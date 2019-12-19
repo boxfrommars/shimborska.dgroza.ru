@@ -1,0 +1,382 @@
+/* jQuery UI */
+.ui-helper-hidden { display: none; }
+.ui-helper-hidden-accessible { position: absolute; left: -99999999px; }
+.ui-helper-reset { margin: 0; padding: 0; border: 0; outline: 0; line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none; }
+.ui-helper-clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.ui-helper-clearfix { display: inline-block; }
+/* required comment for clearfix to work in Opera \*/
+* html .ui-helper-clearfix { height:1%; }
+.ui-helper-clearfix { display:block; }
+/* end clearfix */
+.ui-icon { display: block; text-indent: -99999px; overflow: hidden; background-repeat: no-repeat; }
+.ui-widget-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.ui-widget { font-family: Verdana, Arial, sans-serif; font-size: 1.1em; }
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Verdana, Arial, sans-serif; font-size: 1em; }
+.ui-widget-content { border: 1px solid #cccccc; background: #D1DCDF url(images/ui-bg_flat_100_D1DCDF_40x100.png) 50% 50% repeat-x; color: #333333; }
+.ui-widget-content a { color: #333333; }
+.ui-widget-header { border: 1px solid #333333; background: #333333 url(images/ui-bg_flat_0_333333_40x100.png) 50% 50% repeat-x; color: #dddddd; font-weight: bold; }
+.ui-widget-header a { color: #dddddd; }
+.ui-icon { width: 16px; height: 16px; background-image: url(images/ui-icons_333333_256x240.png); }
+.ui-widget-content .ui-icon {background-image: url(images/ui-icons_333333_256x240.png); }
+.ui-widget-header .ui-icon {background-image: url(images/ui-icons_bbbbbb_256x240.png); }
+.ui-state-default .ui-icon { background-image: url(images/ui-icons_e3e3e3_256x240.png); }
+.ui-state-hover .ui-icon, .ui-state-focus .ui-icon {background-image: url(images/ui-icons_fafafa_256x240.png); }
+.ui-state-active .ui-icon {background-image: url(images/ui-icons_333333_256x240.png); }
+.ui-state-highlight .ui-icon {background-image: url(images/ui-icons_4ca300_256x240.png); }
+.ui-state-error .ui-icon, .ui-state-error-text .ui-icon {background-image: url(images/ui-icons_ffcf29_256x240.png); }
+.ui-icon-close { background-position: -80px -128px; }
+.ui-icon-closethick { background-position: -96px -128px; }
+.ui-dialog { position: relative; padding: .2em; width: 300px; }
+.ui-dialog .ui-dialog-titlebar { padding: .5em .3em .3em 1em; position: relative;  }
+.ui-dialog .ui-dialog-title { float: left; margin: .1em 0 .2em; } 
+.ui-dialog .ui-dialog-titlebar-close { position: absolute; right: .3em; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height: 18px; }
+.ui-dialog .ui-dialog-titlebar-close span { display: block; margin: 1px; }
+.ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus { padding: 0; }
+.ui-dialog .ui-dialog-content { border: 0; padding: .5em 1em; background: none; overflow: auto; zoom: 1; }
+.ui-dialog .ui-resizable-se { width: 14px; height: 14px; right: 3px; bottom: 3px; }
+.ui-draggable .ui-dialog-titlebar { cursor: move; }
+
+/* Erase */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+/* UI css overwrite:begin */
+.ui-dialog {
+	padding: 0;
+}
+/* UI css overwrite:end */
+
+/* main css */
+
+/* fonts:begin */
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: verdana, geneva, serif;
+}
+strong {
+	font-weight: bold;
+}
+.page,
+.notabene {
+	font-family: "times new roman", times, serif;
+	font-size: 1.6em;
+	line-height:  1.2em;
+}
+.left-box {
+	line-height: 1.2em;
+}
+.page p img {
+	line-height: 1em;
+}
+h1 {
+	font-size: 2em;
+}
+h1 .book-title {
+	font-size: .85em;
+}
+.head-nav {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 2em 24px;
+}
+.page h2,
+.page h3,
+#leftbar {
+	font-family: georgia;
+}
+.page h2,
+.page h3 {
+	font-size: 1.8em;
+	line-height:  1.2em;
+}
+#leftbar {
+	font-size: 1.2em;
+}
+#navigation {
+	font-size: 1.75em;
+}
+#content .chapter-link {
+	font-size: 1.6em;
+}
+.left-box {
+	text-align: center;
+}
+.foot-note,
+#pager .last .shortkey {
+	text-align: right
+}
+#pager {
+	font-size: .875em;
+}
+.shortkey {
+	font-size: .93em;
+}
+.page .cover {
+	text-align: center;
+}
+.italic {
+	font-style: italic;
+}
+/* fonts:end */
+
+
+/* colors & bg:begin */
+.pseudo-anchor,
+a {
+	color:#0187C5;
+}
+a:hover {
+	color: #37ABDF;
+}
+#navigation span,
+.ui-widget-content a:hover,
+.active {
+	color: #777;
+}
+.notabene .note,
+.tonote {
+	color: #7F1F17;
+}
+body {
+	color:#333;
+	background: #fafafa url(/images/pages.png) repeat-x 0 50px;
+}
+#wrap {
+	background: transparent url(/images/pages_corner.png) no-repeat 100% 50px;
+}
+#footer,
+#bar {
+	background:#333;
+	color: #ddd;
+}
+#royklogo {
+	background: transparent url(/images/royklogo.png) no-repeat 80% 100%;
+}
+#footer a,
+#pager {
+	color: #aaa;
+}
+#pager a:hover {
+	background: #ddd;
+}
+.foot-note {
+	color: #999;
+}
+#content .active {
+	color: red;
+}
+.left-box {
+	color: #888;
+	background: #efefef;
+}
+/* colors & bg:end */
+
+
+html, body, #wrap {
+	height: 100%;
+}
+body > #wrap {
+	height: auto; 
+	min-height: 100%;
+}
+#wrap {
+	position: relative;
+}
+#main {
+	padding-bottom: 40px;
+}
+#footer {
+	position: relative;
+	margin-top: -40px;
+	clear:both;
+} 
+#footer,
+#bar {
+	padding: 15px;
+}
+
+#royklogo {
+	position: absolute;
+	bottom: 0;
+	right: 40px;
+	height:80px;
+	width:80px;
+	z-index: 20;
+}
+#main {
+	width: 995px;
+	margin: 0 auto 0;
+	padding-top: 2em;
+	overflow: hidden;
+	position: relative;
+}
+.page {
+	margin-bottom: 2em;
+	padding: 70px 0 0;
+	overflow: hidden;
+	width: 500px;
+	float:left;
+}
+ul.classic,
+.page p {
+	margin-bottom: 1.2em;
+}
+.poem,
+.text {
+	margin-bottom: 2em;
+}
+.page h2,
+.page h3 {
+	padding: .8em 0;
+}
+#leftbar {
+	float: left;
+	width: 184px;
+	padding: 148px 18px 20px 18px;
+}
+#navigation li {
+	padding-bottom: 1em;
+}
+
+/* записки на полях */
+.notabene {
+	float:right;
+	width:225px;
+	position: relative;
+}
+.notabene .note {
+	position: absolute;
+	padding: 10px;
+	left: 0;
+}
+.tonote {
+	border-bottom: 1px dashed #7F1F17;
+}
+#book-note {
+	top: 470px;
+}
+#book-note h2 {
+	font-weight: 400;
+}
+.note p {
+	margin-bottom: 1em;
+}
+/* содержание */
+#content li {
+	padding-bottom: 8px;
+}
+#content ul ul {
+	padding: 10px 0 0 3em;
+}
+#content .chapter-link-list {
+	padding-bottom: 15px;
+	width: 320px;
+	float: left;
+	margin-right: 10px;
+}
+#content .wide {
+	float: none;
+	width: 100%;
+}
+#contents-wrap {
+	padding:2em 2em 1em;
+}
+
+/* нижняя навигация */
+#pager {
+	width: 100%;
+	margin-top:5em;
+}
+#pager li {
+	float: left;
+}
+#pager span,
+#pager a {
+	display: block;
+	padding: 4px 8px;
+	margin: 0 13px;
+}
+#pager .last{
+	float: right;
+	margin-right: 0;
+	padding-right: 0;
+}
+#pager .last a{
+	margin-right: 0;
+	margin-left: 0;
+}
+#pager .first{
+	margin-left: 0;
+	padding-left:0;
+}
+#pager .first span,
+#pager .first a{
+	margin-left: 0;
+	margin-right: 0;
+}
+#pager .shortkey {
+	padding: 0;
+	margin: 0;
+}
+#pager .first .shortkey {
+	padding-left: 8px;
+}
+#pager .last .shortkey {
+	padding-right: 8px;
+}
+/* левые картинки */
+.left-box {
+	width: 160px;
+	padding: 5px;
+	border: 1px solid #e0e0e0;
+	margin-bottom: 20px;
+}
+.left-box p {
+	padding: 4px;
+}
+/**/
