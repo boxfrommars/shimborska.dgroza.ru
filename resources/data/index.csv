@@ -1,0 +1,45 @@
+href,title,page_title,class,parent
+two-monkeys,"Две обезьяны","Две обезьяны",poem,different
+about-soul,"Кое-что о душе","Кое-что о душе",poem,different
+praise-dreams,"Похвала снам","Похвала снам",poem,different
+soliloquy-for-cassandra,"Монолог для Кассандры","Монолог для Кассандры",poem,different
+ball,Бал,Бал,poem,different
+shadow,Тень,Тень,poem,different
+utopia,Утопия,Утопия,poem,different
+torture,Пытки,Пытки,poem,different
+impression-of-the-theater,"Впечатление от театра","Впечатление от театра",poem,different
+reality,Явь,Явь,poem,different
+im-too-close,"Я слишком близко","Я слишком близко",poem,different
+first-picture-of-hitler,"Первая фотография Гитлера","Первая фотография Гитлера",poem,different
+elegiac-arithmetic,"Элегическая арифметика","Элегическая арифметика",poem,different
+in-honor-of-my-sister,"В честь моей сестры","В честь моей сестры",poem,different
+station,Вокзал,Вокзал,poem,different
+ballad,Баллада,Баллада,poem,different
+little-girl-pull-tablecloth,"Маленькая девочка стаскивает скатерть","Маленькая девочка стаскивает скатерть",poem,different
+terrorist-he-looks,"Террорист, он смотрит","Террорист, он смотрит",poem,different
+road-elegy,"Дорожная элегия","Дорожная элегия",poem,different
+people-on-bridge,"Люди на мосту","Люди на мосту",poem,different
+picture-september-11,"Фотография 11 сентября","Фотография 11 сентября",poem,different
+in-park,"В парке","В парке",poem,different
+note,Заметка,Заметка,poem,different
+cat-in-empty-apartment,"Кот в пустой квартире","Кот в пустой квартире",poem,different
+absence,Отсутствие,Отсутствие,poem,semicolon
+abc,АБВ,АБВ,poem,semicolon
+road-accident,"Дорожное происшествие","Дорожное происшествие",poem,semicolon
+next-day-without-us,"Назавтра — без нас","Назавтра — без нас",poem,semicolon
+forestry-morality,"Лесное моралите","Лесное моралите",poem,semicolon
+case,Случай,Случай,poem,semicolon
+repechage,Утешение,Утешение,poem,semicolon
+old-professor,"Старый профессор","Старый профессор",poem,semicolon
+outlook,Перспектива,Перспектива,poem,semicolon
+courtesy-blind,"Учтивость незрячих","Учтивость незрячих",poem,semicolon
+dogs-monologue,"Монолог пса, заплутавшего в эпохе","Монолог пса, заплутавшего в эпохе",poem,semicolon
+conversation-with-atropos,"Беседа с Атропой","Беседа с Атропой",poem,semicolon
+poets-nightmare,"Страшный сон поэта","Страшный сон поэта",poem,semicolon
+maze,Лабиринт,Лабиринт,poem,semicolon
+neglect,Небрежение,Небрежение,poem,semicolon
+greek-statue,"Греческая статуя","Греческая статуя",poem,semicolon
+in-fact-any-verse,"Вообще-то любые стихи","Вообще-то любые стихи",poem,semicolon
+poet-and-world,"Поэт и мир (нобелевская лекция)","Поэт и мир",poem,text
+literary-mail,"Литературная почта, или Как стать/не стать писателем (фрагменты)","Литературная почта, или Как стать/не стать писателем (фрагменты)",poem,text
+moment,Мгновение,Мгновение,poem,moment

@@ -1,4 +1,4 @@
-@extends('page')
+@extends('layout')
 
 @section('content')
     <p class="cover unpined"><a href="/different/two-monkeys"><img alt="Вислава Шимборская. Обложка" src="/images/szymborska1.jpg" /></a></p>

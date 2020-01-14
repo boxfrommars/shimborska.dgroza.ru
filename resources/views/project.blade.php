@@ -1,8 +1,9 @@
-@extends('page')
+@extends('layout')
 
 @section('content')
     <h2>О проекте «Шимборская»</h2>
-    <p>Сайт посвящён творчеству известной польской поэтессы Виславы Шимборской. Многие произведения публикуются впервые в сети</p>
+    <p>Сайт посвящён творчеству известной польской поэтессы Виславы Шимборской. Многие произведения публикуются впервые
+        в сети</p>
     <h3>Источники, использованные в&nbsp;издании</h3>
     <ul class="classic">
         <li>Иностранная литература 1997, №5</li>
@@ -16,7 +17,9 @@
         <li>Новый Мир 1997, №4</li>
         <li>Ахматова Анна. Собрание сочинений. Т. 8. Переводы</li>
         <li><a href="http://nobelprize.org/index.html">Официальный сайт Нобелевской премии</a></li>
-        <li><a href="http://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0">Википедия</a></li>
+        <li>
+            <a href="http://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0">Википедия</a>
+        </li>
     </ul>
     <h3>Участники проекта</h3>
     <ul class="classic">
@@ -25,5 +28,6 @@
         <li>Разнорабочий: <strong>Дмитрий Гроза-Гудмундсдоттир</strong></li>
     </ul>
     <h3>Контакты</h3>
-    <p class="italic">Пожелания, замечания и указания на неточности отправляйте по&nbsp;адресу <a href="mailto:royksopp.studio@gmail.com">royksopp.studio@gmail.com</a></p>
+    <p class="italic">Пожелания, замечания и указания на неточности отправляйте по&nbsp;адресу <a
+            href="mailto:royksopp.studio@gmail.com">royksopp.studio@gmail.com</a></p>
 @endsection

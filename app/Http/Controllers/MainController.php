@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\PoemBook;
 
+
 class MainController extends Controller
 {
     /**
@@ -25,7 +26,6 @@ class MainController extends Controller
     {
         return $this->page('main', '/', [
             'title' => 'Вислава Шимборская. Стихотворения',
-            'main_page' => true,
         ]);
     }
 
@@ -37,11 +37,8 @@ class MainController extends Controller
             abort(404);
         }
 
-        return $this->page('page', $code, [
+        return $this->page("poems.{$parent}.{$code}", $code, [
             'title' => "Вислава Шимборская. {$poem['title']}",
-            'content' => "<h2>{$poem['title']}</h2>\n {$poem['content']}",
-            'images' => isset($poem['images']) ? $poem['images'] : false,
-            'notes' => isset($poem['notes']) ? $poem['notes'] : false,
         ]);
     }
 
@@ -49,15 +46,13 @@ class MainController extends Controller
     {
         return $this->page('project', 'project', [
             'title' => 'Вислава Шимборская. О проекте',
-            'aboutproject' => true,
         ]);
     }
 
     public function author()
     {
         return $this->page('author', 'author', [
-            'title' => 'Вислава Шимборская. Об авторе',
-            'aboutauthor' => true,
+            'title' => 'Вислава Шимборская. Об авторе'
         ]);
     }
 
@@ -67,11 +62,8 @@ class MainController extends Controller
             [
                 'nav' => $this->poemBook->getNavigation($code),
                 'toc' => $this->poemBook->getContent(),
-                'tocCurrent' => $code,
-                'notes' => false,
-                'images' => false,
-                'content' => '',
-                'main_page' => false,
+                'code' => $code,
+                'title' => '',
             ],
             $params
         ));

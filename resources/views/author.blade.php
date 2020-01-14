@@ -1,4 +1,4 @@
-@extends('page')
+@extends('layout')
 
 @section('content')
     <h2>Вислава Шимборская</h2>
