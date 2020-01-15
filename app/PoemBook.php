@@ -29,38 +29,6 @@ class PoemBook
         return $content;
     }
 
-    public function getNavigation_old($title)
-    {
-        $id = -1;
-        $count = 6;
-
-        $content = array();
-        foreach ($this->content as $key => $value) {
-            if ($value['href'] == $title) {
-                $id = $key;
-                $content[$id] = $value;
-                $count--;
-                break;
-            }
-        }
-        $i = 1;
-        $a = 1;
-        while ($count != 0) {
-            if (isset($this->content[$id + $a]) && $this->content[$id + $a]['class'] != 'frontpage') {
-                $content[$id + $a] = $this->content[$id + $a];
-                $count--;
-            }
-            $i++;
-            $a = $a + (-$a / abs($a)) * $i;
-        }
-
-        ksort($content);
-
-        dd($content);
-
-        return array('content' => $content, 'id' => $id);
-    }
-
     public function getNavigation($title)
     {
         $paginationLeftPadding = 2;
