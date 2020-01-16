@@ -32,7 +32,7 @@ class GenerateSitemap extends Command
     public function handle()
     {
         app('url')->forceRootUrl(env('APP_URL'));
-        $isSecure = env('APP_HTTPS');
+        $isSecure = (boolean) env('APP_HTTPS');
 
         $adapter = new Local(resource_path('views' . DIRECTORY_SEPARATOR . 'poems'));
         $filesystem = new Filesystem($adapter);
@@ -47,13 +47,13 @@ class GenerateSitemap extends Command
         $pages_count = 3;
         $poems_count = 0;
 
-        foreach($poems as $poem) {
+        foreach ($poems as $poem) {
             if ($poem['type'] !== 'dir') {
                 $url = route('poem', [
                     'parent' => $poem['dirname'],
                     'title' => explode('.', $poem['filename'])[0]
                 ], $isSecure);
-                $tags[] = new Tag($url, Carbon::createFromTimestamp($poem['timestamp']));
+                $tags[] = new Tag($url, Carbon::createFromTimestampUTC($poem['timestamp']));
                 $poems_count++;
             }
         }
