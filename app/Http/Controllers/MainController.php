@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\PoemBook;
+use Illuminate\Http\RedirectResponse;
 
 
 class MainController extends Controller
@@ -53,6 +54,26 @@ class MainController extends Controller
     {
         return $this->page('author', 'author', [
             'title' => 'Вислава Шимборская. Об авторе'
+        ]);
+    }
+
+    /**
+     * @param string $parent
+     * @return RedirectResponse|void
+     */
+    public function section($parent)
+    {
+        $content = $this->poemBook->getContent();
+
+        if (!key_exists($parent, $content) || count($content[$parent]) === 0) {
+            return abort(404);
+        }
+
+        $poem = $content[$parent][0];
+
+        return redirect()->route('poem', [
+            'parent' => $poem['parent'],
+            'title' => $poem['href']
         ]);
     }
 

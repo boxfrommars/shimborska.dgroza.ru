@@ -7,3 +7,5 @@ $router->get('/', ['as' => 'main', 'uses' => 'MainController@main']);
 $router->get('/{parent:different|semicolon|text|moment}/{title}', ['as' => 'poem', 'uses' => 'MainController@poem']);
 $router->get('project', ['as' => 'project', 'uses' => 'MainController@project']);
 $router->get('author', ['as' => 'author', 'uses' => 'MainController@author']);
+
+$router->get('/{parent:different|semicolon|text|moment}', ['as' => 'section', 'uses' => 'MainController@section']);
