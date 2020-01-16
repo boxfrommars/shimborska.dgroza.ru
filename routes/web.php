@@ -1,6 +1,9 @@
 <?php
 
-$router->get('/', 'MainController@main');
-$router->get('/{parent:different|semicolon|text|moment}/{title}', 'MainController@poem');
-$router->get('project', 'MainController@project');
-$router->get('author', 'MainController@author');
+use Laravel\Lumen\Routing\Router;
+
+/** @var $router Router  */
+$router->get('/', ['as' => 'main', 'uses' => 'MainController@main']);
+$router->get('/{parent:different|semicolon|text|moment}/{title}', ['as' => 'poem', 'uses' => 'MainController@poem']);
+$router->get('project', ['as' => 'project', 'uses' => 'MainController@project']);
+$router->get('author', ['as' => 'author', 'uses' => 'MainController@author']);
