@@ -6,7 +6,7 @@
     <meta name="google-site-verification" content="yvzIVHZghvLLFJArEmBKcr5HGABsieiNZYLausg9Loo" />
     <meta name='yandex-verification' content='74f87e2ca2368e81' />
     <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen" />
-    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <title>{{ $title }}</title>
 </head>
 
