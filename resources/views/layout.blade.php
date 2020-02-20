@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <title>{{ $title }}</title>
+    @yield('head')
+
 </head>
 
 <body>
