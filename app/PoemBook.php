@@ -12,7 +12,10 @@ class PoemBook
     public function __construct()
     {
         $reader = Reader::createFromPath(resource_path('data' . DIRECTORY_SEPARATOR . 'index.csv'));
-        $records = $reader->setHeaderOffset(0)->getRecords();
+        $records = $reader
+            ->setHeaderOffset(0)
+            ->setEscape('')
+            ->getRecords();
         $this->content = iterator_to_array($records, false);
     }
 

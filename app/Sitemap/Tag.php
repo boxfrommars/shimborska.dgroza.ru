@@ -2,7 +2,7 @@
 
 namespace App\Sitemap;
 
-use Carbon\Carbon;
+use Illuminate\Support\Carbon;
 
 class Tag
 {

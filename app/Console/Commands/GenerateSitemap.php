@@ -4,66 +4,50 @@ namespace App\Console\Commands;
 
 use App\Sitemap\Tag;
 use Illuminate\Console\Command;
-use League\Flysystem\Filesystem;
-use League\Flysystem\Adapter\Local;
-use Carbon\Carbon;
-use Throwable;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\URL;
 
 class GenerateSitemap extends Command
 {
-    /**
-     * The console command name.
-     *
-     * @var string
-     */
     protected $signature = 'sitemap:generate';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = 'Generate the sitemap.';
 
-    /**
-     * Execute the console command.
-     * @throws Throwable
-     */
-    public function handle()
+    public function handle(): int
     {
-        app('url')->forceRootUrl(env('APP_URL'));
-        $isSecure = (boolean) env('APP_HTTPS');
+        URL::forceRootUrl(config('app.url'));
 
-        $adapter = new Local(resource_path('views' . DIRECTORY_SEPARATOR . 'poems'));
-        $filesystem = new Filesystem($adapter);
-        $poems = $filesystem->listContents('', true);
-
-        $tags = [];
-
-        $tags[] = new Tag(route('main', [], $isSecure), Carbon::create(2020, 1, 16), 1);
-        $tags[] = new Tag(route('author', [], $isSecure), Carbon::create(2020, 1, 16));
-        $tags[] = new Tag(route('project', [], $isSecure), Carbon::create(2020, 1, 16));
-
-        $pages_count = 3;
-        $poems_count = 0;
-
-        foreach ($poems as $poem) {
-            if ($poem['type'] !== 'dir') {
-                $url = route('poem', [
-                    'parent' => $poem['dirname'],
-                    'title' => explode('.', $poem['filename'])[0]
-                ], $isSecure);
-                $tags[] = new Tag($url, Carbon::createFromTimestampUTC($poem['timestamp']));
-                $poems_count++;
-            }
+        if (config('app.https')) {
+            URL::forceScheme('https');
         }
 
-        $xml = view('sitemap', [
-            'tags' => $tags
-        ])->render();
+        $tags = [
+            new Tag(route('main'), Carbon::create(2020, 1, 16), 1),
+            new Tag(route('author'), Carbon::create(2020, 1, 16)),
+            new Tag(route('project'), Carbon::create(2020, 1, 16)),
+        ];
 
-        $this->info("Success! Pages: {$pages_count}, Poems: {$poems_count}");
+        $poemsCount = 0;
 
-        file_put_contents(base_path('public' . DIRECTORY_SEPARATOR . 'sitemap.xml'), $xml);
+        foreach (File::allFiles(resource_path('views/poems')) as $poem) {
+            $parent = str_replace('\\', '/', $poem->getRelativePath());
+            $tags[] = new Tag(
+                route('poem', [
+                    'parent' => $parent,
+                    'title' => $poem->getFilenameWithoutExtension(),
+                ]),
+                Carbon::createFromTimestampUTC($poem->getMTime()),
+            );
+            $poemsCount++;
+        }
+
+        $xml = view('sitemap', ['tags' => $tags])->render();
+
+        File::put(public_path('sitemap.xml'), $xml);
+
+        $this->info("Success! Pages: 3, Poems: {$poemsCount}");
+
+        return self::SUCCESS;
     }
 }

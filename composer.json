@@ -1,25 +1,18 @@
 {
-    "name": "laravel/lumen",
-    "description": "The Laravel Lumen Framework.",
-    "keywords": ["framework", "laravel", "lumen"],
-    "license": "MIT",
+    "$schema": "https://getcomposer.org/schema.json",
+    "name": "boxfrommars/shimborska.dgroza.ru",
+    "description": "A website dedicated to the poetry of Wislawa Szymborska.",
     "type": "project",
+    "license": "MIT",
     "require": {
-        "php": "^7.2",
-        "laravel/lumen-framework": "^6.0",
-        "league/csv": "^9.5",
-        "league/flysystem": "^1.0"
+        "php": "^8.3",
+        "laravel/framework": "^13.0",
+        "league/csv": "^9.28"
     },
     "require-dev": {
-        "fzaninotto/faker": "^1.4",
-        "phpunit/phpunit": "^8.0",
-        "mockery/mockery": "^1.0"
+        "phpunit/phpunit": "^12.5"
     },
     "autoload": {
-        "classmap": [
-            "database/seeds",
-            "database/factories"
-        ],
         "psr-4": {
             "App\\": "app/"
         },
@@ -28,20 +21,28 @@
         ]
     },
     "autoload-dev": {
-        "classmap": [
-            "tests/"
-        ]
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
     },
     "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ]
+        ],
+        "test": "@php vendor/bin/phpunit"
     },
     "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        },
+        "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true,
-        "optimize-autoloader": true
+        "sort-packages": true
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }

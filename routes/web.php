@@ -1,11 +1,16 @@
 <?php
 
-use Laravel\Lumen\Routing\Router;
+use App\Http\Controllers\MainController;
+use Illuminate\Support\Facades\Route;
 
-/** @var $router Router  */
-$router->get('/', ['as' => 'main', 'uses' => 'MainController@main']);
-$router->get('/{parent:different|semicolon|text|moment}/{title}', ['as' => 'poem', 'uses' => 'MainController@poem']);
-$router->get('project', ['as' => 'project', 'uses' => 'MainController@project']);
-$router->get('author', ['as' => 'author', 'uses' => 'MainController@author']);
+Route::get('/', [MainController::class, 'main'])->name('main');
+Route::get('/project', [MainController::class, 'project'])->name('project');
+Route::get('/author', [MainController::class, 'author'])->name('author');
 
-$router->get('/{parent:different|semicolon|text|moment}', ['as' => 'section', 'uses' => 'MainController@section']);
+Route::get('/{parent}/{title}', [MainController::class, 'poem'])
+    ->whereIn('parent', ['different', 'semicolon', 'text', 'moment'])
+    ->name('poem');
+
+Route::get('/{parent}', [MainController::class, 'section'])
+    ->whereIn('parent', ['different', 'semicolon', 'text', 'moment'])
+    ->name('section');
