@@ -171,12 +171,12 @@
 @endsection
 
 @section('images')
-    <div class="left-box" id="left-b-001" style="margin-top:300px;">
+    <div class="left-box" id="left-b-001" style="margin-top:326px;">
         <img alt="две обезьяны" src="/images/2malpy.jpg"/>
         <p>Две обезьяны (1562)</p>
         <p>П. Брейгель</p>
     </div>
-    <div class="left-box" id="left-b-001" style="margin-top:20px;">
+    <div class="left-box" id="left-b-002" style="margin-top:20px;">
         <img alt="две обезьяны" src="/images/breigel.jpg"/>
         <p>Автопортрет</p>
         <p>П. Брейгель</p>

@@ -11,7 +11,11 @@ class ExampleTest extends TestCase
     {
         $this->get('/')
             ->assertOk()
-            ->assertSee('/css/style.css', false);
+            ->assertSee('name="viewport" content="width=device-width, initial-scale=1"', false)
+            ->assertSee('/css/style.css', false)
+            ->assertSee('<dialog id="content"', false)
+            ->assertSee('/js/script.js', false)
+            ->assertDontSee('jquery', false);
     }
 
     public function testStaticPagesAreAvailable(): void

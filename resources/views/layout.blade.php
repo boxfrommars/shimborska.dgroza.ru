@@ -1,8 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!doctype html>
+<html lang="ru">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="google-site-verification" content="yvzIVHZghvLLFJArEmBKcr5HGABsieiNZYLausg9Loo" />
     <meta name='yandex-verification' content='74f87e2ca2368e81' />
     <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen" />
@@ -24,11 +25,11 @@
 <body>
 
 <div id="wrap">
-    <div id="bar">
+    <header id="bar">
         @if($code === '/')
-            <h1><span class="pseudo-anchor">Вислава Шимборская</span>&nbsp;&nbsp;<span class="book-title">Стихотворения</span></h1>
+            <h1><span class="pseudo-anchor">Вислава Шимборская</span><span class="book-title">Стихотворения</span></h1>
         @else
-            <h1><a href="/" class="pseudo-anchor">Вислава Шимборская</a>&nbsp;&nbsp;<span class="book-title">Стихотворения</span></h1>
+            <h1><a href="/" class="pseudo-anchor">Вислава Шимборская</a><span class="book-title">Стихотворения</span></h1>
         @endif
 
         @if($code === 'project')
@@ -36,21 +37,20 @@
         @else
             <a href="/project" class="head-nav">о проекте</a>
         @endif
-    </div>
-    <div id="main">
-        <div id="leftbar">
+    </header>
+    <main id="main">
+        <nav id="leftbar" aria-label="Основная навигация">
             <ul id="navigation">
-                <li><a href="#content" class="show-content-link">Содержание</a></li>
+                <li><a href="#content" class="show-content-link" aria-haspopup="dialog">Содержание</a></li>
                 @if($code === 'author')
                     <li><span>Об авторе</span></li>
                 @else
                     <li><a href="/author">Об авторе</a></li>
                 @endif
             </ul>
-            @yield('images')
-        </div>
+        </nav>
 
-        <div class="page">
+        <article class="page">
             @yield('content')
 
             <ul id="pager">
@@ -69,16 +69,27 @@
                         @endif
                     @endif
                 @endforeach
-                <li class="last"><a href="#" class="show-content-link">Содержание</a><span class="shortkey">(ctrl + ↑)</span></li>
+                <li class="last"><a href="#" class="show-content-link" aria-haspopup="dialog">Содержание</a><span class="shortkey">(ctrl + ↑)</span></li>
             </ul>
-        </div>
+        </article>
 
-        <div class="notabene">
+        @hasSection('images')
+            <aside class="illustrations" aria-label="Иллюстрации">
+                @yield('images')
+            </aside>
+        @endif
+
+        <aside class="notabene" aria-label="Примечания">
             @yield('notes')
-        </div>
+        </aside>
 
-        <div id="content" title="Содержание">
-            <ul id="contents-wrap">
+        <dialog id="content" aria-labelledby="content-title">
+            <div class="dialog-titlebar">
+                <span id="content-title">Содержание</span>
+                <button type="button" class="content-close" aria-label="Закрыть">×</button>
+            </div>
+            <div class="dialog-body">
+                <ul id="contents-wrap">
                 @if($code == '/')
                     <li class="chapter-link-list wide"><span class="chapter-link active">Обложка</span></li>
                 @else
@@ -99,20 +110,20 @@
                         </ul>
                     </li>
                 @endforeach
-            </ul>
-        </div>
-    </div>
-    <div id="royklogo"></div>
+                </ul>
+            </div>
+        </dialog>
+    </main>
+    <div id="royklogo" aria-hidden="true"></div>
 </div>
-<div id="footer">
+<footer id="footer">
     &copy; 2009 Студия «Гриб-дождевик»
-</div>
+</footer>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.3.2/jquery.min.js" integrity="sha256-yDcKLQUDWenVBazEEeb0V6SbITYKIebLySKbrTp2eJk=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/js/script.js"></script>
+<script src="/js/script.js"></script>
 
 <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
+<script>
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
