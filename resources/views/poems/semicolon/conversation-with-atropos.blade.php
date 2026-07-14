@@ -119,8 +119,8 @@
 
 @section('images')
     <div class="left-box" style="margin-top:50px;">
-        <img alt="кассандра" src="/images/cassandra.jpg"/>
-        <p>Кассандра (1898)</p>
-        <p>Э. Де Морган</p>
+        <img alt="Атропа" src="/images/atropos.jpg"/>
+        <p>Атропа, перерезающая нить судьбы</p>
+        <p>Церковь Богородицы Стовратной, о. Парос</p>
     </div>
 @endsection
