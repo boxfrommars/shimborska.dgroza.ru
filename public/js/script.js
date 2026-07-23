@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const dialog = document.querySelector('#content');
     const currentPage = document.querySelector('#center-bottom-nav');
 
+    if (!dialog) return;
+
     function addShortcut(item, text) {
         if (!item || item.matches('.first, .last')) return;
 

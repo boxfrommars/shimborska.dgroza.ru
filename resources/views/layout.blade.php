@@ -1,3 +1,4 @@
+@php($isErrorPage = ($page ?? null) === 'error')
 <!doctype html>
 <html lang="ru">
 
@@ -22,7 +23,7 @@
 
 </head>
 
-<body>
+<body @class(['error-layout' => $isErrorPage])>
 
 <div id="wrap">
     <header id="bar">
@@ -38,7 +39,8 @@
             <a href="{{ route('project') }}" class="head-nav">о проекте</a>
         @endif
     </header>
-    <main id="main">
+    <main id="main" @class(['error-main' => $isErrorPage])>
+        @unless($isErrorPage)
         <nav id="leftbar" aria-label="Основная навигация">
             <ul id="navigation">
                 <li><a href="#content" class="show-content-link" aria-haspopup="dialog">Содержание</a></li>
@@ -49,10 +51,12 @@
                 @endif
             </ul>
         </nav>
+        @endunless
 
-        <article class="page">
+        <article @class(['page', 'error-page' => $isErrorPage])>
             @yield('content')
 
+            @unless($isErrorPage)
             <ul id="pager">
                 @if($page === 'main')
                     <li id="center-bottom-nav" class="first"><span>Обложка</span><span class="shortkey"></span></li>
@@ -69,8 +73,10 @@
                 @endforeach
                 <li class="last"><a href="#" class="show-content-link" aria-haspopup="dialog">Содержание</a><span class="shortkey">(ctrl + ↑)</span></li>
             </ul>
+            @endunless
         </article>
 
+        @unless($isErrorPage)
         @hasSection('images')
             <aside class="illustrations" aria-label="Иллюстрации">
                 @yield('images')
@@ -111,6 +117,7 @@
                 </ul>
             </div>
         </dialog>
+        @endunless
     </main>
     <div id="royklogo" aria-hidden="true"></div>
 </div>

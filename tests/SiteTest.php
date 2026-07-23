@@ -48,9 +48,29 @@ class SiteTest extends TestCase
 
     public function testUnknownAndMismatchedPagesReturnNotFound(): void
     {
-        $this->get('/unknown')->assertNotFound();
-        $this->get('/different/unknown')->assertNotFound();
-        $this->get('/semicolon/two-monkeys')->assertNotFound();
+        foreach (['/unknown', '/different/unknown', '/semicolon/two-monkeys'] as $path) {
+            $this->get($path)
+                ->assertNotFound()
+                ->assertSee('<body class="error-layout">', false)
+                ->assertSee('<header id="bar">', false)
+                ->assertSee('<footer id="footer">', false)
+                ->assertSee('<div id="royklogo"', false)
+                ->assertSee('<h2>404 — Страница не найдена</h2>', false)
+                ->assertSee('Такой страницы здесь нет — возможно, адрес изменился или в нём опечатка.')
+                ->assertSee('Вернуться на обложку')
+                ->assertDontSee('<nav id="leftbar"', false)
+                ->assertDontSee('<ul id="pager"', false)
+                ->assertDontSee('<dialog id="content"', false);
+        }
+    }
+
+    public function testUnknownJsonPageKeepsLaravelJsonResponse(): void
+    {
+        $this->getJson('/unknown')
+            ->assertNotFound()
+            ->assertHeader('content-type', 'application/json')
+            ->assertJsonStructure(['message'])
+            ->assertDontSee('Страница не найдена');
     }
 
     public function testCatalogMatchesPoemViews(): void

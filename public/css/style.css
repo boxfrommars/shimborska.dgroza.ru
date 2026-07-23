@@ -202,6 +202,13 @@ body {
 	flex: 1 0 auto;
 	position: relative;
 }
+.error-layout #wrap {
+	display: flex;
+	flex-direction: column;
+}
+.error-layout #main {
+	flex: 1 0 auto;
+}
 #footer {
 	flex: none;
 } 
@@ -504,6 +511,10 @@ ul.classic,
 		font-size: 1.125rem;
 		line-height: 1.4;
 		overflow-wrap: break-word;
+	}
+	.error-main .page {
+		grid-row: 1;
+		padding-top: 70px;
 	}
 	.page h2 {
 		font-size: 2rem;
