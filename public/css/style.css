@@ -189,22 +189,21 @@ body {
 /* colors & bg:end */
 
 
-html, body, #wrap {
-	height: 100%;
-}
-body > #wrap {
-	height: auto; 
+html {
 	min-height: 100%;
 }
-#wrap {
-	position: relative;
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	min-height: 100dvh;
 }
-#main {
-	padding-bottom: 40px;
+#wrap {
+	flex: 1 0 auto;
+	position: relative;
 }
 #footer {
-	position: relative;
-	margin-top: -40px;
+	flex: none;
 } 
 #footer,
 #bar {
@@ -213,7 +212,7 @@ body > #wrap {
 
 #royklogo {
 	position: absolute;
-	bottom: 0;
+	bottom: -40px;
 	right: 40px;
 	height:80px;
 	width:80px;
