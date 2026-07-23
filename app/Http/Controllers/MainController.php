@@ -2,88 +2,78 @@
 
 namespace App\Http\Controllers;
 
-use App\PoemBook;
+use App\PoemCatalog;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-
 
 class MainController extends Controller
 {
-    /**
-     * @var PoemBook
-     */
-    protected $poemBook;
+    public function __construct(private readonly PoemCatalog $poems) {}
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function main(): View
     {
-        $this->poemBook = new PoemBook();
-    }
-
-    public function main()
-    {
-        return $this->page('main', '/', [
+        return $this->page('main', 'main', [
             'title' => 'Вислава Шимборская. Стихотворения',
         ]);
     }
 
-    public function poem($parent, $code)
+    public function poem(string $section, string $slug): View
     {
-        $poem = $this->poemBook->getPoem($code);
+        $poem = $this->poems->find($section, $slug);
+        $view = "poems.{$section}.{$slug}";
 
-        if (!$poem) {
+        if ($poem === null || !view()->exists($view)) {
             abort(404);
         }
 
-        return $this->page("poems.{$parent}.{$code}", $code, [
+        return $this->page($view, 'poem', [
             'title' => "Вислава Шимборская. {$poem['title']}",
-        ]);
+        ], $poem);
     }
 
-    public function project()
+    public function project(): View
     {
         return $this->page('project', 'project', [
             'title' => 'Вислава Шимборская. О проекте',
         ]);
     }
 
-    public function author()
+    public function author(): View
     {
         return $this->page('author', 'author', [
-            'title' => 'Вислава Шимборская. Об авторе'
+            'title' => 'Вислава Шимборская. Об авторе',
+        ]);
+    }
+
+    public function section(string $section): RedirectResponse
+    {
+        $poem = $this->poems->firstInSection($section);
+
+        if ($poem === null) {
+            abort(404);
+        }
+
+        return redirect()->route('poem', [
+            'section' => $poem['section'],
+            'slug' => $poem['slug'],
         ]);
     }
 
     /**
-     * @param string $parent
-     * @return RedirectResponse|void
+     * @param array<string, mixed> $params
+     * @param array{section: string, slug: string, title: string}|null $poem
      */
-    public function section($parent)
-    {
-        $content = $this->poemBook->getContent();
-
-        if (!key_exists($parent, $content) || count($content[$parent]) === 0) {
-            return abort(404);
-        }
-
-        $poem = $content[$parent][0];
-
-        return redirect()->route('poem', [
-            'parent' => $poem['parent'],
-            'title' => $poem['href']
-        ]);
-    }
-
-    protected function page($view, $code, $params)
+    private function page(string $view, string $page, array $params, ?array $poem = null): View
     {
         return view($view, array_merge(
             [
-                'nav' => $this->poemBook->getNavigation($code),
-                'toc' => $this->poemBook->getContent(),
-                'code' => $code,
+                'navigation' => $this->poems->navigation(
+                    $poem['section'] ?? null,
+                    $poem['slug'] ?? null,
+                ),
+                'sections' => $this->poems->sections(),
+                'page' => $page,
+                'currentPoem' => $poem,
                 'title' => '',
             ],
             $params

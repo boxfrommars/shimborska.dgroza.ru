@@ -1,0 +1,68 @@
+<?php
+
+return [
+    'different' => [
+        'title' => 'Разные стихотворения',
+        'poems' => [
+            ['slug' => 'two-monkeys', 'title' => 'Две обезьяны'],
+            ['slug' => 'about-soul', 'title' => 'Кое-что о душе'],
+            ['slug' => 'praise-dreams', 'title' => 'Похвала снам'],
+            ['slug' => 'soliloquy-for-cassandra', 'title' => 'Монолог для Кассандры'],
+            ['slug' => 'ball', 'title' => 'Бал'],
+            ['slug' => 'shadow', 'title' => 'Тень'],
+            ['slug' => 'utopia', 'title' => 'Утопия'],
+            ['slug' => 'torture', 'title' => 'Пытки'],
+            ['slug' => 'impression-of-the-theater', 'title' => 'Впечатление от театра'],
+            ['slug' => 'reality', 'title' => 'Явь'],
+            ['slug' => 'im-too-close', 'title' => 'Я слишком близко'],
+            ['slug' => 'first-picture-of-hitler', 'title' => 'Первая фотография Гитлера'],
+            ['slug' => 'elegiac-arithmetic', 'title' => 'Элегическая арифметика'],
+            ['slug' => 'in-honor-of-my-sister', 'title' => 'В честь моей сестры'],
+            ['slug' => 'station', 'title' => 'Вокзал'],
+            ['slug' => 'ballad', 'title' => 'Баллада'],
+            ['slug' => 'little-girl-pull-tablecloth', 'title' => 'Маленькая девочка стаскивает скатерть'],
+            ['slug' => 'terrorist-he-looks', 'title' => 'Террорист, он смотрит'],
+            ['slug' => 'road-elegy', 'title' => 'Дорожная элегия'],
+            ['slug' => 'people-on-bridge', 'title' => 'Люди на мосту'],
+            ['slug' => 'picture-september-11', 'title' => 'Фотография 11 сентября'],
+            ['slug' => 'in-park', 'title' => 'В парке'],
+            ['slug' => 'note', 'title' => 'Заметка'],
+            ['slug' => 'cat-in-empty-apartment', 'title' => 'Кот в пустой квартире'],
+        ],
+    ],
+    'semicolon' => [
+        'title' => 'Двоеточие',
+        'poems' => [
+            ['slug' => 'absence', 'title' => 'Отсутствие'],
+            ['slug' => 'abc', 'title' => 'АБВ'],
+            ['slug' => 'road-accident', 'title' => 'Дорожное происшествие'],
+            ['slug' => 'next-day-without-us', 'title' => 'Назавтра — без нас'],
+            ['slug' => 'forestry-morality', 'title' => 'Лесное моралите'],
+            ['slug' => 'case', 'title' => 'Случай'],
+            ['slug' => 'repechage', 'title' => 'Утешение'],
+            ['slug' => 'old-professor', 'title' => 'Старый профессор'],
+            ['slug' => 'outlook', 'title' => 'Перспектива'],
+            ['slug' => 'courtesy-blind', 'title' => 'Учтивость незрячих'],
+            ['slug' => 'dogs-monologue', 'title' => 'Монолог пса, заплутавшего в эпохе'],
+            ['slug' => 'conversation-with-atropos', 'title' => 'Беседа с Атропой'],
+            ['slug' => 'poets-nightmare', 'title' => 'Страшный сон поэта'],
+            ['slug' => 'maze', 'title' => 'Лабиринт'],
+            ['slug' => 'neglect', 'title' => 'Небрежение'],
+            ['slug' => 'greek-statue', 'title' => 'Греческая статуя'],
+            ['slug' => 'in-fact-any-verse', 'title' => 'Вообще-то любые стихи'],
+        ],
+    ],
+    'text' => [
+        'title' => 'Проза',
+        'poems' => [
+            ['slug' => 'poet-and-world', 'title' => 'Поэт и мир (нобелевская лекция)'],
+            ['slug' => 'literary-mail', 'title' => 'Литературная почта, или Как стать/не стать писателем (фрагменты)'],
+        ],
+    ],
+    'moment' => [
+        'title' => 'Мгновение',
+        'poems' => [
+            ['slug' => 'moment', 'title' => 'Мгновение'],
+        ],
+    ],
+];

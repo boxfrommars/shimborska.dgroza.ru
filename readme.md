@@ -22,7 +22,17 @@ docker compose run --rm app composer audit
 ```
 
 Production deployments must provide their own `APP_KEY`; generate one with
-`php artisan key:generate` after creating the `.env` file.
+`php artisan key:generate` after creating the `.env` file. `APP_URL` must contain
+the complete public origin, including the `https://` scheme in production.
+
+## Adding a poem
+
+1. Add its `slug` and `title` to the appropriate section in
+   `resources/data/poems.php`. The position in the list controls the table of
+   contents and page navigation.
+2. Add the matching Blade view at
+   `resources/views/poems/{section}/{slug}.blade.php`.
+3. Run `composer test` and `php artisan sitemap:generate`.
 
 ## https://shimborska.dgroza.ru
 

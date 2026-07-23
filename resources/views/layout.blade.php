@@ -26,26 +26,26 @@
 
 <div id="wrap">
     <header id="bar">
-        @if($code === '/')
+        @if($page === 'main')
             <h1><span class="pseudo-anchor">Вислава Шимборская</span><span class="book-title">Стихотворения</span></h1>
         @else
-            <h1><a href="/" class="pseudo-anchor">Вислава Шимборская</a><span class="book-title">Стихотворения</span></h1>
+            <h1><a href="{{ route('main') }}" class="pseudo-anchor">Вислава Шимборская</a><span class="book-title">Стихотворения</span></h1>
         @endif
 
-        @if($code === 'project')
+        @if($page === 'project')
             <span class="head-nav">о проекте</span>
         @else
-            <a href="/project" class="head-nav">о проекте</a>
+            <a href="{{ route('project') }}" class="head-nav">о проекте</a>
         @endif
     </header>
     <main id="main">
         <nav id="leftbar" aria-label="Основная навигация">
             <ul id="navigation">
                 <li><a href="#content" class="show-content-link" aria-haspopup="dialog">Содержание</a></li>
-                @if($code === 'author')
+                @if($page === 'author')
                     <li><span>Об авторе</span></li>
                 @else
-                    <li><a href="/author">Об авторе</a></li>
+                    <li><a href="{{ route('author') }}">Об авторе</a></li>
                 @endif
             </ul>
         </nav>
@@ -54,19 +54,17 @@
             @yield('content')
 
             <ul id="pager">
-                @if($code === '/')
+                @if($page === 'main')
                     <li id="center-bottom-nav" class="first"><span>Обложка</span><span class="shortkey"></span></li>
                 @else
-                    <li class="first"><a href="/">Обложка</a><span class="shortkey">(ctrl + ↓)</span></li>
+                    <li class="first"><a href="{{ route('main') }}">Обложка</a><span class="shortkey">(ctrl + ↓)</span></li>
                 @endif
 
-                @foreach($nav['content'] as $key => $value)
-                    @if($value['class'] !== 'frontpage')
-                        @if($nav['current_key'] === $key)
-                            <li id="center-bottom-nav"><span>{{ $key + 1 }}</span></li>
-                        @else
-                            <li><a title="{{ $value['title'] }}" href="/{{ $value['parent'] }}/{{ $value['href'] }}">{{ $key + 1 }}</a></li>
-                        @endif
+                @foreach($navigation['items'] as $index => $poem)
+                    @if($navigation['currentIndex'] === $index)
+                        <li id="center-bottom-nav"><span>{{ $index + 1 }}</span></li>
+                    @else
+                        <li><a title="{{ $poem['title'] }}" href="{{ route('poem', ['section' => $poem['section'], 'slug' => $poem['slug']]) }}">{{ $index + 1 }}</a></li>
                     @endif
                 @endforeach
                 <li class="last"><a href="#" class="show-content-link" aria-haspopup="dialog">Содержание</a><span class="shortkey">(ctrl + ↑)</span></li>
@@ -90,21 +88,21 @@
             </div>
             <div class="dialog-body">
                 <ul id="contents-wrap">
-                @if($code == '/')
+                @if($page === 'main')
                     <li class="chapter-link-list wide"><span class="chapter-link active">Обложка</span></li>
                 @else
-                    <li class="chapter-link-list wide"><a href="/" class="chapter-link">Обложка</a></li>
+                    <li class="chapter-link-list wide"><a href="{{ route('main') }}" class="chapter-link">Обложка</a></li>
                 @endif
 
-                @foreach($toc as $parent_key => $parent)
+                @foreach($sections as $sectionSlug => $section)
                     <li class="chapter-link-list">
-                        <span class="chapter-link">{{ parent_alias($parent_key) }}</span>
+                        <span class="chapter-link">{{ $section['title'] }}</span>
                         <ul>
-                            @foreach($parent as $node)
-                                @if($node['href'] === $code)
-                                    <li><span class="active">{{ $node['title'] }}</span></li>
+                            @foreach($section['poems'] as $poem)
+                                @if($currentPoem !== null && $currentPoem['section'] === $sectionSlug && $currentPoem['slug'] === $poem['slug'])
+                                    <li><span class="active">{{ $poem['title'] }}</span></li>
                                 @else
-                                    <li><a href="/{{ $parent_key }}/{{ $node['href'] }}">{{ $node['title'] }}</a></li>
+                                    <li><a href="{{ route('poem', ['section' => $sectionSlug, 'slug' => $poem['slug']]) }}">{{ $poem['title'] }}</a></li>
                                 @endif
                             @endforeach
                         </ul>

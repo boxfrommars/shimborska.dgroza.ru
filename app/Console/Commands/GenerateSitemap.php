@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Sitemap\Tag;
+use App\PoemCatalog;
 use Illuminate\Console\Command;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\File;
@@ -14,38 +14,63 @@ class GenerateSitemap extends Command
 
     protected $description = 'Generate the sitemap.';
 
-    public function handle(): int
+    public function handle(PoemCatalog $poems): int
     {
-        URL::forceRootUrl(config('app.url'));
+        $appUrl = (string) config('app.url');
+        $scheme = parse_url($appUrl, PHP_URL_SCHEME);
 
-        if (config('app.https')) {
-            URL::forceScheme('https');
+        URL::forceRootUrl($appUrl);
+
+        if (is_string($scheme)) {
+            URL::forceScheme($scheme);
         }
 
         $tags = [
-            new Tag(route('main'), Carbon::create(2020, 1, 16), 1),
-            new Tag(route('author'), Carbon::create(2020, 1, 16)),
-            new Tag(route('project'), Carbon::create(2020, 1, 16)),
+            [
+                'url' => route('main'),
+                'lastModificationDate' => Carbon::create(2020, 1, 16),
+                'priority' => 1.0,
+            ],
+            [
+                'url' => route('author'),
+                'lastModificationDate' => Carbon::create(2020, 1, 16),
+                'priority' => 0.8,
+            ],
+            [
+                'url' => route('project'),
+                'lastModificationDate' => Carbon::create(2020, 1, 16),
+                'priority' => 0.8,
+            ],
         ];
 
-        $poemsCount = 0;
-
-        foreach (File::allFiles(resource_path('views/poems')) as $poem) {
-            $parent = str_replace('\\', '/', $poem->getRelativePath());
-            $tags[] = new Tag(
-                route('poem', [
-                    'parent' => $parent,
-                    'title' => $poem->getFilenameWithoutExtension(),
-                ]),
-                Carbon::createFromTimestampUTC($poem->getMTime()),
+        foreach ($poems->poems() as $poem) {
+            $viewPath = resource_path(
+                "views/poems/{$poem['section']}/{$poem['slug']}.blade.php",
             );
-            $poemsCount++;
+
+            if (!File::exists($viewPath)) {
+                $this->error("Poem view does not exist: {$viewPath}");
+
+                return self::FAILURE;
+            }
+
+            $tags[] = [
+                'url' => route('poem', [
+                    'section' => $poem['section'],
+                    'slug' => $poem['slug'],
+                ]),
+                'lastModificationDate' => Carbon::createFromTimestampUTC(
+                    File::lastModified($viewPath),
+                ),
+                'priority' => 0.8,
+            ];
         }
 
         $xml = view('sitemap', ['tags' => $tags])->render();
 
         File::put(public_path('sitemap.xml'), $xml);
 
+        $poemsCount = count($poems->poems());
         $this->info("Success! Pages: 3, Poems: {$poemsCount}");
 
         return self::SUCCESS;

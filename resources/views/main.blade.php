@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <p class="cover unpined"><a href="/different/two-monkeys"><img alt="Вислава Шимборская. Обложка" src="/images/szymborska1.jpg" /></a></p>
+    <p class="cover unpined"><a href="{{ route('poem', ['section' => 'different', 'slug' => 'two-monkeys']) }}"><img alt="Вислава Шимборская. Обложка" src="/images/szymborska1.jpg" /></a></p>
 @endsection
 
 @section('notes')
