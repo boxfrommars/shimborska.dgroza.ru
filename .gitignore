@@ -1,5 +1,6 @@
 /vendor
 /.idea
+/AGENTS.md
 Homestead.json
 Homestead.yaml
 .env
