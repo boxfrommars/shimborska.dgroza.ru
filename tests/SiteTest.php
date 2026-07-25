@@ -5,7 +5,7 @@ namespace Tests;
 use App\PoemCatalog;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Route;
 
 class SiteTest extends TestCase
 {
@@ -24,6 +24,23 @@ class SiteTest extends TestCase
     {
         $this->get('/project')->assertOk();
         $this->get('/author')->assertOk();
+    }
+
+    public function testPublicPagesDoNotStartSessions(): void
+    {
+        $this->get('/')
+            ->assertOk()
+            ->assertHeaderMissing('set-cookie');
+
+        $this->get('/different/two-monkeys')
+            ->assertOk()
+            ->assertHeaderMissing('set-cookie');
+    }
+
+    public function testUnusedStorageRoutesAreDisabled(): void
+    {
+        self::assertNull(Route::getRoutes()->getByName('storage.local'));
+        self::assertNull(Route::getRoutes()->getByName('storage.local.upload'));
     }
 
     public function testPoemPageIsAvailable(): void
@@ -60,7 +77,8 @@ class SiteTest extends TestCase
                 ->assertSee('Вернуться на обложку')
                 ->assertDontSee('<nav id="leftbar"', false)
                 ->assertDontSee('<ul id="pager"', false)
-                ->assertDontSee('<dialog id="content"', false);
+                ->assertDontSee('<dialog id="content"', false)
+                ->assertDontSee('/js/script.js', false);
         }
     }
 
@@ -137,9 +155,12 @@ class SiteTest extends TestCase
 
             $xml = File::get($path);
             self::assertSame(47, substr_count($xml, '<url>'));
+            self::assertSame(47, substr_count($xml, '<loc>'));
             self::assertStringContainsString('https://example.test/', $xml);
             self::assertStringContainsString('https://example.test/author', $xml);
             self::assertStringContainsString('https://example.test/project', $xml);
+            self::assertStringNotContainsString('<lastmod>', $xml);
+            self::assertStringNotContainsString('<priority>', $xml);
 
             foreach (app(PoemCatalog::class)->poems() as $poem) {
                 self::assertStringContainsString(
@@ -150,12 +171,22 @@ class SiteTest extends TestCase
         } finally {
             File::delete($path);
             config(['app.url' => $originalUrl]);
-            URL::forceRootUrl($originalUrl);
-            URL::forceScheme(
-                is_string($originalUrl)
-                    ? parse_url($originalUrl, PHP_URL_SCHEME) ?: null
-                    : null,
-            );
+        }
+    }
+
+    public function testSitemapRejectsInvalidAppUrl(): void
+    {
+        $path = public_path('sitemap.xml');
+        $originalUrl = config('app.url');
+        File::delete($path);
+
+        try {
+            config(['app.url' => 'not-a-url']);
+
+            self::assertSame(1, Artisan::call('sitemap:generate'));
+            self::assertFileDoesNotExist($path);
+        } finally {
+            config(['app.url' => $originalUrl]);
         }
     }
 }

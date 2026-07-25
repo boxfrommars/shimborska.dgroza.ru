@@ -13,12 +13,16 @@ docker compose up -d
 
 The site is then available at http://localhost:8000.
 
-Run the checks with:
+Run all project checks with:
 
 ```shell
-docker compose run --rm app composer test
-docker compose run --rm app composer validate --strict
-docker compose run --rm app composer audit
+docker compose run --rm app composer check
+```
+
+Generate the sitemap with:
+
+```shell
+docker compose run --rm app composer sitemap
 ```
 
 Production deployments must provide their own `APP_KEY`; generate one with
@@ -32,7 +36,7 @@ the complete public origin, including the `https://` scheme in production.
    contents and page navigation.
 2. Add the matching Blade view at
    `resources/views/poems/{section}/{slug}.blade.php`.
-3. Run `composer test` and `php artisan sitemap:generate`.
+3. Run `composer check` and `composer sitemap`.
 
 ## https://shimborska.dgroza.ru
 

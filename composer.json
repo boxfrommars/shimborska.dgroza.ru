@@ -29,7 +29,13 @@
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
-        "test": "@php vendor/bin/phpunit"
+        "test": "@php vendor/bin/phpunit",
+        "check": [
+            "@composer validate --strict",
+            "@composer audit",
+            "@test"
+        ],
+        "sitemap": "@php artisan sitemap:generate"
     },
     "config": {
         "optimize-autoloader": true,

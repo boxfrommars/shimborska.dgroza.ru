@@ -4,9 +4,7 @@ namespace App\Console\Commands;
 
 use App\PoemCatalog;
 use Illuminate\Console\Command;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\URL;
 
 class GenerateSitemap extends Command
 {
@@ -16,31 +14,24 @@ class GenerateSitemap extends Command
 
     public function handle(PoemCatalog $poems): int
     {
-        $appUrl = (string) config('app.url');
+        $appUrl = rtrim((string) config('app.url'), '/');
         $scheme = parse_url($appUrl, PHP_URL_SCHEME);
 
-        URL::forceRootUrl($appUrl);
+        if (
+            !filter_var($appUrl, FILTER_VALIDATE_URL)
+            || !in_array($scheme, ['http', 'https'], true)
+        ) {
+            $this->error('APP_URL must be a valid HTTP or HTTPS URL.');
 
-        if (is_string($scheme)) {
-            URL::forceScheme($scheme);
+            return self::FAILURE;
         }
 
-        $tags = [
-            [
-                'url' => route('main'),
-                'lastModificationDate' => Carbon::create(2020, 1, 16),
-                'priority' => 1.0,
-            ],
-            [
-                'url' => route('author'),
-                'lastModificationDate' => Carbon::create(2020, 1, 16),
-                'priority' => 0.8,
-            ],
-            [
-                'url' => route('project'),
-                'lastModificationDate' => Carbon::create(2020, 1, 16),
-                'priority' => 0.8,
-            ],
+        $absoluteUrl = static fn (string $path): string => $appUrl.'/'.ltrim($path, '/');
+
+        $urls = [
+            $absoluteUrl(route('main', [], false)),
+            $absoluteUrl(route('author', [], false)),
+            $absoluteUrl(route('project', [], false)),
         ];
 
         foreach ($poems->poems() as $poem) {
@@ -54,19 +45,15 @@ class GenerateSitemap extends Command
                 return self::FAILURE;
             }
 
-            $tags[] = [
-                'url' => route('poem', [
+            $urls[] = $absoluteUrl(
+                route('poem', [
                     'section' => $poem['section'],
                     'slug' => $poem['slug'],
-                ]),
-                'lastModificationDate' => Carbon::createFromTimestampUTC(
-                    File::lastModified($viewPath),
-                ),
-                'priority' => 0.8,
-            ];
+                ], false)
+            );
         }
 
-        $xml = view('sitemap', ['tags' => $tags])->render();
+        $xml = view('sitemap', ['urls' => $urls])->render();
 
         File::put(public_path('sitemap.xml'), $xml);
 
