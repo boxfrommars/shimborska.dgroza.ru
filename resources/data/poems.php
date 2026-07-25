@@ -63,6 +63,7 @@ return [
         'title' => 'Мгновение',
         'poems' => [
             ['slug' => 'moment', 'title' => 'Мгновение'],
+            ['slug' => 'in-abundance', 'title' => 'В преизбытке'],
         ],
     ],
 ];
