@@ -22,7 +22,9 @@ class SiteTest extends TestCase
 
     public function testStaticPagesAreAvailable(): void
     {
-        $this->get('/project')->assertOk();
+        $this->get('/project')
+            ->assertOk()
+            ->assertSee('Вислава Шимборская. Избранное в переводах Асара Эппеля');
         $this->get('/author')->assertOk();
     }
 
@@ -51,6 +53,12 @@ class SiteTest extends TestCase
             ->assertSee('В преизбытке')
             ->assertSee('Перевод Асара Эппеля')
             ->assertSee('W zatrzęsieniu');
+
+        $this->get('/moment/clouds')
+            ->assertOk()
+            ->assertSee('Облака')
+            ->assertSee('Перевод Асара Эппеля')
+            ->assertSee('Chmury');
     }
 
     public function testEverySectionRedirectsToItsFirstPoem(): void
@@ -113,8 +121,8 @@ class SiteTest extends TestCase
             }
         }
 
-        self::assertCount(45, $catalogPaths);
-        self::assertCount(45, array_unique($catalogPaths));
+        self::assertCount(46, $catalogPaths);
+        self::assertCount(46, array_unique($catalogPaths));
 
         $viewPaths = [];
 
@@ -143,7 +151,7 @@ class SiteTest extends TestCase
 
         $lastNavigation = $catalog->navigation('moment', 'moment');
         self::assertSame(43, $lastNavigation['currentIndex']);
-        self::assertSame([39, 40, 41, 42, 43, 44], array_keys($lastNavigation['items']));
+        self::assertSame([40, 41, 42, 43, 44, 45], array_keys($lastNavigation['items']));
     }
 
     public function testSitemapCanBeGeneratedFromCatalog(): void
@@ -159,8 +167,8 @@ class SiteTest extends TestCase
             self::assertFileExists($path);
 
             $xml = File::get($path);
-            self::assertSame(48, substr_count($xml, '<url>'));
-            self::assertSame(48, substr_count($xml, '<loc>'));
+            self::assertSame(49, substr_count($xml, '<url>'));
+            self::assertSame(49, substr_count($xml, '<loc>'));
             self::assertStringContainsString('https://example.test/', $xml);
             self::assertStringContainsString('https://example.test/author', $xml);
             self::assertStringContainsString('https://example.test/project', $xml);
