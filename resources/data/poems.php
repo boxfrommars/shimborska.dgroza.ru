@@ -65,6 +65,9 @@ return [
             ['slug' => 'moment', 'title' => 'Мгновение'],
             ['slug' => 'in-abundance', 'title' => 'В преизбытке'],
             ['slug' => 'clouds', 'title' => 'Облака'],
+            ['slug' => 'negative', 'title' => 'Негатив'],
+            ['slug' => 'telephone-receiver', 'title' => 'Телефонная трубка'],
+            ['slug' => 'three-striking-words', 'title' => 'Три поразительных слова'],
         ],
     ],
 ];
