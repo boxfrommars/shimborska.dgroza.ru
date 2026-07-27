@@ -50,28 +50,32 @@
                 <button type="button" class="content-close" aria-label="Закрыть">×</button>
             </div>
             <div class="dialog-body">
-                <ul id="contents-wrap">
+                <div id="contents-wrap">
                 @if($page === 'main')
-                    <li class="chapter-link-list wide"><span class="chapter-link active">Обложка</span></li>
+                    <div class="chapter-link-list wide"><span class="chapter-link active">Обложка</span></div>
                 @else
-                    <li class="chapter-link-list wide"><a href="{{ route('main') }}" class="chapter-link">Обложка</a></li>
+                    <div class="chapter-link-list wide"><a href="{{ route('main') }}" class="chapter-link">Обложка</a></div>
                 @endif
 
-                @foreach($sections as $sectionSlug => $section)
-                    <li class="chapter-link-list">
-                        <span class="chapter-link">{{ $section['title'] }}</span>
-                        <ul>
-                            @foreach($section['poems'] as $poem)
-                                @if($currentPoem !== null && $currentPoem['section'] === $sectionSlug && $currentPoem['slug'] === $poem['slug'])
-                                    <li><span class="active">{{ $poem['title'] }}</span></li>
-                                @else
-                                    <li><a href="{{ route('poem', ['section' => $sectionSlug, 'slug' => $poem['slug']]) }}">{{ $poem['title'] }}</a></li>
-                                @endif
-                            @endforeach
-                        </ul>
-                    </li>
+                @foreach(array_chunk($sections, 2, true) as $column)
+                    <ul class="contents-column">
+                        @foreach($column as $sectionSlug => $section)
+                            <li class="chapter-link-list" data-section="{{ $sectionSlug }}">
+                                <span class="chapter-link">{{ $section['title'] }}</span>
+                                <ul>
+                                    @foreach($section['poems'] as $poem)
+                                        @if($currentPoem !== null && $currentPoem['section'] === $sectionSlug && $currentPoem['slug'] === $poem['slug'])
+                                            <li><span class="active">{{ $poem['title'] }}</span></li>
+                                        @else
+                                            <li><a href="{{ route('poem', ['section' => $sectionSlug, 'slug' => $poem['slug']]) }}">{{ $poem['title'] }}</a></li>
+                                        @endif
+                                    @endforeach
+                                </ul>
+                            </li>
+                        @endforeach
+                    </ul>
                 @endforeach
-                </ul>
+                </div>
             </div>
         </dialog>
     </main>

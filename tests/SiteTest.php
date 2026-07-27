@@ -20,6 +20,23 @@ class SiteTest extends TestCase
             ->assertDontSee('jquery', false);
     }
 
+    public function testContentsDialogUsesCatalogOrderInTwoColumns(): void
+    {
+        $response = $this->get('/')->assertOk();
+
+        self::assertSame(
+            2,
+            substr_count($response->getContent(), '<ul class="contents-column">'),
+        );
+
+        $response->assertSeeInOrder([
+            'data-section="different"',
+            'data-section="text"',
+            'data-section="semicolon"',
+            'data-section="moment"',
+        ], false);
+    }
+
     public function testStaticPagesAreAvailable(): void
     {
         $this->get('/project')
@@ -127,6 +144,11 @@ class SiteTest extends TestCase
         $catalog = app(PoemCatalog::class);
         $catalogPaths = [];
 
+        self::assertSame(
+            ['different', 'text', 'semicolon', 'moment'],
+            array_keys($catalog->sections()),
+        );
+
         foreach ($catalog->sections() as $sectionSlug => $section) {
             self::assertNotSame('', $sectionSlug);
             self::assertNotSame('', $section['title']);
@@ -153,6 +175,10 @@ class SiteTest extends TestCase
         sort($viewPaths);
 
         self::assertSame($catalogPaths, $viewPaths);
+
+        $lastPoem = $catalog->poems()[48];
+        self::assertSame('moment', $lastPoem['section']);
+        self::assertSame('three-striking-words', $lastPoem['slug']);
     }
 
     public function testNavigationKeepsItsWindowAroundTheCurrentPoem(): void
@@ -164,12 +190,16 @@ class SiteTest extends TestCase
         self::assertSame([0, 1, 2, 3, 4, 5], array_keys($coverNavigation['items']));
 
         $middleNavigation = $catalog->navigation('semicolon', 'absence');
-        self::assertSame(24, $middleNavigation['currentIndex']);
-        self::assertSame([22, 23, 24, 25, 26, 27], array_keys($middleNavigation['items']));
+        self::assertSame(26, $middleNavigation['currentIndex']);
+        self::assertSame([24, 25, 26, 27, 28, 29], array_keys($middleNavigation['items']));
 
-        $lastNavigation = $catalog->navigation('moment', 'moment');
-        self::assertSame(43, $lastNavigation['currentIndex']);
-        self::assertSame([41, 42, 43, 44, 45, 46], array_keys($lastNavigation['items']));
+        $momentNavigation = $catalog->navigation('moment', 'moment');
+        self::assertSame(43, $momentNavigation['currentIndex']);
+        self::assertSame([41, 42, 43, 44, 45, 46], array_keys($momentNavigation['items']));
+
+        $lastNavigation = $catalog->navigation('moment', 'three-striking-words');
+        self::assertSame(48, $lastNavigation['currentIndex']);
+        self::assertSame([43, 44, 45, 46, 47, 48], array_keys($lastNavigation['items']));
     }
 
     public function testSitemapCanBeGeneratedFromCatalog(): void

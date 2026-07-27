@@ -30,6 +30,13 @@ return [
             ['slug' => 'cat-in-empty-apartment', 'title' => 'Кот в пустой квартире'],
         ],
     ],
+    'text' => [
+        'title' => 'Проза',
+        'poems' => [
+            ['slug' => 'poet-and-world', 'title' => 'Поэт и мир (нобелевская лекция)'],
+            ['slug' => 'literary-mail', 'title' => 'Литературная почта, или Как стать/не стать писателем (фрагменты)'],
+        ],
+    ],
     'semicolon' => [
         'title' => 'Двоеточие',
         'poems' => [
@@ -50,13 +57,6 @@ return [
             ['slug' => 'neglect', 'title' => 'Небрежение'],
             ['slug' => 'greek-statue', 'title' => 'Греческая статуя'],
             ['slug' => 'in-fact-any-verse', 'title' => 'Вообще-то любые стихи'],
-        ],
-    ],
-    'text' => [
-        'title' => 'Проза',
-        'poems' => [
-            ['slug' => 'poet-and-world', 'title' => 'Поэт и мир (нобелевская лекция)'],
-            ['slug' => 'literary-mail', 'title' => 'Литературная почта, или Как стать/не стать писателем (фрагменты)'],
         ],
     ],
     'moment' => [
