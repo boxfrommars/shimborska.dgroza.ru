@@ -70,6 +70,9 @@ return [
             ['slug' => 'silence-of-plants', 'title' => 'Молчание растений'],
             ['slug' => 'plato-or-why', 'title' => 'Платон, или зачем'],
             ['slug' => 'little-girl-pull-tablecloth', 'title' => 'Маленькая девочка стаскивает скатерть'],
+            ['slug' => 'from-memories', 'title' => 'Из воспоминаний'],
+            ['slug' => 'puddle', 'title' => 'Лужа'],
+            ['slug' => 'first-love', 'title' => 'Первая любовь'],
         ],
     ],
 ];

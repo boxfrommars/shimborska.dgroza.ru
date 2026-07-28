@@ -115,6 +115,24 @@ class SiteTest extends TestCase
                 'Mała dziewczynka ściąga obrus',
                 'Перевод Асара Эппеля',
             ]);
+
+        $this->get('/moment/from-memories')
+            ->assertOk()
+            ->assertSee('Из воспоминаний')
+            ->assertSee('Перевод Асара Эппеля')
+            ->assertSee('Ze wspomnień');
+
+        $this->get('/moment/puddle')
+            ->assertOk()
+            ->assertSee('Лужа')
+            ->assertSee('Перевод Асара Эппеля')
+            ->assertSee('Kałuża');
+
+        $this->get('/moment/first-love')
+            ->assertOk()
+            ->assertSee('Первая любовь')
+            ->assertSee('Перевод Асара Эппеля')
+            ->assertSee('Pierwsza miłość');
     }
 
     public function testMovedPoemRedirectsPermanently(): void
@@ -189,8 +207,8 @@ class SiteTest extends TestCase
             }
         }
 
-        self::assertCount(51, $catalogPaths);
-        self::assertCount(51, array_unique($catalogPaths));
+        self::assertCount(54, $catalogPaths);
+        self::assertCount(54, array_unique($catalogPaths));
 
         $viewPaths = [];
 
@@ -204,9 +222,9 @@ class SiteTest extends TestCase
 
         self::assertSame($catalogPaths, $viewPaths);
 
-        $lastPoem = $catalog->poems()[50];
+        $lastPoem = $catalog->poems()[53];
         self::assertSame('moment', $lastPoem['section']);
-        self::assertSame('little-girl-pull-tablecloth', $lastPoem['slug']);
+        self::assertSame('first-love', $lastPoem['slug']);
     }
 
     public function testNavigationKeepsItsWindowAroundTheCurrentPoem(): void
@@ -225,9 +243,9 @@ class SiteTest extends TestCase
         self::assertSame(42, $momentNavigation['currentIndex']);
         self::assertSame([40, 41, 42, 43, 44, 45], array_keys($momentNavigation['items']));
 
-        $lastNavigation = $catalog->navigation('moment', 'little-girl-pull-tablecloth');
-        self::assertSame(50, $lastNavigation['currentIndex']);
-        self::assertSame([45, 46, 47, 48, 49, 50], array_keys($lastNavigation['items']));
+        $lastNavigation = $catalog->navigation('moment', 'first-love');
+        self::assertSame(53, $lastNavigation['currentIndex']);
+        self::assertSame([48, 49, 50, 51, 52, 53], array_keys($lastNavigation['items']));
     }
 
     public function testSitemapCanBeGeneratedFromCatalog(): void
@@ -243,8 +261,8 @@ class SiteTest extends TestCase
             self::assertFileExists($path);
 
             $xml = File::get($path);
-            self::assertSame(54, substr_count($xml, '<url>'));
-            self::assertSame(54, substr_count($xml, '<loc>'));
+            self::assertSame(57, substr_count($xml, '<url>'));
+            self::assertSame(57, substr_count($xml, '<loc>'));
             self::assertStringContainsString('https://example.test/', $xml);
             self::assertStringContainsString('https://example.test/author', $xml);
             self::assertStringContainsString('https://example.test/project', $xml);
