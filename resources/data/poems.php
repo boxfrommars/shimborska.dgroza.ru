@@ -20,7 +20,6 @@ return [
             ['slug' => 'in-honor-of-my-sister', 'title' => 'В честь моей сестры'],
             ['slug' => 'station', 'title' => 'Вокзал'],
             ['slug' => 'ballad', 'title' => 'Баллада'],
-            ['slug' => 'little-girl-pull-tablecloth', 'title' => 'Маленькая девочка стаскивает скатерть'],
             ['slug' => 'terrorist-he-looks', 'title' => 'Террорист, он смотрит'],
             ['slug' => 'road-elegy', 'title' => 'Дорожная элегия'],
             ['slug' => 'people-on-bridge', 'title' => 'Люди на мосту'],
@@ -68,6 +67,9 @@ return [
             ['slug' => 'negative', 'title' => 'Негатив'],
             ['slug' => 'telephone-receiver', 'title' => 'Телефонная трубка'],
             ['slug' => 'three-striking-words', 'title' => 'Три поразительных слова'],
+            ['slug' => 'silence-of-plants', 'title' => 'Молчание растений'],
+            ['slug' => 'plato-or-why', 'title' => 'Платон, или зачем'],
+            ['slug' => 'little-girl-pull-tablecloth', 'title' => 'Маленькая девочка стаскивает скатерть'],
         ],
     ],
 ];

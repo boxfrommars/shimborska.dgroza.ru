@@ -136,6 +136,8 @@ Hooks выполняются после установки production-завис
 - `GET /up` возвращает `200`
 - `GET /{section}` возвращает временный redirect на первое стихотворение
   существующего раздела
+- `GET /different/little-girl-pull-tablecloth` возвращает постоянный redirect
+  на `/moment/little-girl-pull-tablecloth`
 - Неизвестный HTML URL и неправильная пара `section/slug` возвращают фирменную
   страницу с HTTP-статусом `404`
 - Неизвестный JSON-запрос возвращает стандартный JSON 404 Laravel
@@ -149,6 +151,8 @@ Hooks выполняются после установки production-завис
 | `GET /project` | `200` |
 | `GET /author` | `200` |
 | `GET /different/two-monkeys` | `200`, страница стихотворения |
+| `GET /different/little-girl-pull-tablecloth` | `301` на `/moment/little-girl-pull-tablecloth` |
+| `GET /moment/little-girl-pull-tablecloth` | `200`, страница стихотворения |
 | `GET /semicolon/two-monkeys` | фирменный HTML `404` |
 | `GET /unknown`, `Accept: application/json` | JSON `404` |
 | `GET /sitemap.xml` | `200`, актуальные HTTPS URL |

@@ -94,6 +94,34 @@ class SiteTest extends TestCase
             ->assertSee('Три поразительных слова')
             ->assertSee('Перевод Асара Эппеля')
             ->assertSee('Trzy słowa najdziwniejsze');
+
+        $this->get('/moment/silence-of-plants')
+            ->assertOk()
+            ->assertSee('Молчание растений')
+            ->assertSee('Перевод Асара Эппеля')
+            ->assertSee('Milczenie roślin');
+
+        $this->get('/moment/plato-or-why')
+            ->assertOk()
+            ->assertSee('Платон, или зачем')
+            ->assertSee('Перевод Асара Эппеля')
+            ->assertSee('Platon, czyli dlaczego');
+
+        $this->get('/moment/little-girl-pull-tablecloth')
+            ->assertOk()
+            ->assertSee('Маленькая девочка стаскивает скатерть')
+            ->assertSeeInOrder([
+                'Перевод Натальи Астафьевой',
+                'Mała dziewczynka ściąga obrus',
+                'Перевод Асара Эппеля',
+            ]);
+    }
+
+    public function testMovedPoemRedirectsPermanently(): void
+    {
+        $this->get('/different/little-girl-pull-tablecloth')
+            ->assertStatus(301)
+            ->assertRedirect('/moment/little-girl-pull-tablecloth');
     }
 
     public function testEverySectionRedirectsToItsFirstPoem(): void
@@ -161,8 +189,8 @@ class SiteTest extends TestCase
             }
         }
 
-        self::assertCount(49, $catalogPaths);
-        self::assertCount(49, array_unique($catalogPaths));
+        self::assertCount(51, $catalogPaths);
+        self::assertCount(51, array_unique($catalogPaths));
 
         $viewPaths = [];
 
@@ -176,9 +204,9 @@ class SiteTest extends TestCase
 
         self::assertSame($catalogPaths, $viewPaths);
 
-        $lastPoem = $catalog->poems()[48];
+        $lastPoem = $catalog->poems()[50];
         self::assertSame('moment', $lastPoem['section']);
-        self::assertSame('three-striking-words', $lastPoem['slug']);
+        self::assertSame('little-girl-pull-tablecloth', $lastPoem['slug']);
     }
 
     public function testNavigationKeepsItsWindowAroundTheCurrentPoem(): void
@@ -190,16 +218,16 @@ class SiteTest extends TestCase
         self::assertSame([0, 1, 2, 3, 4, 5], array_keys($coverNavigation['items']));
 
         $middleNavigation = $catalog->navigation('semicolon', 'absence');
-        self::assertSame(26, $middleNavigation['currentIndex']);
-        self::assertSame([24, 25, 26, 27, 28, 29], array_keys($middleNavigation['items']));
+        self::assertSame(25, $middleNavigation['currentIndex']);
+        self::assertSame([23, 24, 25, 26, 27, 28], array_keys($middleNavigation['items']));
 
         $momentNavigation = $catalog->navigation('moment', 'moment');
-        self::assertSame(43, $momentNavigation['currentIndex']);
-        self::assertSame([41, 42, 43, 44, 45, 46], array_keys($momentNavigation['items']));
+        self::assertSame(42, $momentNavigation['currentIndex']);
+        self::assertSame([40, 41, 42, 43, 44, 45], array_keys($momentNavigation['items']));
 
-        $lastNavigation = $catalog->navigation('moment', 'three-striking-words');
-        self::assertSame(48, $lastNavigation['currentIndex']);
-        self::assertSame([43, 44, 45, 46, 47, 48], array_keys($lastNavigation['items']));
+        $lastNavigation = $catalog->navigation('moment', 'little-girl-pull-tablecloth');
+        self::assertSame(50, $lastNavigation['currentIndex']);
+        self::assertSame([45, 46, 47, 48, 49, 50], array_keys($lastNavigation['items']));
     }
 
     public function testSitemapCanBeGeneratedFromCatalog(): void
@@ -215,11 +243,15 @@ class SiteTest extends TestCase
             self::assertFileExists($path);
 
             $xml = File::get($path);
-            self::assertSame(52, substr_count($xml, '<url>'));
-            self::assertSame(52, substr_count($xml, '<loc>'));
+            self::assertSame(54, substr_count($xml, '<url>'));
+            self::assertSame(54, substr_count($xml, '<loc>'));
             self::assertStringContainsString('https://example.test/', $xml);
             self::assertStringContainsString('https://example.test/author', $xml);
             self::assertStringContainsString('https://example.test/project', $xml);
+            self::assertStringNotContainsString(
+                'https://example.test/different/little-girl-pull-tablecloth',
+                $xml,
+            );
             self::assertStringNotContainsString('<lastmod>', $xml);
             self::assertStringNotContainsString('<priority>', $xml);
 
