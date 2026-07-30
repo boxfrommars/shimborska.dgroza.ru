@@ -138,6 +138,10 @@ Hooks выполняются после установки production-завис
   существующего раздела
 - `GET /different/little-girl-pull-tablecloth` возвращает постоянный redirect
   на `/moment/little-girl-pull-tablecloth`
+- `GET /different/about-soul` возвращает постоянный redirect
+  на `/moment/about-soul`
+- `GET /different/in-park` возвращает постоянный redirect
+  на `/moment/in-park`
 - Неизвестный HTML URL и неправильная пара `section/slug` возвращают фирменную
   страницу с HTTP-статусом `404`
 - Неизвестный JSON-запрос возвращает стандартный JSON 404 Laravel
@@ -153,6 +157,10 @@ Hooks выполняются после установки production-завис
 | `GET /different/two-monkeys` | `200`, страница стихотворения |
 | `GET /different/little-girl-pull-tablecloth` | `301` на `/moment/little-girl-pull-tablecloth` |
 | `GET /moment/little-girl-pull-tablecloth` | `200`, страница стихотворения |
+| `GET /different/about-soul` | `301` на `/moment/about-soul` |
+| `GET /moment/about-soul` | `200`, страница стихотворения |
+| `GET /different/in-park` | `301` на `/moment/in-park` |
+| `GET /moment/in-park` | `200`, страница стихотворения |
 | `GET /semicolon/two-monkeys` | фирменный HTML `404` |
 | `GET /unknown`, `Accept: application/json` | JSON `404` |
 | `GET /sitemap.xml` | `200`, актуальные HTTPS URL |

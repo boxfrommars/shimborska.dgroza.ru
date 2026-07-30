@@ -5,7 +5,6 @@ return [
         'title' => 'Разные стихотворения',
         'poems' => [
             ['slug' => 'two-monkeys', 'title' => 'Две обезьяны'],
-            ['slug' => 'about-soul', 'title' => 'Кое-что о душе'],
             ['slug' => 'praise-dreams', 'title' => 'Похвала снам'],
             ['slug' => 'soliloquy-for-cassandra', 'title' => 'Монолог для Кассандры'],
             ['slug' => 'ball', 'title' => 'Бал'],
@@ -24,7 +23,6 @@ return [
             ['slug' => 'road-elegy', 'title' => 'Дорожная элегия'],
             ['slug' => 'people-on-bridge', 'title' => 'Люди на мосту'],
             ['slug' => 'picture-september-11', 'title' => 'Фотография 11 сентября'],
-            ['slug' => 'in-park', 'title' => 'В парке'],
             ['slug' => 'note', 'title' => 'Заметка'],
             ['slug' => 'cat-in-empty-apartment', 'title' => 'Кот в пустой квартире'],
         ],
@@ -73,6 +71,9 @@ return [
             ['slug' => 'from-memories', 'title' => 'Из воспоминаний'],
             ['slug' => 'puddle', 'title' => 'Лужа'],
             ['slug' => 'first-love', 'title' => 'Первая любовь'],
+            ['slug' => 'about-soul', 'title' => 'Кое-что о душе'],
+            ['slug' => 'early-hour', 'title' => 'Спозаранку'],
+            ['slug' => 'in-park', 'title' => 'В парке'],
         ],
     ],
 ];

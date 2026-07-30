@@ -133,6 +133,32 @@ class SiteTest extends TestCase
             ->assertSee('Первая любовь')
             ->assertSee('Перевод Асара Эппеля')
             ->assertSee('Pierwsza miłość');
+
+        $this->get('/moment/about-soul')
+            ->assertOk()
+            ->assertSee('Кое-что о душе')
+            ->assertSeeInOrder([
+                'Перевод Асара Эппеля (Иностранная литература 2000, №8)',
+                'Trochę o duszy',
+                'Душой обзаводятся по временам.',
+                'Перевод Асара Эппеля (Избранное. Текст, 2007)',
+            ]);
+
+        $this->get('/moment/early-hour')
+            ->assertOk()
+            ->assertSee('Спозаранку')
+            ->assertSee('Перевод Асара Эппеля')
+            ->assertSee('Wczesna godzina');
+
+        $this->get('/moment/in-park')
+            ->assertOk()
+            ->assertSee('В парке')
+            ->assertSeeInOrder([
+                'Перевод Натальи Астафьевой',
+                'W parku',
+                'такая облу-у-упленная?',
+                'Перевод Асара Эппеля',
+            ]);
     }
 
     public function testMovedPoemRedirectsPermanently(): void
@@ -140,6 +166,14 @@ class SiteTest extends TestCase
         $this->get('/different/little-girl-pull-tablecloth')
             ->assertStatus(301)
             ->assertRedirect('/moment/little-girl-pull-tablecloth');
+
+        $this->get('/different/about-soul')
+            ->assertStatus(301)
+            ->assertRedirect('/moment/about-soul');
+
+        $this->get('/different/in-park')
+            ->assertStatus(301)
+            ->assertRedirect('/moment/in-park');
     }
 
     public function testEverySectionRedirectsToItsFirstPoem(): void
@@ -207,8 +241,8 @@ class SiteTest extends TestCase
             }
         }
 
-        self::assertCount(54, $catalogPaths);
-        self::assertCount(54, array_unique($catalogPaths));
+        self::assertCount(55, $catalogPaths);
+        self::assertCount(55, array_unique($catalogPaths));
 
         $viewPaths = [];
 
@@ -222,9 +256,9 @@ class SiteTest extends TestCase
 
         self::assertSame($catalogPaths, $viewPaths);
 
-        $lastPoem = $catalog->poems()[53];
+        $lastPoem = $catalog->poems()[54];
         self::assertSame('moment', $lastPoem['section']);
-        self::assertSame('first-love', $lastPoem['slug']);
+        self::assertSame('in-park', $lastPoem['slug']);
     }
 
     public function testNavigationKeepsItsWindowAroundTheCurrentPoem(): void
@@ -236,16 +270,16 @@ class SiteTest extends TestCase
         self::assertSame([0, 1, 2, 3, 4, 5], array_keys($coverNavigation['items']));
 
         $middleNavigation = $catalog->navigation('semicolon', 'absence');
-        self::assertSame(25, $middleNavigation['currentIndex']);
-        self::assertSame([23, 24, 25, 26, 27, 28], array_keys($middleNavigation['items']));
+        self::assertSame(23, $middleNavigation['currentIndex']);
+        self::assertSame([21, 22, 23, 24, 25, 26], array_keys($middleNavigation['items']));
 
         $momentNavigation = $catalog->navigation('moment', 'moment');
-        self::assertSame(42, $momentNavigation['currentIndex']);
-        self::assertSame([40, 41, 42, 43, 44, 45], array_keys($momentNavigation['items']));
+        self::assertSame(40, $momentNavigation['currentIndex']);
+        self::assertSame([38, 39, 40, 41, 42, 43], array_keys($momentNavigation['items']));
 
-        $lastNavigation = $catalog->navigation('moment', 'first-love');
-        self::assertSame(53, $lastNavigation['currentIndex']);
-        self::assertSame([48, 49, 50, 51, 52, 53], array_keys($lastNavigation['items']));
+        $lastNavigation = $catalog->navigation('moment', 'in-park');
+        self::assertSame(54, $lastNavigation['currentIndex']);
+        self::assertSame([49, 50, 51, 52, 53, 54], array_keys($lastNavigation['items']));
     }
 
     public function testSitemapCanBeGeneratedFromCatalog(): void
@@ -261,13 +295,21 @@ class SiteTest extends TestCase
             self::assertFileExists($path);
 
             $xml = File::get($path);
-            self::assertSame(57, substr_count($xml, '<url>'));
-            self::assertSame(57, substr_count($xml, '<loc>'));
+            self::assertSame(58, substr_count($xml, '<url>'));
+            self::assertSame(58, substr_count($xml, '<loc>'));
             self::assertStringContainsString('https://example.test/', $xml);
             self::assertStringContainsString('https://example.test/author', $xml);
             self::assertStringContainsString('https://example.test/project', $xml);
             self::assertStringNotContainsString(
                 'https://example.test/different/little-girl-pull-tablecloth',
+                $xml,
+            );
+            self::assertStringNotContainsString(
+                'https://example.test/different/about-soul',
+                $xml,
+            );
+            self::assertStringNotContainsString(
+                'https://example.test/different/in-park',
                 $xml,
             );
             self::assertStringNotContainsString('<lastmod>', $xml);

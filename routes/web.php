@@ -13,6 +13,18 @@ Route::redirect(
     301,
 );
 
+Route::redirect(
+    '/different/about-soul',
+    '/moment/about-soul',
+    301,
+);
+
+Route::redirect(
+    '/different/in-park',
+    '/moment/in-park',
+    301,
+);
+
 Route::get('/{section}/{slug}', [MainController::class, 'poem'])->name('poem');
 
 Route::get('/{section}', [MainController::class, 'section'])->name('section');
