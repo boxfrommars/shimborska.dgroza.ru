@@ -1,0 +1,261 @@
+@page {
+	margin: 18mm;
+}
+
+html {
+	box-sizing: border-box;
+	background: #fff;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	background: #fff;
+	color: #000;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 13pt;
+	line-height: 1.4;
+}
+
+#wrap,
+#main,
+.page,
+.notabene,
+.illustrations {
+	position: static;
+	width: auto;
+	max-width: none;
+	margin: 0;
+	padding: 0;
+	background: none;
+}
+
+#main {
+	display: flex;
+	flex-direction: column;
+}
+
+#bar {
+	margin: 0 0 8mm;
+	padding: 0 0 3mm;
+	border-bottom: .25mm solid #bbb;
+}
+
+#bar h1 {
+	margin: 0;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 15pt;
+	font-weight: 700;
+	line-height: 1.2;
+}
+
+#bar .book-title {
+	font-size: 13pt;
+	font-weight: 400;
+}
+
+#bar .book-title::before {
+	content: " · ";
+}
+
+#leftbar,
+#pager,
+#content,
+.head-nav,
+.shortkey,
+#royklogo,
+body > noscript {
+	display: none !important;
+}
+
+.page {
+	order: 1;
+}
+
+.page h2,
+.page h3 {
+	margin: 0 0 5mm;
+	font-family: Georgia, "Times New Roman", serif;
+	line-height: 1.2;
+	break-after: avoid-page;
+	page-break-after: avoid;
+}
+
+.page h2 {
+	font-size: 20pt;
+}
+
+.page h3 {
+	font-size: 17pt;
+}
+
+.page p,
+.page li,
+.notabene p {
+	orphans: 3;
+	widows: 3;
+}
+
+.page p {
+	margin: 0 0 3.5mm;
+}
+
+.page ul.classic,
+.page ol.classic {
+	margin: 0 0 5mm;
+	padding-left: 7mm;
+}
+
+.page ul.classic {
+	list-style: disc;
+}
+
+.page ol.classic {
+	list-style: decimal;
+}
+
+.poem,
+.text {
+	margin: 0 0 7mm;
+	break-inside: auto;
+	page-break-inside: auto;
+}
+
+.poem p {
+	break-inside: avoid-page;
+	page-break-inside: avoid;
+}
+
+.foot-note {
+	margin-top: -1mm;
+	color: #333;
+	font-size: 13pt;
+	text-align: right;
+	break-before: avoid-page;
+	break-inside: avoid-page;
+	page-break-before: avoid;
+	page-break-inside: avoid;
+}
+
+.tonote {
+	border: 0;
+	color: inherit;
+}
+
+.notabene {
+	order: 2;
+	margin-top: 4mm;
+	padding-top: 4mm;
+	border-top: .25mm solid #bbb;
+	font-size: 10.5pt;
+}
+
+.notabene:not(:has(.note)) {
+	display: none;
+}
+
+.notabene:has(.note)::before {
+	content: "Примечания";
+	display: block;
+	margin-bottom: 3mm;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 15pt;
+	font-weight: 700;
+}
+
+.notabene .note {
+	position: static !important;
+	margin: 0 0 4mm;
+	padding: 0;
+	color: #000;
+	break-inside: avoid-page;
+	page-break-inside: avoid;
+}
+
+.notabene .note:last-child {
+	margin-bottom: 0;
+}
+
+.notabene .note p:last-child {
+	margin-bottom: 0;
+}
+
+.illustrations {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	order: 3;
+	gap: 6mm;
+	margin-top: 6mm;
+}
+
+.illustrations:not(:has(.left-box)) {
+	display: none;
+}
+
+.illustrations:has(.left-box)::before {
+	content: "Иллюстрации";
+	grid-column: 1 / -1;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 15pt;
+	font-weight: 700;
+}
+
+.illustrations .left-box {
+	width: auto;
+	margin: 0 !important;
+	padding: 3mm;
+	border: .25mm solid #ccc;
+	color: #222;
+	font-size: 9.5pt;
+	line-height: 1.3;
+	text-align: center;
+	break-inside: avoid-page;
+	page-break-inside: avoid;
+}
+
+.illustrations .left-box p {
+	margin: 2mm 0 0;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	border: 0;
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+	break-inside: avoid-page;
+	page-break-inside: avoid;
+}
+
+a,
+a:visited {
+	color: inherit;
+	text-decoration: none;
+}
+
+.page a[href^="http://"]::after,
+.page a[href^="https://"]::after {
+	content: " (" attr(href) ")";
+	font-family: Arial, sans-serif;
+	font-size: 9.5pt;
+	overflow-wrap: anywhere;
+}
+
+#footer {
+	margin-top: 8mm;
+	padding-top: 3mm;
+	border-top: .25mm solid #bbb;
+	color: #555;
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+	line-height: 1.3;
+}
+
+#footer::after {
+	content: " · shimborska.dgroza.ru";
+}

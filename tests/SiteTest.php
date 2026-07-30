@@ -15,9 +15,32 @@ class SiteTest extends TestCase
             ->assertOk()
             ->assertSee('name="viewport" content="width=device-width, initial-scale=1"', false)
             ->assertSee('/css/style.css', false)
+            ->assertDontSee('/css/print.css', false)
             ->assertSee('<dialog id="content"', false)
             ->assertSee('/js/script.js', false)
             ->assertDontSee('jquery', false);
+    }
+
+    public function testPrintStylesAreOnlyLoadedForPrintablePages(): void
+    {
+        foreach (['/different/two-monkeys', '/author', '/project'] as $path) {
+            $this->get($path)
+                ->assertOk()
+                ->assertSee(
+                    '<link rel="stylesheet" type="text/css" href="/css/print.css" media="print" />',
+                    false,
+                );
+        }
+
+        $this->get('/')
+            ->assertOk()
+            ->assertDontSee('/css/print.css', false);
+
+        $this->get('/unknown')
+            ->assertNotFound()
+            ->assertDontSee('/css/print.css', false);
+
+        self::assertFileExists(public_path('css/print.css'));
     }
 
     public function testContentsDialogUsesCatalogOrderInTwoColumns(): void
