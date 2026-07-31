@@ -66,6 +66,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     dialog.querySelector('.content-close').addEventListener('click', closeContents);
+    dialog.addEventListener('click', (event) => {
+        const bounds = dialog.getBoundingClientRect();
+        const clickedOutside = event.clientX < bounds.left
+            || event.clientX > bounds.right
+            || event.clientY < bounds.top
+            || event.clientY > bounds.bottom;
+
+        if (clickedOutside) closeContents();
+    });
     dialog.addEventListener('close', () => document.body.classList.remove('content-open'));
 
     function goToAdjacentPage(direction) {
