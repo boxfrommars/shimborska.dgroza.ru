@@ -21,7 +21,7 @@
                     @if($page === 'main')
                         <li id="center-bottom-nav" class="first"><span aria-current="page" aria-label="Текущая страница — Обложка">Обложка</span><span class="shortkey"></span></li>
                     @else
-                        <li class="first"><a href="{{ route('main') }}">Обложка</a><span class="shortkey">(ctrl + ↓)</span></li>
+                        <li class="first"><a href="{{ route('main') }}">Обложка</a><span class="shortkey" data-shortcut="cover"></span></li>
                     @endif
 
                     @foreach($navigation['items'] as $index => $poem)
@@ -31,7 +31,7 @@
                             <li><a title="Страница {{ $index + 1 }} — {{ $poem['title'] }}" aria-label="Страница {{ $index + 1 }} — {{ $poem['title'] }}" href="{{ route('poem', ['section' => $poem['section'], 'slug' => $poem['slug']]) }}">{{ $index + 1 }}</a></li>
                         @endif
                     @endforeach
-                    <li class="last"><a href="#" class="show-content-link" aria-haspopup="dialog">Содержание</a><span class="shortkey">(ctrl + ↑)</span></li>
+                    <li class="last"><a href="#" class="show-content-link" aria-haspopup="dialog">Содержание</a><span class="shortkey" data-shortcut="contents"></span></li>
                 </ul>
             </nav>
         </article>

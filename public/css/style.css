@@ -160,6 +160,7 @@ h1 .book-title {
 }
 .shortkey {
 	font-size: .8125rem;
+	white-space: nowrap;
 }
 .page .cover {
 	text-align: center;
@@ -434,8 +435,8 @@ ul.classic,
 	width: 100%;
 	margin-top:5em;
 }
-#pager span,
-#pager a {
+#pager > li > span,
+#pager > li > a {
 	display: block;
 	padding: 4px 8px;
 	margin: 0 13px;
@@ -453,8 +454,8 @@ ul.classic,
 	margin-left: 0;
 	padding-left:0;
 }
-#pager .first span,
-#pager .first a{
+#pager .first > span,
+#pager .first > a{
 	margin-left: 0;
 	margin-right: 0;
 }
@@ -630,8 +631,8 @@ ul.classic,
 	#pager .last {
 		margin-left: auto;
 	}
-	#pager span,
-	#pager a {
+	#pager > li > span,
+	#pager > li > a {
 		margin: 0;
 	}
 	#pager .shortkey {

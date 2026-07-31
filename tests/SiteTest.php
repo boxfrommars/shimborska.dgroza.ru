@@ -86,6 +86,17 @@ class SiteTest extends TestCase
             ->assertSee('<article id="page-content" class="page error-page" tabindex="-1">', false);
     }
 
+    public function testKeyboardShortcutPlaceholdersAreRenderedWithoutPlatformLabels(): void
+    {
+        $response = $this->get('/different/two-monkeys')->assertOk();
+
+        $response
+            ->assertSee('<span class="shortkey" data-shortcut="cover"></span>', false)
+            ->assertSee('<span class="shortkey" data-shortcut="contents"></span>', false)
+            ->assertDontSee('(ctrl +', false)
+            ->assertDontSee('⌃⇧', false);
+    }
+
     public function testPolishOriginalsDeclareTheirLanguage(): void
     {
         $paths = [

@@ -1,20 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
     const dialog = document.querySelector('#content');
     const currentPage = document.querySelector('#center-bottom-nav');
+    const platform = navigator.userAgentData?.platform || navigator.platform || '';
+    const isMac = platform.toLowerCase().startsWith('mac');
+    const shortcutDirections = {
+        previous: { symbol: '←', name: 'влево' },
+        next: { symbol: '→', name: 'вправо' },
+        cover: { symbol: '↓', name: 'вниз' },
+        contents: { symbol: '↑', name: 'вверх' },
+    };
 
     if (!dialog) return;
 
-    function addShortcut(item, text) {
+    function renderShortcut(shortcut, action) {
+        const direction = shortcutDirections[action];
+        if (!direction) return;
+
+        const visualLabel = document.createElement('span');
+        visualLabel.setAttribute('aria-hidden', 'true');
+        visualLabel.textContent = isMac
+            ? `(⌃⇧${direction.symbol})`
+            : `(ctrl + ${direction.symbol})`;
+
+        const accessibleLabel = document.createElement('span');
+        accessibleLabel.className = 'visually-hidden';
+        accessibleLabel.textContent = isMac
+            ? `Горячая клавиша: Control, Shift и стрелка ${direction.name}`
+            : `Горячая клавиша: Control и стрелка ${direction.name}`;
+
+        shortcut.replaceChildren(visualLabel, accessibleLabel);
+    }
+
+    function addShortcut(item, action) {
         if (!item || item.matches('.first, .last')) return;
 
         const shortcut = document.createElement('span');
         shortcut.className = 'shortkey';
-        shortcut.textContent = text;
+        shortcut.dataset.shortcut = action;
+        renderShortcut(shortcut, action);
         item.append(shortcut);
     }
 
-    addShortcut(currentPage?.previousElementSibling, '(ctrl + ←)');
-    addShortcut(currentPage?.nextElementSibling, '(ctrl + →)');
+    document.querySelectorAll('.shortkey[data-shortcut]').forEach((shortcut) => {
+        renderShortcut(shortcut, shortcut.dataset.shortcut);
+    });
+
+    addShortcut(currentPage?.previousElementSibling, 'previous');
+    addShortcut(currentPage?.nextElementSibling, 'next');
 
     function positionNotes() {
         const main = document.querySelector('#main');
@@ -85,13 +117,26 @@ document.addEventListener('DOMContentLoaded', () => {
         location.href = link?.href || '/';
     }
 
+    function hasShortcutModifiers(event) {
+        if (event.altKey || event.metaKey) return false;
+
+        return isMac
+            ? event.ctrlKey && event.shiftKey
+            : event.ctrlKey && !event.shiftKey;
+    }
+
+    function isEditableTarget(target) {
+        return target instanceof Element
+            && target.closest('input, textarea, select, [contenteditable]:not([contenteditable="false"])') !== null;
+    }
+
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && dialog.open) {
             event.preventDefault();
             closeContents();
             return;
         }
-        if (!event.ctrlKey || event.altKey || event.metaKey || event.shiftKey) return;
+        if (isEditableTarget(event.target) || !hasShortcutModifiers(event)) return;
 
         if (event.key === 'ArrowLeft') goToAdjacentPage('previous');
         else if (event.key === 'ArrowRight') goToAdjacentPage('next');
