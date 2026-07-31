@@ -35,8 +35,13 @@ img {
 	border: 0;
 }
 :focus-visible {
-	outline: 2px solid #37ABDF;
+	outline: 2px solid #005F87;
 	outline-offset: 2px;
+}
+#bar :focus-visible,
+#footer :focus-visible,
+#content .dialog-titlebar :focus-visible {
+	outline-color: #fff;
 }
 ol, ul {
 	list-style: none;
@@ -137,18 +142,28 @@ h1 .book-title {
 /* colors & bg:begin */
 .pseudo-anchor,
 a {
-	color:#0187C5;
+	color: #0177AD;
 }
 a:hover {
+	color: #1A78A2;
+}
+#bar .pseudo-anchor,
+#bar a {
+	color: #01A8F5;
+}
+#bar a:hover,
+#footer a:hover {
 	color: #37ABDF;
 }
 #navigation span,
-#content a:hover,
 .active {
-	color: #777;
+	color: #707070;
 }
 #content a {
 	color: #333;
+}
+#content a:hover {
+	color: #5D5D5D;
 }
 .notabene .note,
 .tonote {
@@ -169,21 +184,24 @@ body {
 #royklogo {
 	background: transparent url(/images/royklogo.png) no-repeat 80% 100%;
 }
-#footer a,
-#pager {
+#footer a {
 	color: #aaa;
 }
+#pager {
+	color: #707070;
+}
 #pager a:hover {
+	color: #156489;
 	background: #ddd;
 }
 .foot-note {
-	color: #999;
+	color: #707070;
 }
 #content .active {
-	color: red;
+	color: #BE0000;
 }
 .left-box {
-	color: #888;
+	color: #6A6A6A;
 	background: #efefef;
 }
 /* colors & bg:end */
