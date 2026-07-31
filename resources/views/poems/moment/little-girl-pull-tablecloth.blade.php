@@ -50,7 +50,7 @@
         <p class="foot-note">Перевод Натальи Астафьевой</p>
     </div>
 
-    <div class="poem">
+    <div class="poem" lang="pl">
         <h3>Mała dziewczynka ściąga obrus</h3>
 
         <p>

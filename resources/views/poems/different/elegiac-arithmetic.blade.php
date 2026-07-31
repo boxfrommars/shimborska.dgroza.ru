@@ -67,7 +67,7 @@
             Перевод Натальи Астафьевой
         </p>
     </div>
-    <div class="poem">
+    <div class="poem" lang="pl">
         <h3>Rachunek elegijny</h3>
         <p>
             Ilu tych, ktorych znałam<br/>

@@ -85,7 +85,7 @@
         </p>
     </div>
 
-    <div class="poem">
+    <div class="poem" lang="pl">
         <h3>W zatrzęsieniu</h3>
 
         <p>

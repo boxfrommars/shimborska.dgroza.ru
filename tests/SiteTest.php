@@ -43,6 +43,162 @@ class SiteTest extends TestCase
         self::assertFileExists(public_path('css/print.css'));
     }
 
+    public function testAccessiblePageAndNavigationSemanticsAreRendered(): void
+    {
+        $this->get('/')
+            ->assertOk()
+            ->assertSee('<a class="skip-link" href="#page-content">Перейти к основному содержанию</a>', false)
+            ->assertSee('<span class="visually-hidden"> · </span>', false)
+            ->assertSee('<article id="page-content" class="page" tabindex="-1">', false)
+            ->assertSee('<nav aria-label="Постраничная навигация">', false)
+            ->assertSee('aria-current="page" aria-label="Текущая страница — Обложка"', false)
+            ->assertSee(
+                'aria-label="Вислава Шимборская. Обложка — перейти к стихотворению «Две обезьяны»"',
+                false,
+            );
+
+        $this->get('/different/two-monkeys')
+            ->assertOk()
+            ->assertSee(
+                '<span aria-current="page" aria-label="Текущая страница 1 — Две обезьяны">1</span>',
+                false,
+            )
+            ->assertSee(
+                'title="Страница 2 — Похвала снам" aria-label="Страница 2 — Похвала снам"',
+                false,
+            )
+            ->assertSee(
+                '<span class="active" aria-current="page" aria-label="Текущая страница — Две обезьяны">',
+                false,
+            );
+
+        $this->get('/author')
+            ->assertOk()
+            ->assertSee('aria-current="page" aria-label="Текущая страница — Об авторе"', false);
+
+        $this->get('/project')
+            ->assertOk()
+            ->assertSee('aria-current="page" aria-label="Текущая страница — О проекте"', false);
+
+        $this->get('/unknown')
+            ->assertNotFound()
+            ->assertSee('<article id="page-content" class="page error-page" tabindex="-1">', false);
+    }
+
+    public function testPolishOriginalsDeclareTheirLanguage(): void
+    {
+        $paths = [
+            '/different/elegiac-arithmetic',
+            '/different/first-picture-of-hitler',
+            '/different/impression-of-the-theater',
+            '/different/shadow',
+            '/different/soliloquy-for-cassandra',
+            '/different/torture',
+            '/different/two-monkeys',
+            '/different/utopia',
+            '/moment/about-soul',
+            '/moment/clouds',
+            '/moment/early-hour',
+            '/moment/first-love',
+            '/moment/from-memories',
+            '/moment/in-abundance',
+            '/moment/in-park',
+            '/moment/little-girl-pull-tablecloth',
+            '/moment/negative',
+            '/moment/plato-or-why',
+            '/moment/puddle',
+            '/moment/silence-of-plants',
+            '/moment/telephone-receiver',
+            '/moment/three-striking-words',
+        ];
+
+        foreach ($paths as $path) {
+            $response = $this->get($path)->assertOk();
+
+            self::assertSame(1, substr_count($response->getContent(), 'lang="pl"'), $path);
+        }
+
+        $this->get('/text/literary-mail')
+            ->assertOk()
+            ->assertDontSee('lang="pl"', false);
+    }
+
+    public function testNotesHaveBidirectionalAccessibleLinks(): void
+    {
+        $pages = [
+            '/different/ball' => 1,
+            '/different/first-picture-of-hitler' => 1,
+            '/different/people-on-bridge' => 1,
+            '/different/praise-dreams' => 1,
+            '/different/soliloquy-for-cassandra' => 1,
+            '/different/two-monkeys' => 1,
+            '/semicolon/conversation-with-atropos' => 1,
+            '/semicolon/repechage' => 1,
+            '/text/literary-mail' => 3,
+        ];
+
+        foreach ($pages as $path => $expectedCount) {
+            $response = $this->get($path)->assertOk();
+            $content = $response->getContent();
+
+            self::assertSame($expectedCount, substr_count($content, 'role="doc-noteref"'), $path);
+            self::assertSame($expectedCount, substr_count($content, 'role="doc-footnote"'), $path);
+            self::assertSame($expectedCount, substr_count($content, 'class="note-backlink"'), $path);
+
+            for ($index = 1; $index <= $expectedCount; $index++) {
+                $id = str_pad((string) $index, 3, '0', STR_PAD_LEFT);
+
+                $response
+                    ->assertSee("id=\"tonote{$id}\" href=\"#note{$id}\" role=\"doc-noteref\"", false)
+                    ->assertSee("id=\"note{$id}\" role=\"doc-footnote\" tabindex=\"-1\"", false)
+                    ->assertSee("href=\"#tonote{$id}\" aria-label=\"Вернуться к месту примечания\"", false);
+
+                self::assertMatchesRegularExpression(
+                    "/<p\\b[^>]*>(?:(?!<\\/p>).)*<a class=\"note-backlink\" href=\"#tonote{$id}\"[^>]*>↩<\\/a>\\s*<\\/p>/su",
+                    $content,
+                    $path,
+                );
+            }
+        }
+    }
+
+    public function testEmptyComplementaryLandmarksAreNotRendered(): void
+    {
+        $this->get('/moment/clouds')
+            ->assertOk()
+            ->assertDontSee('<aside class="illustrations"', false)
+            ->assertDontSee('<aside class="notabene"', false);
+
+        $this->get('/text/literary-mail')
+            ->assertOk()
+            ->assertDontSee('<aside class="illustrations"', false)
+            ->assertSee('<aside class="notabene" aria-label="Примечания">', false);
+
+        $this->get('/different/two-monkeys')
+            ->assertOk()
+            ->assertSee('<aside class="illustrations" aria-label="Иллюстрации">', false)
+            ->assertSee('<aside class="notabene" aria-label="Примечания">', false);
+
+        foreach (['/author', '/project'] as $path) {
+            $this->get($path)
+                ->assertOk()
+                ->assertDontSee('<aside class="illustrations"', false)
+                ->assertDontSee('<aside class="notabene"', false);
+        }
+    }
+
+    public function testCorrectedAlternativeTextIsRendered(): void
+    {
+        $this->get('/different/first-picture-of-hitler')
+            ->assertOk()
+            ->assertSee('alt="Адольф Гитлер в возрасте 12 лет"', false)
+            ->assertDontSee('alt="кассандра" src="/images/younghitler.jpg"', false);
+
+        $this->get('/different/two-monkeys')
+            ->assertOk()
+            ->assertSee('alt="Автопортрет Питера Брейгеля" src="/images/breigel.jpg"', false);
+    }
+
     public function testContentsDialogUsesCatalogOrderInTwoColumns(): void
     {
         $response = $this->get('/')->assertOk();

@@ -24,8 +24,8 @@
             Перевод Андрея Базилевского
         </p>
     </div>
-    <div class="poem">
-        <h3>Dwie malpy <span class="tonote" id="tonote001">Bruegla</span></h3>
+    <div class="poem" lang="pl">
+        <h3>Dwie malpy <a class="tonote" id="tonote001" href="#note001" role="doc-noteref">Bruegla</a></h3>
         <p>
             Tak wyglada moj wielki maturalny sen: <br/>
             siedza w oknie dwie malpy przykute lancuchem, <br/>
@@ -162,9 +162,9 @@
 @endsection
 
 @section('notes')
-    <div class="note" id="note001">
+    <div class="note" id="note001" role="doc-footnote" tabindex="-1">
         <p>
-            Питер Брейгель-старший, (ок. 1525—1569) — (фламандский) живописец и график. Мастер пейзажа и жанровых сцен.
+            Питер Брейгель-старший, (ок. 1525—1569) — (фламандский) живописец и график. Мастер пейзажа и жанровых сцен. <a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a>
         </p>
     </div>
 
@@ -177,7 +177,7 @@
         <p>П. Брейгель</p>
     </div>
     <div class="left-box" id="left-b-002" style="margin-top:20px;">
-        <img alt="две обезьяны" src="/images/breigel.jpg"/>
+        <img alt="Автопортрет Питера Брейгеля" src="/images/breigel.jpg"/>
         <p>Автопортрет</p>
         <p>П. Брейгель</p>
     </div>

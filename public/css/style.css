@@ -34,6 +34,41 @@ img {
 	height: auto;
 	border: 0;
 }
+.visually-hidden {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border: 0;
+}
+.skip-link {
+	position: fixed;
+	top: 8px;
+	left: 8px;
+	z-index: 1000;
+	padding: 8px 12px;
+	transform: translateY(calc(-100% - 16px));
+	background: #333;
+	color: #fff;
+}
+.skip-link:focus {
+	transform: translateY(0);
+}
+.skip-link:hover,
+.skip-link:focus {
+	color: #fff;
+}
+.skip-link:focus-visible {
+	outline-color: #fff;
+}
+#page-content:focus {
+	outline: none;
+}
 :focus-visible {
 	outline: 2px solid #005F87;
 	outline-offset: 2px;
@@ -295,6 +330,22 @@ ul.classic,
 }
 .tonote {
 	border-bottom: 1px dashed #7F1F17;
+	text-decoration: none;
+}
+.tonote:hover {
+	color: #7F1F17;
+}
+.note-backlink {
+	display: inline-block;
+	font-family: var(--font-ui);
+	font-size: .875rem;
+	line-height: 1;
+	color: #707070;
+	text-decoration: none;
+}
+.note-backlink:hover,
+.note-backlink:focus-visible {
+	color: #333;
 }
 #book-note {
 	top: 470px;

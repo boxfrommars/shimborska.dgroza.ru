@@ -49,7 +49,7 @@
         </p>
     </div>
 
-    <div class="poem">
+    <div class="poem" lang="pl">
         <h3>Wczesna godzina</h3>
 
         <p>

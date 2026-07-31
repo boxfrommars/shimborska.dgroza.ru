@@ -53,7 +53,7 @@
             Перевод Андрея Базилевского
         </p>
     </div>
-    <div class="poem">
+    <div class="poem" lang="pl">
         <h3>Utopia</h3>
         <p>
             Wyspa, na ktorej wszystko sie wyjasnia.

@@ -52,7 +52,7 @@
             Перевод Виктора Коркия
         </p>
     </div>
-    <div class="">
+    <div class="" lang="pl">
         <h3>Wrażenia z teatru</h3>
         <p>
             Najważniejszy w tragedii jest dla mnie akt szósty;<br/>

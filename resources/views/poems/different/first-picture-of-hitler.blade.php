@@ -37,7 +37,7 @@
             накроется черной накидкой и сделает: пстрык.
         </p>
         <p>
-            Ателье Клингер, Грабенштрассе, <span class="tonote" id="tonote001">Браунау,</span><br/>
+            Ателье Клингер, Грабенштрассе, <a class="tonote" id="tonote001" href="#note001" role="doc-noteref">Браунау,</a><br/>
             а Браунау — город маленький, но достойный, <br/>
             почтенные соседи, солидные фирмы, <br/>
             дух дрожжевого теста и простого мыла. <br/>
@@ -49,7 +49,7 @@
             Перевод Натальи Астафьевой
         </p>
     </div>
-    <div class="poem">
+    <div class="poem" lang="pl">
         <h3>Pierwsza fotografia Hitlera</h3>
         <p>
             A któż to jest ten mały dzidziuś w kaftaniku?<br/>
@@ -96,15 +96,15 @@
 @endsection
 
 @section('notes')
-    <div class="note" id="note001">
+    <div class="note" id="note001" role="doc-footnote" tabindex="-1">
         <p>Браунау-на-Инне — город в&nbsp;Австрии, в&nbsp;федеральной земле Верхняя Австрия, в&nbsp;Браунау 20&nbsp;апреля&nbsp;1889
-            года родился Адольф Гитлер</p>
+            года родился Адольф Гитлер <a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a></p>
     </div>
 @endsection
 
 @section('images')
     <div class="left-box" style="margin-top:50px;">
-        <img alt="кассандра" src="/images/younghitler.jpg"/>
+        <img alt="Адольф Гитлер в возрасте 12 лет" src="/images/younghitler.jpg"/>
         <p>А. Гитлер, 12 лет (1901)</p>
         <p>Школьная фотография, г.&nbsp;Ленц</p>
     </div>

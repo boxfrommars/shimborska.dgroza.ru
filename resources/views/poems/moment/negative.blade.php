@@ -37,7 +37,7 @@
         </p>
     </div>
 
-    <div class="poem">
+    <div class="poem" lang="pl">
         <h3>Negatyw</h3>
 
         <p>

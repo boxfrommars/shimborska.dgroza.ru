@@ -43,7 +43,7 @@
         </p>
     </div>
 
-    <div class="poem">
+    <div class="poem" lang="pl">
         <h3>Słuchawka</h3>
 
         <p>

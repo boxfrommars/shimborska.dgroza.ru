@@ -54,7 +54,7 @@
             Перевод Натальи Астафьевой
         </p>
     </div>
-    <div class="poem">
+    <div class="poem" lang="pl">
         <h3>Tortury</h3>
         <p>
             Nic się nie zmieniło.<br/>

@@ -5,7 +5,7 @@
 
     <div class="poem">
         <p>
-            Это я, <span class="tonote" id="tonote001">Кассандра</span>. <br/>
+            Это я, <a class="tonote" id="tonote001" href="#note001" role="doc-noteref">Кассандра</a>. <br/>
             А это мой город под пеплом. <br/>
             А это мой посох и ленты жрицы. <br/>
             А это моя голова, переполненная сомнениями.
@@ -63,7 +63,7 @@
             Перевод Виктора Коркия
         </p>
     </div>
-    <div class="poem">
+    <div class="poem" lang="pl">
         <h3>Monolog dla Kasandry</h3>
         <p>
             To ja, Kasandra.<br/>
@@ -122,10 +122,10 @@
 @endsection
 
 @section('notes')
-    <div class="note" id="note001">
+    <div class="note" id="note001" role="doc-footnote" tabindex="-1">
         <p>Кассандра (др.-греч. Κασσάνδρα) — персонаж древнегреческой мифологии, дочь Приама и Гекубы. Большинство
             авторов описывает её как прорицательницу, предсказаниям которой никто не верил. Согласно Гомеру, она была
-            красивейшей из дочерей Приама.</p>
+            красивейшей из дочерей Приама. <a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a></p>
     </div>
 @endsection
 

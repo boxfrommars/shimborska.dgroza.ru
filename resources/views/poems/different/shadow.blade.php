@@ -42,7 +42,7 @@
             Перевод Асара Эппеля
         </p>
     </div>
-    <div class="poem">
+    <div class="poem" lang="pl">
         <h3>Cien</h3>
         <p>
             Moj cien jak blazen za krolowej. <br/>

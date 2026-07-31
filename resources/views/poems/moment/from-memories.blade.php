@@ -29,7 +29,7 @@
         </p>
     </div>
 
-    <div class="poem">
+    <div class="poem" lang="pl">
         <h3>Ze wspomnień</h3>
 
         <p>

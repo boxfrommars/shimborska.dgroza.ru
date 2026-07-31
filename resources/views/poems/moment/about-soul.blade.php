@@ -86,7 +86,7 @@
         </p>
     </div>
 
-    <div class="poem">
+    <div class="poem" lang="pl">
         <h3>Trochę o duszy</h3>
 
         <p>

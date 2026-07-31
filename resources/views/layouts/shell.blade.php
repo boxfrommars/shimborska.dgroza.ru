@@ -30,16 +30,18 @@
 <body>
 @endif
 
+<a class="skip-link" href="#page-content">Перейти к основному содержанию</a>
+
 <div id="wrap">
     <header id="bar">
         @if($page === 'main')
-            <h1><span class="pseudo-anchor">Вислава Шимборская</span><span class="book-title">Стихотворения</span></h1>
+            <h1><span class="pseudo-anchor">Вислава Шимборская</span><span class="visually-hidden"> · </span><span class="book-title">Стихотворения</span></h1>
         @else
-            <h1><a href="{{ route('main') }}" class="pseudo-anchor">Вислава Шимборская</a><span class="book-title">Стихотворения</span></h1>
+            <h1><a href="{{ route('main') }}" class="pseudo-anchor">Вислава Шимборская</a><span class="visually-hidden"> · </span><span class="book-title">Стихотворения</span></h1>
         @endif
 
         @if($page === 'project')
-            <span class="head-nav">о проекте</span>
+            <span class="head-nav" aria-current="page" aria-label="Текущая страница — О проекте">о проекте</span>
         @else
             <a href="{{ route('project') }}" class="head-nav">о проекте</a>
         @endif

@@ -20,7 +20,7 @@
         <p class="foot-note">Перевод Натальи Астафьевой</p>
     </div>
 
-    <div class="poem">
+    <div class="poem" lang="pl">
         <h3>W parku</h3>
 
         <p>

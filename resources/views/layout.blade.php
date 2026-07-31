@@ -6,43 +6,52 @@
             <ul id="navigation">
                 <li><a href="#content" class="show-content-link" aria-haspopup="dialog">Содержание</a></li>
                 @if($page === 'author')
-                    <li><span>Об авторе</span></li>
+                    <li><span aria-current="page" aria-label="Текущая страница — Об авторе">Об авторе</span></li>
                 @else
                     <li><a href="{{ route('author') }}">Об авторе</a></li>
                 @endif
             </ul>
         </nav>
 
-        <article class="page">
+        <article id="page-content" class="page" tabindex="-1">
             @yield('content')
 
-            <ul id="pager">
-                @if($page === 'main')
-                    <li id="center-bottom-nav" class="first"><span>Обложка</span><span class="shortkey"></span></li>
-                @else
-                    <li class="first"><a href="{{ route('main') }}">Обложка</a><span class="shortkey">(ctrl + ↓)</span></li>
-                @endif
-
-                @foreach($navigation['items'] as $index => $poem)
-                    @if($navigation['currentIndex'] === $index)
-                        <li id="center-bottom-nav"><span>{{ $index + 1 }}</span></li>
+            <nav aria-label="Постраничная навигация">
+                <ul id="pager">
+                    @if($page === 'main')
+                        <li id="center-bottom-nav" class="first"><span aria-current="page" aria-label="Текущая страница — Обложка">Обложка</span><span class="shortkey"></span></li>
                     @else
-                        <li><a title="{{ $poem['title'] }}" href="{{ route('poem', ['section' => $poem['section'], 'slug' => $poem['slug']]) }}">{{ $index + 1 }}</a></li>
+                        <li class="first"><a href="{{ route('main') }}">Обложка</a><span class="shortkey">(ctrl + ↓)</span></li>
                     @endif
-                @endforeach
-                <li class="last"><a href="#" class="show-content-link" aria-haspopup="dialog">Содержание</a><span class="shortkey">(ctrl + ↑)</span></li>
-            </ul>
+
+                    @foreach($navigation['items'] as $index => $poem)
+                        @if($navigation['currentIndex'] === $index)
+                            <li id="center-bottom-nav"><span aria-current="page" aria-label="Текущая страница {{ $index + 1 }} — {{ $poem['title'] }}">{{ $index + 1 }}</span></li>
+                        @else
+                            <li><a title="Страница {{ $index + 1 }} — {{ $poem['title'] }}" aria-label="Страница {{ $index + 1 }} — {{ $poem['title'] }}" href="{{ route('poem', ['section' => $poem['section'], 'slug' => $poem['slug']]) }}">{{ $index + 1 }}</a></li>
+                        @endif
+                    @endforeach
+                    <li class="last"><a href="#" class="show-content-link" aria-haspopup="dialog">Содержание</a><span class="shortkey">(ctrl + ↑)</span></li>
+                </ul>
+            </nav>
         </article>
 
-        @hasSection('images')
+        @php
+            $illustrationsContent = trim($__env->yieldContent('images'));
+            $notesContent = trim($__env->yieldContent('notes'));
+        @endphp
+
+        @if($illustrationsContent !== '')
             <aside class="illustrations" aria-label="Иллюстрации">
-                @yield('images')
+                {!! $illustrationsContent !!}
             </aside>
         @endif
 
-        <aside class="notabene" aria-label="Примечания">
-            @yield('notes')
-        </aside>
+        @if($notesContent !== '')
+            <aside class="notabene" aria-label="Примечания">
+                {!! $notesContent !!}
+            </aside>
+        @endif
 
         <dialog id="content" aria-labelledby="content-title">
             <div class="dialog-titlebar">
@@ -52,7 +61,7 @@
             <div class="dialog-body">
                 <div id="contents-wrap">
                 @if($page === 'main')
-                    <div class="chapter-link-list wide"><span class="chapter-link active">Обложка</span></div>
+                    <div class="chapter-link-list wide"><span class="chapter-link active" aria-current="page" aria-label="Текущая страница — Обложка">Обложка</span></div>
                 @else
                     <div class="chapter-link-list wide"><a href="{{ route('main') }}" class="chapter-link">Обложка</a></div>
                 @endif
@@ -65,7 +74,7 @@
                                 <ul>
                                     @foreach($section['poems'] as $poem)
                                         @if($currentPoem !== null && $currentPoem['section'] === $sectionSlug && $currentPoem['slug'] === $poem['slug'])
-                                            <li><span class="active">{{ $poem['title'] }}</span></li>
+                                            <li><span class="active" aria-current="page" aria-label="Текущая страница — {{ $poem['title'] }}">{{ $poem['title'] }}</span></li>
                                         @else
                                             <li><a href="{{ route('poem', ['section' => $sectionSlug, 'slug' => $poem['slug']]) }}">{{ $poem['title'] }}</a></li>
                                         @endif

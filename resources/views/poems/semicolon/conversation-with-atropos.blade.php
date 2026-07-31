@@ -5,7 +5,7 @@
 
     <div class="poem">
         <p>
-            Госпожа <span class="tonote" id="tonote001">Атропа</span>?
+            Госпожа <a class="tonote" id="tonote001" href="#note001" role="doc-noteref">Атропа</a>?
         </p>
         <p>
             Верно, это я.
@@ -109,10 +109,10 @@
 @endsection
 
 @section('notes')
-    <div class="note" id="note001">
+    <div class="note" id="note001" role="doc-footnote" tabindex="-1">
         <p>
             Атропос или Атропа («Неотвратимая») — неумолимая, неотвратимая участь (смерть). Одна из трёх мойр, греческих
-            богинь судьбы. Перерезающая нить.
+            богинь судьбы. Перерезающая нить. <a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a>
         </p>
     </div>
 @endsection

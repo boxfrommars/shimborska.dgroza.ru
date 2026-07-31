@@ -6,7 +6,7 @@
 
 @section('body')
     <main id="main" class="error-main">
-        <article class="page error-page">
+        <article id="page-content" class="page error-page" tabindex="-1">
             <h2>404 — Страница не найдена</h2>
             <p>Такой страницы здесь нет — возможно, адрес изменился или в нём опечатка.</p>
             <p><a href="{{ route('main') }}">Вернуться на обложку</a></p>

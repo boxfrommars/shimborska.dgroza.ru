@@ -34,8 +34,24 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!image.complete) image.addEventListener('load', positionNotes);
     });
 
+    function revealCurrentContentItem() {
+        const dialogBody = dialog.querySelector('.dialog-body');
+        const currentItem = dialog.querySelector('[aria-current="page"]');
+        if (!dialogBody || !currentItem) return;
+
+        const bodyRect = dialogBody.getBoundingClientRect();
+        const itemRect = currentItem.getBoundingClientRect();
+        const itemIsVisible = itemRect.top >= bodyRect.top && itemRect.bottom <= bodyRect.bottom;
+        if (itemIsVisible) return;
+
+        dialogBody.scrollTop += itemRect.top
+            - bodyRect.top
+            - (dialogBody.clientHeight - itemRect.height) / 2;
+    }
+
     function openContents() {
         if (!dialog.open) dialog.showModal();
+        revealCurrentContentItem();
         document.body.classList.add('content-open');
     }
 
