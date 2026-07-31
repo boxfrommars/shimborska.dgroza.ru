@@ -35,9 +35,9 @@
 <div id="wrap">
     <header id="bar">
         @if($page === 'main')
-            <h1><span class="pseudo-anchor">Вислава Шимборская</span><span class="visually-hidden"> · </span><span class="book-title">Стихотворения</span></h1>
+            <h1><span class="pseudo-anchor">Вислава Шимборская</span><span class="visually-hidden"> · </span><span class="book-title visually-hidden-mobile">Стихотворения</span></h1>
         @else
-            <h1><a href="{{ route('main') }}" class="pseudo-anchor">Вислава Шимборская</a><span class="visually-hidden"> · </span><span class="book-title">Стихотворения</span></h1>
+            <h1><a href="{{ route('main') }}" class="pseudo-anchor">Вислава Шимборская</a><span class="visually-hidden"> · </span><span class="book-title visually-hidden-mobile">Стихотворения</span></h1>
         @endif
 
         @if($page === 'project')

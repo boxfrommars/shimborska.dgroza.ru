@@ -39,6 +39,7 @@
         @php
             $illustrationsContent = trim($__env->yieldContent('images'));
             $notesContent = trim($__env->yieldContent('notes'));
+            $notesLabel = $page === 'main' ? 'О сайте' : 'Примечания';
         @endphp
 
         @if($illustrationsContent !== '')
@@ -48,7 +49,7 @@
         @endif
 
         @if($notesContent !== '')
-            <aside class="notabene" aria-label="Примечания">
+            <aside class="notabene" aria-label="{{ $notesLabel }}">
                 {!! $notesContent !!}
             </aside>
         @endif

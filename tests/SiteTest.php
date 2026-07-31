@@ -49,6 +49,7 @@ class SiteTest extends TestCase
             ->assertOk()
             ->assertSee('<a class="skip-link" href="#page-content">Перейти к основному содержанию</a>', false)
             ->assertSee('<span class="visually-hidden"> · </span>', false)
+            ->assertSee('<span class="book-title visually-hidden-mobile">Стихотворения</span>', false)
             ->assertSee('<article id="page-content" class="page" tabindex="-1">', false)
             ->assertSee('<nav aria-label="Постраничная навигация">', false)
             ->assertSee('aria-current="page" aria-label="Текущая страница — Обложка"', false)
@@ -164,6 +165,11 @@ class SiteTest extends TestCase
 
     public function testEmptyComplementaryLandmarksAreNotRendered(): void
     {
+        $this->get('/')
+            ->assertOk()
+            ->assertSee('<aside class="notabene" aria-label="О сайте">', false)
+            ->assertDontSee('<aside class="notabene" aria-label="Примечания">', false);
+
         $this->get('/moment/clouds')
             ->assertOk()
             ->assertDontSee('<aside class="illustrations"', false)
