@@ -92,5 +92,5 @@
 @endsection
 
 @section('scripts')
-    <script src="/js/script.js"></script>
+    <script src="/js/script.js?v={{ filemtime(public_path('js/script.js')) }}"></script>
 @endsection

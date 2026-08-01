@@ -11,23 +11,33 @@ class SiteTest extends TestCase
 {
     public function testMainPageIsAvailable(): void
     {
+        $styleVersion = filemtime(public_path('css/style.css'));
+        $scriptVersion = filemtime(public_path('js/script.js'));
+
+        self::assertIsInt($styleVersion);
+        self::assertIsInt($scriptVersion);
+
         $this->get('/')
             ->assertOk()
             ->assertSee('name="viewport" content="width=device-width, initial-scale=1"', false)
-            ->assertSee('/css/style.css', false)
+            ->assertSee("/css/style.css?v={$styleVersion}", false)
             ->assertDontSee('/css/print.css', false)
             ->assertSee('<dialog id="content"', false)
-            ->assertSee('/js/script.js', false)
+            ->assertSee("/js/script.js?v={$scriptVersion}", false)
             ->assertDontSee('jquery', false);
     }
 
     public function testPrintStylesAreOnlyLoadedForPrintablePages(): void
     {
+        $printVersion = filemtime(public_path('css/print.css'));
+
+        self::assertIsInt($printVersion);
+
         foreach (['/different/two-monkeys', '/author', '/project'] as $path) {
             $this->get($path)
                 ->assertOk()
                 ->assertSee(
-                    '<link rel="stylesheet" type="text/css" href="/css/print.css" media="print" />',
+                    "<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/print.css?v={$printVersion}\" media=\"print\" />",
                     false,
                 );
         }
