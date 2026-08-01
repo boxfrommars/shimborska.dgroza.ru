@@ -1,0 +1,11 @@
+{
+    "preset": "laravel",
+    "exclude": [
+        "bootstrap/cache",
+        "resources/views",
+        "storage"
+    ],
+    "rules": {
+        "php_unit_method_casing": false
+    }
+}

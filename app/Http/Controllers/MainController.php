@@ -22,7 +22,7 @@ class MainController extends Controller
         $poem = $this->poems->find($section, $slug);
         $view = "poems.{$section}.{$slug}";
 
-        if ($poem === null || !view()->exists($view)) {
+        if ($poem === null || ! view()->exists($view)) {
             abort(404);
         }
 
@@ -60,8 +60,8 @@ class MainController extends Controller
     }
 
     /**
-     * @param array<string, mixed> $params
-     * @param array{section: string, slug: string, title: string}|null $poem
+     * @param  array<string, mixed>  $params
+     * @param  array{section: string, slug: string, title: string}|null  $poem
      */
     private function page(string $view, string $page, array $params, ?array $poem = null): View
     {

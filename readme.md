@@ -27,10 +27,23 @@ docker compose down
 ## Проверки
 
 Полная автоматическая проверка выполняет строгую валидацию Composer, security
-audit и PHPUnit:
+audit, проверку стиля PHP без изменения файлов и PHPUnit:
 
 ```shell
 docker compose run --rm app composer check
+```
+
+Проверить только стиль PHP без изменения файлов:
+
+```shell
+docker compose run --rm app composer lint
+```
+
+Автоматическое исправление стиля не запускается проверками и доступно только
+по отдельной ручной команде:
+
+```shell
+docker compose run --rm app composer format
 ```
 
 Сгенерировать локальный `public/sitemap.xml`:

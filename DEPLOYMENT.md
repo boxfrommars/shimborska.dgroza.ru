@@ -173,10 +173,10 @@ composer check
 composer sitemap
 ```
 
-`composer check` выполняет строгую валидацию Composer, security audit и
-PHPUnit. После изменений layout, CSS или JS дополнительно проверить desktop и
-mobile, диалог содержания, короткую и длинную страницу и отсутствие ошибок в
-консоли.
+`composer check` выполняет строгую валидацию Composer, security audit, проверку
+стиля PHP без изменения файлов и PHPUnit. После изменений layout, CSS или JS
+дополнительно проверить desktop и mobile, диалог содержания, короткую и длинную
+страницу и отсутствие ошибок в консоли.
 
 ## Совместимость rollback
 

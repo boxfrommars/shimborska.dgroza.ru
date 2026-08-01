@@ -9,6 +9,7 @@
         "laravel/framework": "^13.0"
     },
     "require-dev": {
+        "laravel/pint": "^1.30",
         "phpunit/phpunit": "^12.5"
     },
     "autoload": {
@@ -29,10 +30,13 @@
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
+        "format": "@php vendor/bin/pint",
+        "lint": "@php vendor/bin/pint --test",
         "test": "@php vendor/bin/phpunit",
         "check": [
             "@composer validate --strict",
             "@composer audit",
+            "@lint",
             "@test"
         ],
         "sitemap": "@php artisan sitemap:generate"

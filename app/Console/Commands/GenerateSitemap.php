@@ -18,8 +18,8 @@ class GenerateSitemap extends Command
         $scheme = parse_url($appUrl, PHP_URL_SCHEME);
 
         if (
-            !filter_var($appUrl, FILTER_VALIDATE_URL)
-            || !in_array($scheme, ['http', 'https'], true)
+            ! filter_var($appUrl, FILTER_VALIDATE_URL)
+            || ! in_array($scheme, ['http', 'https'], true)
         ) {
             $this->error('APP_URL must be a valid HTTP or HTTPS URL.');
 
@@ -39,7 +39,7 @@ class GenerateSitemap extends Command
                 "views/poems/{$poem['section']}/{$poem['slug']}.blade.php",
             );
 
-            if (!File::exists($viewPath)) {
+            if (! File::exists($viewPath)) {
                 $this->error("Poem view does not exist: {$viewPath}");
 
                 return self::FAILURE;
