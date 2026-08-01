@@ -15,5 +15,5 @@ return [
             'lock_path' => storage_path('framework/cache/data'),
         ],
     ],
-    'prefix' => env('CACHE_PREFIX', Str::slug((string) env('APP_NAME', 'laravel')).'-cache-'),
+    'prefix' => env('CACHE_PREFIX', Str::slug((string) env('APP_NAME', 'laravel')) . '-cache-'),
 ];

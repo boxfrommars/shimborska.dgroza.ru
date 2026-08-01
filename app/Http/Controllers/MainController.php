@@ -22,7 +22,7 @@ class MainController extends Controller
         $poem = $this->poems->find($section, $slug);
         $view = "poems.{$section}.{$slug}";
 
-        if ($poem === null || ! view()->exists($view)) {
+        if ($poem === null || !view()->exists($view)) {
             abort(404);
         }
 
