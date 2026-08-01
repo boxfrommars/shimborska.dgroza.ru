@@ -122,6 +122,7 @@ class SiteTest extends TestCase
             '/moment/silence-of-plants',
             '/moment/telephone-receiver',
             '/moment/three-striking-words',
+            '/text/poet-and-world',
         ];
 
         foreach ($paths as $path) {
@@ -355,6 +356,15 @@ class SiteTest extends TestCase
                 'такая облу-у-упленная?',
                 'Перевод Асара Эппеля',
             ]);
+
+        $this->get('/text/poet-and-world')
+            ->assertOk()
+            ->assertSeeInOrder([
+                'Нобелевская лекция 1996&nbsp;года',
+                'Перевод с&nbsp;польского Ксении&nbsp;Старосельской',
+                'Poeta i świat',
+            ], false)
+            ->assertDontSee('От&nbsp;переводчика', false);
     }
 
     public function testMovedPoemRedirectsPermanently(): void

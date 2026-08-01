@@ -140,34 +140,121 @@
         <p>Похоже, что у&nbsp;поэтов всегда будет много&nbsp;работы.</p>
         <p class="foot-note">Перевод с&nbsp;польского Ксении&nbsp;Старосельской</p>
     </div>
-    <div class="text">
-        <h3>От&nbsp;переводчика</h3>
-        <p>Виславу Шимборскую не&nbsp;нужно представлять постоянному&nbsp;&mdash; особенно давнишнему&nbsp;&mdash;
-            читателю нашего журнала: он&nbsp;знаком с&nbsp;ней ровно тридцать лет. Впервые её&nbsp;стихи появились в&nbsp;&laquo;Иностранной
-            литературе&raquo; в&nbsp;1967 году&nbsp;&mdash; перевел их&nbsp;Асар Эппель. А&nbsp;в&nbsp;1973-м она вместе
-            со&nbsp;своим, ныне покойным, мужем, прекрасным прозаиком Корнелем Филиповичем, была гостем редакции, после
-            чего журнал опубликовал запись беседы с&nbsp;польскими писателями. Во&nbsp;время этой встречи и&nbsp;была
-            сделана фотография, которая сейчас перед вами. Впоследствии стихи Шимборской печатались в&nbsp;&laquo;ИЛ&raquo;
-            в&nbsp;1974, 1978 (также в&nbsp;переводах А.Эппеля) и&nbsp;в&nbsp;1994 годах (в&nbsp;переводах Натальи
-            Астафьевой). Надо сказать, что опубликовать Шимборскую в&nbsp;70-х годах было далеко не&nbsp;просто: её&nbsp;фамилия
-            числилась в&nbsp;&laquo;черных&raquo; списках, которыми услужливые &laquo;польские друзья&raquo; снабжали
-            посольство СССР и&nbsp;которые затем попадали к&nbsp;&laquo;кураторам&raquo; культуры. Переводчику и&nbsp;редакторам
-            журнала приходилось проявлять большую настойчивость и&nbsp;отвагу, а&nbsp;то&nbsp;и&nbsp;хитрить, чтобы
-            &laquo;протащить&raquo; в&nbsp;номер стихи неблагонадежного&nbsp;автора.</p>
-        <p>И&nbsp;сейчас редакция с&nbsp;удовольствием присоединяет свой голос к&nbsp;хору поздравивших новую
-            Нобелевскую лауреатку почитателей её&nbsp;таланта. Мы&nbsp;вспоминаем, какую высокую оценку дала Шимборской
-            переводившая её&nbsp;Анна Ахматова, отмечавшая зрелость мысли и&nbsp;отточенность стиля поэтессы; нам
-            хочется процитировать прошлогоднего лауреата Нобелевской премии ирландца Шеймаса Хини, который в&nbsp;ответ
-            на&nbsp;вопрос, знает&nbsp;ли он, кто получил эту премию в&nbsp;1996 году, воскликнул: &laquo;Вислава, это
-            прекрасно! Потрясающе, что &bdquo;Нобеля&ldquo; получила поэтесса, которую я&nbsp;так высоко ценю. /&hellip;/
-            Шимборская&nbsp;&mdash; как Беккет&nbsp;&mdash; останется свободной. Как и&nbsp;он, она будет по-прежнему
-            следовать за&nbsp;той тоненькой стрелкой компаса, которая у&nbsp;нее в&nbsp;голове, и, полагаю, ничто не&nbsp;собьет
-            её&nbsp;с&nbsp;этого пути&raquo;; мы&nbsp;согласны с&nbsp;Чеславом Милошем, ещё одним польским лауреатом
-            Нобелевской премии, который сказал, что присужденная Шимборской награда&nbsp;&mdash; подтверждение высокой
-            позиции польской поэзии в&nbsp;мире; и&nbsp;с&nbsp;Иосифом Бродским, который включил&nbsp;бы &laquo;Конец и&nbsp;начало&raquo;
-            Шимборской в&nbsp;антологию ста лучших стихотворений&nbsp;XX&nbsp;века.</p>
-        <p>Мы&nbsp;надеемся, что впредь ещё не&nbsp;раз предоставим читателю возможность познакомиться с&nbsp;новыми
-            стихами и&nbsp;эссе замечательной поэтессы, умнейшего, тонкого и&nbsp;обаятельного&nbsp;человека.</p>
+    <div class="text" lang="pl">
+        <h3>Poeta i świat</h3>
+        <p>Podobno w przemówieniu pierwsze zdanie jest zawsze najtrudniejsze. A więc mam je już poza sobą … Ale czuję,
+            że i następne zdania będą trudne, trzecie, szóste, dziesiąte, aż do ostatniego, ponieważ mam mówić o
+            poezji. Na ten temat wypowiadam się rzadko, prawie wcale. I zawsze towarzyszyło mi przekonanie, że nie robię
+            tego najlepiej. Dlatego mój odczyt nie będzie zbyt długi. Wszelka niedoskonałość lżejsza jest do zniesienia,
+            jeśli podaje się ją w małych dawkach.</p>
+        <p>Dzisiejszy poeta jest sceptyczny i podejrzliwy nawet — a może przede wszystkim — wobec samego siebie. Z
+            niechęcią oświadcza publicznie, że jest poetą — jakby się tego trochę wstydził. Ale w naszej krzykliwej
+            epoce dużo łatwiej przyznać się do własnych wad, jeżeli tylko prezentują się efektownie, a dużo trudniej do
+            zalet, bo są głębiej ukryte, i w które samemu nie do końca się wierzy … W różnych ankietach czy rozmowach z
+            przypadkowymi ludźmi, kiedy poecie już koniecznie wypada określić swoje zajęcie, podaje on ogólnikowe
+            “literat” albo wymienia nazwę dodatkowo wykonywanej pracy. Wiadomość, że mają do czynienia z poetą,
+            przyjmowana jest przez urzędników czy współpasażerów autobusu z lekkim niedowierzaniem i zaniepokojeniem.
+            Przypuszczam, że i filozof budzi podobne zakłopotanie. Jest jednak w lepszym położeniu, bo najczęściej ma
+            możność ozdobienia swojej profesji jakimś tytułem naukowym. Profesor filozofii — to brzmi już dużo
+            poważniej.</p>
+        <p>Nie ma jednak profesorów poezji. To by przecież znaczyło, że jest to zatrudnienie wymagające
+            specjalistycznych studiów, regularnie zdawanych egzaminów, rozpraw teoretycznych wzbogaconych bibliografią i
+            odnośnikami, a wreszcie uroczyście otrzymywanych dyplomów. A to z kolei oznaczałoby, że po to, żeby zostać
+            poetą, nie wystarczą kartki papieru zapisane choćby najświetniejszymi wierszami — konieczny jest i to przede
+            wszystkim, jakiś papierek z pieczątką. Przypomnijmy sobie, że na takiej właśnie podstawie skazano na zesłanie
+            chlubę poezji rosyjskiej, późniejszego Noblistę, Josifa Brodskiego. Uznano go za “pasożyta”, ponieważ nie
+            miał urzędowego zaświadczenia, że wolno mu być poetą …</p>
+        <p>Przed kilkoma laty miałam zaszczyt i radość poznać Go osobiście. Zauważyłam, że on jeden, spośród znanych mi
+            poetów, lubił mówić o sobie “poeta”, wymawiał to słowo bez wewnętrznych oporów, z jakąś nawet wyzywającą
+            swobodą. Myślę, że to przez pamięć brutalnych upokorzeń, jakich doznał w młodości.</p>
+        <p>W krajach szczęśliwszych, gdzie godność ludzka nie jest naruszana tak łatwo, poeci pragną być oczywiście
+            publikowani, czytani i rozumiani, ale nie robią już nic albo bardzo niewiele, żeby na co dzień wyróżniać się
+            wśród innych ludzi. A jeszcze tak niedawno temu, w pierwszych dziesięcioleciach naszego wieku, poeci lubili
+            szokować wymyślnym strojem i ekscentrycznym zachowaniem. Było to jednak zawsze widowisko na użytek
+            publiczny. Przychodziła chwila, kiedy poeta zamykał za sobą drzwi, zrzucał ze siebie te wszystkie peleryny,
+            błyskotki i inne poetyczne akcesoria, i stawał w ciszy, w oczekiwaniu na samego siebie, nad niezapisaną
+            jeszcze kartką papieru. Bo tak naprawdę tylko to się liczy.</p>
+        <p>Rzecz charakterystyczna. Produkuje się ciągle dużo biograficznych filmów o wielkich uczonych i wielkich
+            artystach. Zadaniem ambitniejszych reżyserów jest wiarygodne przedstawienie procesu twórczego, który w
+            rezultacie prowadził do ważnych odkryć naukowych czy powstawania najsłynniejszych dzieł sztuki. Można z jakim
+            takim sukcesem ukazać pracę niektórych uczonych: laboratoria, przeróżne przyrządy, mechanizmy wprowadzone w
+            ruch są zdolne przez pewien czas utrzymać uwagę widzów. Ponadto bardzo dramatyczne bywają chwile
+            niepewności, czy powtarzany po raz tysiączny eksperyment, z drobną tylko modyfikacją, przyniesie wreszcie
+            spodziewany wynik. Widowiskowe potrafią być filmy o malarzach — można odtworzyć wszystkie fazy powstawania
+            obrazu od początkowej kreski do ostatniego dotknięcia pędzla. Filmy o kompozytorach wypełnia muzyka — od
+            pierwszych taktów, które twórca słyszy w sobie, aż do dojrzałej formy dzieła rozpisanego na instrumenty.
+            Wszystko to jest w dalszym ciągu naiwne i nic nie mówi o tym dziwnym stanie ducha, zwanym popularnie
+            natchnieniem, ale przynajmniej jest co oglądać i jest czego słuchać.</p>
+        <p>Najgorzej z poetami. Ich praca jest beznadziejnie niefotogeniczna. Człowiek siedzi przy stole albo leży na
+            kanapie, wpatruje się nieruchomym wzrokiem w ścianę albo w sufit, od czasu do czasu napisze siedem wersów, z
+            czego jeden po kwadransie skreśli, i znów upływa godzina, w której nic się nie dzieje … Jaki widz wytrzymałby
+            oglądanie czegoś takiego?</p>
+        <p>Wspomniałam o natchnieniu. Na pytanie, czym ono jest, jeśli jest, poeci współcześni dają odpowiedzi wymijające.
+            Nie dlatego, że nigdy nie odczuli dobrodziejstwa tego wewnętrznego impulsu. Przyczyna jest inna. Niełatwo
+            wyjaśnić komuś coś, czego się samemu nie rozumie.</p>
+        <p>Ja także, pytana o to czasami, istotę rzeczy obchodzę z daleka. Ale odpowiadam w sposób taki: natchnienie nie
+            jest wyłącznym przywilejem poetów czy artystów w ogólności. Jest, była, będzie zawsze pewna grupa ludzi,
+            których natchnienie nawiedza. To ci wszyscy, którzy świadomie wybierają sobie pracę i wykonują ją z
+            zamiłowaniem i wyobraźnią. Bywają tacy lekarze, bywają tacy pedagodzy, bywają tacy ogrodnicy i jeszcze setka
+            innych zawodów. Ich praca może być bezustanną przygodą, jeśli tylko potrafią w niej dostrzec coraz to nowe
+            wyzwania. Pomimo trudów i porażek, ich ciekawość nie stygnie. Z każdego rozwiązanego zagadnienia wyfruwa im
+            rój nowych pytań. Natchnienie, czymkolwiek ono jest, rodzi się z bezustannego “nie wiem”.</p>
+        <p>Takich ludzi nie jest zbyt wielu. Większość mieszkańców tej ziemi pracuje, żeby zdobyć środki utrzymania,
+            pracuje, bo musi. To nie oni z własnej pasji wybierają sobie pracę, to okoliczności życia wybierają za nich.
+            Praca nie lubiana, praca, która nudzi, ceniona tylko dlatego, że nawet w tej postaci nie dla wszystkich jest
+            dostępna, to jedna z najcięższych ludzkich niedoli. I nie zanosi się na to, żeby najbliższe stulecia
+            przyniosły tutaj jakąś szczęśliwą zmianę.</p>
+        <p>Wolno mi więc powiedzieć, że wprawdzie odbieram poetom monopol na natchnienie, ale i tak umieszczam ich w
+            nielicznej grupie wybrańców losu.</p>
+        <p>Tutaj jednak mogą się w słuchaczach zbudzić wątpliwości. Rozmaici oprawcy, dyktatorzy, fanatycy, demagodzy
+            walczący o władzę przy pomocy kilku byle głośno wykrzykiwanych haseł, także lubią swoją pracę i także
+            wykonują ją z gorliwą pomysłowością. No tak, ale oni “wiedzą”. Wiedzą, a to, co wiedzą, wystarcza im raz na
+            zawsze. Niczego ponad to nie są ciekawi, bo to mogłoby osłabić siłę ich argumentów. A wszelka wiedza, która
+            nie wyłania z siebie nowych pytań, staje się w szybkim czasie martwa, traci temperaturę sprzyjającą życiu. W
+            najskrajniejszych przypadkach, o czym dobrze wiadomo z historii dawnej i współczesnej, potrafi być nawet
+            śmiertelnie groźna dla społeczeństw.</p>
+        <p>Dlatego tak wysoko sobie cenię dwa małe słowa: “nie wiem”. Małe, ale mocno uskrzydlone. Rozszerzające nam
+            życie na obszary, które mieszczą się w nas samych i obszary, w których zawieszona jest nasza nikła Ziemia.
+            Gdyby Izaak Newton nie powiedział sobie “nie wiem”, jabłka w ogródku mogłyby spadać na jego oczach jak grad,
+            a on w najlepszym razie schylałby się po nie i zjadał z apetytem. Gdyby moja rodaczka Maria Skłodowska-Curie
+            nie powiedziała sobie “nie wiem”, zostałaby pewnie nauczycielką chemii na pensji dla panienek z dobrych
+            domów, i na tej — skądinąd zacnej — pracy upłynęłoby jej życie. Ale powtarzała sobie “nie wiem” i te właśnie
+            słowa przywiodły ją, i to dwukrotnie, do Sztokholmu, gdzie ludzi o duchu niespokojnym i wiecznie poszukującym
+            nagradza się Nagrodą Nobla.</p>
+        <p>Poeta również, jeśli jest prawdziwym poetą, musi ciągle powtarzać sobie “nie wiem”. Każdym utworem próbuje na
+            to odpowiedzieć, ale kiedy tylko postawi kropkę, już ogarnia go wahanie, już zaczyna sobie zdawać sprawę, że
+            jest to odpowiedź tymczasowa i absolutnie niewystarczająca. Więc próbuje jeszcze raz i jeszcze raz, a potem
+            te kolejne dowody jego niezadowolenia z siebie historycy literatury zepną wielkim spinaczem i nazywać będą
+            “dorobkiem” …</p>
+        <p>Marzą mi się czasami sytuacje niemożliwe do urzeczywistnienia. Wyobrażam sobie na przykład w swojej
+            zuchwałości, że mam okazję porozmawiania z Eklezjastą, autorem jakże przejmującego lamentu nad marnością
+            wszelkich ludzkich poczynań. Pokłoniłabym mu się bardzo nisko, bo to przecież jeden z najważniejszych —
+            przynajmniej dla mnie — poetów. Ale potem pochwyciłabym go za rękę. “Nic nowego pod słońcem” — napisałeś,
+            Eklezjasto. Ale przecież Ty sam urodziłeś się nowy pod słońcem. A poemat, którego jesteś twórcą, też jest nowy
+            pod słońcem, bo przed Tobą nie napisał go nikt. I nowi pod słońcem są wszyscy Twoi czytelnicy, bo ci, co
+            żyli przed Tobą, czytać go przecież nie mogli. Także i cyprys, w którego cieniu usiadłeś, nie rośnie tutaj od
+            początku świata. Dał mu początek jakiś cyprys inny, podobny do Twojego, ale nie całkiem ten sam. I ponadto
+            chciałabym Cię spytać, Eklezjasto, co nowego pod słońcem zamierzasz teraz napisać. Czy coś, czym uzupełnisz
+            jeszcze swoje myśli, czy może masz pokusę niektórym z nich zaprzeczyć jednak? W swoim poprzednim poemacie
+            dostrzegłeś także i radość — cóż z tego, że przemijającą? Więc może o niej będzie Twój nowy pod słońcem
+            poemat? Czy masz już notatki, jakieś pierwsze szkice? Nie powiesz chyba: “Napisałem wszystko, nie mam nic do
+            dodania”. Tego nie może powiedzieć żaden na świecie poeta, a co dopiero tak wielki jak Ty.</p>
+        <p>Świat, cokolwiek byśmy o nim pomyśleli zatrwożeni jego ogromem i własną wobec niego bezsilnością,
+            rozgoryczeni jego obojętnością na poszczególne cierpienia — ludzi, zwierząt, a może i roślin, bo skąd pewność,
+            że rośliny są od cierpień wolne; cokolwiek byśmy pomyśleli o jego przestrzeniach przeszywanych promieniowaniem
+            gwiazd, gwiazd, wokół których zaczęto już odkrywać jakieś planety, już martwe? jeszcze martwe? — nie wiadomo;
+            cokolwiek byśmy pomyśleli o tym bezmiernym teatrze, na który mamy wprawdzie bilet wstępu, ale ważność tego
+            biletu jest śmiesznie krótka, ograniczona dwiema stanowczymi datami; cokolwiek jeszcze pomyślelibyśmy o tym
+            świecie — jest on zadziwiający.</p>
+        <p>Ale w określeniu “zadziwiający” kryje się pewna logiczna pułapka. Zadziwia nas przecież to, co odbiega od
+            jakiejś znanej i powszechnie uznanej normy, od jakiejś oczywistości, do której jesteśmy przyzwyczajeni. Otóż
+            takiego oczywistego świata nie ma wcale. Nasze zadziwienie jest samoistne i nie wynika z żadnych z czymkolwiek
+            porównań.</p>
+        <p>Zgoda, w mowie potocznej, która nie zastanawia się nad każdym słowem, wszyscy używamy określeń: “zwykły
+            świat”, “zwykłe życie”, “zwykła kolej rzeczy” … Jednak w języku poezji, gdzie każde słowo się waży, nic już
+            zwyczajne i normalne nie jest. Żaden kamień i żadna nad nim chmura. Żaden dzień i żadna po nim noc. A nade
+            wszystko żadne niczyje na tym świecie istnienie.</p>
+        <p>Wygląda na to, że poeci będą mieli zawsze dużo do roboty.</p>
     </div>
 @endsection
 
