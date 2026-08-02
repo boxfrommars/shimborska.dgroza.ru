@@ -6,6 +6,13 @@
 Проект работает на PHP 8.3 и Laravel 13, не использует базу данных и не
 требует frontend-сборки.
 
+## Документация
+
+- [AGENTS.md](AGENTS.md) — постоянные правила работы с репозиторием.
+- [docs/CONTENT.md](docs/CONTENT.md) — устройство каталога и изменение произведений.
+- [docs/FRONTEND.md](docs/FRONTEND.md) — frontend-контракты и ручные проверки.
+- [DEPLOYMENT.md](DEPLOYMENT.md) — переносимые production-требования приложения.
+
 ## Локальная разработка
 
 Для запуска требуется Docker Desktop:
@@ -56,13 +63,13 @@ Sitemap является генерируемым файлом и не вход�
 
 ## Добавление стихотворения
 
-1. Добавить `slug` и `title` в нужный раздел
-   `resources/data/poems.php`. Положение записи определяет содержание и
-   постраничную навигацию.
-2. Добавить соответствующий Blade-шаблон
+1. Прочитать полный порядок действий и контентные ограничения в
+   [docs/CONTENT.md](docs/CONTENT.md).
+2. Добавить запись в `resources/data/poems.php` и соответствующий Blade-шаблон
    `resources/views/poems/{section}/{slug}.blade.php`.
-3. Обновить ожидаемые количества каталога и URL в `tests/SiteTest.php`.
-4. Выполнить обе команды из раздела «Проверки».
+3. Обновить затронутые ожидания в `tests/SiteTest.php`.
+4. Выполнить `docker compose run --rm app composer check` и
+   `docker compose run --rm app composer sitemap`.
 
 Не изменять механически орфографию, пунктуацию, переводы и польские оригиналы.
 

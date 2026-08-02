@@ -31,7 +31,12 @@ production. Способ размещения, права ОС и админис
 - Относительный публичный каталог: `public/`
 - Entry point: `public/index.php`
 - Frontend-сборка: отсутствует; CSS, изображения и vanilla JS хранятся готовыми
-- PHP-расширения: DOM, Filter, Fileinfo, Mbstring и XML
+- PHP-расширения для production-установки Composer: `ext-ctype`, `ext-dom`,
+  `ext-fileinfo`, `ext-filter`, `ext-hash`, `ext-iconv`, `ext-json`,
+  `ext-libxml`, `ext-mbstring`, `ext-openssl`, `ext-pcre`, `ext-session` и
+  `ext-tokenizer`
+- Для установки dev-зависимостей и `composer check` дополнительно требуются
+  `ext-phar`, `ext-xml` и `ext-xmlwriter`
 - Ограничения процесса: состояние пользователя между HTTP-запросами не
   сохраняется
 
@@ -166,7 +171,10 @@ Hooks выполняются после установки production-завис
 | `GET /sitemap.xml` | `200`, актуальные HTTPS URL |
 | HTTP `GET /project?source=smoke` | `301` на тот же path и query по каноническому HTTPS URL |
 
-## Проверка релиза
+## Проверка перед релизом
+
+Проверка исходного кода выполняется в отдельном окружении с установленными
+dev-зависимостями:
 
 ```shell
 composer check
@@ -177,6 +185,10 @@ composer sitemap
 стиля PHP без изменения файлов и PHPUnit. После изменений layout, CSS или JS
 дополнительно проверить desktop и mobile, диалог содержания, короткую и длинную
 страницу и отсутствие ошибок в консоли.
+
+`composer check` не является runtime hook и не запускается после production-
+установки с `--no-dev`. После deployment выполняются lifecycle hooks и smoke-
+сценарии из раздела «Внешнее поведение».
 
 ## Совместимость rollback
 
