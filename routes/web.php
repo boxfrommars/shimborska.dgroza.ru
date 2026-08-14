@@ -25,6 +25,24 @@ Route::redirect(
     301,
 );
 
+Route::redirect(
+    '/different/picture-september-11',
+    '/moment/picture-september-11',
+    301,
+);
+
+Route::redirect(
+    '/different/ball',
+    '/moment/ball',
+    301,
+);
+
+Route::redirect(
+    '/different/note',
+    '/moment/note',
+    301,
+);
+
 Route::get('/{section}/{slug}', [MainController::class, 'poem'])->name('poem');
 
 Route::get('/{section}', [MainController::class, 'section'])->name('section');

@@ -119,17 +119,25 @@ class SiteTest extends TestCase
             '/different/two-monkeys',
             '/different/utopia',
             '/moment/about-soul',
+            '/moment/ball',
             '/moment/clouds',
+            '/moment/contribution-to-statistics',
             '/moment/early-hour',
+            '/moment/everything',
             '/moment/first-love',
             '/moment/from-memories',
             '/moment/in-abundance',
             '/moment/in-park',
+            '/moment/list',
             '/moment/little-girl-pull-tablecloth',
             '/moment/negative',
+            '/moment/note',
             '/moment/plato-or-why',
+            '/moment/picture-september-11',
             '/moment/puddle',
+            '/moment/return-baggage',
             '/moment/silence-of-plants',
+            '/moment/some-people',
             '/moment/telephone-receiver',
             '/moment/three-striking-words',
             '/text/poet-and-world',
@@ -149,12 +157,12 @@ class SiteTest extends TestCase
     public function testNotesHaveBidirectionalAccessibleLinks(): void
     {
         $pages = [
-            '/different/ball' => 1,
             '/different/first-picture-of-hitler' => 1,
             '/different/people-on-bridge' => 1,
             '/different/praise-dreams' => 1,
             '/different/soliloquy-for-cassandra' => 1,
             '/different/two-monkeys' => 1,
+            '/moment/ball' => 1,
             '/semicolon/conversation-with-atropos' => 1,
             '/semicolon/repechage' => 1,
             '/text/literary-mail' => 3,
@@ -367,6 +375,71 @@ class SiteTest extends TestCase
                 'Перевод Асара Эппеля',
             ]);
 
+        $this->get('/moment/contribution-to-statistics')
+            ->assertOk()
+            ->assertSeeInOrder([
+                'Дополнительно к статистике',
+                'Перевод Асара Эппеля',
+                'Przyczynek do statystyki',
+            ]);
+
+        $this->get('/moment/some-people')
+            ->assertOk()
+            ->assertSeeInOrder([
+                'Какие-то люди',
+                'Перевод Асара Эппеля',
+                'Jacyś ludzie',
+            ]);
+
+        $this->get('/moment/picture-september-11')
+            ->assertOk()
+            ->assertSeeInOrder([
+                'Перевод Натальи Астафьевой',
+                'Fotografia z 11 września',
+                'Сфотографированное 11 сентября',
+                'Перевод Асара Эппеля',
+            ]);
+
+        $this->get('/moment/return-baggage')
+            ->assertOk()
+            ->assertSeeInOrder([
+                'Обратный багаж',
+                'Перевод Асара Эппеля',
+                'Bagaż powrotny',
+            ]);
+
+        $this->get('/moment/ball')
+            ->assertOk()
+            ->assertSeeInOrder([
+                'Перевод Асара Эппеля',
+                'Bal',
+            ]);
+
+        $this->get('/moment/note')
+            ->assertOk()
+            ->assertSeeInOrder([
+                'Перевод Натальи Астафьевой',
+                'Notatka',
+                'Запись',
+                'Перевод Асара Эппеля',
+            ]);
+
+        $this->get('/moment/list')
+            ->assertOk()
+            ->assertSeeInOrder([
+                'Список',
+                'Перевод Асара Эппеля',
+                'Spis',
+            ]);
+
+        $this->get('/moment/everything')
+            ->assertOk()
+            ->assertSeeInOrder([
+                'Всё',
+                'Перевод Асара Эппеля',
+                'Wszystko',
+            ]);
+
         $this->get('/text/poet-and-world')
             ->assertOk()
             ->assertSeeInOrder([
@@ -390,6 +463,18 @@ class SiteTest extends TestCase
         $this->get('/different/in-park')
             ->assertStatus(301)
             ->assertRedirect('/moment/in-park');
+
+        $this->get('/different/picture-september-11')
+            ->assertStatus(301)
+            ->assertRedirect('/moment/picture-september-11');
+
+        $this->get('/different/ball')
+            ->assertStatus(301)
+            ->assertRedirect('/moment/ball');
+
+        $this->get('/different/note')
+            ->assertStatus(301)
+            ->assertRedirect('/moment/note');
     }
 
     public function testEverySectionRedirectsToItsFirstPoem(): void
@@ -457,8 +542,8 @@ class SiteTest extends TestCase
             }
         }
 
-        self::assertCount(55, $catalogPaths);
-        self::assertCount(55, array_unique($catalogPaths));
+        self::assertCount(60, $catalogPaths);
+        self::assertCount(60, array_unique($catalogPaths));
 
         $viewPaths = [];
 
@@ -472,9 +557,9 @@ class SiteTest extends TestCase
 
         self::assertSame($catalogPaths, $viewPaths);
 
-        $lastPoem = $catalog->poems()[54];
+        $lastPoem = $catalog->poems()[59];
         self::assertSame('moment', $lastPoem['section']);
-        self::assertSame('in-park', $lastPoem['slug']);
+        self::assertSame('everything', $lastPoem['slug']);
     }
 
     public function testNavigationKeepsItsWindowAroundTheCurrentPoem(): void
@@ -486,16 +571,16 @@ class SiteTest extends TestCase
         self::assertSame([0, 1, 2, 3, 4, 5], array_keys($coverNavigation['items']));
 
         $middleNavigation = $catalog->navigation('semicolon', 'absence');
-        self::assertSame(23, $middleNavigation['currentIndex']);
-        self::assertSame([21, 22, 23, 24, 25, 26], array_keys($middleNavigation['items']));
+        self::assertSame(20, $middleNavigation['currentIndex']);
+        self::assertSame([18, 19, 20, 21, 22, 23], array_keys($middleNavigation['items']));
 
         $momentNavigation = $catalog->navigation('moment', 'moment');
-        self::assertSame(40, $momentNavigation['currentIndex']);
-        self::assertSame([38, 39, 40, 41, 42, 43], array_keys($momentNavigation['items']));
+        self::assertSame(37, $momentNavigation['currentIndex']);
+        self::assertSame([35, 36, 37, 38, 39, 40], array_keys($momentNavigation['items']));
 
-        $lastNavigation = $catalog->navigation('moment', 'in-park');
-        self::assertSame(54, $lastNavigation['currentIndex']);
-        self::assertSame([49, 50, 51, 52, 53, 54], array_keys($lastNavigation['items']));
+        $lastNavigation = $catalog->navigation('moment', 'everything');
+        self::assertSame(59, $lastNavigation['currentIndex']);
+        self::assertSame([54, 55, 56, 57, 58, 59], array_keys($lastNavigation['items']));
     }
 
     public function testSitemapCanBeGeneratedFromCatalog(): void
@@ -511,8 +596,8 @@ class SiteTest extends TestCase
             self::assertFileExists($path);
 
             $xml = File::get($path);
-            self::assertSame(58, substr_count($xml, '<url>'));
-            self::assertSame(58, substr_count($xml, '<loc>'));
+            self::assertSame(63, substr_count($xml, '<url>'));
+            self::assertSame(63, substr_count($xml, '<loc>'));
             self::assertStringContainsString('https://example.test/', $xml);
             self::assertStringContainsString('https://example.test/author', $xml);
             self::assertStringContainsString('https://example.test/project', $xml);
@@ -526,6 +611,18 @@ class SiteTest extends TestCase
             );
             self::assertStringNotContainsString(
                 'https://example.test/different/in-park',
+                $xml,
+            );
+            self::assertStringNotContainsString(
+                'https://example.test/different/picture-september-11',
+                $xml,
+            );
+            self::assertStringNotContainsString(
+                '<loc>https://example.test/different/ball</loc>',
+                $xml,
+            );
+            self::assertStringNotContainsString(
+                '<loc>https://example.test/different/note</loc>',
                 $xml,
             );
             self::assertStringNotContainsString('<lastmod>', $xml);

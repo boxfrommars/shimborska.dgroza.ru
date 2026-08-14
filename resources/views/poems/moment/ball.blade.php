@@ -67,6 +67,69 @@
             Перевод Асара Эппеля
         </p>
     </div>
+
+    <div class="poem" lang="pl">
+        <h3>Bal</h3>
+
+        <p>
+            Dopóki nie wiadomo jeszcze nic pewnego,<br/>
+            bo brak sygnałów, które by dobiegły,
+        </p>
+        <p>
+            dopóki Ziemia wciąż jeszcze nie taka<br/>
+            jak do tej pory bliższe i dalsze planety,
+        </p>
+        <p>
+            dopóki ani widu ani słychu<br/>
+            o innych trawach zaszczycanych wiatrem,<br/>
+            o innych drzewach ukoronowanych,<br/>
+            innych zwierzętach udowodnionych jak nasze,
+        </p>
+        <p>
+            dopóki nie ma echa, oprócz tubylczego,<br/>
+            które by potrafiło mówić sylabami,
+        </p>
+        <p>
+            dopóki żadnych nowin<br/>
+            o lepszych albo gorszych gdzieś mozartach,<br/>
+            platonach czy edisonach,
+        </p>
+        <p>
+            dopóki nasze zbrodnie<br/>
+            rywalizować mogą tylko między sobą,
+        </p>
+        <p>
+            dopóki nasza dobroć<br/>
+            na razie do niczyjej jeszcze nie podobna<br/>
+            i wyjątkowa nawet w niedoskonałości,
+        </p>
+        <p>
+            dopóki nasze głowy pełne złudzeń<br/>
+            uchodzą za jedyne głowy pełne złudzeń,
+        </p>
+        <p>
+            dopóki tylko z naszych jak dotąd podniebień<br/>
+            wzbijają się wniebogłosy —
+        </p>
+        <p>
+            czujmy się gośćmi w tutejszej remizie<br/>
+            osobliwymi i wyróżnionymi,<br/>
+            tańczmy do taktu miejscowej kapeli<br/>
+            i niech się nam wydaje,<br/>
+            że to bal nad bale.
+        </p>
+        <p>
+            Nie wiem jak komu —<br/>
+            mnie to zupełnie wystarcza<br/>
+            do szczęścia i do nieszczęścia:
+        </p>
+        <p>
+            niepozorny zaścianek,<br/>
+            gdzie gwiazdy mówią dobranoc<br/>
+            i mrugają w jego stronę<br/>
+            nieznacząco.
+        </p>
+    </div>
 @endsection
 
 @section('notes')
