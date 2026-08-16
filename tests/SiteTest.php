@@ -166,6 +166,7 @@ class SiteTest extends TestCase
             '/moment/in-park',
             '/moment/list',
             '/moment/little-girl-pull-tablecloth',
+            '/moment/moment',
             '/moment/negative',
             '/moment/note',
             '/moment/plato-or-why',
@@ -361,6 +362,14 @@ class SiteTest extends TestCase
     public function testPoemPageIsAvailable(): void
     {
         $this->get('/different/two-monkeys')->assertOk();
+        $this->get('/moment/moment')
+            ->assertOk()
+            ->assertSeeInOrder([
+                'Мгновение',
+                'Перевод Асара Эппеля',
+                'Chwila',
+            ]);
+
         $this->get('/moment/in-abundance')
             ->assertOk()
             ->assertSee('В преизбытке')
@@ -492,8 +501,10 @@ class SiteTest extends TestCase
         $this->get('/moment/ball')
             ->assertOk()
             ->assertSeeInOrder([
-                'Перевод Асара Эппеля',
+                'Перевод Асара Эппеля (Иностранная литература 2000, №8)',
                 'Bal',
+                'пока земля по-прежнему иная,',
+                'Перевод Асара Эппеля (Избранное. Текст, 2007)',
             ]);
 
         $this->get('/moment/note')

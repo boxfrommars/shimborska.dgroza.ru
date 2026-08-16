@@ -83,9 +83,7 @@
         </p>
         <p>
             Bardzo ciekawe,<br/>
-            jaki ruch wybiorą,
-        </p>
-        <p>
+            jaki ruch wybiorą,<br/>
             kiedy się już zachwieją na krawędzi:<br/>
             wędrówkę po suficie?<br/>
             lot dokoła lampy?<br/>
@@ -134,9 +132,7 @@
         </p>
         <p>
             Интересно,<br/>
-            что им придет в голову,
-        </p>
-        <p>
+            что им придет в голову,<br/>
             когда качнутся на краю:<br/>
             гулять по потолку?<br/>
             летать вокруг лампы?<br/>

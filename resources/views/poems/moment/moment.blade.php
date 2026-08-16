@@ -48,6 +48,49 @@
             Перевод Асара Эппеля
         </p>
     </div>
+
+    <div class="poem" lang="pl">
+        <h3>Chwila</h3>
+
+        <p>
+            Idę stokiem pagórka zazielenionego.<br/>
+            Trawa, kwiatuszki w trawie<br/>
+            jak na obrazku dla dzieci.<br/>
+            Niebo zamglone, już błękitniejące.<br/>
+            Widok na inne wzgórza rozlega się w ciszy.
+        </p>
+        <p>
+            Jakby tutaj nie było żadnych kambrów, sylurów,<br/>
+            skał warczących na siebie,<br/>
+            wypiętrzonych otchłani,<br/>
+            żadnych nocy w płomieniach<br/>
+            i dni w kłębach ciemności.
+        </p>
+        <p>
+            Jakby nie przesuwały się tędy niziny<br/>
+            w gorączkowych malignach,<br/>
+            lodowatych dreszczach.
+        </p>
+        <p>
+            Jakby tylko gdzie indziej burzyły się morza<br/>
+            i rozrywały brzegi horyzontów.
+        </p>
+        <p>
+            Jest dziewiąta trzydzieści czasu lokalnego.<br/>
+            Wszystko na swoim miejscu i w układnej zgodzie.<br/>
+            W dolince potok mały jako potok mały.<br/>
+            Ścieżka w postaci ścieżki od zawsze do zawsze.
+        </p>
+        <p>
+            Las pod pozorem lasu na wieki wieków i amen,<br/>
+            a w górze ptaki w locie w roli ptaków w locie.
+        </p>
+        <p>
+            Jak okiem sięgnąć panuje tu chwila.<br/>
+            Jedna z tych ziemskich chwil<br/>
+            proszonych, żeby trwały.
+        </p>
+    </div>
 @endsection
 
 @section('notes')
