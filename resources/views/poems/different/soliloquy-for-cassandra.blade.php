@@ -84,7 +84,7 @@
             Wyraźnie teraz przypominam sobie,<br/>
             jak ludzie, widząc mnie, milkli wpół słowa.<br/>
             Rwał się śmiech.<br/>
-            Rozpalały się ręce.<br/>
+            Rozplatały się ręce.<br/>
             Dzieci biegły do matki.<br/>
             Nawet nie znałam ich nietrwałych imion.<br/>
             A ta piosenka o zielonym listku —<br/>
@@ -110,14 +110,76 @@
             własną migotliwością sycący się płomyk.<br/>
             Oni wiedzieli, co to takiego jest chwila,<br/>
             och bodaj jedna jakakolwiek<br/>
-            zanim —<br/>
+            zanim —
+        </p>
+        <p>
             Wyszło na moje.<br/>
-            tylko że z tego nie wynika nic.<br/>
-            A to jest moja szmatka ogniem osmalona.<br/>
+            Tylko że z tego nie wynika nic.<br/>
+            A to jest moja szatka ogniem osmalona.<br/>
             A to są moje prorockie rupiecie.<br/>
             A to jest moja wykrzywiona twarz.<br/>
             Twarz, która nie wiedziała, że mogła być piękna.
         </p>
+    </div>
+    <div class="poem">
+        <p>
+            Это я, Кассандра.<br/>
+            А это вот мой город под пеплом.<br/>
+            А это вот мой посох и ленты-провидицы.<br/>
+            А это моя голова, исполненная сомнений.
+        </p>
+        <p>
+            Что ж, я торжествую.<br/>
+            Моя правота заревом полыхнула в небо.<br/>
+            Только пророкам, которым не верят,<br/>
+            случается увидеть такое.<br/>
+            Только тем, кто плохо брался за дело,<br/>
+            а все так быстро сбывалось,<br/>
+            словно они ни при чем.
+        </p>
+        <p>
+            Теперь-то я припоминаю четко,<br/>
+            как все, меня завидев, молкли на полслове.<br/>
+            Обрывался смех.<br/>
+            Расплетались руки.<br/>
+            Дети бежали к матерям.<br/>
+            Имен их мимолетных я не знала даже.<br/>
+            А песенку о листике зеленом —<br/>
+            ее при мне никто и не допел.
+        </p>
+        <p>
+            Я их любила.<br/>
+            Но любила с высот.<br/>
+            Любила из наджизни.<br/>
+            Из будущего. Где всегда пусто<br/>
+            и откуда проще простого увидеть смерть.<br/>
+            Я сожалею, что голос мой был тверд.<br/>
+            Взгляните на себя со звезд — взывала я, —<br/>
+            взгляните на себя со звезд.<br/>
+            Они внимали и прятали глаза.
+        </p>
+        <p>
+            Они ведь жили в жизни.<br/>
+            Подбитые огромным ветром.<br/>
+            Предрешенные.<br/>
+            От рожденья воплощенные в останки.<br/>
+            Но была в них какая-то влажная надежда,<br/>
+            тепленьем собственным живущий фитилек.<br/>
+            Они знали, что оно такое, мгновение,<br/>
+            хотя бы одно-разъединственное,<br/>
+            прежде чем —
+        </p>
+        <p>
+            Вышло на мое.<br/>
+            Только из этого ничего не следует.
+        </p>
+        <p>
+            А это вот моя одежка, прихваченная пламенем.<br/>
+            А это вот моя пророческая дребедень.<br/>
+            А это вот мое искаженное лицо.<br/>
+            Которое не знало, что могло быть красиво.
+        </p>
+        <p class="foot-note">Перевод Асара Эппеля</p>
     </div>
 @endsection
 

@@ -110,14 +110,50 @@ class SiteTest extends TestCase
     public function testPolishOriginalsDeclareTheirLanguage(): void
     {
         $paths = [
+            '/different/allegro-ma-non-troppo',
+            '/different/arrival',
+            '/different/atlantis',
+            '/different/authors-evening',
+            '/different/autotomy',
+            '/different/born',
+            '/different/buffo',
+            '/different/commemoration',
+            '/different/dealings-with-the-dead',
+            '/different/discovery',
             '/different/elegiac-arithmetic',
+            '/different/epitaph',
             '/different/first-picture-of-hitler',
+            '/different/four-in-the-morning',
+            '/different/hilarity',
+            '/different/im-too-close',
             '/different/impression-of-the-theater',
+            '/different/in-any-event',
+            '/different/in-honor-of-my-sister',
+            '/different/joy-of-writing',
+            '/different/large-number',
+            '/different/lesson',
+            '/different/letters-of-the-dead',
+            '/different/life-while-you-wait',
+            '/different/lizard-skeleton',
+            '/different/lots-wife',
+            '/different/male-beauty-contest',
+            '/different/medieval-miniature',
+            '/different/memory-at-last',
+            '/different/pi',
+            '/different/prospect',
+            '/different/pursuit',
+            '/different/rubens-women',
+            '/different/seen-from-above',
             '/different/shadow',
             '/different/soliloquy-for-cassandra',
+            '/different/station',
+            '/different/tarsier',
             '/different/torture',
             '/different/two-monkeys',
+            '/different/under-one-small-star',
+            '/different/unexpected-meeting',
             '/different/utopia',
+            '/different/vietnam',
             '/moment/about-soul',
             '/moment/ball',
             '/moment/clouds',
@@ -250,6 +286,51 @@ class SiteTest extends TestCase
             'data-section="semicolon"',
             'data-section="moment"',
         ], false);
+    }
+
+    public function testNewPoemsAreAppendedAfterTheExistingDifferentSection(): void
+    {
+        $different = app(PoemCatalog::class)->sections()['different']['poems'];
+
+        self::assertCount(51, $different);
+        self::assertSame([
+            'two-monkeys',
+            'praise-dreams',
+            'soliloquy-for-cassandra',
+            'shadow',
+            'utopia',
+            'torture',
+            'impression-of-the-theater',
+            'reality',
+            'im-too-close',
+            'first-picture-of-hitler',
+            'elegiac-arithmetic',
+            'in-honor-of-my-sister',
+            'station',
+            'ballad',
+            'terrorist-he-looks',
+            'road-elegy',
+            'people-on-bridge',
+            'cat-in-empty-apartment',
+        ], array_column(array_slice($different, 0, 18), 'slug'));
+        self::assertSame('atlantis', $different[18]['slug']);
+
+        $atlantisUrl = route('poem', ['section' => 'different', 'slug' => 'atlantis']);
+        $catUrl = route('poem', ['section' => 'different', 'slug' => 'cat-in-empty-apartment']);
+
+        $this->get('/different/cat-in-empty-apartment')
+            ->assertOk()
+            ->assertSee(
+                "title=\"Страница 19 — Атлантида\" aria-label=\"Страница 19 — Атлантида\" href=\"{$atlantisUrl}\"",
+                false,
+            );
+
+        $this->get('/different/atlantis')
+            ->assertOk()
+            ->assertSee(
+                "title=\"Страница 18 — Кот в пустой квартире\" aria-label=\"Страница 18 — Кот в пустой квартире\" href=\"{$catUrl}\"",
+                false,
+            );
     }
 
     public function testStaticPagesAreAvailable(): void
@@ -450,6 +531,83 @@ class SiteTest extends TestCase
             ->assertDontSee('От&nbsp;переводчика', false);
     }
 
+    public function testScannedPoemsContainTheOriginalAndEppelTranslationInTheExpectedOrder(): void
+    {
+        $newPoems = [
+            'atlantis' => ['Атлантида', 'Atlantyda'],
+            'buffo' => ['Буффонада', 'Buffo'],
+            'commemoration' => ['Увековечение', 'Upamiętnienie'],
+            'four-in-the-morning' => ['Четыре часа утра', 'Czwarta nad ranem'],
+            'lesson' => ['Урок', 'Lekcja'],
+            'unexpected-meeting' => ['Внезапная встреча', 'Niespodziane spotkanie'],
+            'rubens-women' => ['Рубенсовские женщины', 'Kobiety Rubensa'],
+            'male-beauty-contest' => ['Конкурс мужской красоты', 'Konkurs piękności męskiej'],
+            'authors-evening' => ['Авторский вечер', 'Wieczór autorski'],
+            'epitaph' => ['Надгробная надпись', 'Nagrobek'],
+            'joy-of-writing' => ['Радость писательства', 'Radość pisania'],
+            'memory-at-last' => ['Вот память и нашла', 'Pamięć nareszcie'],
+            'born' => ['Порожденный', 'Urodzony'],
+            'vietnam' => ['Вьетнам', 'Wietnam'],
+            'arrival' => ['Прилет', 'Przylot'],
+            'tarsier' => ['Долгопят', 'Tarsjusz'],
+            'hilarity' => ['Умора', 'Sto pociech'],
+            'in-any-event' => ['Всякий случай', 'Wszelki wypadek'],
+            'letters-of-the-dead' => ['Письма умерших', 'Listy umarłych'],
+            'prospect' => ['Проспект', 'Prospekt'],
+            'discovery' => ['Открытие', 'Odkrycie'],
+            'lizard-skeleton' => ['Скелет ящера', 'Szkielet jaszczura'],
+            'pursuit' => ['Погоня', 'Pogoń'],
+            'allegro-ma-non-troppo' => ['Allegro ma non troppo', 'Allegro ma non troppo'],
+            'autotomy' => ['Аутотомия', 'Autotomia'],
+            'under-one-small-star' => ['Под тою же самой звездой', 'Pod jedną gwiazdką'],
+            'large-number' => ['Большое число', 'Wielka liczba'],
+            'lots-wife' => ['Лотова жена', 'Żona Lota'],
+            'seen-from-above' => ['Виденное сверху', 'Widziane z góry'],
+            'medieval-miniature' => ['Средневековая миниатюра', 'Miniatura średniowieczna'],
+            'life-while-you-wait' => ['Жизнь в присутствии заказчика', 'Życie na poczekaniu'],
+            'pi' => ['Число пи', 'Liczba Pi'],
+            'dealings-with-the-dead' => ['Сношения с умершими', 'Konszachty z umarłymi'],
+        ];
+
+        foreach ($newPoems as $slug => [$title, $originalTitle]) {
+            $response = $this->get("/different/{$slug}")->assertOk();
+            $content = $response->getContent();
+
+            $response
+                ->assertSee("<h2>{$title}</h2>", false)
+                ->assertSee("<h3>{$originalTitle}</h3>", false)
+                ->assertSeeInOrder([
+                    'Перевод Асара Эппеля',
+                    '<div class="poem" lang="pl">',
+                    "<h3>{$originalTitle}</h3>",
+                ], false);
+            self::assertSame(1, substr_count($content, 'Перевод Асара Эппеля'), $slug);
+        }
+
+        $supplementedPoems = [
+            'im-too-close' => ['Я слишком близко', 'Jestem za blisko'],
+            'station' => ['Вокзал', 'Dworzec'],
+            'terrorist-he-looks' => ['Террорист, он смотрит', 'Terrorysta, on patrzy'],
+            'in-honor-of-my-sister' => ['В честь моей сестры', 'Pochwała siostry'],
+            'soliloquy-for-cassandra' => ['Монолог для Кассандры', 'Monolog dla Kasandry'],
+            'impression-of-the-theater' => ['Впечатление от театра', 'Wrażenia z teatru'],
+        ];
+
+        foreach ($supplementedPoems as $slug => [$title, $originalTitle]) {
+            $response = $this->get("/different/{$slug}")->assertOk();
+            $content = $response->getContent();
+
+            $response
+                ->assertSee("<h2>{$title}</h2>", false)
+                ->assertSeeInOrder([
+                    '<div class="poem" lang="pl">',
+                    "<h3>{$originalTitle}</h3>",
+                    'Перевод Асара Эппеля',
+                ], false);
+            self::assertSame(1, substr_count($content, 'Перевод Асара Эппеля'), $slug);
+        }
+    }
+
     public function testMovedPoemRedirectsPermanently(): void
     {
         $this->get('/different/little-girl-pull-tablecloth')
@@ -542,8 +700,8 @@ class SiteTest extends TestCase
             }
         }
 
-        self::assertCount(60, $catalogPaths);
-        self::assertCount(60, array_unique($catalogPaths));
+        self::assertCount(93, $catalogPaths);
+        self::assertCount(93, array_unique($catalogPaths));
 
         $viewPaths = [];
 
@@ -557,7 +715,7 @@ class SiteTest extends TestCase
 
         self::assertSame($catalogPaths, $viewPaths);
 
-        $lastPoem = $catalog->poems()[59];
+        $lastPoem = $catalog->poems()[92];
         self::assertSame('moment', $lastPoem['section']);
         self::assertSame('everything', $lastPoem['slug']);
     }
@@ -571,16 +729,16 @@ class SiteTest extends TestCase
         self::assertSame([0, 1, 2, 3, 4, 5], array_keys($coverNavigation['items']));
 
         $middleNavigation = $catalog->navigation('semicolon', 'absence');
-        self::assertSame(20, $middleNavigation['currentIndex']);
-        self::assertSame([18, 19, 20, 21, 22, 23], array_keys($middleNavigation['items']));
+        self::assertSame(53, $middleNavigation['currentIndex']);
+        self::assertSame([51, 52, 53, 54, 55, 56], array_keys($middleNavigation['items']));
 
         $momentNavigation = $catalog->navigation('moment', 'moment');
-        self::assertSame(37, $momentNavigation['currentIndex']);
-        self::assertSame([35, 36, 37, 38, 39, 40], array_keys($momentNavigation['items']));
+        self::assertSame(70, $momentNavigation['currentIndex']);
+        self::assertSame([68, 69, 70, 71, 72, 73], array_keys($momentNavigation['items']));
 
         $lastNavigation = $catalog->navigation('moment', 'everything');
-        self::assertSame(59, $lastNavigation['currentIndex']);
-        self::assertSame([54, 55, 56, 57, 58, 59], array_keys($lastNavigation['items']));
+        self::assertSame(92, $lastNavigation['currentIndex']);
+        self::assertSame([87, 88, 89, 90, 91, 92], array_keys($lastNavigation['items']));
     }
 
     public function testSitemapCanBeGeneratedFromCatalog(): void
@@ -596,8 +754,8 @@ class SiteTest extends TestCase
             self::assertFileExists($path);
 
             $xml = File::get($path);
-            self::assertSame(63, substr_count($xml, '<url>'));
-            self::assertSame(63, substr_count($xml, '<loc>'));
+            self::assertSame(96, substr_count($xml, '<url>'));
+            self::assertSame(96, substr_count($xml, '<loc>'));
             self::assertStringContainsString('https://example.test/', $xml);
             self::assertStringContainsString('https://example.test/author', $xml);
             self::assertStringContainsString('https://example.test/project', $xml);

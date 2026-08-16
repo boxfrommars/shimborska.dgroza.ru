@@ -52,10 +52,10 @@
             Перевод Виктора Коркия
         </p>
     </div>
-    <div class="" lang="pl">
+    <div class="poem" lang="pl">
         <h3>Wrażenia z teatru</h3>
         <p>
-            Najważniejszy w tragedii jest dla mnie akt szósty;<br/>
+            Najważniejszy w tragedii jest dla mnie akt szósty:<br/>
             zmartwychwstanie z pobojowisk sceny,<br/>
             poprawianie peruk, szatek,<br/>
             wyrywanie noża z piersi,<br/>
@@ -64,42 +64,93 @@
             twarzą do publiczności.
         </p>
         <p>
-            Ukłony pojedyncze i zbiorowe;<br/>
-            Biała dłoń na ranie serca,<br/>
-            Dyganie samobójczyni,<br/>
-            Kiwanie ściętej głowy.
+            Ukłony pojedyncze i zbiorowe:<br/>
+            biała dłoń na ranie serca,<br/>
+            dyganie samobójczyni,<br/>
+            kiwanie ściętej głowy.
         </p>
         <p>
             Ukłony parzyste:<br/>
-            Wściekłość podaje ramię łagodności,<br/>
-            Ofiara patrzy błogo w oczy kata,<br/>
-            Buntownik bez urazy stąpa przy boku tyrana.
+            wściekłość podaje ramię łagodności,<br/>
+            ofiara patrzy błogo w oczy kata,<br/>
+            buntownik bez urazy stąpa przy boku tyrana.
         </p>
         <p>
-            Deptanie wieczność i noskiem złotego trzewiczka.<br/>
+            Deptanie wieczności noskiem złotego trzewiczka.<br/>
             Rozpędzanie morałów rondem kapelusza.<br/>
             Niepoprawna gotowość rozpoczęcia od jutra na nowo.
         </p>
         <p>
             Wejście gęsiego zmarłych dużo wcześniej,<br/>
-            Bo w akcie trzecim, czwartym oraz pomiędzy aktami.<br/>
+            bo w akcie trzecim, czwartym oraz pomiędzy aktami.<br/>
             Cudowny powrót zaginionych bez wieści.
         </p>
         <p>
             Myśl, że za kulisami czekali cierpliwie,<br/>
-            Nie zdejmując kostiumu,<br/>
-            Nie zmywając szminki,<br/>
-            Wzrusza mniej bardziej niż tyrady tragedii.
+            nie zdejmując kostiumu,<br/>
+            nie zmywając szminki,<br/>
+            wzrusza mnie bardziej niż tyrady tragedii.
         </p>
         <p>
             Ale naprawdę podniosłe jest opadanie kurtyny<br/>
-            I to, co widać jeszcze w niskiej szparze:<br/>
-            Tu oto jedna ręka po kwiat spiesznie sięga,<br/>
-            Tam druga chwyta upuszczony miecz.<br/>
+            i to, co widać jeszcze w niskiej szparze:<br/>
+            tu oto jedna ręka po kwiat spiesznie sięga,<br/>
+            tam druga chwyta upuszczony miecz.<br/>
             Dopiero wtedy trzecia, niewidzialna,<br/>
-            Spełnia swoja powinność:<br/>
-            Ściska mnie za gardło.
+            spełnia swoją powinność:<br/>
+            ściska mnie za gardło.
         </p>
+    </div>
+    <div class="poem">
+        <p>
+            Всего важнее в трагедии для меня шестой акт:<br/>
+            воскресание из сценических побоищ,<br/>
+            поправление париков и одежек,<br/>
+            выдергивание ножа из груди,<br/>
+            выпрастыванье шеи из петли,<br/>
+            размещение себя среди живых<br/>
+            лицом к зрительному залу.
+        </p>
+        <p>
+            Поклоны индивидуальные и общие:<br/>
+            белая рука на ране сердца,<br/>
+            реверансы самоубившейся,<br/>
+            кивок отрубленной головой.
+        </p>
+        <p>
+            Поклоны парные:<br/>
+            ярость выходит об руку с кротостью,<br/>
+            жертва блаженно глядит в глаза палачу,<br/>
+            бунтовщику не постыдно стоять возле тирана.
+        </p>
+        <p>
+            Попирание вечного мыском золотой туфельки.<br/>
+            Сметание нравоучений взмахами шляпы.<br/>
+            Чудесное появление без вести пропавших.
+        </p>
+        <p>
+            Появление-гуськом-умерших прежде,<br/>
+            в акте третьем, четвертом или между.<br/>
+            Чудесное возвращение пропавших без вести.
+        </p>
+        <p>
+            Сознание, что за кулисами они терпеливо ждали,<br/>
+            не снимая грима,<br/>
+            оставаясь в костюмах,<br/>
+            действует на меня сильнее, чем тирады трагедии.
+        </p>
+        <p>
+            Но поистине возвышенно опускание занавеса<br/>
+            и то, что успеваешь заметить в низкой щели:<br/>
+            чья-то рука склонилась за цветами,<br/>
+            другая чья-то поднимает с пола меч.
+        </p>
+        <p>
+            Тем временем невидимая третья<br/>
+            делает свое дело —<br/>
+            перехватывает мне горло.
+        </p>
+        <p class="foot-note">Перевод Асара Эппеля</p>
     </div>
 @endsection
 

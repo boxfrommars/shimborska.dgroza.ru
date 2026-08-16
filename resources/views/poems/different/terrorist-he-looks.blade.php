@@ -52,6 +52,80 @@
         </p>
         <p class="foot-note">Перевод Михаила Микляева</p>
     </div>
+    <div class="poem" lang="pl">
+        <h3>Terrorysta, on patrzy</h3>
+        <p>
+            Bomba wybuchnie w barze trzynasta dwadzieścia.<br/>
+            Teraz mamy dopiero trzynastą szesnaście.<br/>
+            Niektórzy zdążą jeszcze wejść.<br/>
+            Niektórzy wyjść.<br/>
+            Terrorysta już przeszedł na drugą stronę ulicy.<br/>
+            Ta odległość go chroni od wszelkiego złego<br/>
+            no i widok jak w kinie:<br/>
+            Kobieta w żółtej kurtce, ona wchodzi.<br/>
+            Mężczyzna w ciemnych okularach, on wychodzi.<br/>
+            Chłopaki w dżinsach, oni rozmawiają.<br/>
+            Trzynasta siedemnaście i cztery sekundy.<br/>
+            Ten niższy to ma szczęście i wsiada na skuter,<br/>
+            a ten wyższy to wchodzi.<br/>
+            Trzynasta siedemnaście i czterdzieści sekund.<br/>
+            Dziewczyna, ona idzie z zieloną wstążką we włosach.<br/>
+            Tylko że ten autobus nagle ją zasłania.<br/>
+            Trzynasta osiemnaście.<br/>
+            Już nie ma dziewczyny.<br/>
+            Czy była taka głupia i weszła, czy nie,<br/>
+            to się zobaczy, jak będą wynosić.<br/>
+            Trzynasta dziewiętnaście.<br/>
+            Nikt jakoś nie wchodzi.<br/>
+            Za to jeszcze wychodzi jeden gruby łysy.<br/>
+            Ale tak, jakby szukał czegoś po kieszeniach i<br/>
+            o trzynastej dwadzieścia bez dziesięciu sekund<br/>
+            on wraca po te swoje marne rękawiczki.<br/>
+            Jest trzynasta dwadzieścia.<br/>
+            Czas, jak on się wlecze.<br/>
+            Chyba już teraz.<br/>
+            Jeszcze nie teraz.<br/>
+            Tak, teraz.<br/>
+            Bomba, ona wybucha.
+        </p>
+    </div>
+    <div class="poem">
+        <p>
+            Бомба взорвется в баре в тринадцать двадцать.<br/>
+            А сейчас тринадцать шестнадцать.<br/>
+            Некоторые еще войдут.<br/>
+            Некоторые выйдут.<br/>
+            Террорист уже перешел на другую сторону улицы.<br/>
+            Это расстояние оберегает его от всяческих неприятностей,<br/>
+            да и стой, смотри, как в кино.<br/>
+            Женщина в желтой куртке, она входит.<br/>
+            Мужчина в темных очках, он выходит.<br/>
+            Ребята в джинсах, они разговаривают.<br/>
+            Тринадцать семнадцать и четыре секунды.<br/>
+            Тот вон, маленький, везучий — сел на мотороллер,<br/>
+            а вон тот, высокий, входит.<br/>
+            Тринадцать семнадцать и сорок секунд.<br/>
+            Девушка, она идет с зеленой лентой в прическе.<br/>
+            Только вон тот автобус вдруг ее заслоняет.<br/>
+            Тринадцать восемнадцать.<br/>
+            Девушки не видать.<br/>
+            Вошла дура или не вошла,<br/>
+            увидим, когда будут выносить.<br/>
+            Тринадцать девятнадцать.<br/>
+            Что-то никто не входит.<br/>
+            Зато выходит один толстый, лысый.<br/>
+            Но вроде бы ищет что-то по карманам и<br/>
+            в тринадцать двадцать без десяти секунд<br/>
+            возвращается за своими дурацкими перчатками.<br/>
+            Вот и тринадцать двадцать.<br/>
+            Время, вот уж оно ползет.<br/>
+            Вроде сейчас бы.<br/>
+            Нет, не сейчас.<br/>
+            Да, сейчас.<br/>
+            Бомба, она взрывается.
+        </p>
+        <p class="foot-note">Перевод Асара Эппеля</p>
+    </div>
 @endsection
 
 @section('notes')
