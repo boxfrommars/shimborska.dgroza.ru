@@ -67,7 +67,7 @@
                     <div class="chapter-link-list wide"><a href="{{ route('main') }}" class="chapter-link">Обложка</a></div>
                 @endif
 
-                @foreach(array_chunk($sections, 2, true) as $column)
+                @foreach([array_slice($sections, 0, 1, true), array_slice($sections, 1, null, true)] as $column)
                     <ul class="contents-column">
                         @foreach($column as $sectionSlug => $section)
                             <li class="chapter-link-list" data-section="{{ $sectionSlug }}">

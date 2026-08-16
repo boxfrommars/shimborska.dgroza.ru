@@ -3,6 +3,8 @@
 namespace Tests;
 
 use App\PoemCatalog;
+use DOMDocument;
+use DOMXPath;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
@@ -275,18 +277,40 @@ class SiteTest extends TestCase
     public function testContentsDialogUsesCatalogOrderInTwoColumns(): void
     {
         $response = $this->get('/')->assertOk();
+        $document = new DOMDocument;
+        $previousUseInternalErrors = libxml_use_internal_errors(true);
+
+        try {
+            self::assertTrue($document->loadHTML($response->getContent()));
+        } finally {
+            libxml_clear_errors();
+            libxml_use_internal_errors($previousUseInternalErrors);
+        }
+
+        $xpath = new DOMXPath($document);
+        $columns = $xpath->query('//div[@id="contents-wrap"]/ul[contains(concat(" ", normalize-space(@class), " "), " contents-column ")]');
 
         self::assertSame(
             2,
-            substr_count($response->getContent(), '<ul class="contents-column">'),
+            $columns->length,
         );
 
-        $response->assertSeeInOrder([
-            'data-section="different"',
-            'data-section="text"',
-            'data-section="semicolon"',
-            'data-section="moment"',
-        ], false);
+        $sectionsByColumn = [];
+
+        foreach ($columns as $column) {
+            $sectionSlugs = [];
+
+            foreach ($xpath->query('./li[@data-section]', $column) as $section) {
+                $sectionSlugs[] = $section->getAttribute('data-section');
+            }
+
+            $sectionsByColumn[] = $sectionSlugs;
+        }
+
+        self::assertSame([
+            ['different'],
+            ['semicolon', 'moment', 'text'],
+        ], $sectionsByColumn);
     }
 
     public function testNewPoemsAreAppendedAfterTheExistingDifferentSection(): void
@@ -873,7 +897,7 @@ class SiteTest extends TestCase
         $catalogPaths = [];
 
         self::assertSame(
-            ['different', 'text', 'semicolon', 'moment'],
+            ['different', 'semicolon', 'moment', 'text'],
             array_keys($catalog->sections()),
         );
 
@@ -905,8 +929,8 @@ class SiteTest extends TestCase
         self::assertSame($catalogPaths, $viewPaths);
 
         $lastPoem = $catalog->poems()[92];
-        self::assertSame('moment', $lastPoem['section']);
-        self::assertSame('everything', $lastPoem['slug']);
+        self::assertSame('text', $lastPoem['section']);
+        self::assertSame('literary-mail', $lastPoem['slug']);
     }
 
     public function testNavigationKeepsItsWindowAroundTheCurrentPoem(): void
@@ -918,14 +942,26 @@ class SiteTest extends TestCase
         self::assertSame([0, 1, 2, 3, 4, 5], array_keys($coverNavigation['items']));
 
         $middleNavigation = $catalog->navigation('semicolon', 'absence');
-        self::assertSame(53, $middleNavigation['currentIndex']);
-        self::assertSame([51, 52, 53, 54, 55, 56], array_keys($middleNavigation['items']));
+        self::assertSame(51, $middleNavigation['currentIndex']);
+        self::assertSame([49, 50, 51, 52, 53, 54], array_keys($middleNavigation['items']));
 
         $momentNavigation = $catalog->navigation('moment', 'moment');
-        self::assertSame(70, $momentNavigation['currentIndex']);
-        self::assertSame([68, 69, 70, 71, 72, 73], array_keys($momentNavigation['items']));
+        self::assertSame(68, $momentNavigation['currentIndex']);
+        self::assertSame([66, 67, 68, 69, 70, 71], array_keys($momentNavigation['items']));
 
-        $lastNavigation = $catalog->navigation('moment', 'everything');
+        $momentEndNavigation = $catalog->navigation('moment', 'everything');
+        self::assertSame(90, $momentEndNavigation['currentIndex']);
+        self::assertSame([87, 88, 89, 90, 91, 92], array_keys($momentEndNavigation['items']));
+        self::assertSame([
+            'ball',
+            'note',
+            'list',
+            'everything',
+            'poet-and-world',
+            'literary-mail',
+        ], array_column($momentEndNavigation['items'], 'slug'));
+
+        $lastNavigation = $catalog->navigation('text', 'literary-mail');
         self::assertSame(92, $lastNavigation['currentIndex']);
         self::assertSame([87, 88, 89, 90, 91, 92], array_keys($lastNavigation['items']));
     }

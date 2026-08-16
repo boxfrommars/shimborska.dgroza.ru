@@ -57,13 +57,6 @@ return [
             ['slug' => 'dealings-with-the-dead', 'title' => 'Сношения с умершими'],
         ],
     ],
-    'text' => [
-        'title' => 'Проза',
-        'poems' => [
-            ['slug' => 'poet-and-world', 'title' => 'Поэт и мир (нобелевская лекция)'],
-            ['slug' => 'literary-mail', 'title' => 'Литературная почта, или Как стать/не стать писателем (фрагменты)'],
-        ],
-    ],
     'semicolon' => [
         'title' => 'Двоеточие',
         'poems' => [
@@ -112,6 +105,13 @@ return [
             ['slug' => 'note', 'title' => 'Заметка'],
             ['slug' => 'list', 'title' => 'Список'],
             ['slug' => 'everything', 'title' => 'Всё'],
+        ],
+    ],
+    'text' => [
+        'title' => 'Проза',
+        'poems' => [
+            ['slug' => 'poet-and-world', 'title' => 'Поэт и мир (нобелевская лекция)'],
+            ['slug' => 'literary-mail', 'title' => 'Литературная почта, или Как стать/не стать писателем (фрагменты)'],
         ],
     ],
 ];
