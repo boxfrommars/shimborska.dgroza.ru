@@ -10,9 +10,7 @@
             Пусть не сердится счастье, когда сочту его собственным.<br/>
             Пусть не сетуют мертвые, что память о них лишь теплится.<br/>
             Да простит меня время за уйму незамеченного мира<br/>
-            <span class="poem-line-indent poem-line-indent-5">в секунду.</span>
-        </p>
-        <p>
+            <span class="poem-line-indent poem-line-indent-5">в секунду.</span><br/>
             Да простит былая любовь, что новую полагаю первой.<br/>
             Простите, далекие войны, меня, покупающую цветы.<br/>
             Простите мне, рваные раны, уколотый палец.<br/>
@@ -26,19 +24,13 @@
             Да простит меня дерево за четыре ножки стола.<br/>
             Да простят великие вопросы за малые ответы.<br/>
             Истина, не обращай на меня слишком пристального<br/>
-            <span class="poem-line-indent poem-line-indent-5">внимания.</span>
-        </p>
-        <p>
+            <span class="poem-line-indent poem-line-indent-5">внимания.</span><br/>
             Серьезность, будь снисходительна.<br/>
             Стерпи, тайна сущего, если дергаю нитки из твоего шлейфа.<br/>
-            Не обижайся, душа, за то, что редко общаюсь.
-        </p>
-        <p>
+            Не обижайся, душа, за то, что редко общаюсь.<br/>
             Прошу прощения у всего за неспособность быть всюду.<br/>
             Прошу прощения у всех за неспособность быть каждой<br/>
-            <span class="poem-line-indent poem-line-indent-5">и каждым.</span>
-        </p>
-        <p>
+            <span class="poem-line-indent poem-line-indent-5">и каждым.</span><br/>
             Знаю, пока жива, ничто меня не оправдывает,<br/>
             ибо мешаю себе везде, где могу.<br/>
             Не обессудь меня, речь, за аренду высоких слов<br/>
@@ -54,9 +46,7 @@
             Niech się nie gniewa szczęście, że biorę je jak swoje.<br/>
             Niech mi zapomną umarli, że ledwie tlą się w pamięci.<br/>
             Przepraszam czas za mnogość przeoczonego świata<br/>
-            <span class="poem-line-indent poem-line-indent-5">na sekundę.</span>
-        </p>
-        <p>
+            <span class="poem-line-indent poem-line-indent-5">na sekundę.</span><br/>
             Przepraszam dawną miłość, że nową uważam za pierwszą.<br/>
             Wybaczcie mi, dalekie wojny, że noszę kwiaty do domu.<br/>
             Wybaczcie, otwarte rany, że kłuję się w palec.<br/>
@@ -72,14 +62,10 @@
             Prawdo, nie zwracaj na mnie zbyt bacznej uwagi.<br/>
             Powago, okaż mi wspaniałomyślność.<br/>
             Ścierp, tajemnico bytu, że wyskubuję nitki z twego trenu.<br/>
-            Nie oskarżaj mnie, duszo, że rzadko cię miewam.
-        </p>
-        <p>
+            Nie oskarżaj mnie, duszo, że rzadko cię miewam.<br/>
             Przepraszam wszystko, że nie mogę być wszędzie.<br/>
             Przepraszam wszystkich, że nie umiem być każdym<br/>
-            <span class="poem-line-indent poem-line-indent-5">i każdą.</span>
-        </p>
-        <p>
+            <span class="poem-line-indent poem-line-indent-5">i każdą.</span><br/>
             Wiem, że póki żyję, nic mnie nie usprawiedliwia,<br/>
             ponieważ sama sobie stoję na przeszkodzie.<br/>
             Nie miej mi za złe, mowo, że pożyczam patetycznych słów,<br/>

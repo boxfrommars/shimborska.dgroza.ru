@@ -61,9 +61,7 @@
         </p>
         <p>
             Он же, что ни говори, соблюдал пропорции:<br/>
-            ад им уготавливал на другой картинке.
-        </p>
-        <p>
+            ад им уготавливал на другой картинке.<br/>
             Это же так понятно<br/>
             архисамо собой.
         </p>
@@ -128,9 +126,7 @@
         </p>
         <p>
             Onże wszelako dbał o równowagę:<br/>
-            piekło dla nich szykował na drugim obrazku.
-        </p>
-        <p>
+            piekło dla nich szykował na drugim obrazku.<br/>
             Och, to się rozumiało<br/>
             arcysamo przez się.
         </p>

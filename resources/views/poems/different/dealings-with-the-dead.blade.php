@@ -6,9 +6,7 @@
     <div class="poem">
         <p>
             При каких обстоятельствах снятся тебе умершие?<br/>
-            Как часто думаешь о них ты перед сном?
-        </p>
-        <p>
+            Как часто думаешь о них ты перед сном?<br/>
             Кто первым появляется?<br/>
             Всегда ли тот же самый?<br/>
             Имя? Фамилия? Кладбище? Дата смерти?<br/>
@@ -45,9 +43,7 @@
         <h3>Konszachty z umarłymi</h3>
         <p>
             W jakich okolicznościach śnią ci się umarli?<br/>
-            Czy często myślisz o nich przed zaśnięciem?
-        </p>
-        <p>
+            Czy często myślisz o nich przed zaśnięciem?<br/>
             Kto pojawia się pierwszy?<br/>
             Czy zawsze ten sam?<br/>
             Imię? Nazwisko? Cmentarz? Data śmierci?<br/>

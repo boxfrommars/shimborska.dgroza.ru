@@ -24,7 +24,7 @@
             сквозь неба беспардонность и бездонность.<br/>
             Сколь короток — мышиный прямо — хвост кометы!<br/>
             Сколь звездный луч податлив, искривляясь<br/>
-            в первом попавшемся пространстве!<br/>
+            <span class="poem-line-indent poem-line-indent-4">в первом попавшемся пространстве!</span><br/>
             А тут <em>два три пятнадцать триста девятнадцать</em><br/>
             мой номер телефона твой номер рубашки<br/>
             год тыща девятьсот семьдесят третий дом четыре<br/>
@@ -64,7 +64,7 @@
             przez całą nieba wzdętość i bezdenność.<br/>
             O jak krótki, wprost mysi, jest warkocz komety!<br/>
             Jak wątły promień gwiazdy, że zakrzywia się w lada<br/>
-            przestrzeni!<br/>
+            <span class="poem-line-indent poem-line-indent-5">przestrzeni!</span><br/>
             A tu <em>dwa trzy piętnaście trzysta dziewiętnaście</em><br/>
             mój numer telefonu twój numer koszuli<br/>
             rok tysiąc dziewięćset siedemdziesiąty trzeci szóste piętro<br/>

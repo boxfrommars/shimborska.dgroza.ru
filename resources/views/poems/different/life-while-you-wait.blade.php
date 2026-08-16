@@ -48,9 +48,7 @@
             Декорации куда как основательны.<br/>
             Поразительна тщательность реквизита.<br/>
             Поворотный механизм налажен давным-давно.<br/>
-            Включены даже самые дальние туманности.
-        </p>
-        <p>
+            Включены даже самые дальние туманности.<br/>
             Ох, наверняка это — премьера.<br/>
             И — что бы я ни совершила —<br/>
             навечно превратится в то, что совершила.
@@ -103,9 +101,7 @@
             Stoję wśród dekoracji i widzę jak są solidne.<br/>
             Uderza mnie precyzja wszelkich rekwizytów.<br/>
             Aparatura obrotowa działa od długiej już chwili.<br/>
-            Pozapalane zostały najdalsze nawet mgławice.
-        </p>
-        <p>
+            Pozapalane zostały najdalsze nawet mgławice.<br/>
             Och, nie mam wątpliwości, że to premiera.<br/>
             I cokolwiek uczynię,<br/>
             zamieni się na zawsze w to, co uczyniłam.
