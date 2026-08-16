@@ -10,6 +10,8 @@
 
 - [AGENTS.md](AGENTS.md) — постоянные правила работы с репозиторием.
 - [docs/CONTENT.md](docs/CONTENT.md) — устройство каталога и изменение произведений.
+- [docs/OCR.md](docs/OCR.md) — распознавание произведений по снимкам и
+  восстановление прерванной задачи.
 - [docs/FRONTEND.md](docs/FRONTEND.md) — frontend-контракты и ручные проверки.
 - [DEPLOYMENT.md](DEPLOYMENT.md) — переносимые production-требования приложения.
 
@@ -65,10 +67,12 @@ Sitemap является генерируемым файлом и не вход�
 
 1. Прочитать полный порядок действий и контентные ограничения в
    [docs/CONTENT.md](docs/CONTENT.md).
-2. Добавить запись в `resources/data/poems.php` и соответствующий Blade-шаблон
+2. Если источником служат снимки, следовать [docs/OCR.md](docs/OCR.md) и до
+   распознавания создать локальный журнал `sources/PROGRESS.md`.
+3. Добавить запись в `resources/data/poems.php` и соответствующий Blade-шаблон
    `resources/views/poems/{section}/{slug}.blade.php`.
-3. Обновить затронутые ожидания в `tests/SiteTest.php`.
-4. Выполнить `docker compose run --rm app composer check` и
+4. Обновить затронутые ожидания в `tests/SiteTest.php`.
+5. Выполнить `docker compose run --rm app composer check` и
    `docker compose run --rm app composer sitemap`.
 
 Не изменять механически орфографию, пунктуацию, переводы и польские оригиналы.
