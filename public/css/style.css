@@ -303,6 +303,28 @@ ul.classic,
 .text {
 	margin-bottom: 2em;
 }
+.poem-dedication {
+	font-style: italic;
+	text-align: right;
+}
+.poem-line-indent {
+	--poem-line-indent: 2em;
+	display: inline-block;
+	max-width: calc(100% - var(--poem-line-indent));
+	margin-left: var(--poem-line-indent);
+}
+.poem-line-indent-2 {
+	--poem-line-indent: 4em;
+}
+.poem-line-indent-3 {
+	--poem-line-indent: 6em;
+}
+.poem-line-indent-4 {
+	--poem-line-indent: 8em;
+}
+.poem-line-indent-5 {
+	--poem-line-indent: 10em;
+}
 .page h2,
 .page h3 {
 	padding: .8em 0;

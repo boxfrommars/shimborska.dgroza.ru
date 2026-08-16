@@ -29,29 +29,19 @@
         <p>
             Ибо он все-таки есть,<br/>
             воистину состоялся<br/>
-            под одной из звезд провинциальных.
-        </p>
-        <p>
+            под одной из звезд провинциальных.<br/>
             По-своему живучий и весьма динамичный.<br/>
             Для бренного выродка кристаллов<br/>
-            довольно всерьез удивляемый.
-        </p>
-        <p>
+            довольно всерьез удивляемый.<br/>
             Для трудного детства в условиях стада<br/>
-            недурно уже розный.
-        </p>
-        <p>
+            недурно уже розный.<br/>
             Ишь ведь!
         </p>
         <p>
             Только б и дальше так, хоть на мгновенье,<br/>
-            на мимолетность галактики малой!
-        </p>
-        <p>
+            на мимолетность галактики малой!<br/>
             Хоть бы наконец приближенно узнать,<br/>
-            чем же он станет, если уж он есть.
-        </p>
-        <p>
+            чем же он станет, если уж он есть.<br/>
             А он — завзятый.<br/>
             Завзятый, надо сказать, и очень.<br/>
             С кольцом в носу, в тоге, в свитере.<br/>
@@ -88,29 +78,19 @@
         <p>
             Bo przecież chyba jest,<br/>
             naprawdę się wydarzył<br/>
-            pod jedną z gwiazd prowincjonalnych.
-        </p>
-        <p>
+            pod jedną z gwiazd prowincjonalnych.<br/>
             Na swój sposób żywotny i wcale ruchliwy,<br/>
             Jak na marnego wyrodka kryształu —<br/>
-            dość poważnie zdziwiony.
-        </p>
-        <p>
+            dość poważnie zdziwiony.<br/>
             Jak na trudne dzieciństwo w koniecznościach stada —<br/>
-            nieźle już poszczególny.
-        </p>
-        <p>
+            nieźle już poszczególny.<br/>
             Patrzcie go!
         </p>
         <p>
             Tylko tak dalej, dalej choć przez chwilę,<br/>
-            bodaj przez mgnienie galaktyki małej!
-        </p>
-        <p>
+            bodaj przez mgnienie galaktyki małej!<br/>
             Niechby się wreszcie z grubsza okazało,<br/>
-            czym będzie, skoro jest.
-        </p>
-        <p>
+            czym będzie, skoro jest.<br/>
             A jest — zawzięty.<br/>
             Zawzięty, trzeba przyznać, bardzo.<br/>
             Z tym kółkiem w nosie, w tej todze, w tym swetrze.<br/>

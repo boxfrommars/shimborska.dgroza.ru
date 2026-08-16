@@ -54,17 +54,23 @@
             Pod dachem mojej siostry czuję się bezpieczna:<br/>
             mąż siostry za nic w świecie nie pisałby wierszy.<br/>
             I choć to brzmi jak utwór Adama Macedońskiego,<br/>
-            nikt z krewnych nie zajmuje się pisaniem wierszy.<br/>
+            nikt z krewnych nie zajmuje się pisaniem wierszy.
+        </p>
+        <p>
             W szufladach mojej siostry nie ma dawnych wierszy<br/>
             ani w torebce napisanych świeżo.<br/>
             A kiedy siostra zaprasza na obiad,<br/>
             to wiem, że nie w zamiarze czytania mi wierszy.<br/>
             Jej zupy są wyborne bez premedytacji,<br/>
-            a kawa nie rozlewa się na rękopisy.<br/>
+            a kawa nie rozlewa się na rękopisy.
+        </p>
+        <p>
             W wielu rodzinach nikt nie pisze wierszy,<br/>
             ale jak już — to rzadko jedna tylko osoba.<br/>
             Czasem poezja spływa kaskadami pokoleń,<br/>
-            co stwarza groźne wiry w uczuciach wzajemnych.<br/>
+            co stwarza groźne wiry w uczuciach wzajemnych.
+        </p>
+        <p>
             Moja siostra uprawia niezłą prozę mówioną,<br/>
             a całe jej pisarstwo to widokówki z urlopu,<br/>
             z tekstem obiecującym to samo każdego roku:<br/>
@@ -75,6 +81,7 @@
         </p>
     </div>
     <div class="poem">
+        <h3>Похвальное слово сестре</h3>
         <p>
             Моя сестра не пишет стихов<br/>
             и, наверно, уже не начнет писать стихи.<br/>
@@ -82,27 +89,33 @@
             и в отца, который тоже не писал стихов.<br/>
             Под кровом моей сестры я ощущаю себя в безопасности:<br/>
             муж моей сестры ни за что на свете не стал бы писать<br/>
-            стихов.<br/>
+            <span class="poem-line-indent poem-line-indent-5">стихов.</span><br/>
             И хотя это выглядит как произведение Александра<br/>
-            Мацедонского,<br/>
-            никто из родственников не занимается сочинением стихов.<br/>
+            <span class="poem-line-indent poem-line-indent-4">Мацедонского,</span><br/>
+            никто из родственников не занимается сочинением стихов.
+        </p>
+        <p>
             Ни в шкафах моей сестры нету старых стихов,<br/>
             ни в сумочке написанных недавно.<br/>
             А когда сестра приглашает на обед,<br/>
             я знаю, она не собирается читать стихи.<br/>
             Ее супы прекрасны непреднамеренно,<br/>
-            а кофе не проливается на рукописи.<br/>
+            а кофе не проливается на рукописи.
+        </p>
+        <p>
             Во многих семьях никто не пишет стихов,<br/>
             но уж если — разве что кто-нибудь один.<br/>
             Иногда поэзия обрушивается водопадами поколений,<br/>
-            что создает ужасающие водовороты во взаимных чувствах.<br/>
+            что создает ужасающие водовороты во взаимных чувствах.
+        </p>
+        <p>
             Моя сестра практикует неплохую разговорную прозу,<br/>
             а все ее писательство — открытки из отпуска<br/>
             с текстом, обещающим всегда одно и то же,<br/>
             что, когда вернется,<br/>
-            то все,<br/>
-            все,<br/>
-            все расскажет.
+            то всё,<br/>
+            всё,<br/>
+            всё расскажет.
         </p>
         <p class="foot-note">Перевод Асара Эппеля</p>
     </div>

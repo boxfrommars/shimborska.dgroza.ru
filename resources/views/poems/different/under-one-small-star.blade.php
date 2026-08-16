@@ -10,7 +10,7 @@
             Пусть не сердится счастье, когда сочту его собственным.<br/>
             Пусть не сетуют мертвые, что память о них лишь теплится.<br/>
             Да простит меня время за уйму незамеченного мира<br/>
-            в секунду.
+            <span class="poem-line-indent poem-line-indent-5">в секунду.</span>
         </p>
         <p>
             Да простит былая любовь, что новую полагаю первой.<br/>
@@ -26,7 +26,7 @@
             Да простит меня дерево за четыре ножки стола.<br/>
             Да простят великие вопросы за малые ответы.<br/>
             Истина, не обращай на меня слишком пристального<br/>
-            внимания.
+            <span class="poem-line-indent poem-line-indent-5">внимания.</span>
         </p>
         <p>
             Серьезность, будь снисходительна.<br/>
@@ -36,7 +36,7 @@
         <p>
             Прошу прощения у всего за неспособность быть всюду.<br/>
             Прошу прощения у всех за неспособность быть каждой<br/>
-            и каждым.
+            <span class="poem-line-indent poem-line-indent-5">и каждым.</span>
         </p>
         <p>
             Знаю, пока жива, ничто меня не оправдывает,<br/>
@@ -54,7 +54,7 @@
             Niech się nie gniewa szczęście, że biorę je jak swoje.<br/>
             Niech mi zapomną umarli, że ledwie tlą się w pamięci.<br/>
             Przepraszam czas za mnogość przeoczonego świata<br/>
-            na sekundę.
+            <span class="poem-line-indent poem-line-indent-5">na sekundę.</span>
         </p>
         <p>
             Przepraszam dawną miłość, że nową uważam za pierwszą.<br/>
@@ -77,7 +77,7 @@
         <p>
             Przepraszam wszystko, że nie mogę być wszędzie.<br/>
             Przepraszam wszystkich, że nie umiem być każdym<br/>
-            i każdą.
+            <span class="poem-line-indent poem-line-indent-5">i każdą.</span>
         </p>
         <p>
             Wiem, że póki żyję, nic mnie nie usprawiedliwia,<br/>

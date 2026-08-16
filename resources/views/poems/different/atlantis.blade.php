@@ -4,8 +4,8 @@
     <h2>Атлантида</h2>
 
     <div class="poem">
-        <p>Были они или не были.</p>
         <p>
+            Были они или не были.<br/>
             На острове — не на острове.<br/>
             Море или не море<br/>
             поглотило их либо нет.
@@ -54,9 +54,7 @@
     <div class="poem" lang="pl">
         <h3>Atlantyda</h3>
         <p>
-            Istnieli albo nie istnieli.
-        </p>
-        <p>
+            Istnieli albo nie istnieli.<br/>
             Na wyspie albo nie na wyspie.<br/>
             Ocean albo nie ocean<br/>
             połknął ich albo nie.

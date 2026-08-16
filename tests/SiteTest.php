@@ -585,26 +585,204 @@ class SiteTest extends TestCase
         }
 
         $supplementedPoems = [
-            'im-too-close' => ['Я слишком близко', 'Jestem za blisko'],
-            'station' => ['Вокзал', 'Dworzec'],
-            'terrorist-he-looks' => ['Террорист, он смотрит', 'Terrorysta, on patrzy'],
-            'in-honor-of-my-sister' => ['В честь моей сестры', 'Pochwała siostry'],
-            'soliloquy-for-cassandra' => ['Монолог для Кассандры', 'Monolog dla Kasandry'],
-            'impression-of-the-theater' => ['Впечатление от театра', 'Wrażenia z teatru'],
+            'im-too-close' => ['Я слишком близко', 'Jestem za blisko', '* * *'],
+            'station' => ['Вокзал', 'Dworzec', 'Вокзал'],
+            'terrorist-he-looks' => ['Террорист, он смотрит', 'Terrorysta, on patrzy', 'Террорист, он следит'],
+            'in-honor-of-my-sister' => ['В честь моей сестры', 'Pochwała siostry', 'Похвальное слово сестре'],
+            'soliloquy-for-cassandra' => ['Монолог для Кассандры', 'Monolog dla Kasandry', 'Монолог для Кассандры'],
+            'impression-of-the-theater' => ['Впечатление от театра', 'Wrażenia z teatru', 'Вызываемое театром'],
         ];
 
-        foreach ($supplementedPoems as $slug => [$title, $originalTitle]) {
+        foreach ($supplementedPoems as $slug => [$title, $originalTitle, $eppelTitle]) {
             $response = $this->get("/different/{$slug}")->assertOk();
             $content = $response->getContent();
 
             $response
                 ->assertSee("<h2>{$title}</h2>", false)
+                ->assertSee("<h3>{$eppelTitle}</h3>", false)
                 ->assertSeeInOrder([
                     '<div class="poem" lang="pl">',
                     "<h3>{$originalTitle}</h3>",
+                    "<h3>{$eppelTitle}</h3>",
                     'Перевод Асара Эппеля',
                 ], false);
             self::assertSame(1, substr_count($content, 'Перевод Асара Эппеля'), $slug);
+        }
+    }
+
+    public function testPiPreservesTheItalicDigitRunsFromTheSource(): void
+    {
+        $content = $this->get('/different/pi')->assertOk()->getContent();
+
+        $count = preg_match_all('/<em>([^<]+)<\/em>/', $content, $matches);
+
+        self::assertSame(26, $count);
+        self::assertSame([
+            'три',
+            'единица четыре единица',
+            'пять девять два',
+            'шесть пять три пять',
+            'восемь девять',
+            'семь девять',
+            'три два три восемь',
+            'четыре шесть',
+            'два шесть четыре три',
+            'два три пятнадцать триста девятнадцать',
+            'пять',
+            'восемь',
+            'семь',
+            'trzy',
+            'jeden cztery jeden',
+            'pięć dziewięć dwa',
+            'sześć pięć trzy pięć',
+            'osiem dziewięć',
+            'siedem dziewięć',
+            'trzy dwa trzy osiem',
+            'cztery sześć',
+            'dwa sześć cztery trzy',
+            'dwa trzy piętnaście trzysta dziewiętnaście',
+            'pięć',
+            'osiem',
+            'siedem',
+        ], $matches[1]);
+    }
+
+    public function testLessonPreservesTheItalicRunsFromTheSource(): void
+    {
+        $content = $this->get('/different/lesson')->assertOk()->getContent();
+        $expectedRuns = [
+            'кем чем',
+            'кого что',
+            'кому чему',
+            'кто что',
+            'кто что',
+            'кого чего',
+            'кого что',
+            'kim czym',
+            'kogo co',
+            'komu czemu',
+            'kto co',
+            'kto co',
+            'kogo czego',
+            'kogo co',
+        ];
+        $count = preg_match_all('/<em>([^<]+)<\/em>/', $content, $matches);
+
+        self::assertSame(count($expectedRuns), $count);
+        self::assertSame($expectedRuns, $matches[1]);
+    }
+
+    public function testAutotomyUsesSemanticDedications(): void
+    {
+        $content = $this->get('/different/autotomy')->assertOk()->getContent();
+        $count = preg_match_all(
+            '/<p class="poem-dedication">\s*([^<]+)\s*<\/p>/',
+            $content,
+            $matches,
+        );
+
+        self::assertSame(2, $count);
+        self::assertSame([
+            'Памяти Халины Посвятовской',
+            'pamięci Haliny Poświatowskiej',
+        ], array_map('trim', $matches[1]));
+        self::assertSame(0, substr_count($content, '<em>'));
+        self::assertSame(0, substr_count($content, 'poem-line-indent'));
+
+        foreach ([public_path('css/style.css'), public_path('css/print.css')] as $stylesheet) {
+            self::assertMatchesRegularExpression(
+                '/\.poem-dedication\s*\{(?![^}]*padding-left)(?=[^}]*font-style:\s*italic;)(?=[^}]*text-align:\s*right;)[^}]*\}/s',
+                file_get_contents($stylesheet),
+                $stylesheet,
+            );
+        }
+    }
+
+    public function testSourceStanzaBoundariesArePreservedInTheNewTranslations(): void
+    {
+        $expectations = [
+            'in-honor-of-my-sister' => [
+                'Pochwała siostry' => [
+                    'Moja siostra nie pisze wierszy',
+                    'W szufladach mojej siostry nie ma dawnych wierszy',
+                    'W wielu rodzinach nikt nie pisze wierszy,',
+                    'Moja siostra uprawia niezłą prozę mówioną,',
+                ],
+                'Похвальное слово сестре' => [
+                    'Моя сестра не пишет стихов',
+                    'Ни в шкафах моей сестры нету старых стихов,',
+                    'Во многих семьях никто не пишет стихов,',
+                    'Моя сестра практикует неплохую разговорную прозу,',
+                ],
+            ],
+            'terrorist-he-looks' => [
+                'Terrorysta, on patrzy' => [
+                    'Bomba wybuchnie w barze trzynasta dwadzieścia.',
+                    'Terrorysta już przeszedł na drugą stronę ulicy.',
+                    'Kobieta w żółtej kurtce, ona wchodzi.',
+                    'Trzynasta siedemnaście i czterdzieści sekund.',
+                    'Trzynasta dziewiętnaście.',
+                    'Jest trzynasta dwadzieścia.',
+                ],
+                'Террорист, он следит' => [
+                    'Бомба взорвется в баре в тринадцать двадцать.',
+                    'Террорист уже перешел на другую сторону улицы.',
+                    'Женщина в желтой куртке, она входит.',
+                    'Тринадцать семнадцать и сорок секунд.',
+                    'Тринадцать девятнадцать.',
+                    'Вот и тринадцать двадцать.',
+                ],
+            ],
+        ];
+
+        foreach ($expectations as $slug => $versions) {
+            $content = $this->get("/different/{$slug}")->assertOk()->getContent();
+
+            foreach ($versions as $heading => $expectedStarts) {
+                $pattern = '/<h3>' . preg_quote($heading, '/') . '<\/h3>(.*?)(?:<h3>|<p class="foot-note">|<\/div>)/s';
+                self::assertSame(1, preg_match($pattern, $content, $block), "{$slug}: {$heading}");
+                preg_match_all('/<p>\s*([^<]+)<br\/>/', $block[1], $starts);
+
+                self::assertSame($expectedStarts, array_map('trim', $starts[1]), "{$slug}: {$heading}");
+            }
+        }
+    }
+
+    public function testAuthorialLineIndentsArePreservedFromTheSource(): void
+    {
+        $expectations = [
+            'letters-of-the-dead' => [
+                ['poem-line-indent-3', 'неуклюже предусмотрительные.'],
+                ['poem-line-indent-5', 'с маслом,'],
+            ],
+            'under-one-small-star' => [
+                ['poem-line-indent-5', 'в секунду.'],
+                ['poem-line-indent-5', 'внимания.'],
+                ['poem-line-indent-5', 'и каждым.'],
+                ['poem-line-indent-5', 'na sekundę.'],
+                ['poem-line-indent-5', 'i każdą.'],
+            ],
+            'in-honor-of-my-sister' => [
+                ['poem-line-indent-5', 'стихов.'],
+                ['poem-line-indent-4', 'Мацедонского,'],
+            ],
+        ];
+
+        foreach ($expectations as $slug => $expectedIndents) {
+            $content = $this->get("/different/{$slug}")->assertOk()->getContent();
+            $count = preg_match_all(
+                '/<span class="poem-line-indent (poem-line-indent-\d+)">(.*?)<\/span>/s',
+                $content,
+                $matches,
+                PREG_SET_ORDER,
+            );
+            $actualIndents = array_map(
+                static fn (array $match): array => [$match[1], trim(strip_tags($match[2]))],
+                $matches,
+            );
+
+            self::assertSame(count($expectedIndents), $count, $slug);
+            self::assertSame($expectedIndents, $actualIndents, $slug);
         }
     }
 

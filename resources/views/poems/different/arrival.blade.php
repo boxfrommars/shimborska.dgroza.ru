@@ -14,7 +14,9 @@
             сердечных русел, лабиринтам жил,<br/>
             безукоризненной архитектуре ребер,<br/>
             перьям, достойным зала в музее всех ремесел,<br/>
-            и клюву монашьего терпенья.<br/>
+            и клюву монашьего терпенья.
+        </p>
+        <p>
             Не ламентация, а только огорченье,<br/>
             что ангел из чистейшего белка,<br/>
             воздушный змей о железах из песни песней,<br/>
@@ -40,7 +42,9 @@
             dorzecza serca, labiryntu jelit,<br/>
             nawy żeber i kręgów w świetnej amfiladzie,<br/>
             piór godnych pawilonu w muzeum wszechrzemiosł<br/>
-            i dzioba mniszej cierpliwości.<br/>
+            i dzioba mniszej cierpliwości.
+        </p>
+        <p>
             To nie jest lament, to tylko zgorszenie,<br/>
             że anioł z prawdziwego białka,<br/>
             latawiec o gruczołach z Pieśni nad pieśniami,<br/>

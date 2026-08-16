@@ -108,6 +108,11 @@ body > noscript {
 	margin: 0 0 3.5mm;
 }
 
+.poem-dedication {
+	font-style: italic;
+	text-align: right;
+}
+
 .page ul.classic,
 .page ol.classic {
 	margin: 0 0 5mm;

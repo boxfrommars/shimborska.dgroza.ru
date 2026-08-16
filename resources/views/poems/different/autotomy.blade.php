@@ -4,7 +4,7 @@
     <h2>Аутотомия</h2>
 
     <div class="poem">
-        <p>
+        <p class="poem-dedication">
             Памяти Халины Посвятовской
         </p>
         <p>
@@ -53,7 +53,7 @@
     </div>
     <div class="poem" lang="pl">
         <h3>Autotomia</h3>
-        <p>
+        <p class="poem-dedication">
             pamięci Haliny Poświatowskiej
         </p>
         <p>
