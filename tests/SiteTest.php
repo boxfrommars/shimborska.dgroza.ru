@@ -29,6 +29,37 @@ class SiteTest extends TestCase
             ->assertDontSee('jquery', false);
     }
 
+    public function testStaticPagesUseTheExpectedTypography(): void
+    {
+        $this->get('/')
+            ->assertOk()
+            ->assertSee('— лауреату Нобелевской премии', false)
+            ->assertDontSee('лауреауту')
+            ->assertSee('&copy;&nbsp;2009 Студия «Гриб-дождевик»', false);
+
+        $this->get('/project')
+            ->assertOk()
+            ->assertSee('в&nbsp;сети.</p>', false)
+            ->assertSeeInOrder([
+                'Иностранная литература 1997, №&nbsp;5',
+                'Иностранная литература 2000, №&nbsp;8',
+                'Иностранная литература 2003, №&nbsp;5',
+                'Иностранная литература 2006, №&nbsp;6',
+                'Иностранная литература 2009, №&nbsp;7',
+                'Новая Юность 1997, №&nbsp;5&ndash;6',
+                'Новая Польша 2002, №&nbsp;6',
+                'Новый Мир 1995, №&nbsp;3',
+                'Новый Мир 1997, №&nbsp;4',
+                'Ахматова Анна. Собрание сочинений. Т.&nbsp;8. Переводы',
+            ], false)
+            ->assertDontSee('№5', false)
+            ->assertDontSee('№8', false)
+            ->assertDontSee('№6', false)
+            ->assertDontSee('№7', false)
+            ->assertDontSee('№3', false)
+            ->assertDontSee('№4', false);
+    }
+
     public function testPrintStylesAreOnlyLoadedForPrintablePages(): void
     {
         $printVersion = filemtime(public_path('css/print.css'));

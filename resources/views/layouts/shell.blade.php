@@ -52,7 +52,7 @@
     <div id="royklogo" aria-hidden="true"></div>
 </div>
 <footer id="footer">
-    &copy; 2009 Студия «Гриб-дождевик»
+    &copy;&nbsp;2009 Студия «Гриб-дождевик»
 </footer>
 
 @yield('scripts')
