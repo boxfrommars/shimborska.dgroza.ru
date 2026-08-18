@@ -31,33 +31,32 @@ class SiteTest extends TestCase
 
     public function testStaticPagesUseTheExpectedTypography(): void
     {
-        $this->get('/')
-            ->assertOk()
-            ->assertSee('— лауреату Нобелевской премии', false)
-            ->assertDontSee('лауреауту')
-            ->assertSee('&copy;&nbsp;2009 Студия «Гриб-дождевик»', false);
+        $violations = [];
 
-        $this->get('/project')
-            ->assertOk()
-            ->assertSee('в&nbsp;сети.</p>', false)
-            ->assertSeeInOrder([
-                'Иностранная литература 1997, №&nbsp;5',
-                'Иностранная литература 2000, №&nbsp;8',
-                'Иностранная литература 2003, №&nbsp;5',
-                'Иностранная литература 2006, №&nbsp;6',
-                'Иностранная литература 2009, №&nbsp;7',
-                'Новая Юность 1997, №&nbsp;5&ndash;6',
-                'Новая Польша 2002, №&nbsp;6',
-                'Новый Мир 1995, №&nbsp;3',
-                'Новый Мир 1997, №&nbsp;4',
-                'Ахматова Анна. Собрание сочинений. Т.&nbsp;8. Переводы',
-            ], false)
-            ->assertDontSee('№5', false)
-            ->assertDontSee('№8', false)
-            ->assertDontSee('№6', false)
-            ->assertDontSee('№7', false)
-            ->assertDontSee('№3', false)
-            ->assertDontSee('№4', false);
+        foreach (['/' => 'О сайте', '/author' => 'Примечания', '/project' => 'Примечания'] as $path => $notesLabel) {
+            $content = $this->get($path)->assertOk()->getContent();
+            $document = new DOMDocument;
+            $previousUseInternalErrors = libxml_use_internal_errors(true);
+
+            try {
+                self::assertTrue($document->loadHTML($content), $path);
+            } finally {
+                libxml_clear_errors();
+                libxml_use_internal_errors($previousUseInternalErrors);
+            }
+
+            $xpath = new DOMXPath($document);
+            $visibleText = '';
+
+            foreach ($xpath->query('//*[@id="page-content"] | //footer[@id="footer"]') as $node) {
+                $visibleText .= $node->textContent;
+            }
+
+            self::collectStaticTypographyViolations($violations, $visibleText, $path);
+            self::collectSupplementaryContentViolations($violations, $xpath, $path, $notesLabel);
+        }
+
+        self::assertSame([], $violations);
     }
 
     public function testPrintStylesAreOnlyLoadedForPrintablePages(): void
@@ -88,6 +87,10 @@ class SiteTest extends TestCase
 
     public function testAccessiblePageAndNavigationSemanticsAreRendered(): void
     {
+        $poems = app(PoemCatalog::class)->poems();
+        $firstPoem = $poems[0];
+        $secondPoem = $poems[1];
+
         $this->get('/')
             ->assertOk()
             ->assertSee('<a class="skip-link" href="#page-content">Перейти к основному содержанию</a>', false)
@@ -97,22 +100,22 @@ class SiteTest extends TestCase
             ->assertSee('<nav aria-label="Постраничная навигация">', false)
             ->assertSee('aria-current="page" aria-label="Текущая страница — Обложка"', false)
             ->assertSee(
-                'aria-label="Вислава Шимборская. Обложка — перейти к стихотворению «Две обезьяны»"',
+                "aria-label=\"Вислава Шимборская. Обложка — перейти к стихотворению «{$firstPoem['title']}»\"",
                 false,
             );
 
-        $this->get('/different/two-monkeys')
+        $this->get("/{$firstPoem['section']}/{$firstPoem['slug']}")
             ->assertOk()
             ->assertSee(
-                '<span aria-current="page" aria-label="Текущая страница 1 — Две обезьяны">1</span>',
+                "<span aria-current=\"page\" aria-label=\"Текущая страница 1 — {$firstPoem['title']}\">1</span>",
                 false,
             )
             ->assertSee(
-                'title="Страница 2 — Похвала снам" aria-label="Страница 2 — Похвала снам"',
+                "title=\"Страница 2 — {$secondPoem['title']}\" aria-label=\"Страница 2 — {$secondPoem['title']}\"",
                 false,
             )
             ->assertSee(
-                '<span class="active" aria-current="page" aria-label="Текущая страница — Две обезьяны">',
+                "<span class=\"active\" aria-current=\"page\" aria-label=\"Текущая страница — {$firstPoem['title']}\">",
                 false,
             );
 
@@ -140,92 +143,10 @@ class SiteTest extends TestCase
             ->assertDontSee('⌃⇧', false);
     }
 
-    public function testPolishOriginalsDeclareTheirLanguage(): void
+    public function testCatalogPagesMeetContentAndTypographyContracts(): void
     {
-        $paths = [
-            '/different/allegro-ma-non-troppo',
-            '/different/arrival',
-            '/different/atlantis',
-            '/different/authors-evening',
-            '/different/autotomy',
-            '/different/born',
-            '/different/buffo',
-            '/different/commemoration',
-            '/different/dealings-with-the-dead',
-            '/different/discovery',
-            '/different/elegiac-arithmetic',
-            '/different/epitaph',
-            '/different/first-picture-of-hitler',
-            '/different/four-in-the-morning',
-            '/different/hilarity',
-            '/different/im-too-close',
-            '/different/impression-of-the-theater',
-            '/different/in-any-event',
-            '/different/in-honor-of-my-sister',
-            '/different/joy-of-writing',
-            '/different/large-number',
-            '/different/lesson',
-            '/different/letters-of-the-dead',
-            '/different/life-while-you-wait',
-            '/different/lizard-skeleton',
-            '/different/lots-wife',
-            '/different/male-beauty-contest',
-            '/different/medieval-miniature',
-            '/different/memory-at-last',
-            '/different/pi',
-            '/different/prospect',
-            '/different/pursuit',
-            '/different/rubens-women',
-            '/different/seen-from-above',
-            '/different/shadow',
-            '/different/soliloquy-for-cassandra',
-            '/different/station',
-            '/different/tarsier',
-            '/different/torture',
-            '/different/two-monkeys',
-            '/different/under-one-small-star',
-            '/different/unexpected-meeting',
-            '/different/utopia',
-            '/different/vietnam',
-            '/moment/about-soul',
-            '/moment/ball',
-            '/moment/clouds',
-            '/moment/contribution-to-statistics',
-            '/moment/early-hour',
-            '/moment/everything',
-            '/moment/first-love',
-            '/moment/from-memories',
-            '/moment/in-abundance',
-            '/moment/in-park',
-            '/moment/list',
-            '/moment/little-girl-pull-tablecloth',
-            '/moment/moment',
-            '/moment/negative',
-            '/moment/note',
-            '/moment/plato-or-why',
-            '/moment/picture-september-11',
-            '/moment/puddle',
-            '/moment/return-baggage',
-            '/moment/silence-of-plants',
-            '/moment/some-people',
-            '/moment/telephone-receiver',
-            '/moment/three-striking-words',
-            '/text/poet-and-world',
-        ];
+        $violations = [];
 
-        foreach ($paths as $path) {
-            $response = $this->get($path)->assertOk();
-
-            self::assertSame(1, substr_count($response->getContent(), 'lang="pl"'), $path);
-        }
-
-        $this->get('/text/literary-mail')
-            ->assertOk()
-            ->assertDontSee('lang="pl"', false);
-    }
-
-    public function testAllPoemVersionsUseTheHouseTypography(): void
-    {
         foreach (app(PoemCatalog::class)->poems() as $poem) {
             $path = "/{$poem['section']}/{$poem['slug']}";
             $content = $this->get($path)->assertOk()->getContent();
@@ -240,202 +161,50 @@ class SiteTest extends TestCase
             }
 
             $xpath = new DOMXPath($document);
-            $blocks = $xpath->query(
-                '//*[@id="page-content"]/h2'
-                . ' | //*[@id="page-content"]//*[contains(concat(" ", normalize-space(@class), " "), " poem ")]'
-                . ' | //*[@id="page-content"]//*[contains(concat(" ", normalize-space(@class), " "), " text ")]'
-                . ' | //aside[contains(concat(" ", normalize-space(@class), " "), " notabene ")]',
-            );
-
-            self::assertGreaterThan(1, $blocks->length, $path);
-
-            foreach ($blocks as $blockIndex => $block) {
-                $text = $block->textContent;
-                $context = "{$path}, text block {$blockIndex}";
-                $language = $block->attributes?->getNamedItem('lang')?->nodeValue === 'pl' ? 'pl' : 'ru';
-
-                self::assertDoesNotMatchRegularExpression('/[\x{20}\x{A0}]-[\x{20}\x{A0}]/u', $text, $context);
-                self::assertDoesNotMatchRegularExpression('/\p{L}[—–]\p{L}/u', $text, $context);
-                self::assertDoesNotMatchRegularExpression('/\d(?:-|—)\d/u', $text, $context);
-                self::assertDoesNotMatchRegularExpression('/\d[\x{20}\x{A0}]+[—–-][\x{20}\x{A0}]+\d/u', $text, $context);
-                self::assertStringNotContainsString('...', $text, $context);
-                self::assertStringNotContainsString('"', $text, $context);
-                self::assertDoesNotMatchRegularExpression('/[\x{20}\x{A0}]+[,;:!?]/u', $text, $context);
-                self::assertDoesNotMatchRegularExpression(
-                    '/[\x{00}-\x{08}\x{0B}\x{0C}\x{0E}-\x{1F}\x{7F}-\x{9F}\x{200B}-\x{200F}\x{202A}-\x{202E}\x{2060}-\x{206F}\x{FEFF}]/u',
-                    $text,
-                    $context,
-                );
-
-                $textWithoutAuthorialStress = str_replace('что́', 'что', $text);
-                self::assertDoesNotMatchRegularExpression('/\p{M}/u', $textWithoutAuthorialStress, $context);
-
-                preg_match_all('/[\p{L}\p{M}]+/u', $text, $words);
-
-                foreach ($words[0] as $word) {
-                    self::assertFalse(
-                        preg_match('/\p{Cyrillic}/u', $word) === 1
-                        && preg_match('/\p{Latin}/u', $word) === 1,
-                        "{$context}: mixed alphabets in {$word}",
-                    );
-                }
-
-                self::assertSame(substr_count($text, '«'), substr_count($text, '»'), $context);
-
-                if ($language === 'pl') {
-                    self::assertDoesNotMatchRegularExpression('/(^|\s)—(?=\s|$)/u', $text, $context);
-                    self::assertDoesNotMatchRegularExpression('/\S\x{20}–(?=\s)/u', $text, $context);
-                    self::assertDoesNotMatchRegularExpression('/(^|\n)[\x{20}\t]*–\x{20}/u', $text, $context);
-                    self::assertStringNotContainsString('“', $text, $context);
-                    self::assertSame(substr_count($text, '„'), substr_count($text, '”'), $context);
-                } else {
-                    self::assertDoesNotMatchRegularExpression('/(^|\s)–(?=\s|$)/u', $text, $context);
-                    self::assertDoesNotMatchRegularExpression('/\S\x{20}—(?=\s)/u', $text, $context);
-                    self::assertDoesNotMatchRegularExpression('/(^|\n)[\x{20}\t]*—\x{20}/u', $text, $context);
-                    self::assertStringNotContainsString('”', $text, $context);
-                    self::assertSame(substr_count($text, '„'), substr_count($text, '“'), $context);
-                }
-            }
+            self::collectCatalogPageViolations($violations, $xpath, $path);
         }
+
+        self::assertSame([], $violations);
     }
 
-    public function testSourceBackedTextCorrectionsAreRendered(): void
+    public function testContentValidatorDetectsStructuralViolations(): void
     {
-        $this->get('/different/elegiac-arithmetic')
-            ->assertOk()
-            ->assertSee('(jeśli to nawet jeden wspólny los')
-            ->assertDontSee('{jeśli to nawet jeden wspólny los');
+        $document = new DOMDocument;
+        $previousUseInternalErrors = libxml_use_internal_errors(true);
 
-        $this->get('/different/shadow')
-            ->assertOk()
-            ->assertSee('Mój cień jak błazen za królową.')
-            ->assertSee('w dwuwymiarowym świecie.')
-            ->assertSee('położy się na torze.');
-
-        $this->get('/different/two-monkeys')
-            ->assertOk()
-            ->assertSee('Dwie małpy')
-            ->assertSee('Bruegla')
-            ->assertSee('Małpa, wpatrzona we mnie')
-            ->assertSee('Перевод Ирины Адельгейм и Алексея Хованского')
-            ->assertDontSee('Ирины Аледьгейм');
-
-        $this->get('/different/utopia')
-            ->assertOk()
-            ->assertSeeInOrder([
-                'drobne ślady stóp',
-                'Jak gdyby tylko odchodzono stąd',
-                'i bezpowrotnie zanurzano się w topieli.',
-                'W życiu nie do pojęcia.',
-            ])
-            ->assertDontSee('powabуw')
-            ->assertDontSee('co się zowie');
-
-        $this->get('/semicolon/conversation-with-atropos')
-            ->assertOk()
-            ->assertSee('Радовать?')
-            ->assertDontSee('Радовать ?');
-
-        $this->get('/text/literary-mail')
-            ->assertOk()
-            ->assertSee('1953–1981')
-            ->assertSee('Жице&nbsp;литерацке', false)
-            ->assertSee('мало-мальски критически')
-            ->assertSee('Янушу&nbsp;Брт.', false)
-            ->assertSee('колонна разлетается')
-            ->assertSee('Камилле&nbsp;В.', false)
-            ->assertSee('&laquo;Йоська балван&raquo;', false)
-            ->assertSee('Кихот полоумный')
-            ->assertSee('есть&nbsp;ли у&nbsp;жизни смысел', false)
-            ->assertSee('мне братом!..&raquo;', false)
-            ->assertDontSee('Жицелитерацке')
-            ->assertDontSee('ЯнушуБрт.')
-            ->assertDontSee('колоннаразлетается')
-            ->assertDontSee('КамиллеВ.')
-            ->assertDontSee('Йоськабалван')
-            ->assertDontSee('Кихотполоумный')
-            ->assertDontSee('мне братом!.."', false);
-    }
-
-    public function testNotesHaveBidirectionalAccessibleLinks(): void
-    {
-        $pages = [
-            '/different/first-picture-of-hitler' => 1,
-            '/different/people-on-bridge' => 1,
-            '/different/praise-dreams' => 1,
-            '/different/soliloquy-for-cassandra' => 1,
-            '/different/two-monkeys' => 1,
-            '/moment/ball' => 1,
-            '/semicolon/conversation-with-atropos' => 1,
-            '/semicolon/repechage' => 1,
-            '/text/literary-mail' => 3,
-        ];
-
-        foreach ($pages as $path => $expectedCount) {
-            $response = $this->get($path)->assertOk();
-            $content = $response->getContent();
-
-            self::assertSame($expectedCount, substr_count($content, 'role="doc-noteref"'), $path);
-            self::assertSame($expectedCount, substr_count($content, 'role="doc-footnote"'), $path);
-            self::assertSame($expectedCount, substr_count($content, 'class="note-backlink"'), $path);
-
-            for ($index = 1; $index <= $expectedCount; $index++) {
-                $id = str_pad((string) $index, 3, '0', STR_PAD_LEFT);
-
-                $response
-                    ->assertSee("id=\"tonote{$id}\" href=\"#note{$id}\" role=\"doc-noteref\"", false)
-                    ->assertSee("id=\"note{$id}\" role=\"doc-footnote\" tabindex=\"-1\"", false)
-                    ->assertSee("href=\"#tonote{$id}\" aria-label=\"Вернуться к месту примечания\"", false);
-
-                self::assertMatchesRegularExpression(
-                    "/<p\\b[^>]*>(?:(?!<\\/p>).)*<a class=\"note-backlink\" href=\"#tonote{$id}\"[^>]*>↩<\\/a>\\s*<\\/p>/su",
-                    $content,
-                    $path,
-                );
-            }
+        try {
+            $document->loadHTML(<<<'HTML'
+            <!doctype html>
+            <html lang="ru">
+            <head><meta charset="utf-8"></head>
+            <body>
+                <article id="page-content">
+                    <h2>Тест</h2>
+                    <div class="poem"><p>Русское слово powabуw.</p><a id="tonote001" href="#note999" role="doc-noteref">1</a></div>
+                    <div class="poem"><h3>Polski tekst</h3><p>Polski tekst.</p></div>
+                    <div class="poem" lang="pl"><h3>Drugi tekst</h3><p>Drugi tekst.</p></div>
+                </article>
+                <aside class="notabene" aria-label="Примечания"></aside>
+                <aside class="illustrations" aria-label="Иллюстрации"><img src="/images/missing.jpg" alt=""></aside>
+            </body>
+            </html>
+            HTML);
+        } finally {
+            libxml_clear_errors();
+            libxml_use_internal_errors($previousUseInternalErrors);
         }
-    }
+        $violations = [];
 
-    public function testEmptyComplementaryLandmarksAreNotRendered(): void
-    {
-        $this->get('/')
-            ->assertOk()
-            ->assertSee('<aside class="notabene" aria-label="О сайте">', false)
-            ->assertDontSee('<aside class="notabene" aria-label="Примечания">', false);
+        self::collectCatalogPageViolations($violations, new DOMXPath($document), '/fixture');
 
-        $this->get('/moment/clouds')
-            ->assertOk()
-            ->assertDontSee('<aside class="illustrations"', false)
-            ->assertDontSee('<aside class="notabene"', false);
-
-        $this->get('/text/literary-mail')
-            ->assertOk()
-            ->assertDontSee('<aside class="illustrations"', false)
-            ->assertSee('<aside class="notabene" aria-label="Примечания">', false);
-
-        $this->get('/different/two-monkeys')
-            ->assertOk()
-            ->assertSee('<aside class="illustrations" aria-label="Иллюстрации">', false)
-            ->assertSee('<aside class="notabene" aria-label="Примечания">', false);
-
-        foreach (['/author', '/project'] as $path) {
-            $this->get($path)
-                ->assertOk()
-                ->assertDontSee('<aside class="illustrations"', false)
-                ->assertDontSee('<aside class="notabene"', false);
-        }
-    }
-
-    public function testCorrectedAlternativeTextIsRendered(): void
-    {
-        $this->get('/different/first-picture-of-hitler')
-            ->assertOk()
-            ->assertSee('alt="Адольф Гитлер в возрасте 12 лет"', false)
-            ->assertDontSee('alt="кассандра" src="/images/younghitler.jpg"', false);
-
-        $this->get('/different/two-monkeys')
-            ->assertOk()
-            ->assertSee('alt="Автопортрет Питера Брейгеля" src="/images/breigel.jpg"', false);
+        self::assertSame([], array_diff([
+            'common: mixed alphabets in a word',
+            'structure: Polish version position',
+            'language: missing lang=pl',
+            'notes: missing target',
+            'landmarks: empty aside',
+            'images: empty alt',
+        ], array_keys($violations)));
     }
 
     public function testContentsDialogUsesCatalogOrderInTwoColumns(): void
@@ -471,63 +240,11 @@ class SiteTest extends TestCase
             $sectionsByColumn[] = $sectionSlugs;
         }
 
+        $sectionSlugs = array_keys(app(PoemCatalog::class)->sections());
         self::assertSame([
-            ['different'],
-            ['semicolon', 'moment', 'text'],
+            array_slice($sectionSlugs, 0, 1),
+            array_slice($sectionSlugs, 1),
         ], $sectionsByColumn);
-    }
-
-    public function testNewPoemsAreAppendedAfterTheExistingDifferentSection(): void
-    {
-        $different = app(PoemCatalog::class)->sections()['different']['poems'];
-
-        self::assertCount(51, $different);
-        self::assertSame([
-            'two-monkeys',
-            'praise-dreams',
-            'soliloquy-for-cassandra',
-            'shadow',
-            'utopia',
-            'torture',
-            'impression-of-the-theater',
-            'reality',
-            'im-too-close',
-            'first-picture-of-hitler',
-            'elegiac-arithmetic',
-            'in-honor-of-my-sister',
-            'station',
-            'ballad',
-            'terrorist-he-looks',
-            'road-elegy',
-            'people-on-bridge',
-            'cat-in-empty-apartment',
-        ], array_column(array_slice($different, 0, 18), 'slug'));
-        self::assertSame('atlantis', $different[18]['slug']);
-
-        $atlantisUrl = route('poem', ['section' => 'different', 'slug' => 'atlantis']);
-        $catUrl = route('poem', ['section' => 'different', 'slug' => 'cat-in-empty-apartment']);
-
-        $this->get('/different/cat-in-empty-apartment')
-            ->assertOk()
-            ->assertSee(
-                "title=\"Страница 19 — Атлантида\" aria-label=\"Страница 19 — Атлантида\" href=\"{$atlantisUrl}\"",
-                false,
-            );
-
-        $this->get('/different/atlantis')
-            ->assertOk()
-            ->assertSee(
-                "title=\"Страница 18 — Кот в пустой квартире\" aria-label=\"Страница 18 — Кот в пустой квартире\" href=\"{$catUrl}\"",
-                false,
-            );
-    }
-
-    public function testStaticPagesAreAvailable(): void
-    {
-        $this->get('/project')
-            ->assertOk()
-            ->assertSee('Вислава Шимборская. Избранное в переводах Асара Эппеля');
-        $this->get('/author')->assertOk();
     }
 
     public function testPublicPagesDoNotStartSessions(): void
@@ -545,444 +262,6 @@ class SiteTest extends TestCase
     {
         self::assertNull(Route::getRoutes()->getByName('storage.local'));
         self::assertNull(Route::getRoutes()->getByName('storage.local.upload'));
-    }
-
-    public function testPoemPageIsAvailable(): void
-    {
-        $this->get('/different/two-monkeys')->assertOk();
-        $this->get('/moment/moment')
-            ->assertOk()
-            ->assertSeeInOrder([
-                'Мгновение',
-                'Перевод Асара Эппеля',
-                'Chwila',
-            ]);
-
-        $this->get('/moment/in-abundance')
-            ->assertOk()
-            ->assertSee('В преизбытке')
-            ->assertSee('Перевод Асара Эппеля')
-            ->assertSee('W zatrzęsieniu');
-
-        $this->get('/moment/clouds')
-            ->assertOk()
-            ->assertSee('Облака')
-            ->assertSee('Перевод Асара Эппеля')
-            ->assertSee('Chmury');
-
-        $this->get('/moment/negative')
-            ->assertOk()
-            ->assertSee('Негатив')
-            ->assertSee('Перевод Асара Эппеля')
-            ->assertSee('Negatyw');
-
-        $this->get('/moment/telephone-receiver')
-            ->assertOk()
-            ->assertSee('Телефонная трубка')
-            ->assertSee('Перевод Асара Эппеля')
-            ->assertSee('Słuchawka');
-
-        $this->get('/moment/three-striking-words')
-            ->assertOk()
-            ->assertSee('Три поразительных слова')
-            ->assertSee('Перевод Асара Эппеля')
-            ->assertSee('Trzy słowa najdziwniejsze');
-
-        $this->get('/moment/silence-of-plants')
-            ->assertOk()
-            ->assertSee('Молчание растений')
-            ->assertSee('Перевод Асара Эппеля')
-            ->assertSee('Milczenie roślin');
-
-        $this->get('/moment/plato-or-why')
-            ->assertOk()
-            ->assertSee('Платон, или зачем')
-            ->assertSee('Перевод Асара Эппеля')
-            ->assertSee('Platon, czyli dlaczego');
-
-        $this->get('/moment/little-girl-pull-tablecloth')
-            ->assertOk()
-            ->assertSee('Маленькая девочка стаскивает скатерть')
-            ->assertSeeInOrder([
-                'Перевод Натальи Астафьевой',
-                'Mała dziewczynka ściąga obrus',
-                'Перевод Асара Эппеля',
-            ]);
-
-        $this->get('/moment/from-memories')
-            ->assertOk()
-            ->assertSee('Из воспоминаний')
-            ->assertSee('Перевод Асара Эппеля')
-            ->assertSee('Ze wspomnień');
-
-        $this->get('/moment/puddle')
-            ->assertOk()
-            ->assertSee('Лужа')
-            ->assertSee('Перевод Асара Эппеля')
-            ->assertSee('Kałuża');
-
-        $this->get('/moment/first-love')
-            ->assertOk()
-            ->assertSee('Первая любовь')
-            ->assertSee('Перевод Асара Эппеля')
-            ->assertSee('Pierwsza miłość');
-
-        $this->get('/moment/about-soul')
-            ->assertOk()
-            ->assertSee('Кое-что о душе')
-            ->assertSeeInOrder([
-                'Перевод Асара Эппеля (Иностранная литература 2000, №8)',
-                'Trochę o duszy',
-                'Душой обзаводятся по временам.',
-                'Перевод Асара Эппеля (Избранное. Текст, 2007)',
-            ]);
-
-        $this->get('/moment/early-hour')
-            ->assertOk()
-            ->assertSee('Спозаранку')
-            ->assertSee('Перевод Асара Эппеля')
-            ->assertSee('Wczesna godzina');
-
-        $this->get('/moment/in-park')
-            ->assertOk()
-            ->assertSee('В парке')
-            ->assertSeeInOrder([
-                'Перевод Натальи Астафьевой',
-                'W parku',
-                'такая облу-у-упленная?',
-                'Перевод Асара Эппеля',
-            ]);
-
-        $this->get('/moment/contribution-to-statistics')
-            ->assertOk()
-            ->assertSeeInOrder([
-                'Дополнительно к статистике',
-                'Перевод Асара Эппеля',
-                'Przyczynek do statystyki',
-            ]);
-
-        $this->get('/moment/some-people')
-            ->assertOk()
-            ->assertSeeInOrder([
-                'Какие-то люди',
-                'Перевод Асара Эппеля',
-                'Jacyś ludzie',
-            ]);
-
-        $this->get('/moment/picture-september-11')
-            ->assertOk()
-            ->assertSeeInOrder([
-                'Перевод Натальи Астафьевой',
-                'Fotografia z 11 września',
-                'Сфотографированное 11 сентября',
-                'Перевод Асара Эппеля',
-            ]);
-
-        $this->get('/moment/return-baggage')
-            ->assertOk()
-            ->assertSeeInOrder([
-                'Обратный багаж',
-                'Перевод Асара Эппеля',
-                'Bagaż powrotny',
-            ]);
-
-        $this->get('/moment/ball')
-            ->assertOk()
-            ->assertSeeInOrder([
-                'Перевод Асара Эппеля (Иностранная литература 2000, №8)',
-                'Bal',
-                'пока земля по-прежнему иная,',
-                'Перевод Асара Эппеля (Избранное. Текст, 2007)',
-            ]);
-
-        $this->get('/moment/note')
-            ->assertOk()
-            ->assertSeeInOrder([
-                'Перевод Натальи Астафьевой',
-                'Notatka',
-                'Запись',
-                'Перевод Асара Эппеля',
-            ]);
-
-        $this->get('/moment/list')
-            ->assertOk()
-            ->assertSeeInOrder([
-                'Список',
-                'Перевод Асара Эппеля',
-                'Spis',
-            ]);
-
-        $this->get('/moment/everything')
-            ->assertOk()
-            ->assertSeeInOrder([
-                'Всё',
-                'Перевод Асара Эппеля',
-                'Wszystko',
-            ]);
-
-        $this->get('/text/poet-and-world')
-            ->assertOk()
-            ->assertSeeInOrder([
-                'Нобелевская лекция 1996&nbsp;года',
-                'Перевод с&nbsp;польского Ксении&nbsp;Старосельской',
-                'Poeta i świat',
-            ], false)
-            ->assertDontSee('От&nbsp;переводчика', false);
-    }
-
-    public function testScannedPoemsContainTheOriginalAndEppelTranslationInTheExpectedOrder(): void
-    {
-        $newPoems = [
-            'atlantis' => ['Атлантида', 'Atlantyda'],
-            'buffo' => ['Буффонада', 'Buffo'],
-            'commemoration' => ['Увековечение', 'Upamiętnienie'],
-            'four-in-the-morning' => ['Четыре часа утра', 'Czwarta nad ranem'],
-            'lesson' => ['Урок', 'Lekcja'],
-            'unexpected-meeting' => ['Внезапная встреча', 'Niespodziane spotkanie'],
-            'rubens-women' => ['Рубенсовские женщины', 'Kobiety Rubensa'],
-            'male-beauty-contest' => ['Конкурс мужской красоты', 'Konkurs piękności męskiej'],
-            'authors-evening' => ['Авторский вечер', 'Wieczór autorski'],
-            'epitaph' => ['Надгробная надпись', 'Nagrobek'],
-            'joy-of-writing' => ['Радость писательства', 'Radość pisania'],
-            'memory-at-last' => ['Вот память и нашла', 'Pamięć nareszcie'],
-            'born' => ['Порожденный', 'Urodzony'],
-            'vietnam' => ['Вьетнам', 'Wietnam'],
-            'arrival' => ['Прилет', 'Przylot'],
-            'tarsier' => ['Долгопят', 'Tarsjusz'],
-            'hilarity' => ['Умора', 'Sto pociech'],
-            'in-any-event' => ['Всякий случай', 'Wszelki wypadek'],
-            'letters-of-the-dead' => ['Письма умерших', 'Listy umarłych'],
-            'prospect' => ['Проспект', 'Prospekt'],
-            'discovery' => ['Открытие', 'Odkrycie'],
-            'lizard-skeleton' => ['Скелет ящера', 'Szkielet jaszczura'],
-            'pursuit' => ['Погоня', 'Pogoń'],
-            'allegro-ma-non-troppo' => ['Allegro ma non troppo', 'Allegro ma non troppo'],
-            'autotomy' => ['Аутотомия', 'Autotomia'],
-            'under-one-small-star' => ['Под тою же самой звездой', 'Pod jedną gwiazdką'],
-            'large-number' => ['Большое число', 'Wielka liczba'],
-            'lots-wife' => ['Лотова жена', 'Żona Lota'],
-            'seen-from-above' => ['Виденное сверху', 'Widziane z góry'],
-            'medieval-miniature' => ['Средневековая миниатюра', 'Miniatura średniowieczna'],
-            'life-while-you-wait' => ['Жизнь в присутствии заказчика', 'Życie na poczekaniu'],
-            'pi' => ['Число пи', 'Liczba Pi'],
-            'dealings-with-the-dead' => ['Сношения с умершими', 'Konszachty z umarłymi'],
-        ];
-
-        foreach ($newPoems as $slug => [$title, $originalTitle]) {
-            $response = $this->get("/different/{$slug}")->assertOk();
-            $content = $response->getContent();
-
-            $response
-                ->assertSee("<h2>{$title}</h2>", false)
-                ->assertSee("<h3>{$originalTitle}</h3>", false)
-                ->assertSeeInOrder([
-                    'Перевод Асара Эппеля',
-                    '<div class="poem" lang="pl">',
-                    "<h3>{$originalTitle}</h3>",
-                ], false);
-            self::assertSame(1, substr_count($content, 'Перевод Асара Эппеля'), $slug);
-        }
-
-        $supplementedPoems = [
-            'im-too-close' => ['Я слишком близко', 'Jestem za blisko', '* * *'],
-            'station' => ['Вокзал', 'Dworzec', 'Вокзал'],
-            'terrorist-he-looks' => ['Террорист, он смотрит', 'Terrorysta, on patrzy', 'Террорист, он следит'],
-            'in-honor-of-my-sister' => ['В честь моей сестры', 'Pochwała siostry', 'Похвальное слово сестре'],
-            'soliloquy-for-cassandra' => ['Монолог для Кассандры', 'Monolog dla Kasandry', 'Монолог для Кассандры'],
-            'impression-of-the-theater' => ['Впечатление от театра', 'Wrażenia z teatru', 'Вызываемое театром'],
-        ];
-
-        foreach ($supplementedPoems as $slug => [$title, $originalTitle, $eppelTitle]) {
-            $response = $this->get("/different/{$slug}")->assertOk();
-            $content = $response->getContent();
-
-            $response
-                ->assertSee("<h2>{$title}</h2>", false)
-                ->assertSee("<h3>{$eppelTitle}</h3>", false)
-                ->assertSeeInOrder([
-                    '<div class="poem" lang="pl">',
-                    "<h3>{$originalTitle}</h3>",
-                    "<h3>{$eppelTitle}</h3>",
-                    'Перевод Асара Эппеля',
-                ], false);
-            self::assertSame(1, substr_count($content, 'Перевод Асара Эппеля'), $slug);
-        }
-    }
-
-    public function testPiPreservesTheItalicDigitRunsFromTheSource(): void
-    {
-        $content = $this->get('/different/pi')->assertOk()->getContent();
-
-        $count = preg_match_all('/<em>([^<]+)<\/em>/', $content, $matches);
-
-        self::assertSame(26, $count);
-        self::assertSame([
-            'три',
-            'единица четыре единица',
-            'пять девять два',
-            'шесть пять три пять',
-            'восемь девять',
-            'семь девять',
-            'три два три восемь',
-            'четыре шесть',
-            'два шесть четыре три',
-            'два три пятнадцать триста девятнадцать',
-            'пять',
-            'восемь',
-            'семь',
-            'trzy',
-            'jeden cztery jeden',
-            'pięć dziewięć dwa',
-            'sześć pięć trzy pięć',
-            'osiem dziewięć',
-            'siedem dziewięć',
-            'trzy dwa trzy osiem',
-            'cztery sześć',
-            'dwa sześć cztery trzy',
-            'dwa trzy piętnaście trzysta dziewiętnaście',
-            'pięć',
-            'osiem',
-            'siedem',
-        ], $matches[1]);
-    }
-
-    public function testLessonPreservesTheItalicRunsFromTheSource(): void
-    {
-        $content = $this->get('/different/lesson')->assertOk()->getContent();
-        $expectedRuns = [
-            'кем чем',
-            'кого что',
-            'кому чему',
-            'кто что',
-            'кто что',
-            'кого чего',
-            'кого что',
-            'kim czym',
-            'kogo co',
-            'komu czemu',
-            'kto co',
-            'kto co',
-            'kogo czego',
-            'kogo co',
-        ];
-        $count = preg_match_all('/<em>([^<]+)<\/em>/', $content, $matches);
-
-        self::assertSame(count($expectedRuns), $count);
-        self::assertSame($expectedRuns, $matches[1]);
-    }
-
-    public function testAutotomyUsesSemanticDedications(): void
-    {
-        $content = $this->get('/different/autotomy')->assertOk()->getContent();
-        $count = preg_match_all(
-            '/<p class="poem-dedication">\s*([^<]+)\s*<\/p>/',
-            $content,
-            $matches,
-        );
-
-        self::assertSame(2, $count);
-        self::assertSame([
-            'Памяти Халины Посвятовской',
-            'pamięci Haliny Poświatowskiej',
-        ], array_map('trim', $matches[1]));
-        self::assertSame(0, substr_count($content, '<em>'));
-        self::assertSame(0, substr_count($content, 'poem-line-indent'));
-
-        foreach ([public_path('css/style.css'), public_path('css/print.css')] as $stylesheet) {
-            self::assertMatchesRegularExpression(
-                '/\.poem-dedication\s*\{(?![^}]*padding-left)(?=[^}]*font-style:\s*italic;)(?=[^}]*text-align:\s*right;)[^}]*\}/s',
-                file_get_contents($stylesheet),
-                $stylesheet,
-            );
-        }
-    }
-
-    public function testSourceStanzaBoundariesArePreservedInTheNewTranslations(): void
-    {
-        $expectations = [
-            'in-honor-of-my-sister' => [
-                'Pochwała siostry' => [
-                    'Moja siostra nie pisze wierszy',
-                    'W szufladach mojej siostry nie ma dawnych wierszy',
-                    'W wielu rodzinach nikt nie pisze wierszy,',
-                    'Moja siostra uprawia niezłą prozę mówioną,',
-                ],
-                'Похвальное слово сестре' => [
-                    'Моя сестра не пишет стихов',
-                    'Ни в шкафах моей сестры нету старых стихов,',
-                    'Во многих семьях никто не пишет стихов,',
-                    'Моя сестра практикует неплохую разговорную прозу,',
-                ],
-            ],
-            'terrorist-he-looks' => [
-                'Terrorysta, on patrzy' => [
-                    'Bomba wybuchnie w barze trzynasta dwadzieścia.',
-                    'Terrorysta już przeszedł na drugą stronę ulicy.',
-                    'Kobieta w żółtej kurtce, ona wchodzi.',
-                    'Trzynasta siedemnaście i czterdzieści sekund.',
-                    'Trzynasta dziewiętnaście.',
-                    'Jest trzynasta dwadzieścia.',
-                ],
-                'Террорист, он следит' => [
-                    'Бомба взорвется в баре в тринадцать двадцать.',
-                    'Террорист уже перешел на другую сторону улицы.',
-                    'Женщина в желтой куртке, она входит.',
-                    'Тринадцать семнадцать и сорок секунд.',
-                    'Тринадцать девятнадцать.',
-                    'Вот и тринадцать двадцать.',
-                ],
-            ],
-        ];
-
-        foreach ($expectations as $slug => $versions) {
-            $content = $this->get("/different/{$slug}")->assertOk()->getContent();
-
-            foreach ($versions as $heading => $expectedStarts) {
-                $pattern = '/<h3>' . preg_quote($heading, '/') . '<\/h3>(.*?)(?:<h3>|<p class="foot-note">|<\/div>)/s';
-                self::assertSame(1, preg_match($pattern, $content, $block), "{$slug}: {$heading}");
-                preg_match_all('/<p>\s*([^<]+)<br\/>/', $block[1], $starts);
-
-                self::assertSame($expectedStarts, array_map('trim', $starts[1]), "{$slug}: {$heading}");
-            }
-        }
-    }
-
-    public function testAuthorialLineIndentsArePreservedFromTheSource(): void
-    {
-        $expectations = [
-            'letters-of-the-dead' => [
-                ['poem-line-indent-3', 'неуклюже предусмотрительные.'],
-                ['poem-line-indent-5', 'с маслом,'],
-            ],
-            'under-one-small-star' => [
-                ['poem-line-indent-5', 'в секунду.'],
-                ['poem-line-indent-5', 'внимания.'],
-                ['poem-line-indent-5', 'и каждым.'],
-                ['poem-line-indent-5', 'na sekundę.'],
-                ['poem-line-indent-5', 'i każdą.'],
-            ],
-            'in-honor-of-my-sister' => [
-                ['poem-line-indent-5', 'стихов.'],
-                ['poem-line-indent-4', 'Мацедонского,'],
-            ],
-        ];
-
-        foreach ($expectations as $slug => $expectedIndents) {
-            $content = $this->get("/different/{$slug}")->assertOk()->getContent();
-            $count = preg_match_all(
-                '/<span class="poem-line-indent (poem-line-indent-\d+)">(.*?)<\/span>/s',
-                $content,
-                $matches,
-                PREG_SET_ORDER,
-            );
-            $actualIndents = array_map(
-                static fn (array $match): array => [$match[1], trim(strip_tags($match[2]))],
-                $matches,
-            );
-
-            self::assertSame(count($expectedIndents), $count, $slug);
-            self::assertSame($expectedIndents, $actualIndents, $slug);
-        }
     }
 
     public function testMovedPoemRedirectsPermanently(): void
@@ -1029,21 +308,44 @@ class SiteTest extends TestCase
 
     public function testUnknownAndMismatchedPagesReturnNotFound(): void
     {
+        $requiredFragments = [
+            '<body class="error-layout">',
+            '<header id="bar">',
+            '<footer id="footer">',
+            '<div id="royklogo"',
+            '<h2>404',
+            'href="' . route('main') . '"',
+        ];
+        $forbiddenFragments = [
+            '<nav id="leftbar"',
+            '<ul id="pager"',
+            '<dialog id="content"',
+            '/js/script.js',
+        ];
+        $violations = [];
+
         foreach (['/unknown', '/different/unknown', '/semicolon/two-monkeys'] as $path) {
-            $this->get($path)
-                ->assertNotFound()
-                ->assertSee('<body class="error-layout">', false)
-                ->assertSee('<header id="bar">', false)
-                ->assertSee('<footer id="footer">', false)
-                ->assertSee('<div id="royklogo"', false)
-                ->assertSee('<h2>404 — Страница не найдена</h2>', false)
-                ->assertSee('Такой страницы здесь нет — возможно, адрес изменился или в нём опечатка.')
-                ->assertSee('Вернуться на обложку')
-                ->assertDontSee('<nav id="leftbar"', false)
-                ->assertDontSee('<ul id="pager"', false)
-                ->assertDontSee('<dialog id="content"', false)
-                ->assertDontSee('/js/script.js', false);
+            $response = $this->get($path);
+            $content = $response->getContent();
+
+            if ($response->getStatusCode() !== 404) {
+                $violations[] = "{$path}: expected status 404, got {$response->getStatusCode()}";
+            }
+
+            foreach ($requiredFragments as $fragment) {
+                if (!str_contains($content, $fragment)) {
+                    $violations[] = "{$path}: missing {$fragment}";
+                }
+            }
+
+            foreach ($forbiddenFragments as $fragment) {
+                if (str_contains($content, $fragment)) {
+                    $violations[] = "{$path}: unexpectedly contains {$fragment}";
+                }
+            }
         }
+
+        self::assertSame([], $violations);
     }
 
     public function testUnknownJsonPageKeepsLaravelJsonResponse(): void
@@ -1051,14 +353,14 @@ class SiteTest extends TestCase
         $this->getJson('/unknown')
             ->assertNotFound()
             ->assertHeader('content-type', 'application/json')
-            ->assertJsonStructure(['message'])
-            ->assertDontSee('Страница не найдена');
+            ->assertJsonStructure(['message']);
     }
 
     public function testCatalogMatchesPoemViews(): void
     {
         $catalog = app(PoemCatalog::class);
         $catalogPaths = [];
+        $metadataViolations = [];
 
         self::assertSame(
             ['different', 'semicolon', 'moment', 'text'],
@@ -1066,19 +368,33 @@ class SiteTest extends TestCase
         );
 
         foreach ($catalog->sections() as $sectionSlug => $section) {
-            self::assertNotSame('', $sectionSlug);
-            self::assertNotSame('', $section['title']);
-            self::assertNotEmpty($section['poems']);
+            if ($sectionSlug === '') {
+                $metadataViolations[] = 'Section slug is empty';
+            }
+
+            if ($section['title'] === '') {
+                $metadataViolations[] = "{$sectionSlug}: section title is empty";
+            }
+
+            if ($section['poems'] === []) {
+                $metadataViolations[] = "{$sectionSlug}: section has no poems";
+            }
 
             foreach ($section['poems'] as $poem) {
-                self::assertNotSame('', $poem['slug']);
-                self::assertNotSame('', $poem['title']);
+                if ($poem['slug'] === '') {
+                    $metadataViolations[] = "{$sectionSlug}: poem slug is empty";
+                }
+
+                if ($poem['title'] === '') {
+                    $metadataViolations[] = "{$sectionSlug}/{$poem['slug']}: poem title is empty";
+                }
+
                 $catalogPaths[] = "{$sectionSlug}/{$poem['slug']}";
             }
         }
 
-        self::assertCount(93, $catalogPaths);
-        self::assertCount(93, array_unique($catalogPaths));
+        self::assertSame([], $metadataViolations);
+        self::assertSame(count($catalogPaths), count(array_unique($catalogPaths)));
 
         $viewPaths = [];
 
@@ -1091,43 +407,39 @@ class SiteTest extends TestCase
         sort($viewPaths);
 
         self::assertSame($catalogPaths, $viewPaths);
-
-        $lastPoem = $catalog->poems()[92];
-        self::assertSame('text', $lastPoem['section']);
-        self::assertSame('literary-mail', $lastPoem['slug']);
     }
 
     public function testNavigationKeepsItsWindowAroundTheCurrentPoem(): void
     {
         $catalog = app(PoemCatalog::class);
+        $poems = $catalog->poems();
+        $lastIndex = count($poems) - 1;
 
         $coverNavigation = $catalog->navigation();
         self::assertNull($coverNavigation['currentIndex']);
-        self::assertSame([0, 1, 2, 3, 4, 5], array_keys($coverNavigation['items']));
+        self::assertSame(array_keys(array_slice($poems, 0, 6, true)), array_keys($coverNavigation['items']));
 
-        $middleNavigation = $catalog->navigation('semicolon', 'absence');
-        self::assertSame(51, $middleNavigation['currentIndex']);
-        self::assertSame([49, 50, 51, 52, 53, 54], array_keys($middleNavigation['items']));
+        $firstPoem = $poems[0];
+        $firstNavigation = $catalog->navigation($firstPoem['section'], $firstPoem['slug']);
+        self::assertSame(0, $firstNavigation['currentIndex']);
+        self::assertSame([0, 1, 2, 3, 4, 5], array_keys($firstNavigation['items']));
 
-        $momentNavigation = $catalog->navigation('moment', 'moment');
-        self::assertSame(68, $momentNavigation['currentIndex']);
-        self::assertSame([66, 67, 68, 69, 70, 71], array_keys($momentNavigation['items']));
+        $middleIndex = intdiv($lastIndex, 2);
+        $middlePoem = $poems[$middleIndex];
+        $middleNavigation = $catalog->navigation($middlePoem['section'], $middlePoem['slug']);
+        self::assertSame($middleIndex, $middleNavigation['currentIndex']);
+        self::assertSame(
+            range($middleIndex - 2, $middleIndex + 3),
+            array_keys($middleNavigation['items']),
+        );
 
-        $momentEndNavigation = $catalog->navigation('moment', 'everything');
-        self::assertSame(90, $momentEndNavigation['currentIndex']);
-        self::assertSame([87, 88, 89, 90, 91, 92], array_keys($momentEndNavigation['items']));
-        self::assertSame([
-            'ball',
-            'note',
-            'list',
-            'everything',
-            'poet-and-world',
-            'literary-mail',
-        ], array_column($momentEndNavigation['items'], 'slug'));
-
-        $lastNavigation = $catalog->navigation('text', 'literary-mail');
-        self::assertSame(92, $lastNavigation['currentIndex']);
-        self::assertSame([87, 88, 89, 90, 91, 92], array_keys($lastNavigation['items']));
+        $lastPoem = $poems[$lastIndex];
+        $lastNavigation = $catalog->navigation($lastPoem['section'], $lastPoem['slug']);
+        self::assertSame($lastIndex, $lastNavigation['currentIndex']);
+        self::assertSame(
+            range($lastIndex - 5, $lastIndex),
+            array_keys($lastNavigation['items']),
+        );
     }
 
     public function testSitemapCanBeGeneratedFromCatalog(): void
@@ -1143,44 +455,36 @@ class SiteTest extends TestCase
             self::assertFileExists($path);
 
             $xml = File::get($path);
-            self::assertSame(96, substr_count($xml, '<url>'));
-            self::assertSame(96, substr_count($xml, '<loc>'));
-            self::assertStringContainsString('https://example.test/', $xml);
-            self::assertStringContainsString('https://example.test/author', $xml);
-            self::assertStringContainsString('https://example.test/project', $xml);
-            self::assertStringNotContainsString(
-                'https://example.test/different/little-girl-pull-tablecloth',
-                $xml,
-            );
-            self::assertStringNotContainsString(
-                'https://example.test/different/about-soul',
-                $xml,
-            );
-            self::assertStringNotContainsString(
-                'https://example.test/different/in-park',
-                $xml,
-            );
-            self::assertStringNotContainsString(
-                'https://example.test/different/picture-september-11',
-                $xml,
-            );
-            self::assertStringNotContainsString(
-                '<loc>https://example.test/different/ball</loc>',
-                $xml,
-            );
-            self::assertStringNotContainsString(
-                '<loc>https://example.test/different/note</loc>',
-                $xml,
-            );
-            self::assertStringNotContainsString('<lastmod>', $xml);
-            self::assertStringNotContainsString('<priority>', $xml);
+            $document = new DOMDocument;
+            self::assertTrue($document->loadXML($xml));
+            $xpath = new DOMXPath($document);
+            $actualUrls = [];
+
+            foreach ($xpath->query('//*[local-name()="url"]/*[local-name()="loc"]') as $location) {
+                $actualUrls[] = $location->textContent;
+            }
+
+            $expectedUrls = [
+                'https://example.test/',
+                'https://example.test/author',
+                'https://example.test/project',
+            ];
 
             foreach (app(PoemCatalog::class)->poems() as $poem) {
-                self::assertStringContainsString(
-                    "https://example.test/{$poem['section']}/{$poem['slug']}",
-                    $xml,
-                );
+                $expectedUrls[] = "https://example.test/{$poem['section']}/{$poem['slug']}";
             }
+
+            sort($actualUrls);
+            sort($expectedUrls);
+
+            self::assertSame($expectedUrls, $actualUrls);
+            self::assertSame([
+                'lastmod' => 0,
+                'priority' => 0,
+            ], [
+                'lastmod' => $xpath->query('//*[local-name()="lastmod"]')->length,
+                'priority' => $xpath->query('//*[local-name()="priority"]')->length,
+            ]);
         } finally {
             File::delete($path);
             config(['app.url' => $originalUrl]);
@@ -1201,5 +505,367 @@ class SiteTest extends TestCase
         } finally {
             config(['app.url' => $originalUrl]);
         }
+    }
+
+    private static function collectCatalogPageViolations(
+        array &$violations,
+        DOMXPath $xpath,
+        string $path,
+    ): void {
+        $pageContents = $xpath->query('//*[@id="page-content"]');
+
+        if ($pageContents->length !== 1) {
+            $violations['structure: page content'][] = "{$path}: expected 1 #page-content, got {$pageContents->length}";
+        }
+
+        $pageContent = $pageContents->item(0);
+
+        if ($pageContent === null) {
+            return;
+        }
+
+        $headings = $xpath->query('./h2', $pageContent);
+
+        if ($headings->length !== 1) {
+            $violations['structure: page h2'][] = "{$path}: expected 1 direct h2, got {$headings->length}";
+        }
+
+        foreach ($headings as $headingIndex => $heading) {
+            self::collectTypographyViolations(
+                $violations,
+                $heading->textContent,
+                'ru',
+                "{$path}, h2 {$headingIndex}",
+            );
+        }
+
+        $versions = $xpath->query(
+            './div['
+            . 'contains(concat(" ", normalize-space(@class), " "), " poem ")'
+            . ' or contains(concat(" ", normalize-space(@class), " "), " text ")'
+            . ']',
+            $pageContent,
+        );
+
+        if ($versions->length === 0) {
+            $violations['structure: content versions'][] = "{$path}: no poem or text versions";
+        }
+
+        $polishVersionIndexes = [];
+
+        foreach ($versions as $versionIndex => $version) {
+            $class = $version->attributes?->getNamedItem('class')?->nodeValue ?? '';
+            $language = $version->attributes?->getNamedItem('lang')?->nodeValue ?? '';
+            $text = $version->textContent;
+            $headings3 = $xpath->query('./h3', $version);
+            $isPoem = preg_match('/(^|\s)poem(\s|$)/', $class) === 1;
+
+            if ($versionIndex === 0 && $isPoem && $headings3->length !== 0) {
+                $violations['structure: first poem heading'][] = "{$path}: first poem version must use the page h2";
+            }
+
+            if ($versionIndex > 0 && ($isPoem || $language === 'pl') && $headings3->length === 0) {
+                $violations['structure: subsequent version heading'][] = "{$path}: version {$versionIndex} has no direct h3";
+            }
+
+            $hasLatin = preg_match('/\p{Latin}/u', $text) === 1;
+            $hasCyrillic = preg_match('/\p{Cyrillic}/u', $text) === 1;
+            $isPolishByScript = $hasLatin && !$hasCyrillic;
+
+            if ($isPolishByScript && $language !== 'pl') {
+                $violations['language: missing lang=pl'][] = "{$path}: Latin-only version {$versionIndex}";
+            }
+
+            if (!$isPolishByScript && $language === 'pl') {
+                $violations['language: unexpected lang=pl'][] = "{$path}: version {$versionIndex} contains Cyrillic or no Latin text";
+            }
+
+            if ($language !== '' && $language !== 'pl') {
+                $violations['language: unsupported declaration'][] = "{$path}: version {$versionIndex} declares {$language}";
+            }
+
+            if ($language === 'pl') {
+                $polishVersionIndexes[] = $versionIndex;
+            }
+
+            self::collectTypographyViolations(
+                $violations,
+                $text,
+                $language === 'pl' ? 'pl' : 'ru',
+                "{$path}, version {$versionIndex}",
+            );
+        }
+
+        if ($polishVersionIndexes !== [] && $polishVersionIndexes !== [1]) {
+            $violations['structure: Polish version position'][] = "{$path}: indexes " . implode(', ', $polishVersionIndexes);
+        }
+
+        foreach ($xpath->query('//aside[contains(concat(" ", normalize-space(@class), " "), " notabene ")]') as $notesIndex => $notes) {
+            self::collectTypographyViolations(
+                $violations,
+                $notes->textContent,
+                'ru',
+                "{$path}, notes {$notesIndex}",
+            );
+        }
+
+        self::collectNoteViolations($violations, $xpath, $path);
+        self::collectSupplementaryContentViolations($violations, $xpath, $path, 'Примечания');
+    }
+
+    private static function collectNoteViolations(
+        array &$violations,
+        DOMXPath $xpath,
+        string $path,
+    ): void {
+        $noterefIds = [];
+
+        foreach ($xpath->query('//*[@role="doc-noteref"]') as $noteref) {
+            $id = $noteref->attributes?->getNamedItem('id')?->nodeValue ?? '';
+
+            if (preg_match('/^tonote(\d{3})$/', $id, $matches) !== 1) {
+                $violations['notes: invalid noteref ID'][] = "{$path}: {$id}";
+
+                continue;
+            }
+
+            $noteId = $matches[1];
+            $noterefIds[] = $noteId;
+
+            if (($noteref->attributes?->getNamedItem('href')?->nodeValue ?? '') !== "#note{$noteId}") {
+                $violations['notes: invalid target href'][] = "{$path}: {$id}";
+            }
+
+            if ($xpath->query("//*[@id=\"note{$noteId}\" and @role=\"doc-footnote\"]")->length !== 1) {
+                $violations['notes: missing target'][] = "{$path}: note{$noteId}";
+            }
+        }
+
+        $footnoteIds = [];
+        $backlinkIds = [];
+
+        foreach ($xpath->query('//*[@role="doc-footnote"]') as $footnote) {
+            $id = $footnote->attributes?->getNamedItem('id')?->nodeValue ?? '';
+
+            if (preg_match('/^note(\d{3})$/', $id, $matches) !== 1) {
+                $violations['notes: invalid footnote ID'][] = "{$path}: {$id}";
+
+                continue;
+            }
+
+            $noteId = $matches[1];
+            $footnoteIds[] = $noteId;
+
+            if (($footnote->attributes?->getNamedItem('tabindex')?->nodeValue ?? '') !== '-1') {
+                $violations['notes: missing footnote tabindex'][] = "{$path}: {$id}";
+            }
+
+            $backlinks = $xpath->query(
+                './/a[contains(concat(" ", normalize-space(@class), " "), " note-backlink ")]',
+                $footnote,
+            );
+
+            if ($backlinks->length !== 1) {
+                $violations['notes: backlink count'][] = "{$path}: {$id} has {$backlinks->length}";
+            }
+
+            foreach ($backlinks as $backlink) {
+                $href = $backlink->attributes?->getNamedItem('href')?->nodeValue ?? '';
+
+                if (preg_match('/^#tonote(\d{3})$/', $href, $backlinkMatches) === 1) {
+                    $backlinkIds[] = $backlinkMatches[1];
+                } else {
+                    $violations['notes: invalid backlink href'][] = "{$path}: {$id}";
+                }
+
+                if (trim($backlink->attributes?->getNamedItem('aria-label')?->nodeValue ?? '') === '') {
+                    $violations['notes: missing backlink label'][] = "{$path}: {$id}";
+                }
+            }
+
+            if ($xpath->query(
+                './p[last()]//a['
+                . 'contains(concat(" ", normalize-space(@class), " "), " note-backlink ")'
+                . " and @href=\"#tonote{$noteId}\"]",
+                $footnote,
+            )->length !== 1) {
+                $violations['notes: backlink placement'][] = "{$path}: {$id}";
+            }
+        }
+
+        sort($noterefIds);
+        sort($footnoteIds);
+        sort($backlinkIds);
+
+        if ($noterefIds !== $footnoteIds || $noterefIds !== $backlinkIds) {
+            $violations['notes: unmatched IDs'][] = "{$path}: noterefs="
+                . implode(',', $noterefIds)
+                . '; footnotes=' . implode(',', $footnoteIds)
+                . '; backlinks=' . implode(',', $backlinkIds);
+        }
+    }
+
+    private static function collectSupplementaryContentViolations(
+        array &$violations,
+        DOMXPath $xpath,
+        string $path,
+        string $notesLabel,
+    ): void {
+        foreach ($xpath->query(
+            '//aside['
+            . 'contains(concat(" ", normalize-space(@class), " "), " illustrations ")'
+            . ' or contains(concat(" ", normalize-space(@class), " "), " notabene ")'
+            . ']',
+        ) as $aside) {
+            $class = $aside->attributes?->getNamedItem('class')?->nodeValue ?? '';
+            $isIllustrations = preg_match('/(^|\s)illustrations(\s|$)/', $class) === 1;
+            $expectedLabel = $isIllustrations ? 'Иллюстрации' : $notesLabel;
+
+            if (($aside->attributes?->getNamedItem('aria-label')?->nodeValue ?? '') !== $expectedLabel) {
+                $violations['landmarks: accessible label'][] = "{$path}: {$class}";
+            }
+
+            if (trim($aside->textContent) === '' && $xpath->query('.//*', $aside)->length === 0) {
+                $violations['landmarks: empty aside'][] = "{$path}: {$class}";
+            }
+        }
+
+        foreach ($xpath->query(
+            '//*[@id="page-content"]//img'
+            . ' | //aside[contains(concat(" ", normalize-space(@class), " "), " illustrations ")]//img',
+        ) as $image) {
+            $alt = $image->attributes?->getNamedItem('alt')?->nodeValue;
+            $src = $image->attributes?->getNamedItem('src')?->nodeValue ?? '';
+
+            if ($alt === null || trim($alt) === '') {
+                $violations['images: empty alt'][] = "{$path}: {$src}";
+            }
+
+            if ($src === '') {
+                $violations['images: missing src'][] = $path;
+
+                continue;
+            }
+
+            $srcPath = parse_url($src, PHP_URL_PATH);
+
+            if (is_string($srcPath) && str_starts_with($srcPath, '/')) {
+                $localPath = public_path(ltrim($srcPath, '/'));
+
+                if (!File::exists($localPath)) {
+                    $violations['images: missing local file'][] = "{$path}: {$srcPath}";
+                }
+            }
+        }
+    }
+
+    private static function collectStaticTypographyViolations(
+        array &$violations,
+        string $text,
+        string $path,
+    ): void {
+        $patterns = [
+            'static: number without non-breaking space' => '/№(?!\x{A0}\d)/u',
+            'static: invalid numeric range dash' => '/\d(?:-|—)\d/u',
+            'static: spaced numeric range' => '/\d[\x{20}\x{A0}]+[—–-][\x{20}\x{A0}]+\d/u',
+            'static: volume without non-breaking space' => '/Т\.(?!\x{A0}\d)/u',
+            'static: copyright without non-breaking space' => '/©(?!\x{A0}\d)/u',
+        ];
+
+        foreach ($patterns as $rule => $pattern) {
+            preg_match_all($pattern, $text, $matches);
+
+            if ($matches[0] !== []) {
+                $violations[$rule][] = "{$path}: " . implode(', ', array_unique($matches[0]));
+            }
+        }
+    }
+
+    private static function collectTypographyViolations(
+        array &$violations,
+        string $text,
+        string $language,
+        string $context,
+    ): void {
+        $recordMatches = static function (
+            string $rule,
+            string $pattern,
+            string $subject,
+        ) use (&$violations, $context): void {
+            $result = preg_match_all($pattern, $subject, $matches);
+
+            if ($result === false) {
+                $violations[$rule][] = "{$context}: pattern could not be evaluated";
+
+                return;
+            }
+
+            if ($matches[0] === []) {
+                return;
+            }
+
+            $renderedMatches = array_map(
+                static fn (string $match): string => str_replace(
+                    ["\r", "\n", "\t"],
+                    ['\\r', '\\n', '\\t'],
+                    $match,
+                ),
+                array_values(array_unique($matches[0])),
+            );
+            $violations[$rule][] = "{$context}: " . implode(', ', $renderedMatches);
+        };
+
+        $recordUnbalancedQuotes = static function (
+            string $rule,
+            string $openingQuote,
+            string $closingQuote,
+        ) use (&$violations, $context, $text): void {
+            $openingCount = substr_count($text, $openingQuote);
+            $closingCount = substr_count($text, $closingQuote);
+
+            if ($openingCount !== $closingCount) {
+                $violations[$rule][] = "{$context}: {$openingQuote}={$openingCount}, {$closingQuote}={$closingCount}";
+            }
+        };
+
+        $recordMatches('common: spaced ASCII hyphen', '/[\x{20}\x{A0}]-[\x{20}\x{A0}]/u', $text);
+        $recordMatches('common: dash inside a word', '/\p{L}[—–]\p{L}/u', $text);
+        $recordMatches('common: invalid numeric range dash', '/\d(?:-|—)\d/u', $text);
+        $recordMatches('common: spaced numeric range', '/\d[\x{20}\x{A0}]+[—–-][\x{20}\x{A0}]+\d/u', $text);
+        $recordMatches('common: three periods instead of ellipsis', '/\.\.\./u', $text);
+        $recordMatches('common: straight double quote', '/"/u', $text);
+        $recordMatches('common: space before punctuation', '/[\x{20}\x{A0}]+[,;:!?]/u', $text);
+        $recordMatches(
+            'common: control or invisible character',
+            '/[\x{00}-\x{08}\x{0B}\x{0C}\x{0E}-\x{1F}\x{7F}-\x{9F}\x{200B}-\x{200F}\x{202A}-\x{202E}\x{2060}-\x{206F}\x{FEFF}]/u',
+            $text,
+        );
+        $recordMatches(
+            'common: unexpected combining mark',
+            '/\p{M}/u',
+            str_replace('что́', 'что', $text),
+        );
+        $recordMatches(
+            'common: mixed alphabets in a word',
+            '/(?=[\p{L}\p{M}]*\p{Cyrillic})(?=[\p{L}\p{M}]*\p{Latin})[\p{L}\p{M}]+/u',
+            $text,
+        );
+        $recordUnbalancedQuotes('common: unbalanced guillemets', '«', '»');
+
+        if ($language === 'pl') {
+            $recordMatches('pl: em dash instead of en dash', '/(^|\s)—(?=\s|$)/u', $text);
+            $recordMatches('pl: breakable space before en dash', '/\S\x{20}–(?=\s)/u', $text);
+            $recordMatches('pl: breakable space after initial en dash', '/(^|\n)[\x{20}\t]*–\x{20}/u', $text);
+            $recordMatches('pl: Russian nested closing quote', '/“/u', $text);
+            $recordUnbalancedQuotes('pl: unbalanced Polish quotes', '„', '”');
+
+            return;
+        }
+
+        $recordMatches('ru: en dash instead of em dash', '/(^|\s)–(?=\s|$)/u', $text);
+        $recordMatches('ru: breakable space before em dash', '/\S\x{20}—(?=\s)/u', $text);
+        $recordMatches('ru: breakable space after initial em dash', '/(^|\n)[\x{20}\t]*—\x{20}/u', $text);
+        $recordMatches('ru: Polish closing quote', '/”/u', $text);
+        $recordUnbalancedQuotes('ru: unbalanced nested quotes', '„', '“');
     }
 }

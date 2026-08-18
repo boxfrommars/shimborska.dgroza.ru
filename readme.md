@@ -71,7 +71,10 @@ Sitemap является генерируемым файлом и не вход�
    распознавания создать локальный журнал `sources/PROGRESS.md`.
 3. Добавить запись в `resources/data/poems.php` и соответствующий Blade-шаблон
    `resources/views/poems/{section}/{slug}.blade.php`.
-4. Обновить затронутые ожидания в `tests/SiteTest.php`.
+4. Добавлять ожидания в `tests/SiteTest.php` только при изменении программного
+   контракта. Каталогизированные страницы, их структура, язык и типографика
+   входят в общие проверки автоматически; точный текст повторять в тестах не
+   нужно.
 5. Выполнить `docker compose run --rm app composer check` и
    `docker compose run --rm app composer sitemap`.
 
