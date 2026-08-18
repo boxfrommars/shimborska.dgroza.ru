@@ -1,6 +1,8 @@
 /vendor
 /.idea
-/sources/
+/sources/*
+!/sources/README.md
+!/sources/POEMS.md
 Homestead.json
 Homestead.yaml
 .env
