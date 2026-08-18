@@ -9,69 +9,69 @@
         </p>
         <p>
             таких, кто знает всё лучше всех<br/>
-            — пятьдесят два;
+            —&nbsp;пятьдесят два;
         </p>
         <p>
             неуверенных в каждом шаге<br/>
-            — почти все остальные;
+            —&nbsp;почти все остальные;
         </p>
         <p>
             готовых помочь,<br/>
             если на это не уйдет много времени<br/>
-            — целых сорок девять;
+            —&nbsp;целых сорок девять;
         </p>
         <p>
             всегда хороших,<br/>
             потому что не могут иначе<br/>
-            — четверо, ну пятеро;
+            —&nbsp;четверо, ну пятеро;
         </p>
         <p>
             склонных восхититься не завидуя<br/>
-            — восемнадцать;
+            —&nbsp;восемнадцать;
         </p>
         <p>
             живущих во всегдашней опаске<br/>
             перед кем-то или чем-то<br/>
-            — семьдесят семь;
+            —&nbsp;семьдесят семь;
         </p>
         <p>
             умеющих быть счастливыми<br/>
-            — самое большее двадцать с лишним;
+            —&nbsp;самое большее двадцать с лишним;
         </p>
         <p>
             нестрашных поодиночке,<br/>
             но звереющих в толпе<br/>
-            — уж точно больше половины;
+            —&nbsp;уж точно больше половины;
         </p>
         <p>
             жестоких,<br/>
             если вынудят обстоятельства<br/>
-            — даже приблизительно<br/>
+            —&nbsp;даже приблизительно<br/>
             лучше не знать;
         </p>
         <p>
             крепких задним умом<br/>
-            — не намного больше,<br/>
+            —&nbsp;не намного больше,<br/>
             чем тем же умом некрепких;
         </p>
         <p>
             берущих от жизни только вещи и ничего кроме<br/>
-            — сорок,<br/>
+            —&nbsp;сорок,<br/>
             хотя хотелось бы ошибиться;
         </p>
         <p>
             съежившихся, удрученных<br/>
             и впотьмах без фонарика<br/>
-            — восемьдесят и трое<br/>
+            —&nbsp;восемьдесят и трое<br/>
             прежде и впредь;
         </p>
         <p>
             заслуживающих сочувствия<br/>
-            — девяносто девять;
+            —&nbsp;девяносто девять;
         </p>
         <p>
             смертных<br/>
-            — сто на сто.<br/>
+            —&nbsp;сто на сто.<br/>
             Показатель, как прежде, тот же.
         </p>
         <p class="foot-note">
@@ -87,69 +87,69 @@
         </p>
         <p>
             wiedzących wszystko lepiej<br/>
-            — pięćdziesięciu dwóch;
+            –&nbsp;pięćdziesięciu dwóch;
         </p>
         <p>
             niepewnych każdego kroku<br/>
-            — prawie cała reszta;
+            –&nbsp;prawie cała reszta;
         </p>
         <p>
             gotowych pomóc,<br/>
             o ile nie potrwa to długo<br/>
-            — aż czterdziestu dziewięciu;
+            –&nbsp;aż czterdziestu dziewięciu;
         </p>
         <p>
             dobrych zawsze,<br/>
             bo nie potrafią inaczej<br/>
-            — czterech, no może pięciu;
+            –&nbsp;czterech, no może pięciu;
         </p>
         <p>
             skłonnych do podziwu bez zawiści<br/>
-            — osiemnastu;
+            –&nbsp;osiemnastu;
         </p>
         <p>
             żyjących w stałej trwodze<br/>
             przed kimś albo czymś<br/>
-            — siedemdziesięciu siedmiu,
+            –&nbsp;siedemdziesięciu siedmiu,
         </p>
         <p>
             uzdolnionych do szczęścia<br/>
-            — dwudziestu kilku najwyżej;
+            –&nbsp;dwudziestu kilku najwyżej;
         </p>
         <p>
             niegroźnych pojedynczo,<br/>
             dziczejących w tłumie<br/>
-            — ponad połowa na pewno,
+            –&nbsp;ponad połowa na pewno,
         </p>
         <p>
             okrutnych, kiedy<br/>
             zmuszą ich okoliczności<br/>
-            — tego lepiej nie wiedzieć<br/>
+            –&nbsp;tego lepiej nie wiedzieć<br/>
             nawet w przybliżeniu;
         </p>
         <p>
             mądrych po szkodzie<br/>
-            — nie wielu więcej<br/>
+            –&nbsp;nie wielu więcej<br/>
             niż mądrych przed szkodą,
         </p>
         <p>
             niczego nie biorących z życia oprócz rzeczy<br/>
-            — czterdziestu,<br/>
+            –&nbsp;czterdziestu,<br/>
             chociaż chciałabym się mylić,
         </p>
         <p>
             skulonych, obolałych<br/>
             i bez latarki w ciemności<br/>
-            — osiemdziesięciu trzech<br/>
+            –&nbsp;osiemdziesięciu trzech<br/>
             prędzej czy później;
         </p>
         <p>
             godnych współczucia<br/>
-            — dziewięćdziesięciu dziewięciu;
+            –&nbsp;dziewięćdziesięciu dziewięciu;
         </p>
         <p>
             śmiertelnych<br/>
-            — stu na stu.<br/>
+            –&nbsp;stu na stu.<br/>
             Liczba, która jak dotąd nie ulega zmianie.
         </p>
     </div>

@@ -22,8 +22,8 @@
         </p>
         <p>
             Всем не по себе в четыре утра.<br/>
-            Если муравьям по себе в четыре утра —<br/>
-            поздравимте их. И — да наступит пять,<br/>
+            Если муравьям по себе в четыре утра&nbsp;—<br/>
+            поздравимте их. И&nbsp;— да наступит пять,<br/>
             ежели дальше решаем жить.
         </p>
         <p class="foot-note">Перевод Асара Эппеля</p>
@@ -49,7 +49,7 @@
         <p>
             Nikomu nie jest dobrze o czwartej nad ranem.<br/>
             Jeśli mrówkom jest dobrze o czwartej nad ranem<br/>
-            — pogratulujmy mrówkom. I niech przyjdzie piąta<br/>
+            –&nbsp;pogratulujmy mrówkom. I niech przyjdzie piąta<br/>
             o ile mamy dłużej żyć.
         </p>
     </div>

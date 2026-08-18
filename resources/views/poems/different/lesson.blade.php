@@ -33,7 +33,7 @@
             Nie przyszło to do głowy <em>komu czemu</em> nikomu.
         </p>
         <p>
-            Było stu filozofów — żaden nie rozplątał.<br/>
+            Było stu filozofów&nbsp;– żaden nie rozplątał.<br/>
             Nic dziwnego, że teraz kryją się po kątach.<br/>
             Żołdactwo ich za brody łapie,<br/>
             za roztrzęsione, siwe, capie,<br/>

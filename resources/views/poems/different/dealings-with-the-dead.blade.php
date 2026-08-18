@@ -24,9 +24,9 @@
             Помнят ли своих убийц?
         </p>
         <p>
-            Что у них в руках — опиши предметы?<br/>
+            Что у них в руках&nbsp;— опиши предметы?<br/>
             Истлевшие? Заржавевшие? Сгнившие? Обгоревшие?<br/>
-            Глаза их? — устрашают? вопрошают? И что?<br/>
+            Глаза их?&nbsp;— устрашают? вопрошают? И что?<br/>
             О чем беседуете? О погоде только?<br/>
             О птичках? мотыльках? цветочках?
         </p>
@@ -61,9 +61,9 @@
             Czy pamiętają ciągle, kto ich zabił?
         </p>
         <p>
-            Co mają w rękach — opisz te przedmioty.<br/>
+            Co mają w rękach&nbsp;– opisz te przedmioty.<br/>
             Zbutwiałe? Zardzewiałe? Zwęglone? Spróchniałe?<br/>
-            Co mają w oczach — groźbę? prośbę? Jaką?<br/>
+            Co mają w oczach&nbsp;– groźbę? prośbę? Jaką?<br/>
             Czy tylko o pogodzie z sobą rozmawiacie?<br/>
             O ptaszkach? Kwiatkach? Motylkach?
         </p>

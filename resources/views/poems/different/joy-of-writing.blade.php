@@ -11,7 +11,7 @@
             Зачем насторожилась? Неужто слышит что-то,<br/>
             на занятых у правды стройных ножках<br/>
             прядая ухом под моей рукой?<br/>
-            Тишь — это слово тоже на бумаге<br/>
+            Тишь&nbsp;— это слово тоже на бумаге<br/>
             шуршит,<br/>
             раздвинув ветви слова «лес».
         </p>
@@ -33,7 +33,7 @@
             мгновенье длится, сколько пожелаю,<br/>
             деля себя на маленькие вечности<br/>
             приостановленных в полете пуль.<br/>
-            Велю — и впредь ничто не совершится.<br/>
+            Велю&nbsp;— и впредь ничто не совершится.<br/>
             Лист сам собой и тот не упадет.<br/>
             Травинка точкою копытца не примнется.
         </p>
@@ -59,7 +59,7 @@
             Dlaczego łeb podnosi, czy coś słyszy?<br/>
             Na pożyczonych z prawdy czterech nóżkach wsparta<br/>
             spod moich palców uchem strzyże.<br/>
-            Cisza — ten wyraz też szeleści po papierze<br/>
+            Cisza&nbsp;– ten wyraz też szeleści po papierze<br/>
             i rozgarnia<br/>
             spowodowane słowem «las» gałęzie.
         </p>

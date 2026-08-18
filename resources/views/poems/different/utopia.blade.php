@@ -13,7 +13,7 @@
         </p>
         <p>
             И поразительно прямое Древо Понимания <br/>
-            над источником, что зовется — Ах, Вот Оно Как. <br/>
+            над источником, что зовется&nbsp;— Ах, Вот Оно Как. <br/>
             Чем дальше в лес, тем лучше видна <br/>
             Долина Очевидного. <br/>
             Стоит только возникнуть сомнению, <br/>
@@ -56,54 +56,58 @@
     <div class="poem" lang="pl">
         <h3>Utopia</h3>
         <p>
-            Wyspa, na ktorej wszystko sie wyjasnia.
+            Wyspa, na której wszystko się wyjaśnia.
         </p>
         <p>
-            Tu mozna stanac na gruncie dowodow.
+            Tu można stanąć na gruncie dowodów.
         </p>
         <p>
-            Nie ma drog innych oprocz drogi dojscia.
+            Nie ma dróg innych oprócz drogi dojścia.
         </p>
         <p>
-            Krzaki az uginaja sie od odpowiedzi.
+            Krzaki aż uginają się od odpowiedzi.
         </p>
         <p>
-            Rosnie tu drzewo Slusznego Domyslu <br/>
-            o rozwiklanych odwiecznie galeziach.
+            Rośnie tu drzewo Słusznego Domysłu <br/>
+            o rozwikłanych odwiecznie gałęziach.
         </p>
         <p>
-            Olsniewajaco proste drzewo Zrozumienia <br/>
-            przy zrodle, co sie zowie Ach Wiec To Tak.
+            Olśniewająco proste drzewo Zrozumienia <br/>
+            przy źródle, co się zwie Ach Więc To Tak.
         </p>
         <p>
-            Im dalej w las, tym szerzej sie otwiera <br/>
-            Dolina Oczywistosci.
+            Im dalej w las, tym szerzej się otwiera <br/>
+            Dolina Oczywistości.
         </p>
         <p>
-            Jesli jakies zwatpienie, to wiatr je rozwiewa.
+            Jeśli jakieś zwątpienie, to wiatr je rozwiewa.
         </p>
         <p>
-            Echo bez wywolania glos zabiera <br/>
-            i wyjasnia ochoczo tajemnice swiatow.
+            Echo bez wywołania głos zabiera <br/>
+            i wyjaśnia ochoczo tajemnice światów.
         </p>
         <p>
-            W prawo jaskinia, w ktorej lezy sens.
+            W prawo jaskinia, w której leży sens.
         </p>
         <p>
-            W lewo jezioro Glebokiego Przekonania. <br/>
-            Z dna odrywa sie prawda i lekko na wierzch wyplywa.
+            W lewo jezioro Głębokiego Przekonania. <br/>
+            Z dna odrywa się prawda i lekko na wierzch wypływa.
         </p>
         <p>
-            Goruje nad dolina Pewnosc Niewzruszona. <br/>
-            Ze szczytu jej roztacza sie Istota Rzeczy.
+            Góruje nad doliną Pewność Niewzruszona. <br/>
+            Ze szczytu jej roztacza się Istota Rzeczy.
         </p>
         <p>
-            Mimo powabуw wyspa jest bezludna, <br/>
-            a widoczne po brzegach slady stop <br/>
-            bez wyjatku zwrocone sa w kierunku morza.
+            Mimo powabów wyspa jest bezludna, <br/>
+            a widoczne po brzegach drobne ślady stóp <br/>
+            bez wyjątku zwrócone są w kierunku morza.
         </p>
         <p>
-            W zyciu nie do pojecia.
+            Jak gdyby tylko odchodzono stąd <br/>
+            i bezpowrotnie zanurzano się w topieli.
+        </p>
+        <p>
+            W życiu nie do pojęcia.
         </p>
     </div>
     <div class="poem">
@@ -126,7 +130,7 @@
         </p>
         <p>
             Прямолинейнейшее древо Пониманья <br/>
-            возле источника Ах — Значит — Это — Так.
+            возле источника Ах&nbsp;— Значит&nbsp;— Это&nbsp;— Так.
         </p>
         <p>
             Чем дальше в лес, тем шире открывается <br/>
@@ -200,14 +204,14 @@
             последние тайны вселенной.
         </p>
         <p>
-            Справа — пещера Смысла,
+            Справа&nbsp;— пещера Смысла,
         </p>
         <p>
-            слева — озеро Глубокой Уверенности, <br/>
+            слева&nbsp;— озеро Глубокой Уверенности, <br/>
             пронизанное светом Истины.
         </p>
         <p>
-            Впереди — высится гора Неколебимой Веры, <br/>
+            Впереди&nbsp;— высится гора Неколебимой Веры, <br/>
             с которой открывается Суть Вещей.
         </p>
         <p>
@@ -246,14 +250,14 @@
         </p>
         <p>
             Стрелой взмывает древо Понимания <br/>
-            У родника — зовется он Ах Вот Как.
+            У родника&nbsp;— зовется он Ах Вот Как.
         </p>
         <p>
             Чем дальше в лес, тем шире перед вами <br/>
             Долина Ясности.
         </p>
         <p>
-            Чуть где сомненье — враз развеет ветер.
+            Чуть где сомненье&nbsp;— враз развеет ветер.
         </p>
         <p>
             Эхо никогда не просит слова, <br/>
@@ -263,7 +267,7 @@
             Скрытый смысл найдешь в пещере справа. <br/>
         </p>
         <p>
-            Слева — озеро Глубоких Убеждений. <br/>
+            Слева&nbsp;— озеро Глубоких Убеждений. <br/>
             С дна его легко всплывает правда.
         </p>
         <p>
@@ -276,7 +280,7 @@
             все без исключенья прочь стремятся.
         </p>
         <p>
-            Жизнь — выше пониманья.
+            Жизнь&nbsp;— выше пониманья.
         </p>
         <p class="foot-note">
             Перевод Марины Курганской
@@ -298,7 +302,7 @@
         </p>
         <p>
             И удивительно прямое древо Понимания <br/>
-            Над источником, зовущимся Ах — вот — как...
+            Над источником, зовущимся Ах&nbsp;— вот&nbsp;— как…
         </p>
         <p>
             Чем дальше в лес, тем шире открывается <br/>
@@ -312,10 +316,10 @@
             И охотно толкует тайны мироздания.
         </p>
         <p>
-            Направо — пещера, в ней содержится смысл.
+            Направо&nbsp;— пещера, в ней содержится смысл.
         </p>
         <p>
-            Налево — озеро Глубокой Убежденности. <br/>
+            Налево&nbsp;— озеро Глубокой Убежденности. <br/>
             Со дна поднимается истина и всплывает легко на поверхность.
         </p>
         <p>

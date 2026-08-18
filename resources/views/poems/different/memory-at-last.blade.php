@@ -17,10 +17,10 @@
             по скольким снам они скитались, в скольких толпах<br/>
             вытаскивала их из-под колес,<br/>
             в скольких агониях со скольких срывались моих рук.<br/>
-            Отрезанные — отрастали криво.<br/>
+            Отрезанные&nbsp;— отрастали криво.<br/>
             Нелепость вынуждала их рядиться.<br/>
-            Пусть вне меня их не снедало это —<br/>
-            что из того? — когда во мне снедало.<br/>
+            Пусть вне меня их не снедало это&nbsp;—<br/>
+            что из того?&nbsp;— когда во мне снедало.<br/>
             Приснившаяся чернь слыхала крик мой «мама»,<br/>
             чему-то, что пищало, скача на ветке.<br/>
             Еще смеялись, что отец был с бантом.<br/>
@@ -59,7 +59,7 @@
             w ilu snach się tułali, w ilu zbiegowiskach<br/>
             spod kół ich wyciągałam,<br/>
             w ilu agoniach przez ile mi lecieli rąk.<br/>
-            Odcięci — odrastali krzywo.<br/>
+            Odcięci&nbsp;– odrastali krzywo.<br/>
             Niedorzeczność zmuszała ich do maskarady.<br/>
             Cóż stąd, że to nie mogło ich poza mną boleć,<br/>
             jeśli bolało ich we mnie.<br/>

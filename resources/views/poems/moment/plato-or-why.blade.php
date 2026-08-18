@@ -10,7 +10,7 @@
             Идеальное Бытие перестало быть самодостаточно.
         </p>
         <p>
-            А ведь из мрака вызволенное, из света вызванное —<br/>
+            А ведь из мрака вызволенное, из света вызванное&nbsp;—<br/>
             могло без конца длиться и длиться<br/>
             в надмирных дремлющих своих садах.
         </p>
@@ -30,7 +30,7 @@
             расходившимися водами?<br/>
             Красота<br/>
             с неприятными внутри кишками<br/>
-            и Добро —<br/>
+            и Добро&nbsp;—<br/>
             почему с тенью,<br/>
             если прежде ее не наблюдалось?
         </p>
@@ -81,7 +81,7 @@
             Piękno<br/>
             z niepoważnymi w środku jelitami<br/>
             i Dobro<br/>
-            — po co z cieniem,<br/>
+            –&nbsp;po co z cieniem,<br/>
             jeśli go wcześniej nie miało?
         </p>
         <p>
@@ -94,7 +94,7 @@
         <p>
             W dodatku ci okropni poeci, Platonie,<br/>
             roznoszone podmuchem wióry spod posągów,<br/>
-            odpadki wielkiej na wyżynach Ciszy...
+            odpadki wielkiej na wyżynach Ciszy…
         </p>
     </div>
 @endsection

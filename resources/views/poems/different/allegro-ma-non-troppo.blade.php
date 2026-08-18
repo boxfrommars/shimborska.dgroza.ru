@@ -5,7 +5,7 @@
 
     <div class="poem">
         <p>
-            Дивна ты — твержу я жизни, —<br/>
+            Дивна ты&nbsp;— твержу я жизни,&nbsp;—<br/>
             невозможно быть чрезмерней,<br/>
             лягушачей, соловьиней,<br/>
             муравьиней и семянней.
@@ -25,11 +25,11 @@
         <p>
             Что за божья та коровка,<br/>
             как лесна та земляника.<br/>
-            Не родись я — просто б сроду<br/>
+            Не родись я&nbsp;— просто б сроду<br/>
             не поверила в природу!
         </p>
         <p>
-            Не найду — твержу я жизни, —<br/>
+            Не найду&nbsp;— твержу я жизни,&nbsp;—<br/>
             с чем сравнить тебя возможно.<br/>
             Ведь никто не создал шишки<br/>
             ни получше, ни похуже.
@@ -37,7 +37,7 @@
         <p>
             Славлю я искусность, щедрость,<br/>
             безупречность и безбрежность<br/>
-            и к тому же, сверх того же —<br/>
+            и к тому же, сверх того же&nbsp;—<br/>
             ведовство и чародейство.
         </p>
         <p>
@@ -47,17 +47,17 @@
             подлетаю к ней с улыбкой.
         </p>
         <p>
-            Трону жизнь за край листочка —<br/>
+            Трону жизнь за край листочка&nbsp;—<br/>
             обернулась? услыхала?<br/>
             Неужели позабыла<br/>
-            хоть на миг — куда спешила?
+            хоть на миг&nbsp;— куда спешила?
         </p>
         <p class="foot-note">Перевод Асара Эппеля</p>
     </div>
     <div class="poem" lang="pl">
         <h3>Allegro ma non troppo</h3>
         <p>
-            Jesteś piękne — mówię życiu —<br/>
+            Jesteś piękne&nbsp;– mówię życiu&nbsp;–<br/>
             bujniej już nie można było,<br/>
             bardziej żabio i słowiczo,<br/>
             bardziej mrówczo i nasiennie.
@@ -76,12 +76,12 @@
         </p>
         <p>
             Jaki polny jest ten konik,<br/>
-            jaka leśna ta jagoda —<br/>
+            jaka leśna ta jagoda&nbsp;–<br/>
             nigdy bym nie uwierzyła,<br/>
             gdybym się nie urodziła!
         </p>
         <p>
-            Nie znajduję — mówię życiu —<br/>
+            Nie znajduję&nbsp;– mówię życiu&nbsp;–<br/>
             z czym mogłabym cię porównać.<br/>
             Nikt nie zrobił drugiej szyszki<br/>
             ani lepszej, ani gorszej.
@@ -89,7 +89,7 @@
         <p>
             Chwalę hojność, pomysłowość,<br/>
             zamaszystość i dokładność,<br/>
-            i co jeszcze — i co dalej —<br/>
+            i co jeszcze&nbsp;– i co dalej&nbsp;–<br/>
             czarodziejstwo, czarnoksięstwo.
         </p>
         <p>
@@ -102,7 +102,7 @@
             Szarpię życie za brzeg listka:<br/>
             przystanęło? dosłyszało?<br/>
             Czy na chwilę, choć raz jeden,<br/>
-            dokąd idzie — zapomniało?
+            dokąd idzie&nbsp;– zapomniało?
         </p>
     </div>
 @endsection

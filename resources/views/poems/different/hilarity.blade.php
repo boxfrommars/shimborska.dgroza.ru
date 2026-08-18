@@ -19,10 +19,10 @@
             не настолько смешной, чтобы смешить пустоту,<br/>
             глазами только видит,<br/>
             ушами только слышит,<br/>
-            рекорд его речи — сослагательное наклонение,<br/>
+            рекорд его речи&nbsp;— сослагательное наклонение,<br/>
             разумом травит разум,<br/>
-            в общем — почти никто;<br/>
-            а в голове — свобода, познанье и бытие<br/>
+            в общем&nbsp;— почти никто;<br/>
+            а в голове&nbsp;— свобода, познанье и бытие<br/>
             вне неразумной плоти.<br/>
             Ишь ведь!
         </p>
@@ -42,7 +42,7 @@
             на мимолетность галактики малой!<br/>
             Хоть бы наконец приближенно узнать,<br/>
             чем же он станет, если уж он есть.<br/>
-            А он — завзятый.<br/>
+            А он&nbsp;— завзятый.<br/>
             Завзятый, надо сказать, и очень.<br/>
             С кольцом в носу, в тоге, в свитере.<br/>
             Умора, что ни говори.<br/>
@@ -80,9 +80,9 @@
             naprawdę się wydarzył<br/>
             pod jedną z gwiazd prowincjonalnych.<br/>
             Na swój sposób żywotny i wcale ruchliwy,<br/>
-            Jak na marnego wyrodka kryształu —<br/>
+            Jak na marnego wyrodka kryształu&nbsp;–<br/>
             dość poważnie zdziwiony.<br/>
-            Jak na trudne dzieciństwo w koniecznościach stada —<br/>
+            Jak na trudne dzieciństwo w koniecznościach stada&nbsp;–<br/>
             nieźle już poszczególny.<br/>
             Patrzcie go!
         </p>
@@ -91,7 +91,7 @@
             bodaj przez mgnienie galaktyki małej!<br/>
             Niechby się wreszcie z grubsza okazało,<br/>
             czym będzie, skoro jest.<br/>
-            A jest — zawzięty.<br/>
+            A jest&nbsp;– zawzięty.<br/>
             Zawzięty, trzeba przyznać, bardzo.<br/>
             Z tym kółkiem w nosie, w tej todze, w tym swetrze.<br/>
             Sto pociech, bądź co bądź.<br/>

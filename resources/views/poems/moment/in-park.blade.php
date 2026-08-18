@@ -5,13 +5,13 @@
 
     <div class="poem">
         <p>
-            — Ой-ёй — удивляется мальчик —<br/>
+            —&nbsp;Ой-ёй&nbsp;— удивляется мальчик&nbsp;—<br/>
             а кто эта пани?<br/>
-            — Это памятник Милосердья или чего-то такого — отвечает мама.<br/>
-            — А почему эта пани так по… о… б… бита?
+            —&nbsp;Это памятник Милосердья или чего-то такого&nbsp;— отвечает мама.<br/>
+            —&nbsp;А почему эта пани так по… о… б… бита?
         </p>
         <p>
-            — Не знаю, сколько помню,<br/>
+            —&nbsp;Не знаю, сколько помню,<br/>
             всегда была в таком виде.<br/>
             Город должен что-то с этим сделать.<br/>
             Или ее обновить или выбросить вовсе.<br/>
@@ -24,20 +24,20 @@
         <h3>W parku</h3>
 
         <p>
-            — Ojej — dziwi się chłopczyk —<br/>
+            –&nbsp;Ojej&nbsp;– dziwi się chłopczyk&nbsp;–<br/>
             a kto to ta pani?
         </p>
         <p>
-            — To pomnik Miłosierdzia,<br/>
-            czy czegoś takiego —<br/>
+            –&nbsp;To pomnik Miłosierdzia,<br/>
+            czy czegoś takiego&nbsp;–<br/>
             odpowiada mama.
         </p>
         <p>
-            — A dlaczego ta pani<br/>
-            taka po...o...o... poobijana?
+            –&nbsp;A dlaczego ta pani<br/>
+            taka po…o…o… poobijana?
         </p>
         <p>
-            — Nie wiem, odkąd pamiętam<br/>
+            –&nbsp;Nie wiem, odkąd pamiętam<br/>
             zawsze taka była.<br/>
             Miasto powinno coś z tym w końcu zrobić.<br/>
             Albo wyrzucić gdzieś, albo odnowić.<br/>
@@ -49,20 +49,20 @@
         <h3>В парке</h3>
 
         <p>
-            — Ой, — удивляется мальчик —<br/>
+            —&nbsp;Ой,&nbsp;— удивляется мальчик&nbsp;—<br/>
             а кто вон та тетя?
         </p>
         <p>
-            — Статуя Милосердия<br/>
-            или что-то вроде —<br/>
+            —&nbsp;Статуя Милосердия<br/>
+            или что-то вроде&nbsp;—<br/>
             отвечает мама.
         </p>
         <p>
-            — А почему она<br/>
+            —&nbsp;А почему она<br/>
             такая облу-у-упленная?
         </p>
         <p>
-            — Не знаю. Сколько помню<br/>
+            —&nbsp;Не знаю. Сколько помню<br/>
             всегда так было.<br/>
             Городские власти должны наконец что-то придумать.<br/>
             Или ее убрать, или хотя бы покрасить.<br/>

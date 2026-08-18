@@ -17,7 +17,7 @@
             Кристина положила ладонь<br/>
             на руку Збышека.<br/>
             А я подумала: позвоню тебе,<br/>
-            пока — скажу — не приезжай,<br/>
+            пока&nbsp;— скажу&nbsp;— не приезжай,<br/>
             на ближайшие дни обещали дождь.
         </p>
         <p>
@@ -45,7 +45,7 @@
             Krystyna odruchowo położyła dłoń<br/>
             na dłoni Zbyszka.<br/>
             Ja pomyślałam: zadzwonię do ciebie,<br/>
-            jeszcze na razie — powiem — nie przyjeżdżaj,<br/>
+            jeszcze na razie&nbsp;– powiem&nbsp;– nie przyjeżdżaj,<br/>
             zapowiadają właśnie kilkudniowe deszcze.
         </p>
         <p>

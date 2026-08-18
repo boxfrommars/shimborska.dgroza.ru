@@ -5,7 +5,7 @@
 
     <div class="poem">
         <p>
-            Всё —<br/>
+            Всё&nbsp;—<br/>
             слово бессовестное и надменное.<br/>
             Вполне заслуживающее кавычек.<br/>
             Представляясь, что целиком охватывает,<br/>
@@ -22,7 +22,7 @@
         <h3>Wszystko</h3>
 
         <p>
-            Wszystko —<br/>
+            Wszystko&nbsp;–<br/>
             słowo bezczelne i nadęte pychą.<br/>
             Powinno być pisane w cudzysłowie.<br/>
             Udaje, że niczego nie pomija,<br/>

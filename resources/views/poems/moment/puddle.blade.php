@@ -21,7 +21,7 @@
         <p>
             Потом лужа высохнет,<br/>
             сомкнется надо мной,<br/>
-            а я навсегда канувшая — куда? —<br/>
+            а я навсегда канувшая&nbsp;— куда?&nbsp;—<br/>
             с не долетающим наружу криком.
         </p>
         <p>
@@ -56,7 +56,7 @@
         <p>
             Potem kałuża wyschnie,<br/>
             zamknie się nade mną,<br/>
-            a ja na zawsze zatrzaśnięta — gdzie —<br/>
+            a ja na zawsze zatrzaśnięta&nbsp;– gdzie&nbsp;–<br/>
             z niedoniesionym na powierzchnię krzykiem.
         </p>
         <p>

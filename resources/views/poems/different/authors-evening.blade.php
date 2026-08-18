@@ -10,7 +10,7 @@
             Двенадцать человек уже имеют быть,<br/>
             давно пора и вечер бы открыть.<br/>
             Пришли не все, поскольку дождь,<br/>
-            прочие — родственники. Муза.
+            прочие&nbsp;— родственники. Муза.
         </p>
         <p>
             Готовы женщины в осенний этот вечер<br/>
@@ -22,7 +22,7 @@
             Не быть боксером, быть поэтом,<br/>
             приговоренным на пожизненные строки,<br/>
             за неимением мускулатуры демонстрировать<br/>
-            грядущее школьное чтение — удачу редких из нас —<br/>
+            грядущее школьное чтение&nbsp;— удачу редких из нас&nbsp;—<br/>
             о Муза. О Пегас,<br/>
             ангел конноспортивный.
         </p>
@@ -55,7 +55,7 @@
             Nie być bokserem, być poetą,<br/>
             mieć wyrok skazujący na ciężkie norwidy,<br/>
             z braku muskulatury demonstrować światu<br/>
-            przyszłą lekturę szkolną — w najszczęśliwszym razie —<br/>
+            przyszłą lekturę szkolną&nbsp;– w najszczęśliwszym razie&nbsp;–<br/>
             o Muzo. O Pegazie,<br/>
             aniele koński.
         </p>

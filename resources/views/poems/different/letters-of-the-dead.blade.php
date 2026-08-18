@@ -6,7 +6,7 @@
     <div class="poem">
         <p>
             Читаем письма умерших, как бессильные боги,<br/>
-            и все-таки — боги, ибо знаем позднейшие даты.<br/>
+            и все-таки&nbsp;— боги, ибо знаем позднейшие даты.<br/>
             Знаем, какие долги не вернулись к заимодавцам<br/>
             и за кого поспешно повыходили вдовы.<br/>
             Бедные умершие, слепые умершие,<br/>
@@ -20,7 +20,7 @@
             Их скверный вкус, Бонапарт, пар, электричество,<br/>
             убийственные курации излечимых болезней,<br/>
             неумный апокалипсис по апостолу Иоанну,<br/>
-            фальшивый рай на земле по епистолам Жан-Жака...<br/>
+            фальшивый рай на земле по епистолам Жан-Жака…<br/>
             Мы озираем в молчанье их пешки на шахматном поле,<br/>
             разве что продвинутые на какие-нибудь три клетки.<br/>
             Все, что ими предсказано, произошло иначе,<br/>
@@ -46,7 +46,7 @@
             Ich zły gust, Napoleon, para i elektryczność,<br/>
             ich zabójcze kuracje na uleczalne choroby,<br/>
             niemądra apokalipsa według świętego Jana,<br/>
-            fałszywy raj na ziemi według Jana Jakuba...<br/>
+            fałszywy raj na ziemi według Jana Jakuba…<br/>
             Obserwujemy w milczeniu ich pionki na szachownicy,<br/>
             tyle że przesunięte o trzy pola dalej.<br/>
             Wszystko, co przewidzieli, wypadło zupełnie inaczej,<br/>

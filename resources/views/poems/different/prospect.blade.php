@@ -5,12 +5,12 @@
 
     <div class="poem">
         <p>
-            Я — успокоительная таблетка.<br/>
+            Я&nbsp;— успокоительная таблетка.<br/>
             Воздействую дома,<br/>
             помогаю на службе,<br/>
             сижу перед экзаменатором,<br/>
             стою перед судьей,<br/>
-            склеиваю разбитые плошки —<br/>
+            склеиваю разбитые плошки&nbsp;—<br/>
             только прими меня,<br/>
             раствори под языком,<br/>
             только проглоти,<br/>
@@ -24,7 +24,7 @@
             подобрать к лицу траурную шляпу.
         </p>
         <p>
-            Чего же ты медлишь —<br/>
+            Чего же ты медлишь&nbsp;—<br/>
             доверься химическому милосердию.
         </p>
         <p>
@@ -34,7 +34,7 @@
             что жизнь следует прожить отважно?
         </p>
         <p>
-            Вручи мне свою бездну —<br/>
+            Вручи мне свою бездну&nbsp;—<br/>
             я вымощу ее сном,<br/>
             будешь мне благодарен (благодарна)<br/>
             за четыре лапы падения.
@@ -56,7 +56,7 @@
             skutkuję w urzędzie,<br/>
             siadam do egzaminu,<br/>
             staję na rozprawie,<br/>
-            starannie sklejam rozbite garnuszki —<br/>
+            starannie sklejam rozbite garnuszki&nbsp;–<br/>
             tylko mnie zażyj,<br/>
             rozpuść pod językiem,<br/>
             tylko mnie połknij,<br/>
@@ -70,7 +70,7 @@
             dobrać do twarzy kapelusz żałobny.
         </p>
         <p>
-            Na co czekasz —<br/>
+            Na co czekasz&nbsp;–<br/>
             zaufaj chemicznej litości.
         </p>
         <p>
@@ -80,7 +80,7 @@
             że życie ma być odważnie przeżyte?
         </p>
         <p>
-            Oddaj mi swą przepaść —<br/>
+            Oddaj mi swą przepaść&nbsp;–<br/>
             wymoszczę ją snem,<br/>
             będziesz mi wdzięczny (wdzięczna)<br/>
             za cztery łapy spadania.

@@ -24,8 +24,8 @@
             и музыка шарманки во дворе, <br/>
             счастливая планета в розовой бумажке, <br/>
             а перед родами пророческий сон матери: <br/>
-            голубя во сне видеть — радостная новость, <br/>
-            поймать его же — прибудет гость долгожданный. <br/>
+            голубя во сне видеть&nbsp;— радостная новость, <br/>
+            поймать его же&nbsp;— прибудет гость долгожданный. <br/>
             Тук-тук, кто там, стучится будущий Адольфик.
         </p>
         <p>
@@ -38,7 +38,7 @@
         </p>
         <p>
             Ателье Клингер, Грабенштрассе, <a class="tonote" id="tonote001" href="#note001" role="doc-noteref">Браунау,</a><br/>
-            а Браунау — город маленький, но достойный, <br/>
+            а Браунау&nbsp;— город маленький, но достойный, <br/>
             почтенные соседи, солидные фирмы, <br/>
             дух дрожжевого теста и простого мыла. <br/>
             Не слышно ни воя собак, ни шагов судьбы. <br/>
@@ -71,8 +71,8 @@
             muzyka katarynki na podwórku,<br/>
             pomyślna wróżba w bibułce różowej,<br/>
             tuż przed porodem proroczy sen matki:<br/>
-            gołąbka we śnie widzieć - radosna nowina,<br/>
-            tegoż schwytać - przybędzie gość długo czekany.<br/>
+            gołąbka we śnie widzieć&nbsp;– radosna nowina,<br/>
+            tegoż schwytać&nbsp;– przybędzie gość długo czekany.<br/>
             Puk puk, kto tam, to stuka serduszko Adolfka.
         </p>
         <p>
@@ -97,7 +97,7 @@
 
 @section('notes')
     <div class="note" id="note001" role="doc-footnote" tabindex="-1">
-        <p>Браунау-на-Инне — город в&nbsp;Австрии, в&nbsp;федеральной земле Верхняя Австрия, в&nbsp;Браунау 20&nbsp;апреля&nbsp;1889
+        <p>Браунау-на-Инне&nbsp;— город в&nbsp;Австрии, в&nbsp;федеральной земле Верхняя Австрия, в&nbsp;Браунау 20&nbsp;апреля&nbsp;1889
             года родился Адольф Гитлер <a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a></p>
     </div>
 @endsection

@@ -5,10 +5,10 @@
 
     <div class="poem">
         <p>
-            Тень моя — шут при королеве. <br/>
+            Тень моя&nbsp;— шут при королеве. <br/>
             Привстанет королева с кресел, <br/>
-            а шут в дурацком перепеве — <br/>
-            скок! — в потолок башкою треснет.
+            а шут в дурацком перепеве&nbsp;— <br/>
+            скок!&nbsp;— в потолок башкою треснет.
         </p>
         <p>
             И мучится, быть может, болью <br/>
@@ -19,12 +19,12 @@
         <p>
             Она склонится из бойницы, <br/>
             а шут и спрыгнет с вышины. <br/>
-            Всем ухитрились поделиться — <br/>
+            Всем ухитрились поделиться&nbsp;— <br/>
             вот только доли не равны.
         </p>
         <p>
             Дурак присвоил жестов живость, <br/>
-            бесстыдство пафоса и лживость — <br/>
+            бесстыдство пафоса и лживость&nbsp;— <br/>
             все то, на что меня не стать: <br/>
             порфиру, скипетр и фальшивость.
         </p>
@@ -36,53 +36,53 @@
         </p>
         <p>
             Король, счастливых вам дорог, <br/>
-            не я — мой шут на рельсы лег.
+            не я&nbsp;— мой шут на рельсы лег.
         </p>
         <p class="foot-note">
             Перевод Асара Эппеля
         </p>
     </div>
     <div class="poem" lang="pl">
-        <h3>Cien</h3>
+        <h3>Cień</h3>
         <p>
-            Moj cien jak blazen za krolowej. <br/>
-            Kiedy krolowa z krzesla wstanie, <br/>
-            blazen nastroszy sie na scianie <br/>
-            i stuknie w sufit glupia glowa.
+            Mój cień jak błazen za królową. <br/>
+            Kiedy królowa z krzesła wstanie, <br/>
+            błazen nastroszy się na ścianie <br/>
+            i stuknie w sufit głupią głową.
         </p>
         <p>
-            Co moze na swoj sposob boli <br/>
-            W dwuwymiarowym swiecie. Moze <br/>
-            blaznowi zle na moim dworze <br/>
-            i wolalby sie w innej roli.
+            Co może na swój sposób boli <br/>
+            w dwuwymiarowym świecie. Może <br/>
+            błaznowi źle na moim dworze <br/>
+            i wolałby się w innej roli.
         </p>
         <p>
-            Krolowa z okna sie wychyli, <br/>
-            a blazen z okna skoczy w dol. <br/>
-            Tak kazda czynnosc podzielili, <br/>
-            Ale to nie jest pol na pol.
+            Królowa z okna się wychyli, <br/>
+            a błazen z okna skoczy w dół. <br/>
+            Tak każdą czynność podzielili, <br/>
+            ale to nie jest pół na pół.
         </p>
         <p>
-            Ten prostak wzial na siebie gesty, <br/>
-            patos i caly jego bezwstyd, <br/>
-            to wszystko, na co nie mam sil <br/>
-            — korone, berlo, plaszcz krolewski.
+            Ten prostak wziął na siebie gesty, <br/>
+            patos i cały jego bezwstyd, <br/>
+            to wszystko, na co nie mam sił <br/>
+            –&nbsp;koronę, berło, płaszcz królewski.
         </p>
         <p>
-            Bede, ach, lekka w ruchu ramion, <br/>
-            ach, lekka w odwroceniu glowy, <br/>
-            krolu, przy naszym pozegnaniu, <br/>
-            krolu, na stacji kolejowej.
+            Będę, ach, lekka w ruchu ramion, <br/>
+            ach, lekka w odwróceniu głowy, <br/>
+            królu, przy naszym pożegnaniu, <br/>
+            królu, na stacji kolejowej.
         </p>
         <p>
-            Krolu, to blazen o tej porze, <br/>
-            krolu, polozy sie na torze.
+            Królu, to błazen o tej porze, <br/>
+            królu, położy się na torze.
         </p>
     </div>
     <div class="poem">
         <h3>Тень</h3>
         <p>
-            Тень — точно шут за королевой. <br/>
+            Тень&nbsp;— точно шут за королевой. <br/>
             Лишь королева с кресла встанет, <br/>
             он по стене взлетит нелепо <br/>
             и в потолок башкою грянет.
@@ -97,12 +97,12 @@
             Едва склонюсь я на перила, <br/>
             бедняга выброситься рад. <br/>
             Судьба во всем нас поделила, <br/>
-            да жаль — не поровну расклад.
+            да жаль&nbsp;— не поровну расклад.
         </p>
         <p>
             Себе забрал он позы, страсти <br/>
             с бесстыдным пафосом и пылом, <br/>
-            и знаки королевской власти — <br/>
+            и знаки королевской власти&nbsp;— <br/>
             все, что самой мне не по силам.
         </p>
         <p>
@@ -122,8 +122,8 @@
     <div class="poem">
         <h3>Моя тень</h3>
         <p>
-            Тень — это шут при королеве. <br/>
-            Шагнуть мне стоит за порог — <br/>
+            Тень&nbsp;— это шут при королеве. <br/>
+            Шагнуть мне стоит за порог&nbsp;— <br/>
             мой шут уперся в потолок, <br/>
             скосил затылок в глупом гневе.
         </p>
@@ -164,12 +164,12 @@
         <p>
             За мною тень, как шут придворный, <br/>
             Отсутствует меж нами сходство, <br/>
-            Я встану — шут мой поскользнется <br/>
+            Я встану&nbsp;— шут мой поскользнется <br/>
             И въедет в потолок невольно
         </p>
         <p>
             Башкой садовой. Больно все же <br/>
-            Бывает и в двухмерном мире, — <br/>
+            Бывает и в двухмерном мире,&nbsp;— <br/>
             Роль тяжела. В моей порфире <br/>
             Шуту не по себе, быть может.
         </p>
@@ -177,12 +177,12 @@
             Вот госпожа в окошко взглянет, <br/>
             А шут с окна сорвется вниз. <br/>
             Мы неразлучны, но не равны: <br/>
-            Капризы мне — ему карниз.
+            Капризы мне&nbsp;— ему карниз.
         </p>
         <p>
             Простак себе взял тяжесть жеста, <br/>
             Бесстыдство пафоса, и вместо <br/>
-            Бубенчиков — нелегкий груз <br/>
+            Бубенчиков&nbsp;— нелегкий груз <br/>
             Моих регалий королевских.
         </p>
         <p>
@@ -204,7 +204,7 @@
         <p>
             Тень моя, как шут при королеве, <br/>
             Неотступно следует за мной. <br/>
-            Чуть привстану, тень — в слезах иль в гневе — <br/>
+            Чуть привстану, тень&nbsp;— в слезах иль в гневе&nbsp;— <br/>
             Стукнется о стену головой.
         </p>
         <p>

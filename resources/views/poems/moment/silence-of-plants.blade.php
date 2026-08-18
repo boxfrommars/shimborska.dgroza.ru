@@ -22,7 +22,7 @@
             Вы у меня с именами:<br/>
             клен, лопух, перелеска,<br/>
             вереск, можжевельник, омела, незабудка,<br/>
-            а я у вас — без.
+            а я у вас&nbsp;— без.
         </p>
         <p>
             У нас одна дорога.<br/>
@@ -52,7 +52,7 @@
         </p>
         <p>
             Заросли, камыши, луга и перелески,<br/>
-            всё, с чем к вам обращаюсь, — монолог,<br/>
+            всё, с чем к вам обращаюсь,&nbsp;— монолог,<br/>
             и не вы ему внемлете.
         </p>
         <p>
@@ -114,7 +114,7 @@
             tak bardzo dla was nikim.
         </p>
         <p>
-            Porośla, zagajniki, łąki i szuwary —<br/>
+            Porośla, zagajniki, łąki i szuwary&nbsp;–<br/>
             wszystko, co do was mówię, to monolog,<br/>
             i nie wy go słuchacie.
         </p>

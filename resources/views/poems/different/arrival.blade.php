@@ -6,8 +6,8 @@
     <div class="poem">
         <p>
             Опять весной вернулись птицы слишком рано.<br/>
-            Радуйся, разум — инстинкт обознался.<br/>
-            Прошляпил, зазевался — и упали в снег,<br/>
+            Радуйся, разум&nbsp;— инстинкт обознался.<br/>
+            Прошляпил, зазевался&nbsp;— и упали в снег,<br/>
             и мрут, и гибнут так несообразно<br/>
             строенью горлышек и архикоготочков,<br/>
             хрящей надежных, дельных перепонок,<br/>
@@ -23,7 +23,7 @@
             в полете уникальный и в руке бессчетный,<br/>
             ткань к ткани прочно связанный в единство<br/>
             места и времени, как классика театра,<br/>
-            в аплодисментах крыльев —<br/>
+            в аплодисментах крыльев&nbsp;—<br/>
             упал и распростерся возле камня,<br/>
             а тот по-архаически топорно<br/>
             воспринимает жизнь, как неудачный опыт.
@@ -35,7 +35,7 @@
         <p>
             Tej wiosny, znowu ptaki wróciły za wcześnie.<br/>
             Ciesz się, rozumie, instynkt też się myli.<br/>
-            Zagapi się, przeoczy — i spadają w śnieg,<br/>
+            Zagapi się, przeoczy&nbsp;– i spadają w śnieg,<br/>
             i giną licho, giną nie na miarę<br/>
             budowy swojej krtani i arcypazurków,<br/>
             rzetelnych chrząstek i sumiennych błon,<br/>
@@ -51,7 +51,7 @@
             pojedynczy w powietrzu, nieprzeliczony w ręce,<br/>
             tkanka po tkance związany we wspólność<br/>
             miejsca i czasu jak sztuka klasyczna<br/>
-            w brawach skrzydeł —<br/>
+            w brawach skrzydeł&nbsp;–<br/>
             spada i kładzie się obok kamienia,<br/>
             który w swój archaiczny i prostacki sposób<br/>
             patrzy na życie jak na odrzucane próby.

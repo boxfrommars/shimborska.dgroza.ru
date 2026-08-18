@@ -26,9 +26,9 @@
             дородные блюда любви!
         </p>
         <p>
-            Худые сестры — те пораньше встали,<br/>
+            Худые сестры&nbsp;— те пораньше встали,<br/>
             покамест на холсте не развиднелось.<br/>
-            И — незамеченные — шли гуськом<br/>
+            И&nbsp;— незамеченные&nbsp;— шли гуськом<br/>
             по незакрашенному обороту.
         </p>
         <p>
@@ -37,13 +37,13 @@
             Попытка улететь на худеньких лопатках.
         </p>
         <p>
-            Им век тринадцатый — фон золотой бы отдал.<br/>
-            Двадцатый бы — серебряный экран.<br/>
+            Им век тринадцатый&nbsp;— фон золотой бы отдал.<br/>
+            Двадцатый бы&nbsp;— серебряный экран.<br/>
             А вот семнадцатый ничто им, плоским, не дал.
         </p>
         <p>
             Поскольку выпуклы и сами небеса,<br/>
-            выпуклы ангелы и выпукл бог плечистый —<br/>
+            выпуклы ангелы и выпукл бог плечистый&nbsp;—<br/>
             усатый Феб, который на вспотевшем<br/>
             коне въезжает в пышущий альков.
         </p>
@@ -85,12 +85,12 @@
         </p>
         <p>
             Trzynasty wiek dałby im złote tło.<br/>
-            Dwudziesty — dałby ekran srebrny.<br/>
+            Dwudziesty&nbsp;– dałby ekran srebrny.<br/>
             Ten siedemnasty nic dla płaskich nie ma.
         </p>
         <p>
             Albowiem nawet niebo jest wypukłe,<br/>
-            wypukli aniołowie i wypukły bóg —<br/>
+            wypukli aniołowie i wypukły bóg&nbsp;–<br/>
             Febus wąsaty, który na spoconym<br/>
             rumaku wjeżdża do wrzącej alkowy.
         </p>

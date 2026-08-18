@@ -224,6 +224,139 @@ class SiteTest extends TestCase
             ->assertDontSee('lang="pl"', false);
     }
 
+    public function testAllPoemVersionsUseTheHouseTypography(): void
+    {
+        foreach (app(PoemCatalog::class)->poems() as $poem) {
+            $path = "/{$poem['section']}/{$poem['slug']}";
+            $content = $this->get($path)->assertOk()->getContent();
+            $document = new DOMDocument;
+            $previousUseInternalErrors = libxml_use_internal_errors(true);
+
+            try {
+                self::assertTrue($document->loadHTML($content), $path);
+            } finally {
+                libxml_clear_errors();
+                libxml_use_internal_errors($previousUseInternalErrors);
+            }
+
+            $xpath = new DOMXPath($document);
+            $blocks = $xpath->query(
+                '//*[@id="page-content"]/h2'
+                . ' | //*[@id="page-content"]//*[contains(concat(" ", normalize-space(@class), " "), " poem ")]'
+                . ' | //*[@id="page-content"]//*[contains(concat(" ", normalize-space(@class), " "), " text ")]'
+                . ' | //aside[contains(concat(" ", normalize-space(@class), " "), " notabene ")]',
+            );
+
+            self::assertGreaterThan(1, $blocks->length, $path);
+
+            foreach ($blocks as $blockIndex => $block) {
+                $text = $block->textContent;
+                $context = "{$path}, text block {$blockIndex}";
+                $language = $block->attributes?->getNamedItem('lang')?->nodeValue === 'pl' ? 'pl' : 'ru';
+
+                self::assertDoesNotMatchRegularExpression('/[\x{20}\x{A0}]-[\x{20}\x{A0}]/u', $text, $context);
+                self::assertDoesNotMatchRegularExpression('/\p{L}[—–]\p{L}/u', $text, $context);
+                self::assertDoesNotMatchRegularExpression('/\d(?:-|—)\d/u', $text, $context);
+                self::assertDoesNotMatchRegularExpression('/\d[\x{20}\x{A0}]+[—–-][\x{20}\x{A0}]+\d/u', $text, $context);
+                self::assertStringNotContainsString('...', $text, $context);
+                self::assertStringNotContainsString('"', $text, $context);
+                self::assertDoesNotMatchRegularExpression('/[\x{20}\x{A0}]+[,;:!?]/u', $text, $context);
+                self::assertDoesNotMatchRegularExpression(
+                    '/[\x{00}-\x{08}\x{0B}\x{0C}\x{0E}-\x{1F}\x{7F}-\x{9F}\x{200B}-\x{200F}\x{202A}-\x{202E}\x{2060}-\x{206F}\x{FEFF}]/u',
+                    $text,
+                    $context,
+                );
+
+                $textWithoutAuthorialStress = str_replace('что́', 'что', $text);
+                self::assertDoesNotMatchRegularExpression('/\p{M}/u', $textWithoutAuthorialStress, $context);
+
+                preg_match_all('/[\p{L}\p{M}]+/u', $text, $words);
+
+                foreach ($words[0] as $word) {
+                    self::assertFalse(
+                        preg_match('/\p{Cyrillic}/u', $word) === 1
+                        && preg_match('/\p{Latin}/u', $word) === 1,
+                        "{$context}: mixed alphabets in {$word}",
+                    );
+                }
+
+                self::assertSame(substr_count($text, '«'), substr_count($text, '»'), $context);
+
+                if ($language === 'pl') {
+                    self::assertDoesNotMatchRegularExpression('/(^|\s)—(?=\s|$)/u', $text, $context);
+                    self::assertDoesNotMatchRegularExpression('/\S\x{20}–(?=\s)/u', $text, $context);
+                    self::assertDoesNotMatchRegularExpression('/(^|\n)[\x{20}\t]*–\x{20}/u', $text, $context);
+                    self::assertStringNotContainsString('“', $text, $context);
+                    self::assertSame(substr_count($text, '„'), substr_count($text, '”'), $context);
+                } else {
+                    self::assertDoesNotMatchRegularExpression('/(^|\s)–(?=\s|$)/u', $text, $context);
+                    self::assertDoesNotMatchRegularExpression('/\S\x{20}—(?=\s)/u', $text, $context);
+                    self::assertDoesNotMatchRegularExpression('/(^|\n)[\x{20}\t]*—\x{20}/u', $text, $context);
+                    self::assertStringNotContainsString('”', $text, $context);
+                    self::assertSame(substr_count($text, '„'), substr_count($text, '“'), $context);
+                }
+            }
+        }
+    }
+
+    public function testSourceBackedTextCorrectionsAreRendered(): void
+    {
+        $this->get('/different/elegiac-arithmetic')
+            ->assertOk()
+            ->assertSee('(jeśli to nawet jeden wspólny los')
+            ->assertDontSee('{jeśli to nawet jeden wspólny los');
+
+        $this->get('/different/shadow')
+            ->assertOk()
+            ->assertSee('Mój cień jak błazen za królową.')
+            ->assertSee('w dwuwymiarowym świecie.')
+            ->assertSee('położy się na torze.');
+
+        $this->get('/different/two-monkeys')
+            ->assertOk()
+            ->assertSee('Dwie małpy')
+            ->assertSee('Bruegla')
+            ->assertSee('Małpa, wpatrzona we mnie')
+            ->assertSee('Перевод Ирины Адельгейм и Алексея Хованского')
+            ->assertDontSee('Ирины Аледьгейм');
+
+        $this->get('/different/utopia')
+            ->assertOk()
+            ->assertSeeInOrder([
+                'drobne ślady stóp',
+                'Jak gdyby tylko odchodzono stąd',
+                'i bezpowrotnie zanurzano się w topieli.',
+                'W życiu nie do pojęcia.',
+            ])
+            ->assertDontSee('powabуw')
+            ->assertDontSee('co się zowie');
+
+        $this->get('/semicolon/conversation-with-atropos')
+            ->assertOk()
+            ->assertSee('Радовать?')
+            ->assertDontSee('Радовать ?');
+
+        $this->get('/text/literary-mail')
+            ->assertOk()
+            ->assertSee('1953–1981')
+            ->assertSee('Жице&nbsp;литерацке', false)
+            ->assertSee('мало-мальски критически')
+            ->assertSee('Янушу&nbsp;Брт.', false)
+            ->assertSee('колонна разлетается')
+            ->assertSee('Камилле&nbsp;В.', false)
+            ->assertSee('&laquo;Йоська балван&raquo;', false)
+            ->assertSee('Кихот полоумный')
+            ->assertSee('есть&nbsp;ли у&nbsp;жизни смысел', false)
+            ->assertSee('мне братом!..&raquo;', false)
+            ->assertDontSee('Жицелитерацке')
+            ->assertDontSee('ЯнушуБрт.')
+            ->assertDontSee('колоннаразлетается')
+            ->assertDontSee('КамиллеВ.')
+            ->assertDontSee('Йоськабалван')
+            ->assertDontSee('Кихотполоумный')
+            ->assertDontSee('мне братом!.."', false);
+    }
+
     public function testNotesHaveBidirectionalAccessibleLinks(): void
     {
         $pages = [

@@ -84,7 +84,7 @@
             все&nbsp;же помещаю их&nbsp;в&nbsp;немногочисленную группу баловней&nbsp;судьбы.</p>
         <p>Но&nbsp;тут у&nbsp;слушателей могут возникнуть&nbsp;сомнения.</p>
         <p>Всевозможные палачи, диктаторы, фанатики, демагоги, борющиеся за&nbsp;власть с&nbsp;помощью нескольких&nbsp;&mdash;
-            главное, чтобы погромче! &mdash;&nbsp;лозунгов, тоже любят свою работу и&nbsp;тоже выполняют её&nbsp;рьяно и&nbsp;изобретательно.
+            главное, чтобы погромче!&nbsp;&mdash;&nbsp;лозунгов, тоже любят свою работу и&nbsp;тоже выполняют её&nbsp;рьяно и&nbsp;изобретательно.
             Да, но&nbsp;они &laquo;знают&raquo;. Они знают, и&nbsp;того, что знают, им&nbsp;абсолютно достаточно. Ничто
             сверх уже известного их&nbsp;не&nbsp;интересует, ибо может поколебать их&nbsp;убежденность в&nbsp;собственной
             правоте. А&nbsp;всякое знание, которое не&nbsp;порождает очередных вопросов, очень быстро умирает,
@@ -124,7 +124,7 @@
             ним бессилием, обиженные его равнодушием к&nbsp;страданиям отдельных существ&nbsp;&mdash; людей, зверей, а&nbsp;может
             быть, и&nbsp;растений, ибо откуда эта уверенность, что растения избавлены от&nbsp;страданий; что&nbsp;бы мы&nbsp;ни&nbsp;подумали
             о&nbsp;его пространствах, пронизанных излучением звезд, звезд, вокруг которых мало-помалу открывают какие-то
-            планеты&nbsp;&mdash; уже мертвые? ещё мертвые? &mdash;&nbsp;неизвестно; что&nbsp;бы мы&nbsp;ни&nbsp;сказали
+            планеты&nbsp;&mdash; уже мертвые? ещё мертвые?&nbsp;&mdash;&nbsp;неизвестно; что&nbsp;бы мы&nbsp;ни&nbsp;сказали
             о&nbsp;том вселенском театре, куда у&nbsp;нас, правда, есть билет, но&nbsp;действителен он&nbsp;до&nbsp;смешного
             короткое время, ограниченное двумя заданными датами; что&nbsp;бы мы&nbsp;ни&nbsp;подумали об&nbsp;этом мире&nbsp;&mdash;
             он&nbsp;удивителен.</p>
@@ -147,25 +147,25 @@
             poezji. Na ten temat wypowiadam się rzadko, prawie wcale. I zawsze towarzyszyło mi przekonanie, że nie robię
             tego najlepiej. Dlatego mój odczyt nie będzie zbyt długi. Wszelka niedoskonałość lżejsza jest do zniesienia,
             jeśli podaje się ją w małych dawkach.</p>
-        <p>Dzisiejszy poeta jest sceptyczny i podejrzliwy nawet — a może przede wszystkim — wobec samego siebie. Z
-            niechęcią oświadcza publicznie, że jest poetą — jakby się tego trochę wstydził. Ale w naszej krzykliwej
+        <p>Dzisiejszy poeta jest sceptyczny i podejrzliwy nawet&nbsp;– a może przede wszystkim&nbsp;– wobec samego siebie. Z
+            niechęcią oświadcza publicznie, że jest poetą&nbsp;– jakby się tego trochę wstydził. Ale w naszej krzykliwej
             epoce dużo łatwiej przyznać się do własnych wad, jeżeli tylko prezentują się efektownie, a dużo trudniej do
             zalet, bo są głębiej ukryte, i w które samemu nie do końca się wierzy … W różnych ankietach czy rozmowach z
             przypadkowymi ludźmi, kiedy poecie już koniecznie wypada określić swoje zajęcie, podaje on ogólnikowe
-            “literat” albo wymienia nazwę dodatkowo wykonywanej pracy. Wiadomość, że mają do czynienia z poetą,
+            „literat” albo wymienia nazwę dodatkowo wykonywanej pracy. Wiadomość, że mają do czynienia z poetą,
             przyjmowana jest przez urzędników czy współpasażerów autobusu z lekkim niedowierzaniem i zaniepokojeniem.
             Przypuszczam, że i filozof budzi podobne zakłopotanie. Jest jednak w lepszym położeniu, bo najczęściej ma
-            możność ozdobienia swojej profesji jakimś tytułem naukowym. Profesor filozofii — to brzmi już dużo
+            możność ozdobienia swojej profesji jakimś tytułem naukowym. Profesor filozofii&nbsp;– to brzmi już dużo
             poważniej.</p>
         <p>Nie ma jednak profesorów poezji. To by przecież znaczyło, że jest to zatrudnienie wymagające
             specjalistycznych studiów, regularnie zdawanych egzaminów, rozpraw teoretycznych wzbogaconych bibliografią i
             odnośnikami, a wreszcie uroczyście otrzymywanych dyplomów. A to z kolei oznaczałoby, że po to, żeby zostać
-            poetą, nie wystarczą kartki papieru zapisane choćby najświetniejszymi wierszami — konieczny jest i to przede
+            poetą, nie wystarczą kartki papieru zapisane choćby najświetniejszymi wierszami&nbsp;– konieczny jest i to przede
             wszystkim, jakiś papierek z pieczątką. Przypomnijmy sobie, że na takiej właśnie podstawie skazano na zesłanie
-            chlubę poezji rosyjskiej, późniejszego Noblistę, Josifa Brodskiego. Uznano go za “pasożyta”, ponieważ nie
+            chlubę poezji rosyjskiej, późniejszego Noblistę, Josifa Brodskiego. Uznano go za „pasożyta”, ponieważ nie
             miał urzędowego zaświadczenia, że wolno mu być poetą …</p>
         <p>Przed kilkoma laty miałam zaszczyt i radość poznać Go osobiście. Zauważyłam, że on jeden, spośród znanych mi
-            poetów, lubił mówić o sobie “poeta”, wymawiał to słowo bez wewnętrznych oporów, z jakąś nawet wyzywającą
+            poetów, lubił mówić o sobie „poeta”, wymawiał to słowo bez wewnętrznych oporów, z jakąś nawet wyzywającą
             swobodą. Myślę, że to przez pamięć brutalnych upokorzeń, jakich doznał w młodości.</p>
         <p>W krajach szczęśliwszych, gdzie godność ludzka nie jest naruszana tak łatwo, poeci pragną być oczywiście
             publikowani, czytani i rozumiani, ale nie robią już nic albo bardzo niewiele, żeby na co dzień wyróżniać się
@@ -180,8 +180,8 @@
             takim sukcesem ukazać pracę niektórych uczonych: laboratoria, przeróżne przyrządy, mechanizmy wprowadzone w
             ruch są zdolne przez pewien czas utrzymać uwagę widzów. Ponadto bardzo dramatyczne bywają chwile
             niepewności, czy powtarzany po raz tysiączny eksperyment, z drobną tylko modyfikacją, przyniesie wreszcie
-            spodziewany wynik. Widowiskowe potrafią być filmy o malarzach — można odtworzyć wszystkie fazy powstawania
-            obrazu od początkowej kreski do ostatniego dotknięcia pędzla. Filmy o kompozytorach wypełnia muzyka — od
+            spodziewany wynik. Widowiskowe potrafią być filmy o malarzach&nbsp;– można odtworzyć wszystkie fazy powstawania
+            obrazu od początkowej kreski do ostatniego dotknięcia pędzla. Filmy o kompozytorach wypełnia muzyka&nbsp;– od
             pierwszych taktów, które twórca słyszy w sobie, aż do dojrzałej formy dzieła rozpisanego na instrumenty.
             Wszystko to jest w dalszym ciągu naiwne i nic nie mówi o tym dziwnym stanie ducha, zwanym popularnie
             natchnieniem, ale przynajmniej jest co oglądać i jest czego słuchać.</p>
@@ -198,7 +198,7 @@
             zamiłowaniem i wyobraźnią. Bywają tacy lekarze, bywają tacy pedagodzy, bywają tacy ogrodnicy i jeszcze setka
             innych zawodów. Ich praca może być bezustanną przygodą, jeśli tylko potrafią w niej dostrzec coraz to nowe
             wyzwania. Pomimo trudów i porażek, ich ciekawość nie stygnie. Z każdego rozwiązanego zagadnienia wyfruwa im
-            rój nowych pytań. Natchnienie, czymkolwiek ono jest, rodzi się z bezustannego “nie wiem”.</p>
+            rój nowych pytań. Natchnienie, czymkolwiek ono jest, rodzi się z bezustannego „nie wiem”.</p>
         <p>Takich ludzi nie jest zbyt wielu. Większość mieszkańców tej ziemi pracuje, żeby zdobyć środki utrzymania,
             pracuje, bo musi. To nie oni z własnej pasji wybierają sobie pracę, to okoliczności życia wybierają za nich.
             Praca nie lubiana, praca, która nudzi, ceniona tylko dlatego, że nawet w tej postaci nie dla wszystkich jest
@@ -208,50 +208,50 @@
             nielicznej grupie wybrańców losu.</p>
         <p>Tutaj jednak mogą się w słuchaczach zbudzić wątpliwości. Rozmaici oprawcy, dyktatorzy, fanatycy, demagodzy
             walczący o władzę przy pomocy kilku byle głośno wykrzykiwanych haseł, także lubią swoją pracę i także
-            wykonują ją z gorliwą pomysłowością. No tak, ale oni “wiedzą”. Wiedzą, a to, co wiedzą, wystarcza im raz na
+            wykonują ją z gorliwą pomysłowością. No tak, ale oni „wiedzą”. Wiedzą, a to, co wiedzą, wystarcza im raz na
             zawsze. Niczego ponad to nie są ciekawi, bo to mogłoby osłabić siłę ich argumentów. A wszelka wiedza, która
             nie wyłania z siebie nowych pytań, staje się w szybkim czasie martwa, traci temperaturę sprzyjającą życiu. W
             najskrajniejszych przypadkach, o czym dobrze wiadomo z historii dawnej i współczesnej, potrafi być nawet
             śmiertelnie groźna dla społeczeństw.</p>
-        <p>Dlatego tak wysoko sobie cenię dwa małe słowa: “nie wiem”. Małe, ale mocno uskrzydlone. Rozszerzające nam
+        <p>Dlatego tak wysoko sobie cenię dwa małe słowa: „nie wiem”. Małe, ale mocno uskrzydlone. Rozszerzające nam
             życie na obszary, które mieszczą się w nas samych i obszary, w których zawieszona jest nasza nikła Ziemia.
-            Gdyby Izaak Newton nie powiedział sobie “nie wiem”, jabłka w ogródku mogłyby spadać na jego oczach jak grad,
+            Gdyby Izaak Newton nie powiedział sobie „nie wiem”, jabłka w ogródku mogłyby spadać na jego oczach jak grad,
             a on w najlepszym razie schylałby się po nie i zjadał z apetytem. Gdyby moja rodaczka Maria Skłodowska-Curie
-            nie powiedziała sobie “nie wiem”, zostałaby pewnie nauczycielką chemii na pensji dla panienek z dobrych
-            domów, i na tej — skądinąd zacnej — pracy upłynęłoby jej życie. Ale powtarzała sobie “nie wiem” i te właśnie
+            nie powiedziała sobie „nie wiem”, zostałaby pewnie nauczycielką chemii na pensji dla panienek z dobrych
+            domów, i na tej&nbsp;– skądinąd zacnej&nbsp;– pracy upłynęłoby jej życie. Ale powtarzała sobie „nie wiem” i te właśnie
             słowa przywiodły ją, i to dwukrotnie, do Sztokholmu, gdzie ludzi o duchu niespokojnym i wiecznie poszukującym
             nagradza się Nagrodą Nobla.</p>
-        <p>Poeta również, jeśli jest prawdziwym poetą, musi ciągle powtarzać sobie “nie wiem”. Każdym utworem próbuje na
+        <p>Poeta również, jeśli jest prawdziwym poetą, musi ciągle powtarzać sobie „nie wiem”. Każdym utworem próbuje na
             to odpowiedzieć, ale kiedy tylko postawi kropkę, już ogarnia go wahanie, już zaczyna sobie zdawać sprawę, że
             jest to odpowiedź tymczasowa i absolutnie niewystarczająca. Więc próbuje jeszcze raz i jeszcze raz, a potem
             te kolejne dowody jego niezadowolenia z siebie historycy literatury zepną wielkim spinaczem i nazywać będą
-            “dorobkiem” …</p>
+            „dorobkiem” …</p>
         <p>Marzą mi się czasami sytuacje niemożliwe do urzeczywistnienia. Wyobrażam sobie na przykład w swojej
             zuchwałości, że mam okazję porozmawiania z Eklezjastą, autorem jakże przejmującego lamentu nad marnością
-            wszelkich ludzkich poczynań. Pokłoniłabym mu się bardzo nisko, bo to przecież jeden z najważniejszych —
-            przynajmniej dla mnie — poetów. Ale potem pochwyciłabym go za rękę. “Nic nowego pod słońcem” — napisałeś,
+            wszelkich ludzkich poczynań. Pokłoniłabym mu się bardzo nisko, bo to przecież jeden z najważniejszych&nbsp;–
+            przynajmniej dla mnie&nbsp;– poetów. Ale potem pochwyciłabym go za rękę. „Nic nowego pod słońcem”&nbsp;– napisałeś,
             Eklezjasto. Ale przecież Ty sam urodziłeś się nowy pod słońcem. A poemat, którego jesteś twórcą, też jest nowy
             pod słońcem, bo przed Tobą nie napisał go nikt. I nowi pod słońcem są wszyscy Twoi czytelnicy, bo ci, co
             żyli przed Tobą, czytać go przecież nie mogli. Także i cyprys, w którego cieniu usiadłeś, nie rośnie tutaj od
             początku świata. Dał mu początek jakiś cyprys inny, podobny do Twojego, ale nie całkiem ten sam. I ponadto
             chciałabym Cię spytać, Eklezjasto, co nowego pod słońcem zamierzasz teraz napisać. Czy coś, czym uzupełnisz
             jeszcze swoje myśli, czy może masz pokusę niektórym z nich zaprzeczyć jednak? W swoim poprzednim poemacie
-            dostrzegłeś także i radość — cóż z tego, że przemijającą? Więc może o niej będzie Twój nowy pod słońcem
-            poemat? Czy masz już notatki, jakieś pierwsze szkice? Nie powiesz chyba: “Napisałem wszystko, nie mam nic do
+            dostrzegłeś także i radość&nbsp;– cóż z tego, że przemijającą? Więc może o niej będzie Twój nowy pod słońcem
+            poemat? Czy masz już notatki, jakieś pierwsze szkice? Nie powiesz chyba: „Napisałem wszystko, nie mam nic do
             dodania”. Tego nie może powiedzieć żaden na świecie poeta, a co dopiero tak wielki jak Ty.</p>
         <p>Świat, cokolwiek byśmy o nim pomyśleli zatrwożeni jego ogromem i własną wobec niego bezsilnością,
-            rozgoryczeni jego obojętnością na poszczególne cierpienia — ludzi, zwierząt, a może i roślin, bo skąd pewność,
+            rozgoryczeni jego obojętnością na poszczególne cierpienia&nbsp;– ludzi, zwierząt, a może i roślin, bo skąd pewność,
             że rośliny są od cierpień wolne; cokolwiek byśmy pomyśleli o jego przestrzeniach przeszywanych promieniowaniem
-            gwiazd, gwiazd, wokół których zaczęto już odkrywać jakieś planety, już martwe? jeszcze martwe? — nie wiadomo;
+            gwiazd, gwiazd, wokół których zaczęto już odkrywać jakieś planety, już martwe? jeszcze martwe?&nbsp;– nie wiadomo;
             cokolwiek byśmy pomyśleli o tym bezmiernym teatrze, na który mamy wprawdzie bilet wstępu, ale ważność tego
             biletu jest śmiesznie krótka, ograniczona dwiema stanowczymi datami; cokolwiek jeszcze pomyślelibyśmy o tym
-            świecie — jest on zadziwiający.</p>
-        <p>Ale w określeniu “zadziwiający” kryje się pewna logiczna pułapka. Zadziwia nas przecież to, co odbiega od
+            świecie&nbsp;– jest on zadziwiający.</p>
+        <p>Ale w określeniu „zadziwiający” kryje się pewna logiczna pułapka. Zadziwia nas przecież to, co odbiega od
             jakiejś znanej i powszechnie uznanej normy, od jakiejś oczywistości, do której jesteśmy przyzwyczajeni. Otóż
             takiego oczywistego świata nie ma wcale. Nasze zadziwienie jest samoistne i nie wynika z żadnych z czymkolwiek
             porównań.</p>
-        <p>Zgoda, w mowie potocznej, która nie zastanawia się nad każdym słowem, wszyscy używamy określeń: “zwykły
-            świat”, “zwykłe życie”, “zwykła kolej rzeczy” … Jednak w języku poezji, gdzie każde słowo się waży, nic już
+        <p>Zgoda, w mowie potocznej, która nie zastanawia się nad każdym słowem, wszyscy używamy określeń: „zwykły
+            świat”, „zwykłe życie”, „zwykła kolej rzeczy” … Jednak w języku poezji, gdzie każde słowo się waży, nic już
             zwyczajne i normalne nie jest. Żaden kamień i żadna nad nim chmura. Żaden dzień i żadna po nim noc. A nade
             wszystko żadne niczyje na tym świecie istnienie.</p>
         <p>Wygląda na to, że poeci będą mieli zawsze dużo do roboty.</p>

@@ -25,27 +25,27 @@
         </p>
     </div>
     <div class="poem" lang="pl">
-        <h3>Dwie malpy <a class="tonote" id="tonote001" href="#note001" role="doc-noteref">Bruegla</a></h3>
+        <h3>Dwie małpy <a class="tonote" id="tonote001" href="#note001" role="doc-noteref">Bruegla</a></h3>
         <p>
-            Tak wyglada moj wielki maturalny sen: <br/>
-            siedza w oknie dwie malpy przykute lancuchem, <br/>
+            Tak wygląda mój wielki maturalny sen: <br/>
+            siedzą w oknie dwie małpy przykute łańcuchem, <br/>
             za oknem fruwa niebo <br/>
-            i kapie sie morze.
+            i kąpie się morze.
         </p>
         <p>
-            Zdaje z historii ludzi. <br/>
-            Jakam sie i brne.
+            Zdaję z historii ludzi. <br/>
+            Jąkam się i brnę.
         </p>
         <p>
-            Malpa wpatrzona we mnie, ironicznie slucha, <br/>
-            druga niby to drzemie — <br/>
+            Małpa, wpatrzona we mnie, ironicznie słucha, <br/>
+            druga niby to drzemie&nbsp;– <br/>
             a kiedy po pytaniu nastaje milczenie, <br/>
             podpowiada mi <br/>
-            cichym brzakaniem lancucha.
+            cichym brząkaniem łańcucha.
         </p>
     </div>
     <div class="poem">
-        <h3>Две обезьяны Брейгеля </h3>
+        <h3>Две обезьяны Брейгеля</h3>
         <p>
             Таков мой вечный экзаменационный сон: <br/>
             в окне сидят две обезьяны, скованные цепью, <br/>
@@ -68,7 +68,7 @@
         </p>
     </div>
     <div class="poem">
-        <h3>Две обезьяны Брейгеля </h3>
+        <h3>Две обезьяны Брейгеля</h3>
         <p>
             Вот так выглядит во сне мой экзамен <br/>
             на аттестат зрелости: в оконном проеме <br/>
@@ -91,7 +91,7 @@
         </p>
     </div>
     <div class="poem">
-        <h3>Две обезьяны Брейгеля </h3>
+        <h3>Две обезьяны Брейгеля</h3>
         <p>
             Сон накануне экзамена на аттестат, подтверждающий зрелость: <br/>
             две обезьяны прикованы цепью в проеме оконном, <br/>
@@ -104,7 +104,7 @@
         </p>
         <p>
             Взгляд обезьяны, что слева, иронии полон, <br/>
-            Дремлет как будто другая, — <br/>
+            Дремлет как будто другая,&nbsp;— <br/>
             когда ж повисает молчание, <br/>
             знак подает мне <br/>
             бренчанием цепи негромким.
@@ -133,7 +133,7 @@
             мне помогает.
         </p>
         <p class="foot-note">
-            Перевод Ирины Аледьгейм и Алексея Хованского
+            Перевод Ирины Адельгейм и Алексея Хованского
         </p>
     </div>
     <div class="poem">
@@ -141,7 +141,7 @@
         <p>
             Таков мой извечный сон выпускницы: <br/>
             две скованных цепью обезьяны в нише окна, <br/>
-            а за окном — небо пляшет <br/>
+            а за окном&nbsp;— небо пляшет <br/>
             и море резвится.
         </p>
         <p>
@@ -150,7 +150,7 @@
         </p>
         <p>
             Одна обезьяна, не сводя с меня глаз, благосклонно внимает, <br/>
-            вторая — похоже что в забытьи, <br/>
+            вторая&nbsp;— похоже что в забытьи, <br/>
             а когда после заданного вопроса молчание повисает, <br/>
             та, другая, подсказку мне посылает <br/>
             тихим позвякиваньем цепи.
@@ -164,7 +164,7 @@
 @section('notes')
     <div class="note" id="note001" role="doc-footnote" tabindex="-1">
         <p>
-            Питер Брейгель-старший, (ок. 1525—1569) — (фламандский) живописец и график. Мастер пейзажа и жанровых сцен. <a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a>
+            Питер Брейгель-старший (ок. 1525–1569)&nbsp;— фламандский живописец и график. Мастер пейзажа и жанровых сцен. <a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a>
         </p>
     </div>
 

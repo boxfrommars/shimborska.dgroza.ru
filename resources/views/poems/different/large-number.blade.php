@@ -11,27 +11,27 @@
             Ему пока что ближе единичность.<br/>
             Лучом фонарика летает в темноте,<br/>
             выхватывая первые попавшиеся лица,<br/>
-            а прочие в потемках пропадают —<br/>
+            а прочие в потемках пропадают&nbsp;—<br/>
             в неотвратимость и невозвратимость.<br/>
             Но их сам Дант и тот не удержал бы.<br/>
-            А если ты к тому ж еще — не он.<br/>
+            А если ты к тому ж еще&nbsp;— не он.<br/>
             И даже если музы на подмогу.
         </p>
         <p>
-            Non omnis moriar — до времени забота.<br/>
+            Non omnis moriar&nbsp;— до времени забота.<br/>
             Вся ли живу я, и довольно ль это.<br/>
-            От века не хватало, а теперь — подавно.<br/>
+            От века не хватало, а теперь&nbsp;— подавно.<br/>
             Приемлю, отметая, иначе невозможно,<br/>
             но то, что отметаю, много больше суть,<br/>
             напористее, гуще, чем бывало было.<br/>
-            Ценой неописуемых потерь — стишок, вздыханье.<br/>
+            Ценой неописуемых потерь&nbsp;— стишок, вздыханье.<br/>
             На громкий зов ответствую шепча.<br/>
             Сколь промолчу, того не расскажу.<br/>
             Мышь у подножья матерней горы.<br/>
             Жизнь длится несколько отметин коготком.
         </p>
         <p>
-            Сны мои — и они не, как хотелось бы, многолюдны.<br/>
+            Сны мои&nbsp;— и они не, как хотелось бы, многолюдны.<br/>
             В них больше одиночества, чем галдежа и сутолоки.<br/>
             Порою забежит давно умерший кто-то.<br/>
             Нажмет дверную ручку одинокая рука.
@@ -42,7 +42,7 @@
             тихую, как бы ничью, уже анахроничную.
         </p>
         <p>
-            Откуда еще берется во мне пространство —<br/>
+            Откуда еще берется во мне пространство&nbsp;—<br/>
             не знаю.
         </p>
         <p class="foot-note">Перевод Асара Эппеля</p>
@@ -63,20 +63,20 @@
             I choćby nawet wszystkie muzy do mnie.
         </p>
         <p>
-            Non omnis moriar — przedwczesne strapienie.<br/>
+            Non omnis moriar&nbsp;– przedwczesne strapienie.<br/>
             Czy jednak cała żyję i czy to wystarcza.<br/>
             Nie wystarczało nigdy, a tym bardziej teraz.<br/>
             Wybieram odrzucając, bo nie ma innego sposobu,<br/>
             ale to, co odrzucam, liczebniejsze jest,<br/>
             gęstsze jest, natarczywsze jest niż kiedykolwiek.<br/>
-            Kosztem nieopisanych strat — wierszyk, westchnienie.<br/>
+            Kosztem nieopisanych strat&nbsp;– wierszyk, westchnienie.<br/>
             Na gromkie powołanie odzywam się szeptem.<br/>
             Ile przemilczam, tego nie wypowiem.<br/>
             Mysz u podnóża macierzystej góry.<br/>
             Życie trwa kilka znaków pazurkiem na piasku.
         </p>
         <p>
-            Sny moje — nawet one nie są, jak należałoby, ludne.<br/>
+            Sny moje&nbsp;– nawet one nie są, jak należałoby, ludne.<br/>
             Więcej w nich samotności niż tłumów i wrzawy,<br/>
             Wpadnie czasem na chwilę ktoś dawno umarły.<br/>
             Klamkę porusza pojedyncza ręka.
@@ -87,7 +87,7 @@
             cichą, jakby niczyją, już anachroniczną.
         </p>
         <p>
-            Skąd się jeszcze ta przestrzeń bierze we mnie —<br/>
+            Skąd się jeszcze ta przestrzeń bierze we mnie&nbsp;–<br/>
             nie wiem.
         </p>
     </div>

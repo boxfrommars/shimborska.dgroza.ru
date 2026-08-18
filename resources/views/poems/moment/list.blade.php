@@ -40,7 +40,7 @@
         <p>
             На чьем теперь пальце<br/>
             с моего среднего колечко,<br/>
-            украденное у меня — потерянное;
+            украденное у меня&nbsp;— потерянное;
         </p>
         <p>
             Где место свободной воли,<br/>
@@ -48,7 +48,7 @@
             бывает и не бывает;
         </p>
         <p>
-            Что с уймой людей —<br/>
+            Что с уймой людей&nbsp;—<br/>
             мы в самом деле были знакомы?
         </p>
         <p>
@@ -117,7 +117,7 @@
         <p>
             Na czyim teraz palcu<br/>
             serdeczny pierścionek<br/>
-            skradziony mi — zgubiony;
+            skradziony mi&nbsp;– zgubiony;
         </p>
         <p>
             Gdzie miejsce wolnej woli,<br/>
@@ -125,7 +125,7 @@
             równocześnie;
         </p>
         <p>
-            Co z dziesiątkami ludzi —<br/>
+            Co z dziesiątkami ludzi&nbsp;–<br/>
             czy myśmy naprawdę się znali?
         </p>
         <p>

@@ -8,7 +8,7 @@
             Я оглянулась, говорят, из любопытства.<br/>
             Но кроме любопытства возможны и еще причины.<br/>
             Пожалела о серебряной миске.<br/>
-            По случайности — завязывая ремешок сандалии.<br/>
+            По случайности&nbsp;— завязывая ремешок сандалии.<br/>
             Оттого, что надоело глядеть в праведную спину<br/>
             супруга моего, Лота.<br/>
             От внезапного ощущения, что, умри я,<br/>
@@ -23,7 +23,7 @@
             Оглянулась, не зная, куда идти.<br/>
             На тропе моей возникли змеи,<br/>
             пауки, полевые мыши и птенцы сычей.<br/>
-            Уже — ни доброе, ни злое — просто все живое<br/>
+            Уже&nbsp;— ни доброе, ни злое&nbsp;— просто все живое<br/>
             ползло и скакало в страшной панике.<br/>
             Я оглянулась от одиночества.<br/>
             От стыда, что потихоньку сбегаю.<br/>
@@ -43,7 +43,7 @@
             Нет. Я бежала дальше,<br/>
             ползла и взбегала,<br/>
             покамест тьма не пала с небес,<br/>
-            а с ней — горячие камни и мертвые птицы.<br/>
+            а с ней&nbsp;— горячие камни и мертвые птицы.<br/>
             Из-за сбившегося дыхания я не раз оборачивалась.<br/>
             Со стороны, верно, казалось, будто я приплясываю.<br/>
             Не исключено, что глаза мои были открыты.<br/>
@@ -57,7 +57,7 @@
             Obejrzałam się podobno z ciekawości.<br/>
             Ale prócz ciekawości mogłam mieć inne powody.<br/>
             Obejrzałam się z żalu za miską ze srebra.<br/>
-            Przez nieuwagę — wiążąc rzemyk u sandała.<br/>
+            Przez nieuwagę&nbsp;– wiążąc rzemyk u sandała.<br/>
             Aby nie patrzeć dłużej w sprawiedliwy kark<br/>
             męża mojego, Lota.<br/>
             Z nagłej pewności, że gdybym umarła,<br/>
@@ -72,7 +72,7 @@
             Obejrzałam się z trwogi, gdzie uczynić krok.<br/>
             Na mojej ścieżce zjawiły się węże,<br/>
             pająki, myszy polne i pisklęta sępów.<br/>
-            Już ani dobre, ani złe — po prostu wszystko, co żyło,<br/>
+            Już ani dobre, ani złe&nbsp;– po prostu wszystko, co żyło,<br/>
             pełzało i skakało w gromadnym popłochu.<br/>
             Obejrzałam się z osamotnienia.<br/>
             Ze wstydu, że uciekam chyłkiem.<br/>

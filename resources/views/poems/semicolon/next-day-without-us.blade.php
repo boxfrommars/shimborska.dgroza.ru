@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <h2>Назавтра — без нас</h2>
+    <h2>Назавтра&nbsp;— без нас</h2>
 
     <div class="poem">
         <p>

@@ -6,7 +6,7 @@
     <div class="poem">
         <p>
             Описывая облака,<br/>
-            следует поторопиться —<br/>
+            следует поторопиться&nbsp;—<br/>
             какая-то доля секунды,<br/>
             и они уже не такие.
         </p>
@@ -20,7 +20,7 @@
             они попросту скользят над фактами.
         </p>
         <p>
-            Никакие из них свидетели чего бы то ни было —<br/>
+            Никакие из них свидетели чего бы то ни было&nbsp;—<br/>
             тотчас развеиваются во все стороны.
         </p>
         <p>
@@ -32,7 +32,7 @@
             камень и тот<br/>
             все равно что брат,<br/>
             на которого можно положиться,<br/>
-            они же — далекие ветреные и двоюродные.
+            они же&nbsp;— далекие ветреные и двоюродные.
         </p>
         <p>
             Пусть люди себе побудут, если охота,<br/>
@@ -60,7 +60,7 @@
 
         <p>
             Z opisywaniem chmur<br/>
-            musiałabym się bardzo śpieszyć —<br/>
+            musiałabym się bardzo śpieszyć&nbsp;–<br/>
             już po ułamku chwili<br/>
             przestają być te, zaczynają być inne.
         </p>
@@ -74,7 +74,7 @@
             unoszą się bez trudu nad faktami.
         </p>
         <p>
-            Jacy tam z nich świadkowie czegokolwiek —<br/>
+            Jacy tam z nich świadkowie czegokolwiek&nbsp;–<br/>
             natychmiast rozwiewają się na wszystkie strony.
         </p>
         <p>
