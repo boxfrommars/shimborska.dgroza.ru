@@ -570,7 +570,7 @@ ul.classic,
 		grid-template-columns: minmax(0, 1fr);
 		grid-template-rows: auto;
 		width: auto;
-		padding: 0 18px 40px;
+		padding: 0 14px 40px;
 		background: url(/images/pages_corner.png) no-repeat 100% 0,
 			url(/images/pages.png) repeat-x 0 0;
 	}
@@ -721,5 +721,12 @@ ul.classic,
 		display: inline-block;
 		padding: 2px 0;
 		line-height: 1.35;
+	}
+}
+
+@media (max-width: 479px) {
+	.poem {
+		font-size: 1.0625rem;
+		line-height: 1.45;
 	}
 }
