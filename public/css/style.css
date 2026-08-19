@@ -724,7 +724,7 @@ ul.classic,
 	}
 }
 
-@media (max-width: 479px) {
+@media (max-width: 389px) {
 	.poem {
 		font-size: 1.0625rem;
 		line-height: 1.45;
