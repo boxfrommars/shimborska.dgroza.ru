@@ -636,9 +636,7 @@ ul.classic,
 		grid-row: 1;
 		padding-top: 70px;
 	}
-	.page h2 {
-		font-size: 2rem;
-	}
+	.page h2,
 	.page h3 {
 		font-size: 1.625rem;
 	}
