@@ -908,6 +908,11 @@ class SiteTest extends TestCase
             'static: invalid numeric range dash' => '/\d(?:-|—)\d/u',
             'static: spaced numeric range' => '/\d[\x{20}\x{A0}]+[—–-][\x{20}\x{A0}]+\d/u',
             'static: volume without non-breaking space' => '/Т\.(?!\x{A0}\d)/u',
+            'static: abbreviation without non-breaking space' => '/\bпольск\.(?!\x{A0}\p{L})/u',
+            'static: day without non-breaking month' => '/\b[0-3]?\d\x{20}(?:января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)\b/u',
+            'static: month without non-breaking year' => '/\b(?:января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря|январе|феврале|марте|апреле|мае|июне|июле|августе|сентябре|октябре|ноябре|декабре)\x{20}\d{4}\b/u',
+            'static: issue year without non-breaking space' => '/\p{L}\x{20}\d{4},\x{A0}№/u',
+            'static: breakable space before em dash' => '/\S\x{20}—(?=\s)/u',
             'static: copyright without non-breaking space' => '/©(?!\x{A0}\d)/u',
         ];
 
