@@ -517,6 +517,38 @@ ul.classic,
 }
 /**/
 
+@media (min-width: 761px) and (max-width: 1023px) {
+	#main {
+		grid-template-columns: 220px 500px;
+		grid-template-rows: auto 1fr auto;
+		width: 720px;
+	}
+	.page {
+		grid-column: 2;
+		grid-row: 1 / span 2;
+	}
+	#leftbar {
+		grid-column: 1;
+		grid-row: 1;
+	}
+	.illustrations {
+		grid-column: 1;
+		grid-row: 2;
+	}
+	.notabene {
+		grid-column: 2;
+		grid-row: 3;
+		justify-self: stretch;
+		width: 500px;
+	}
+	.notabene .note {
+		position: static;
+		margin-top: 18px;
+		padding: 18px 0 10px;
+		border-top: 1px solid #e0e0e0;
+	}
+}
+
 @media screen and (max-width: 760px) {
 	.visually-hidden-mobile {
 		position: absolute !important;
