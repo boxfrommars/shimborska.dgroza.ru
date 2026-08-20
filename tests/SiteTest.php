@@ -92,6 +92,43 @@ class SiteTest extends TestCase
         self::assertSame([], $violations);
     }
 
+    public function testBladeViewsUseUtf8CharactersForVisibleTypography(): void
+    {
+        $allowedEntities = [
+            '&nbsp;',
+            '&thinsp;',
+            '&amp;',
+            '&lt;',
+            '&gt;',
+            '&quot;',
+            '&apos;',
+        ];
+        $violations = [];
+
+        foreach (File::allFiles(resource_path('views')) as $view) {
+            if (!str_ends_with($view->getFilename(), '.blade.php')) {
+                continue;
+            }
+
+            $source = File::get($view->getPathname());
+            preg_match_all(
+                '/&(?:#(?:\d+|[xX][0-9A-Fa-f]+)|[A-Za-z][A-Za-z0-9]+);/',
+                $source,
+                $matches,
+            );
+            $disallowedEntities = array_values(array_diff(array_unique($matches[0]), $allowedEntities));
+
+            if ($disallowedEntities === []) {
+                continue;
+            }
+
+            $relativePath = str_replace('\\', '/', $view->getRelativePathname());
+            $violations[$relativePath] = $disallowedEntities;
+        }
+
+        self::assertSame([], $violations);
+    }
+
     public function testPrintStylesAreOnlyLoadedForPrintablePages(): void
     {
         $printVersion = filemtime(public_path('css/print.css'));

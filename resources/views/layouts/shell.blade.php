@@ -55,7 +55,7 @@
     <div id="royklogo" aria-hidden="true"></div>
 </div>
 <footer id="footer">
-    &copy;&nbsp;2009 Студия «Гриб-дождевик»
+    ©&nbsp;2009 Студия «Гриб-дождевик»
 </footer>
 
 @yield('scripts')
