@@ -5,9 +5,12 @@ namespace Tests;
 use App\PoemCatalog;
 use DOMDocument;
 use DOMXPath;
+use Illuminate\Contracts\Http\Kernel as HttpKernel;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Testing\TestResponse;
 
 class SiteTest extends TestCase
 {
@@ -27,6 +30,36 @@ class SiteTest extends TestCase
             ->assertSee('<dialog id="content"', false)
             ->assertSee("/js/script.js?v={$scriptVersion}", false)
             ->assertDontSee('jquery', false);
+    }
+
+    public function testIndexablePagesDeclareCanonicalUrls(): void
+    {
+        $originalUrl = config('app.url');
+
+        try {
+            config(['app.url' => 'https://example.test/']);
+
+            $pages = [
+                '/?utm_source=test' => 'https://example.test/',
+                '/author?utm_source=test' => 'https://example.test/author',
+                '/project' => 'https://example.test/project',
+            ];
+
+            foreach (app(PoemCatalog::class)->poems() as $poem) {
+                $path = "/{$poem['section']}/{$poem['slug']}";
+                $pages[$path] = "https://example.test{$path}";
+            }
+
+            foreach ($pages as $path => $canonicalUrl) {
+                $content = $this->get($path)->assertOk()->getContent();
+                $canonicalElement = "<link rel=\"canonical\" href=\"{$canonicalUrl}\">";
+
+                self::assertSame(1, substr_count($content, 'rel="canonical"'), $path);
+                self::assertStringContainsString($canonicalElement, $content, $path);
+            }
+        } finally {
+            config(['app.url' => $originalUrl]);
+        }
     }
 
     public function testStaticPagesUseTheExpectedTypography(): void
@@ -291,6 +324,42 @@ class SiteTest extends TestCase
             ->assertRedirect('/moment/note');
     }
 
+    public function testSuccessfulHtmlPathsRedirectTrailingSlashPermanently(): void
+    {
+        $canonicalPaths = ['/author', '/project'];
+
+        foreach (app(PoemCatalog::class)->poems() as $poem) {
+            $canonicalPaths[] = "/{$poem['section']}/{$poem['slug']}";
+        }
+
+        foreach ($canonicalPaths as $path) {
+            $response = $this->requestWithRawUri('GET', "{$path}/");
+
+            self::assertSame(301, $response->getStatusCode(), $path);
+            $response->assertRedirect($path);
+        }
+
+        foreach (array_keys(app(PoemCatalog::class)->sections()) as $sectionSlug) {
+            $this->requestWithRawUri('GET', "/{$sectionSlug}/")
+                ->assertStatus(301)
+                ->assertRedirect("/{$sectionSlug}");
+        }
+
+        $this->requestWithRawUri('GET', '/different/little-girl-pull-tablecloth/')
+            ->assertStatus(301)
+            ->assertRedirect('/different/little-girl-pull-tablecloth');
+
+        $this->requestWithRawUri('HEAD', '/author/')
+            ->assertStatus(301)
+            ->assertRedirect('/author');
+
+        $this->requestWithRawUri('GET', '/author/?utm_source=test&source=smoke')
+            ->assertStatus(301)
+            ->assertRedirect('/author?utm_source=test&source=smoke');
+
+        $this->get('/')->assertOk();
+    }
+
     public function testEverySectionRedirectsToItsFirstPoem(): void
     {
         $catalog = app(PoemCatalog::class);
@@ -321,11 +390,21 @@ class SiteTest extends TestCase
             '<ul id="pager"',
             '<dialog id="content"',
             '/js/script.js',
+            'rel="canonical"',
         ];
         $violations = [];
 
-        foreach (['/unknown', '/different/unknown', '/semicolon/two-monkeys'] as $path) {
-            $response = $this->get($path);
+        foreach ([
+            '/unknown',
+            '/unknown/',
+            '/different/unknown',
+            '/different/unknown/',
+            '/semicolon/two-monkeys',
+            '/semicolon/two-monkeys/',
+        ] as $path) {
+            $response = str_ends_with($path, '/')
+                ? $this->requestWithRawUri('GET', $path)
+                : $this->get($path);
             $content = $response->getContent();
 
             if ($response->getStatusCode() !== 404) {
@@ -350,10 +429,19 @@ class SiteTest extends TestCase
 
     public function testUnknownJsonPageKeepsLaravelJsonResponse(): void
     {
-        $this->getJson('/unknown')
-            ->assertNotFound()
-            ->assertHeader('content-type', 'application/json')
-            ->assertJsonStructure(['message']);
+        foreach (['/unknown', '/unknown/'] as $path) {
+            $response = str_ends_with($path, '/')
+                ? $this->requestWithRawUri('GET', $path, [
+                    'HTTP_ACCEPT' => 'application/json',
+                    'CONTENT_TYPE' => 'application/json',
+                ])
+                : $this->getJson($path);
+
+            $response
+                ->assertNotFound()
+                ->assertHeader('content-type', 'application/json')
+                ->assertJsonStructure(['message']);
+        }
     }
 
     public function testCatalogMatchesPoemViews(): void
@@ -505,6 +593,20 @@ class SiteTest extends TestCase
         } finally {
             config(['app.url' => $originalUrl]);
         }
+    }
+
+    /**
+     * @param  array<string, mixed>  $server
+     */
+    private function requestWithRawUri(string $method, string $uri, array $server = []): TestResponse
+    {
+        $kernel = $this->app->make(HttpKernel::class);
+        $url = rtrim((string) config('app.url'), '/') . $uri;
+        $request = Request::create($url, $method, server: $server);
+        $response = $kernel->handle($request);
+        $kernel->terminate($request, $response);
+
+        return TestResponse::fromBaseResponse($response, $request);
     }
 
     private static function collectCatalogPageViolations(

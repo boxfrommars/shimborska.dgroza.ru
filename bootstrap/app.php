@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\RedirectTrailingSlash;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Application;
@@ -16,13 +17,16 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->web(remove: [
-            EncryptCookies::class,
-            AddQueuedCookiesToResponse::class,
-            StartSession::class,
-            ShareErrorsFromSession::class,
-            PreventRequestForgery::class,
-        ]);
+        $middleware->web(
+            append: [RedirectTrailingSlash::class],
+            remove: [
+                EncryptCookies::class,
+                AddQueuedCookiesToResponse::class,
+                StartSession::class,
+                ShareErrorsFromSession::class,
+                PreventRequestForgery::class,
+            ],
+        );
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

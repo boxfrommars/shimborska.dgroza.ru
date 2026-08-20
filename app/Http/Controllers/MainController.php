@@ -14,6 +14,7 @@ class MainController extends Controller
     {
         return $this->page('main', 'main', [
             'title' => 'Вислава Шимборская. Стихотворения',
+            'canonicalUrl' => $this->canonicalUrl(route('main', [], false)),
         ]);
     }
 
@@ -28,6 +29,10 @@ class MainController extends Controller
 
         return $this->page($view, 'poem', [
             'title' => "Вислава Шимборская. {$poem['title']}",
+            'canonicalUrl' => $this->canonicalUrl(route('poem', [
+                'section' => $poem['section'],
+                'slug' => $poem['slug'],
+            ], false)),
         ], $poem);
     }
 
@@ -35,6 +40,7 @@ class MainController extends Controller
     {
         return $this->page('project', 'project', [
             'title' => 'Вислава Шимборская. О проекте',
+            'canonicalUrl' => $this->canonicalUrl(route('project', [], false)),
         ]);
     }
 
@@ -42,6 +48,7 @@ class MainController extends Controller
     {
         return $this->page('author', 'author', [
             'title' => 'Вислава Шимборская. Об авторе',
+            'canonicalUrl' => $this->canonicalUrl(route('author', [], false)),
         ]);
     }
 
@@ -78,5 +85,10 @@ class MainController extends Controller
             ],
             $params
         ));
+    }
+
+    private function canonicalUrl(string $path): string
+    {
+        return rtrim((string) config('app.url'), '/') . $path;
     }
 }

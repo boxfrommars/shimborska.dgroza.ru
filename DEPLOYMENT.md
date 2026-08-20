@@ -57,8 +57,8 @@ Web middleware для cookies, session, CSRF и shared validation errors
 | `LOG_LEVEL` | нет | нет | Уровень, подходящий для production |
 | `CACHE_STORE` | нет | нет | `file` |
 
-`APP_URL` является единственным источником origin для sitemap. Переменная
-`APP_HTTPS` не поддерживается.
+`APP_URL` является единственным источником origin для sitemap и HTML canonical
+URL. Переменная `APP_HTTPS` не поддерживается.
 
 ## Состояние и запись
 
@@ -138,6 +138,12 @@ Hooks выполняются после установки production-завис
 - Дополнительные имена: отсутствуют
 - HTTP-запрос должен постоянно перенаправляться на тот же path и query string
   канонического HTTPS URL
+- `GET` и `HEAD` существующего HTML URL с завершающим `/`, кроме корня,
+  постоянно перенаправляются на тот же path без завершающего `/` с сохранением
+  query string
+- Каждая успешная индексируемая HTML-страница содержит ровно один
+  self-referential `rel="canonical"`, построенный из `APP_URL` и канонического
+  пути без query string
 - `GET /up` возвращает `200`
 - `GET /{section}` возвращает временный redirect на первое стихотворение
   существующего раздела
@@ -159,10 +165,12 @@ Hooks выполняются после установки production-завис
 
 | Метод и путь | Ожидаемый результат |
 | --- | --- |
-| `GET /` | `200`, главная страница |
+| `GET /` | `200`, главная страница с canonical `https://shimborska.dgroza.ru/` |
 | `GET /up` | `200` |
 | `GET /project` | `200` |
 | `GET /author` | `200` |
+| `GET /author/?source=smoke` | `301` на `/author?source=smoke` |
+| `GET /author?source=smoke` | `200`, canonical `https://shimborska.dgroza.ru/author` |
 | `GET /different/two-monkeys` | `200`, страница стихотворения |
 | `GET /different/little-girl-pull-tablecloth` | `301` на `/moment/little-girl-pull-tablecloth` |
 | `GET /moment/little-girl-pull-tablecloth` | `200`, страница стихотворения |
@@ -176,7 +184,7 @@ Hooks выполняются после установки production-завис
 | `GET /moment/ball` | `200`, страница стихотворения |
 | `GET /different/note` | `301` на `/moment/note` |
 | `GET /moment/note` | `200`, страница стихотворения |
-| `GET /semicolon/two-monkeys` | фирменный HTML `404` |
+| `GET /semicolon/two-monkeys` и `/semicolon/two-monkeys/` | фирменный HTML `404` |
 | `GET /unknown`, `Accept: application/json` | JSON `404` |
 | `GET /sitemap.xml` | `200`, актуальные HTTPS URL |
 | HTTP `GET /project?source=smoke` | `301` на тот же path и query по каноническому HTTPS URL |
@@ -193,8 +201,7 @@ composer sitemap
 
 `composer check` выполняет строгую валидацию Composer, security audit, проверку
 стиля PHP без изменения файлов и PHPUnit. После изменений layout, CSS или JS
-дополнительно проверить desktop и mobile, диалог содержания, короткую и длинную
-страницу и отсутствие ошибок в консоли.
+дополнительно пройти ручную матрицу из `docs/FRONTEND.md`.
 
 `composer check` не является runtime hook и не запускается после production-
 установки с `--no-dev`. После deployment выполняются lifecycle hooks и smoke-

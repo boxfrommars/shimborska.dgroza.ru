@@ -21,6 +21,9 @@
     <meta name="theme-color" content="#333333">
 
     <title>{{ $title }}</title>
+    @isset($canonicalUrl)
+        <link rel="canonical" href="{{ $canonicalUrl }}">
+    @endisset
     @yield('head')
 </head>
 
