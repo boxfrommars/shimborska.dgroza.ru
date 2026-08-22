@@ -184,9 +184,9 @@
 
 @section('notes')
     <div class="note" id="note001" role="doc-footnote" tabindex="-1">
-        <p>Кассандра (др.-греч. Κασσάνδρα)&nbsp;— персонаж древнегреческой мифологии, дочь Приама и Гекубы. Большинство
-            авторов описывает её как прорицательницу, предсказаниям которой никто не верил. Согласно Гомеру, она была
-            красивейшей из дочерей Приама. <a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a></p>
+        <p><span class="note-proper-name">Кассандра</span> <span class="note-nowrap">(др.-греч.&nbsp;Κασσάνδρα)</span>&nbsp;— персонаж древнегреческой мифологии, дочь <span class="note-proper-name">Приама</span> и&nbsp;<span class="note-proper-name">Гекубы</span>. Большинство
+            авторов описывает её как прорицательницу, предсказаниям которой никто не&nbsp;верил. Согласно <span class="note-proper-name">Гомеру</span>, она была
+            красивейшей из&nbsp;дочерей <span class="note-proper-name">Приама</span>.&nbsp;<a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a></p>
     </div>
 @endsection
 

@@ -366,6 +366,12 @@ ul.classic,
 	padding: 10px;
 	left: 0;
 }
+.notabene .note-proper-name {
+	hyphens: none;
+}
+.notabene .note-nowrap {
+	white-space: nowrap;
+}
 .tonote {
 	border-bottom: 1px dashed #7F1F17;
 	text-decoration: none;
@@ -384,9 +390,6 @@ ul.classic,
 .note-backlink:hover,
 .note-backlink:focus-visible {
 	color: #333;
-}
-#book-note {
-	top: 470px;
 }
 #book-note h2 {
 	font-weight: 400;
@@ -538,6 +541,13 @@ ul.classic,
 	padding: 4px;
 }
 /**/
+
+@media (min-width: 1024px) {
+	#book-note {
+		top: 570px;
+		transform: translateY(-100%);
+	}
+}
 
 @media (min-width: 761px) and (max-width: 1023px) {
 	#main {

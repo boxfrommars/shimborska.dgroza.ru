@@ -115,6 +115,14 @@ body > noscript {
 	hyphens: auto;
 }
 
+.notabene .note-proper-name {
+	hyphens: none;
+}
+
+.notabene .note-nowrap {
+	white-space: nowrap;
+}
+
 .page p {
 	margin: 0 0 3.5mm;
 }

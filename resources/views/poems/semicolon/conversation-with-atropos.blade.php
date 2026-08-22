@@ -111,8 +111,8 @@
 @section('notes')
     <div class="note" id="note001" role="doc-footnote" tabindex="-1">
         <p>
-            Атропос или Атропа («Неотвратимая»)&nbsp;— неумолимая, неотвратимая участь (смерть). Одна из трёх мойр, греческих
-            богинь судьбы. Перерезающая нить. <a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a>
+            <span class="note-proper-name">Атропос</span> или <span class="note-proper-name">Атропа</span> («Неотвратимая»)&nbsp;— неумолимая, неотвратимая участь (смерть). Одна из&nbsp;трёх мойр, греческих
+            богинь судьбы. Перерезающая нить.&nbsp;<a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a>
         </p>
     </div>
 @endsection

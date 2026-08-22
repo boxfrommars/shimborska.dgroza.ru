@@ -290,6 +290,46 @@ class SiteTest extends TestCase
         self::assertSame([], $violations);
     }
 
+    public function testMainNoteMeetsNarrowColumnTypographyContract(): void
+    {
+        $content = $this->get('/')->assertOk()->getContent();
+        $document = new DOMDocument;
+        $previousUseInternalErrors = libxml_use_internal_errors(true);
+
+        try {
+            self::assertTrue($document->loadHTML($content));
+        } finally {
+            libxml_clear_errors();
+            libxml_use_internal_errors($previousUseInternalErrors);
+        }
+
+        $xpath = new DOMXPath($document);
+        $notes = $xpath->query('//aside[contains(concat(" ", normalize-space(@class), " "), " notabene ")]');
+        self::assertSame(1, $notes->length);
+
+        $violations = [];
+        self::collectNarrowNoteTypographyViolations($violations, $notes->item(0)->textContent, '/, notes 0');
+
+        self::assertSame([], $violations);
+    }
+
+    public function testNarrowNoteTypographyValidatorDetectsBreakableGroups(): void
+    {
+        $violations = [];
+
+        self::collectNarrowNoteTypographyViolations(
+            $violations,
+            'Текст в колонке, 2001 года, 12 до н. э.',
+            '/fixture, notes 0',
+        );
+
+        self::assertSame([], array_diff([
+            'notes: breakable short service word',
+            'notes: breakable year designation',
+            'notes: breakable era abbreviation',
+        ], array_keys($violations)));
+    }
+
     public function testContentValidatorDetectsStructuralViolations(): void
     {
         $document = new DOMDocument;
@@ -799,6 +839,11 @@ class SiteTest extends TestCase
                 'ru',
                 "{$path}, notes {$notesIndex}",
             );
+            self::collectNarrowNoteTypographyViolations(
+                $violations,
+                $notes->textContent,
+                "{$path}, notes {$notesIndex}",
+            );
         }
 
         self::collectNoteViolations($violations, $xpath, $path);
@@ -872,6 +917,10 @@ class SiteTest extends TestCase
 
                 if (trim($backlink->attributes?->getNamedItem('aria-label')?->nodeValue ?? '') === '') {
                     $violations['notes: missing backlink label'][] = "{$path}: {$id}";
+                }
+
+                if (!str_ends_with($backlink->previousSibling?->textContent ?? '', "\u{00A0}")) {
+                    $violations['notes: breakable backlink'][] = "{$path}: {$id}";
                 }
             }
 
@@ -974,6 +1023,32 @@ class SiteTest extends TestCase
 
             if ($matches[0] !== []) {
                 $violations[$rule][] = "{$path}: " . implode(', ', array_unique($matches[0]));
+            }
+        }
+    }
+
+    private static function collectNarrowNoteTypographyViolations(
+        array &$violations,
+        string $text,
+        string $context,
+    ): void {
+        $patterns = [
+            'notes: breakable short service word' => '/(?<![\p{L}\p{M}-])(?:а|в|и|к|о|с|у|во|до|за|из|на|не|но|об|от|по|со)[\x{20}\t\r\n]+(?=[\p{L}\p{M}\d«„(])/iu',
+            'notes: breakable year designation' => '/\b\d{4}(?:–\d{4})?[\x{20}\t\r\n]+(?:г\.|гг\.|года)(?=[\s.,)])/u',
+            'notes: breakable era abbreviation' => '/\b(?:до[\x{20}\t\r\n]+н\.|н\.[\x{20}\t\r\n]+э\.)/u',
+        ];
+
+        foreach ($patterns as $rule => $pattern) {
+            $result = preg_match_all($pattern, $text, $matches);
+
+            if ($result === false) {
+                $violations[$rule][] = "{$context}: pattern could not be evaluated";
+
+                continue;
+            }
+
+            if ($matches[0] !== []) {
+                $violations[$rule][] = "{$context}: " . implode(', ', array_unique($matches[0]));
             }
         }
     }

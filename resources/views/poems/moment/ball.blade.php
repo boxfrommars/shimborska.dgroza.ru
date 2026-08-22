@@ -201,11 +201,11 @@
 
 @section('notes')
     <div class="note" id="note001" role="doc-footnote" tabindex="-1">
-        <p>Йоганн Хризостом Вольфганг Теофил Моцарт (1756–1791)&nbsp;— величайший австрийский композитор, инструменталист и
+        <p><span class="note-proper-name">Йоганн Хризостом Вольфганг Теофил Моцарт</span> <span class="note-nowrap">(1756–1791)</span>&nbsp;— величайший австрийский композитор, инструменталист и&nbsp;
             дирижёр.</p>
-        <p>Томас Алва Эдисон (1847–1931)&nbsp;— всемирно известный американский изобретатель и предприниматель</p>
-        <p>Платон (428 или 427 до н. э.&nbsp;— 348 или 347 до н. э.)&nbsp;— древнегреческий философ, ученик Сократа, учитель
-            Аристотеля. <a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a></p>
+        <p><span class="note-proper-name">Томас Алва Эдисон</span> <span class="note-nowrap">(1847–1931)</span>&nbsp;— всемирно известный американский изобретатель и&nbsp;предприниматель</p>
+        <p><span class="note-proper-name">Платон</span> (428 или 427&nbsp;до&nbsp;н.&nbsp;э.&nbsp;— 348 или 347&nbsp;до&nbsp;н.&nbsp;э.)&nbsp;— древнегреческий философ, ученик <span class="note-proper-name">Сократа</span>, учитель
+            <span class="note-proper-name">Аристотеля</span>.&nbsp;<a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a></p>
     </div>
 @endsection
 

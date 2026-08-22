@@ -224,13 +224,13 @@
 
 @section('notes')
     <div class="note" id="note001" role="doc-footnote" tabindex="-1">
-        <p>Литературный еженедельник, в котором в 1953–1981 гг. работала Вислава Шимборская. <a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a></p>
+        <p>Литературный еженедельник, в&nbsp;котором в&nbsp;<span class="note-nowrap">1953–1981&nbsp;гг.</span> работала <span class="note-proper-name">Вислава Шимборская</span>.&nbsp;<a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a></p>
     </div>
     <div class="note" id="note002" role="doc-footnote" tabindex="-1">
-        <p>Ксаверий Дуниковский (1875–1964)&nbsp;— польский скульптор и живописец. <a class="note-backlink" href="#tonote002" aria-label="Вернуться к месту примечания">↩</a></p>
+        <p><span class="note-proper-name">Ксаверий Дуниковский</span> <span class="note-nowrap">(1875–1964)</span>&nbsp;— польский скульптор и&nbsp;живописец.&nbsp;<a class="note-backlink" href="#tonote002" aria-label="Вернуться к месту примечания">↩</a></p>
     </div>
     <div class="note" id="note003" role="doc-footnote" tabindex="-1">
-        <p>Цикл стихотворений Адама Мицкевича, написанных в 1839 г. в Лозанне. <a class="note-backlink" href="#tonote003" aria-label="Вернуться к месту примечания">↩</a></p>
+        <p>Цикл стихотворений <span class="note-proper-name">Адама Мицкевича</span>, написанных в&nbsp;<span class="note-nowrap">1839&nbsp;г.</span> в&nbsp;<span class="note-proper-name">Лозанне</span>.&nbsp;<a class="note-backlink" href="#tonote003" aria-label="Вернуться к месту примечания">↩</a></p>
     </div>
 
 @endsection

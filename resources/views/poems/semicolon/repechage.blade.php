@@ -57,9 +57,9 @@
 @section('notes')
     <div class="note" id="note001" role="doc-footnote" tabindex="-1">
         <p>
-            Чарлз Роберт Дарвин (1809–1882)&nbsp;— английский натуралист и&nbsp;путешественник, одним из&nbsp;первых
+            <span class="note-proper-name">Чарлз Роберт Дарвин</span> <span class="note-nowrap">(1809–1882)</span>&nbsp;— английский натуралист и&nbsp;путешественник, одним из&nbsp;первых
             осознал и&nbsp;наглядно продемонстрировал, что все живые организмы эволюционируют во&nbsp;времени от&nbsp;общих
-            предков. <a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a>
+            предков.&nbsp;<a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a>
         </p>
     </div>
 @endsection

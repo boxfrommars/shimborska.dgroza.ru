@@ -164,7 +164,7 @@
 @section('notes')
     <div class="note" id="note001" role="doc-footnote" tabindex="-1">
         <p>
-            Питер Брейгель-старший (ок. 1525–1569)&nbsp;— фламандский живописец и график. Мастер пейзажа и жанровых сцен. <a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a>
+            <span class="note-proper-name">Питер Брейгель-старший</span> <span class="note-nowrap">(ок.&nbsp;1525–1569)</span>&nbsp;— фламандский живописец и&nbsp;график. Мастер пейзажа и&nbsp;жанровых сцен.&nbsp;<a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a>
         </p>
     </div>
 

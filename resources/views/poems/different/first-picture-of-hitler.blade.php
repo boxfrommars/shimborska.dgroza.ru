@@ -97,8 +97,8 @@
 
 @section('notes')
     <div class="note" id="note001" role="doc-footnote" tabindex="-1">
-        <p>Браунау-на-Инне&nbsp;— город в&nbsp;Австрии, в&nbsp;федеральной земле Верхняя Австрия, в&nbsp;Браунау 20&nbsp;апреля&nbsp;1889
-            года родился Адольф Гитлер <a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a></p>
+        <p><span class="note-proper-name">Браунау-на-Инне</span>&nbsp;— город в&nbsp;<span class="note-proper-name">Австрии</span>, в&nbsp;федеральной земле <span class="note-proper-name">Верхняя Австрия</span>, в&nbsp;<span class="note-proper-name">Браунау</span> <span class="note-nowrap">20&nbsp;апреля&nbsp;1889&nbsp;года</span>
+            родился <span class="note-proper-name">Адольф Гитлер</span>&nbsp;<a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a></p>
     </div>
 @endsection
 

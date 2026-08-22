@@ -73,8 +73,7 @@
 @section('notes')
     <div class="note" id="note001" role="doc-footnote" tabindex="-1">
         <p>
-            Ян Вермер&nbsp;— нидерландский художник, мастер бытовой живописи и жанрового портрета. Наряду с Рембрандтом и
-            Франсом Халсом является одним из величайших живописцев золотого века голландского искусства <a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a>
+            <span class="note-proper-name">Ян Вермер</span>&nbsp;— нидерландский художник, мастер бытовой живописи и&nbsp;жанрового портрета. Наряду с&nbsp;<span class="note-proper-name">Рембрандтом</span> и&nbsp;<span class="note-proper-name">Франсом Халсом</span> является одним из&nbsp;величайших живописцев золотого века голландского искусства&nbsp;<a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a>
         </p>
     </div>
 

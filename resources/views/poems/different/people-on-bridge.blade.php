@@ -69,8 +69,8 @@
 
 @section('notes')
     <div class="note" id="note001" role="doc-footnote" tabindex="-1">
-        <p>Утагава Хиросигэ (歌川広重; 1797–1858)&nbsp;— японский художник-график, представитель направления укиё-э, мастер
-            цветной ксилографии. Работал под пседонимом Андо Хиросигэ <a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a></p>
+        <p><span class="note-proper-name">Утагава Хиросигэ</span> <span class="note-nowrap">(歌川広重;&nbsp;1797–1858)</span>&nbsp;— японский художник-график, представитель направления <span class="note-proper-name">укиё-э</span>, мастер
+            цветной ксилографии. Работал под пседонимом <span class="note-proper-name">Андо Хиросигэ</span>&nbsp;<a class="note-backlink" href="#tonote001" aria-label="Вернуться к месту примечания">↩</a></p>
     </div>
 @endsection
 
