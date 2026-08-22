@@ -353,6 +353,16 @@ ul.classic,
 	padding-bottom: 1em;
 }
 
+@media screen and (min-width: 761px) {
+	#navigation {
+		font-size: 1.25rem;
+		line-height: 23.8px;
+	}
+	#leftbar {
+		transform: translateY(.875px);
+	}
+}
+
 /* записки на полях */
 .notabene {
 	grid-column: 3;
