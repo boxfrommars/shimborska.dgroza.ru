@@ -210,16 +210,16 @@
 @endsection
 
 @section('images')
-    <div class="left-box" style="margin-top:50px;">
+    <div class="left-box" style="--illustration-offset: 34px;">
         <img alt="Моцарт, Вольфганг Амадей" src="/images/mozart.jpg"/>
         <p>Вольфганг Амадей Моцарт, портрет</p>
         <p>Барбара Крафт (1819)</p>
     </div>
-    <div class="left-box">
+    <div class="left-box" style="--illustration-offset: 38px;">
         <img alt="Платон" src="/images/plato.jpg"/>
         <p>Платон на фреске Рафаэля Санти (1509)</p>
     </div>
-    <div class="left-box">
+    <div class="left-box" style="--illustration-offset: 79px;">
         <img alt="Томас Эдисон" src="/images/edison.jpg"/>
         <p>Томас Эдисон (1915)</p>
     </div>

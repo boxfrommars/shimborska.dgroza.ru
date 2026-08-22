@@ -116,7 +116,7 @@
 @endsection
 
 @section('images')
-    <div class="left-box" style="margin-top:35px;">
+    <div class="left-box" style="--illustration-offset: 79px;">
         <img alt="11 сентября, выпрыгнувший из торгового центра человек" src="/images/11september.jpg"/>
         <p>Фотограф Ричард Дрю, Ассошиэйтед Пресс</p>
     </div>

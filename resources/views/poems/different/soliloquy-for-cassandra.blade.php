@@ -191,7 +191,7 @@
 @endsection
 
 @section('images')
-    <div class="left-box" style="margin-top:50px;">
+    <div class="left-box" style="--illustration-offset: 13px;">
         <img alt="кассандра" src="/images/cassandra.jpg"/>
         <p>Кассандра (1898)</p>
         <p>Э. Де Морган</p>

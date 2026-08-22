@@ -75,7 +75,7 @@
 @endsection
 
 @section('images')
-    <div class="left-box" style="margin-top:50px;">
+    <div class="left-box" style="--illustration-offset: 12px;">
         <img alt="Мост Осаши" src="/images/hirosige.jpg"/>
         <p>Мост Осаши</p>
         <p>Андо Хиросигэ. Из цикла 100 известных видов Эдо (1856–1858)</p>

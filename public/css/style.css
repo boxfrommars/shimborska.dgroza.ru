@@ -492,6 +492,9 @@ ul.classic,
 	#content li {
 		padding-bottom: 2px;
 	}
+	.illustrations .left-box {
+		margin-top: var(--illustration-offset, 0);
+	}
 }
 
 /* нижняя навигация */
@@ -700,7 +703,7 @@ ul.classic,
 	.illustrations .left-box {
 		width: 160px;
 		flex: 0 0 160px;
-		margin-top: 0 !important;
+		margin-top: 0;
 		margin-bottom: 0;
 	}
 	.page {

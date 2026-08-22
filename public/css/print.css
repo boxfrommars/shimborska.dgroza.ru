@@ -243,7 +243,7 @@ body > noscript {
 
 .illustrations .left-box {
 	width: auto;
-	margin: 0 !important;
+	margin: 0;
 	padding: 3mm;
 	border: 0;
 	color: #222;

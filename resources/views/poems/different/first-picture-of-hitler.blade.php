@@ -103,12 +103,12 @@
 @endsection
 
 @section('images')
-    <div class="left-box" style="margin-top:50px;">
+    <div class="left-box" style="--illustration-offset: 156px;">
         <img alt="Адольф Гитлер в возрасте 12 лет" src="/images/younghitler.jpg"/>
         <p>А. Гитлер, 12 лет (1901)</p>
         <p>Школьная фотография, г.&nbsp;Ленц</p>
     </div>
-    <div class="left-box">
+    <div class="left-box" style="--illustration-offset: 79px;">
         <img alt="Мемориальный камень против войны и фашизма" src="/images/mahnstein.jpg"/>
         <p>Памятник перед домом, где родился Гитлер</p>
         <p>«За&nbsp;свободу, мир и&nbsp;демократию. Не&nbsp;допустим фашизма вновь, миллионы погибших просят нас об&nbsp;этом»</p>

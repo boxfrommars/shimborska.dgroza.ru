@@ -65,7 +65,7 @@
 @endsection
 
 @section('images')
-    <div class="left-box" style="margin-top:50px;">
+    <div class="left-box" style="--illustration-offset: 50px;">
         <img alt="Чарлз Дарвин" src="/images/darwin.jpg"/>
         <p>Чарлз Дарвин (1881)</p>
     </div>

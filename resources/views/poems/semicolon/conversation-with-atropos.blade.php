@@ -118,7 +118,7 @@
 @endsection
 
 @section('images')
-    <div class="left-box" style="margin-top:50px;">
+    <div class="left-box" style="--illustration-offset: 53px;">
         <img alt="Атропа" src="/images/atropos.jpg"/>
         <p>Атропа, перерезающая нить судьбы</p>
         <p>Церковь Богородицы Стовратной, о. Парос</p>
