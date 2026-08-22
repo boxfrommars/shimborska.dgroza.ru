@@ -478,7 +478,7 @@ ul.classic,
 	min-width: 0;
 }
 
-@media screen and (min-width: 761px) {
+@media screen and (min-width: 529px) {
 	.page {
 		font-size: 1.0625rem;
 		line-height: 1.4;
@@ -561,9 +561,9 @@ ul.classic,
 
 @media (min-width: 761px) and (max-width: 1023px) {
 	#main {
-		grid-template-columns: 220px minmax(500px, 530px);
+		grid-template-columns: minmax(215px, 220px) 530px;
 		grid-template-rows: auto 1fr auto;
-		width: clamp(720px, calc(100% - 16px), 750px);
+		width: clamp(745px, calc(100% - 16px), 750px);
 	}
 	.page {
 		grid-column: 2;
@@ -649,10 +649,14 @@ ul.classic,
 		background: url(/images/pages_corner.png) no-repeat 100% 0,
 			url(/images/pages.png) repeat-x 0 0;
 	}
-	#leftbar,
+	#leftbar {
+		width: auto;
+	}
 	.page,
 	.notabene {
-		width: auto;
+		justify-self: center;
+		width: 100%;
+		max-width: 530px;
 	}
 	#leftbar {
 		grid-column: 1;
@@ -703,8 +707,6 @@ ul.classic,
 		grid-column: 1;
 		grid-row: 2;
 		padding: 18px 0 0;
-		font-size: 1rem;
-		line-height: 1.45;
 		overflow-wrap: break-word;
 	}
 	.error-main .page {
@@ -724,7 +726,6 @@ ul.classic,
 	.notabene {
 		grid-column: 1;
 		grid-row: 4;
-		justify-self: stretch;
 	}
 	#pager {
 		display: flex;
