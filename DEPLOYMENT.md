@@ -31,6 +31,8 @@ production. Способ размещения, права ОС и админис
 - Относительный публичный каталог: `public/`
 - Entry point: `public/index.php`
 - Frontend-сборка: отсутствует; CSS, изображения и vanilla JS хранятся готовыми
+- Шрифты для чтения: versioned WOFF2 в `public/fonts/`; внешние font-сервисы
+  во время выполнения не требуются
 - PHP-расширения для production-установки Composer: `ext-ctype`, `ext-dom`,
   `ext-fileinfo`, `ext-filter`, `ext-hash`, `ext-iconv`, `ext-json`,
   `ext-libxml`, `ext-mbstring`, `ext-openssl`, `ext-pcre`, `ext-session` и
@@ -144,6 +146,9 @@ Hooks выполняются после установки production-завис
 - Каждая успешная индексируемая HTML-страница содержит ровно один
   self-referential `rel="canonical"`, построенный из `APP_URL` и канонического
   пути без query string
+- Versioned WOFF2, на которые ссылается CSS, отдаются с
+  `Content-Type: font/woff2` и
+  `Cache-Control: public, max-age=31536000, immutable`
 - `GET /up` возвращает `200`
 - `GET /{section}` возвращает временный redirect на первое стихотворение
   существующего раздела
@@ -172,6 +177,7 @@ Hooks выполняются после установки production-завис
 | `GET /author/?source=smoke` | `301` на `/author?source=smoke` |
 | `GET /author?source=smoke` | `200`, canonical `https://shimborska.dgroza.ru/author` |
 | `GET /different/two-monkeys` | `200`, страница стихотворения |
+| `HEAD /fonts/pt-serif/v19/regular-cyrillic.woff2` | `200`, `Content-Type: font/woff2` и длительное immutable-кеширование |
 | `GET /different/little-girl-pull-tablecloth` | `301` на `/moment/little-girl-pull-tablecloth` |
 | `GET /moment/little-girl-pull-tablecloth` | `200`, страница стихотворения |
 | `GET /different/about-soul` | `301` на `/moment/about-soul` |

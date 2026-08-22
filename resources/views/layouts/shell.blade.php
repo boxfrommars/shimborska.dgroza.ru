@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="google-site-verification" content="yvzIVHZghvLLFJArEmBKcr5HGABsieiNZYLausg9Loo" />
     <meta name="yandex-verification" content="74f87e2ca2368e81" />
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css?v={{ filemtime(public_path('css/fonts.css')) }}" />
     <link rel="stylesheet" type="text/css" href="/css/style.css?v={{ filemtime(public_path('css/style.css')) }}" media="screen" />
     @if(in_array($page, ['poem', 'project', 'author'], true))
         <link rel="stylesheet" type="text/css" href="/css/print.css?v={{ filemtime(public_path('css/print.css')) }}" media="print" />

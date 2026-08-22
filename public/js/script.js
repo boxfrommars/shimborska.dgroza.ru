@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     positionNotes();
+    if (document.fonts?.ready) document.fonts.ready.then(positionNotes);
     window.addEventListener('load', positionNotes);
     window.addEventListener('resize', positionNotes);
     document.querySelectorAll('.page img').forEach((image) => {

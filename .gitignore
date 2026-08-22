@@ -10,3 +10,4 @@ Homestead.yaml
 .phpunit.result.cache
 .phpunit.cache
 public/sitemap.xml
+/display-lab/

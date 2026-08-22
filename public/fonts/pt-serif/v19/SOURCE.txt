@@ -1,0 +1,4 @@
+PT Serif 19, regular 400, italic 400 and bold 700
+Source: https://fonts.google.com/specimen/PT+Serif
+WOFF2 subsets: Google Fonts CSS API and fonts.gstatic.com, downloaded 2026-08-22
+License: SIL Open Font License 1.1 (see OFL.txt)

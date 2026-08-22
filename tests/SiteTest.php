@@ -16,20 +16,73 @@ class SiteTest extends TestCase
 {
     public function testMainPageIsAvailable(): void
     {
+        $fontVersion = filemtime(public_path('css/fonts.css'));
         $styleVersion = filemtime(public_path('css/style.css'));
         $scriptVersion = filemtime(public_path('js/script.js'));
 
+        self::assertIsInt($fontVersion);
         self::assertIsInt($styleVersion);
         self::assertIsInt($scriptVersion);
 
         $this->get('/')
             ->assertOk()
             ->assertSee('name="viewport" content="width=device-width, initial-scale=1"', false)
+            ->assertSee("/css/fonts.css?v={$fontVersion}", false)
             ->assertSee("/css/style.css?v={$styleVersion}", false)
             ->assertDontSee('/css/print.css', false)
             ->assertSee('<dialog id="content"', false)
             ->assertSee("/js/script.js?v={$scriptVersion}", false)
             ->assertDontSee('jquery', false);
+    }
+
+    public function testReadingFontsAreLocalVersionedAssets(): void
+    {
+        $fontCssPath = public_path('css/fonts.css');
+        $fontCss = File::get($fontCssPath);
+        $fontVersion = filemtime($fontCssPath);
+
+        self::assertIsInt($fontVersion);
+        self::assertSame(9, preg_match_all(
+            '/url\("(?<url>\/fonts\/pt-serif\/v19\/[^"\)]+\.woff2)"\)/',
+            $fontCss,
+            $matches,
+        ));
+
+        $fontUrls = array_values(array_unique($matches['url']));
+        $expectedFontUrls = [
+            '/fonts/pt-serif/v19/bold-cyrillic.woff2',
+            '/fonts/pt-serif/v19/bold-latin-ext.woff2',
+            '/fonts/pt-serif/v19/bold-latin.woff2',
+            '/fonts/pt-serif/v19/italic-cyrillic.woff2',
+            '/fonts/pt-serif/v19/italic-latin-ext.woff2',
+            '/fonts/pt-serif/v19/italic-latin.woff2',
+            '/fonts/pt-serif/v19/regular-cyrillic.woff2',
+            '/fonts/pt-serif/v19/regular-latin-ext.woff2',
+            '/fonts/pt-serif/v19/regular-latin.woff2',
+        ];
+        sort($fontUrls);
+        sort($expectedFontUrls);
+
+        self::assertSame($expectedFontUrls, $fontUrls);
+        self::assertSame(9, substr_count($fontCss, '@font-face'));
+        self::assertSame(9, substr_count($fontCss, 'font-display: swap'));
+        self::assertSame(6, substr_count($fontCss, 'font-weight: 400'));
+        self::assertSame(3, substr_count($fontCss, 'font-weight: 700'));
+        self::assertStringNotContainsString('fonts.googleapis.com', $fontCss);
+        self::assertStringNotContainsString('fonts.gstatic.com', $fontCss);
+
+        foreach ($fontUrls as $fontUrl) {
+            $fontPath = public_path(ltrim($fontUrl, '/'));
+            self::assertFileExists($fontPath, $fontUrl);
+            self::assertSame('wOF2', substr(File::get($fontPath), 0, 4), $fontUrl);
+        }
+
+        self::assertFileExists(public_path('fonts/pt-serif/v19/OFL.txt'));
+        self::assertFileExists(public_path('fonts/pt-serif/v19/SOURCE.txt'));
+
+        $fontStylesheet = "/css/fonts.css?v={$fontVersion}";
+        $this->get('/')->assertSee($fontStylesheet, false);
+        $this->get('/unknown')->assertNotFound()->assertSee($fontStylesheet, false);
     }
 
     public function testIndexablePagesDeclareCanonicalUrls(): void
