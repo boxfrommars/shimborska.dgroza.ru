@@ -261,6 +261,9 @@ body {
 	min-height: 100vh;
 	min-height: 100dvh;
 }
+body.content-open {
+	overflow: hidden;
+}
 #wrap {
 	flex: 1 0 auto;
 	position: relative;
@@ -625,9 +628,6 @@ ul.classic,
 	}
 	body {
 		background: #fafafa;
-	}
-	body.content-open {
-		overflow: hidden;
 	}
 	#wrap {
 		min-height: 0;
