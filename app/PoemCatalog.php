@@ -4,9 +4,17 @@ namespace App;
 
 final class PoemCatalog
 {
+    /** Two entries before the current poem in the regular six-number pager. */
     private const NAVIGATION_LEFT_PADDING = 2;
 
+    /** Three entries after the current poem preserve the established 2 + 1 + 3 window. */
     private const NAVIGATION_RIGHT_PADDING = 3;
+
+    /** The narrow pager keeps the same two preceding entries. */
+    private const COMPACT_NAVIGATION_LEFT_PADDING = 2;
+
+    /** Two following entries make the compact window symmetric: 2 + 1 + 2. */
+    private const COMPACT_NAVIGATION_RIGHT_PADDING = 2;
 
     /**
      * @var array<string, array{title: string, poems: list<array{slug: string, title: string}>}>
@@ -14,11 +22,15 @@ final class PoemCatalog
     private array $sections;
 
     /**
+     * Flat catalog in public page-number order.
+     *
      * @var list<array{section: string, slug: string, title: string}>
      */
     private array $poems = [];
 
     /**
+     * Exact section/slug lookup without changing the ordered catalog above.
+     *
      * @var array<string, array{section: string, slug: string, title: string}>
      */
     private array $poemsByPath = [];
@@ -27,6 +39,7 @@ final class PoemCatalog
     {
         $this->sections = require resource_path('data/poems.php');
 
+        // Source order defines both public numbering and every navigation window.
         foreach ($this->sections as $sectionSlug => $section) {
             foreach ($section['poems'] as $poem) {
                 $entry = [
@@ -78,11 +91,13 @@ final class PoemCatalog
     /**
      * @return array{
      *     items: array<int, array{section: string, slug: string, title: string}>,
+     *     compactItems: array<int, array{section: string, slug: string, title: string}>,
      *     currentIndex: int|null
      * }
      */
     public function navigation(?string $section = null, ?string $slug = null): array
     {
+        // Cover and service pages have no current poem, so their windows start at item zero.
         $currentIndex = null;
 
         if ($section !== null && $slug !== null) {
@@ -94,13 +109,38 @@ final class PoemCatalog
             }
         }
 
+        // Blade renders the regular window once and marks entries absent from
+        // compactItems, avoiding a duplicate mobile navigation tree.
+        return [
+            'items' => $this->navigationWindow(
+                $currentIndex,
+                self::NAVIGATION_LEFT_PADDING,
+                self::NAVIGATION_RIGHT_PADDING,
+            ),
+            'compactItems' => $this->navigationWindow(
+                $currentIndex,
+                self::COMPACT_NAVIGATION_LEFT_PADDING,
+                self::COMPACT_NAVIGATION_RIGHT_PADDING,
+            ),
+            'currentIndex' => $currentIndex,
+        ];
+    }
+
+    /**
+     * @return array<int, array{section: string, slug: string, title: string}>
+     */
+    private function navigationWindow(?int $currentIndex, int $leftPadding, int $rightPadding): array
+    {
         $offset = 0;
 
         if ($currentIndex !== null) {
-            $offset = $currentIndex - self::NAVIGATION_LEFT_PADDING;
+            // Initially place the current poem after the requested number of predecessors.
+            $offset = $currentIndex - $leftPadding;
             $lastIndex = count($this->poems) - 1;
-            $rightOverflow = $lastIndex - ($currentIndex + self::NAVIGATION_RIGHT_PADDING);
+            $rightOverflow = $lastIndex - ($currentIndex + $rightPadding);
 
+            // Near the catalog end, shift the whole window left instead of returning
+            // fewer entries. Near the beginning, clamp the resulting offset to zero.
             if ($rightOverflow < 0) {
                 $offset -= abs($rightOverflow);
             }
@@ -108,15 +148,14 @@ final class PoemCatalog
             $offset = max(0, $offset);
         }
 
-        return [
-            'items' => array_slice(
-                $this->poems,
-                $offset,
-                self::NAVIGATION_LEFT_PADDING + self::NAVIGATION_RIGHT_PADDING + 1,
-                true,
-            ),
-            'currentIndex' => $currentIndex,
-        ];
+        return array_slice(
+            $this->poems,
+            $offset,
+            $leftPadding + $rightPadding + 1,
+            // Original zero-based keys are public page indexes and let Blade compare
+            // regular and compact windows without rebuilding an index map.
+            true,
+        );
     }
 
     private function path(string $section, string $slug): string

@@ -636,11 +636,13 @@ class SiteTest extends TestCase
         $coverNavigation = $catalog->navigation();
         self::assertNull($coverNavigation['currentIndex']);
         self::assertSame(array_keys(array_slice($poems, 0, 6, true)), array_keys($coverNavigation['items']));
+        self::assertSame(array_keys(array_slice($poems, 0, 5, true)), array_keys($coverNavigation['compactItems']));
 
         $firstPoem = $poems[0];
         $firstNavigation = $catalog->navigation($firstPoem['section'], $firstPoem['slug']);
         self::assertSame(0, $firstNavigation['currentIndex']);
         self::assertSame([0, 1, 2, 3, 4, 5], array_keys($firstNavigation['items']));
+        self::assertSame([0, 1, 2, 3, 4], array_keys($firstNavigation['compactItems']));
 
         $middleIndex = intdiv($lastIndex, 2);
         $middlePoem = $poems[$middleIndex];
@@ -650,6 +652,10 @@ class SiteTest extends TestCase
             range($middleIndex - 2, $middleIndex + 3),
             array_keys($middleNavigation['items']),
         );
+        self::assertSame(
+            range($middleIndex - 2, $middleIndex + 2),
+            array_keys($middleNavigation['compactItems']),
+        );
 
         $lastPoem = $poems[$lastIndex];
         $lastNavigation = $catalog->navigation($lastPoem['section'], $lastPoem['slug']);
@@ -658,6 +664,26 @@ class SiteTest extends TestCase
             range($lastIndex - 5, $lastIndex),
             array_keys($lastNavigation['items']),
         );
+        self::assertSame(
+            range($lastIndex - 4, $lastIndex),
+            array_keys($lastNavigation['compactItems']),
+        );
+    }
+
+    public function testPagerMarksOnlyTheItemOutsideTheCompactWindow(): void
+    {
+        $catalog = app(PoemCatalog::class);
+        $poems = $catalog->poems();
+
+        foreach ([$poems[0], $poems[intdiv(count($poems) - 1, 2)], $poems[array_key_last($poems)]] as $poem) {
+            $response = $this->get("/{$poem['section']}/{$poem['slug']}")->assertOk();
+
+            self::assertSame(1, substr_count($response->getContent(), 'class="pager-compact-extra"'));
+            $response->assertSee(
+                'aria-current="page" aria-label="Текущая страница',
+                false,
+            );
+        }
     }
 
     public function testSitemapCanBeGeneratedFromCatalog(): void

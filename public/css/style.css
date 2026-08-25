@@ -165,7 +165,7 @@ h1 .book-title {
 	text-align: right
 }
 #pager {
-	font-size: .875rem;
+	font-size: .9375rem;
 }
 .shortkey {
 	font-size: .8125rem;
@@ -501,6 +501,7 @@ ul.classic,
 #pager {
 	display: flex;
 	align-items: flex-start;
+	justify-content: space-between;
 	width: 100%;
 	margin-top:5em;
 }
@@ -511,7 +512,7 @@ ul.classic,
 	margin: 0 13px;
 }
 #pager .last{
-	margin-left: auto;
+	margin-left: 0;
 	margin-right: 0;
 	padding-right: 0;
 }
@@ -733,15 +734,27 @@ ul.classic,
 	#pager {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 8px 4px;
+		gap: 8px 2px;
 		margin-top: 3em;
-	}
-	#pager .last {
-		margin-left: auto;
 	}
 	#pager > li > span,
 	#pager > li > a {
+		box-sizing: border-box;
+		padding-right: 3px;
+		padding-left: 3px;
 		margin: 0;
+	}
+	#pager > li:not(.first):not(.last) > span,
+	#pager > li:not(.first):not(.last) > a {
+		min-width: 24px;
+		text-align: center;
+	}
+	#pager .first > span,
+	#pager .first > a {
+		padding-left: 0;
+	}
+	#pager .last > a {
+		padding-right: 0;
 	}
 	#pager .shortkey {
 		display: none;
@@ -802,6 +815,9 @@ ul.classic,
 }
 
 @media (max-width: 389px) {
+	#pager .pager-compact-extra {
+		display: none;
+	}
 	.poem {
 		font-size: .9375rem;
 		line-height: 1.5;

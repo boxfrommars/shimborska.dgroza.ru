@@ -26,9 +26,9 @@
 
                     @foreach($navigation['items'] as $index => $poem)
                         @if($navigation['currentIndex'] === $index)
-                            <li id="center-bottom-nav"><span aria-current="page" aria-label="Текущая страница {{ $index + 1 }} — {{ $poem['title'] }}">{{ $index + 1 }}</span></li>
+                            <li id="center-bottom-nav" @class(['pager-compact-extra' => !array_key_exists($index, $navigation['compactItems'])])><span aria-current="page" aria-label="Текущая страница {{ $index + 1 }} — {{ $poem['title'] }}">{{ $index + 1 }}</span></li>
                         @else
-                            <li><a title="Страница {{ $index + 1 }} — {{ $poem['title'] }}" aria-label="Страница {{ $index + 1 }} — {{ $poem['title'] }}" href="{{ route('poem', ['section' => $poem['section'], 'slug' => $poem['slug']]) }}">{{ $index + 1 }}</a></li>
+                            <li @class(['pager-compact-extra' => !array_key_exists($index, $navigation['compactItems'])])><a title="Страница {{ $index + 1 }} — {{ $poem['title'] }}" aria-label="Страница {{ $index + 1 }} — {{ $poem['title'] }}" href="{{ route('poem', ['section' => $poem['section'], 'slug' => $poem['slug']]) }}">{{ $index + 1 }}</a></li>
                         @endif
                     @endforeach
                     <li class="last"><a href="#" class="show-content-link" aria-haspopup="dialog">Содержание</a><span class="shortkey" data-shortcut="contents"></span></li>
