@@ -499,6 +499,7 @@ ul.classic,
 
 /* нижняя навигация */
 #pager {
+	--pager-edge-padding: 8px;
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
@@ -517,8 +518,9 @@ ul.classic,
 	padding-right: 0;
 }
 #pager .last a{
-	margin-right: 0;
+	margin-right: calc(0px - var(--pager-edge-padding));
 	margin-left: 0;
+	padding-right: var(--pager-edge-padding);
 }
 #pager .first{
 	margin-left: 0;
@@ -526,8 +528,9 @@ ul.classic,
 }
 #pager .first > span,
 #pager .first > a{
-	margin-left: 0;
+	margin-left: calc(0px - var(--pager-edge-padding));
 	margin-right: 0;
+	padding-left: var(--pager-edge-padding);
 }
 #pager .shortkey {
 	padding: 0;
@@ -593,6 +596,15 @@ ul.classic,
 		margin-top: 18px;
 		padding: 18px 0 10px;
 		border-top: 1px solid #e0e0e0;
+	}
+}
+
+@media (min-width: 761px) and (max-width: 788px) {
+	#pager .last a {
+		/* Keep the 2px outline and its 2px offset inside the narrow tablet viewport. */
+		margin-right: 4px;
+		padding-right: 3px;
+		padding-left: 3px;
 	}
 }
 
@@ -732,6 +744,7 @@ ul.classic,
 		grid-row: 4;
 	}
 	#pager {
+		--pager-edge-padding: 3px;
 		display: flex;
 		flex-wrap: wrap;
 		gap: 8px 2px;
@@ -749,13 +762,6 @@ ul.classic,
 		min-width: 24px;
 		text-align: center;
 	}
-	#pager .first > span,
-	#pager .first > a {
-		padding-left: 0;
-	}
-	#pager .last > a {
-		padding-right: 0;
-	}
 	#pager .shortkey {
 		display: none;
 	}
@@ -764,10 +770,8 @@ ul.classic,
 		line-height: 1.4;
 	}
 	#royklogo {
-		position: relative;
-		bottom: auto;
-		right: auto;
-		margin: -40px 14px -40px auto;
+		right: 14px;
+		margin: 0;
 	}
 	#content {
 		grid-column: 1;
