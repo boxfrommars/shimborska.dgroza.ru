@@ -23,8 +23,7 @@
             сквозь стену, лист, гнездо, сквозь тучи в небо, в небо,<br/>
             сквозь неба беспардонность и бездонность.<br/>
             Сколь короток&nbsp;— мышиный прямо&nbsp;— хвост кометы!<br/>
-            Сколь звездный луч податлив, искривляясь<br/>
-            <span class="poem-line-indent poem-line-indent-4">в первом попавшемся пространстве!</span><br/>
+            Сколь звездный луч податлив, искривляясь в первом попавшемся пространстве!<br/>
             А тут <em>два три пятнадцать триста девятнадцать</em><br/>
             мой номер телефона твой номер рубашки<br/>
             год тыща девятьсот семьдесят третий дом четыре<br/>
@@ -63,8 +62,7 @@
             przez mur, liść, gniazdo ptasie, chmury, prosto w niebo,<br/>
             przez całą nieba wzdętość i bezdenność.<br/>
             O jak krótki, wprost mysi, jest warkocz komety!<br/>
-            Jak wątły promień gwiazdy, że zakrzywia się w lada<br/>
-            <span class="poem-line-indent poem-line-indent-5">przestrzeni!</span><br/>
+            Jak wątły promień gwiazdy, że zakrzywia się w lada przestrzeni!<br/>
             A tu <em>dwa trzy piętnaście trzysta dziewiętnaście</em><br/>
             mój numer telefonu twój numer koszuli<br/>
             rok tysiąc dziewięćset siedemdziesiąty trzeci szóste piętro<br/>
