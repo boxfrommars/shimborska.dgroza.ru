@@ -5,7 +5,7 @@
 
     <div class="poem">
         <p>
-            Кто что царь Александр <em>кем чем</em> мечом<br/>
+            <em>Кто что</em> царь Александр <em>кем чем</em> мечом<br/>
             рассекает <em>кого что</em> гордиев узел.<br/>
             Сие не пришло в голову <em>кому чему</em> никому.
         </p>
@@ -28,7 +28,7 @@
     <div class="poem" lang="pl">
         <h3>Lekcja</h3>
         <p>
-            Kto co Król Aleksander <em>kim czym</em> mieczem<br/>
+            <em>Kto co</em> Król Aleksander <em>kim czym</em> mieczem<br/>
             przecina <em>kogo co</em> gordyjski węzeł.<br/>
             Nie przyszło to do głowy <em>komu czemu</em> nikomu.
         </p>
