@@ -689,7 +689,7 @@ ul.classic,
 		height: 3px;
 		margin: 0 10px;
 		border-radius: 50%;
-		background: #707070;
+		background: transparent;
 		vertical-align: middle;
 	}
 	#navigation a,
