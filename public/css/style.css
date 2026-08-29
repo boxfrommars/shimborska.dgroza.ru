@@ -404,6 +404,16 @@ ul.classic,
 .note-backlink:focus-visible {
 	color: #333;
 }
+@media screen and (min-width: 1024px) {
+	.note-backlink {
+		opacity: 0;
+		pointer-events: none;
+	}
+	.note-backlink:focus {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
 #book-note h2 {
 	font-weight: 400;
 }
