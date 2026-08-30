@@ -1102,11 +1102,11 @@
 
 ### 2022
 
-**PUB-2022-01 · ● [В] «Польская литература онлайн», 2022, № 5, 3 февраля 2022 года.**  
+**PUB-2022-01 · ● ◆ [В] «Польская литература онлайн», 2022, № 5, 3 февраля 2022 года.**  
 **Формат:** три стихотворения в двух русских версиях каждое; все шесть переводов опубликованы отдельными полнотекстовыми страницами номерного сетевого журнала.  
 **Переводчики:** Асар Эппель, Святослав Свяцкий, Наталья Астафьева.  
 **Примечание:** страницы воспроизводят ранее опубликованные книжные переводы, первоисточники которых указаны порталом. Позднее все шесть материалов были включены в динамический указатель цикла «Столетие Виславы Шимборской»; в каталоге они учитываются только как часть номерного выпуска и не повторяются в `PUB-2023-08`.  
-**Источники:** [«Атлантида» в переводе Асара Эппеля](https://www.polskayaliteratura.pl/zhurnal/no-5/statya/atlantida); [«Атлантида» в переводе Святослава Свяцкого](https://www.polskayaliteratura.pl/zhurnal/no-5/statya/atlantida-0); [«Радость творчества» в переводе Святослава Свяцкого](https://www.polskayaliteratura.pl/zhurnal/no-5/statya/radost-tvorchestva); [«Кошка в пустой квартире» в переводе Святослава Свяцкого](https://www.polskayaliteratura.pl/zhurnal/no-5/statya/koshka-v-pustoy-kvartire); [«Кот в пустой квартире» в переводе Натальи Астафьевой](https://www.polskayaliteratura.pl/zhurnal/no-5/statya/kot-v-pustoy-kvartire); [«Радость писательства» в переводе Асара Эппеля](https://www.polskayaliteratura.pl/zhurnal/no-5/statya/radost-pisatelstva); [официальные данные цикла](https://www.polskayaliteratura.pl/api/cykle/all/2576).  
+**Источники:** [официальная страница выпуска](https://www.polskayaliteratura.pl/polskaya-literatura-online?k=all&t=1173); [«Атлантида» в переводе Асара Эппеля](https://www.polskayaliteratura.pl/zhurnal/no-5/statya/atlantida); [«Атлантида» в переводе Святослава Свяцкого](https://www.polskayaliteratura.pl/zhurnal/no-5/statya/atlantida-0); [«Радость творчества» в переводе Святослава Свяцкого](https://www.polskayaliteratura.pl/zhurnal/no-5/statya/radost-tvorchestva); [«Кошка в пустой квартире» в переводе Святослава Свяцкого](https://www.polskayaliteratura.pl/zhurnal/no-5/statya/koshka-v-pustoy-kvartire); [«Кот в пустой квартире» в переводе Натальи Астафьевой](https://www.polskayaliteratura.pl/zhurnal/no-5/statya/kot-v-pustoy-kvartire); [«Радость писательства» в переводе Асара Эппеля](https://www.polskayaliteratura.pl/zhurnal/no-5/statya/radost-pisatelstva); [официальные данные цикла](https://www.polskayaliteratura.pl/api/cykle/all/2576).  
 **Содержание:** шесть переводов.
 - «Атлантида» — перевод Асара Эппеля
 - «Атлантида» — перевод Святослава Свяцкого
@@ -1473,7 +1473,7 @@
     <https://vtoraya-literatura.com/pdf/interpoeziya_2024__izd.pdf>
 
 16. **«Польская литература онлайн»: выпуск № 5 и цикл «Столетие Виславы Шимборской».**  
-    <https://www.polskayaliteratura.pl/zhurnal/no-5/statya/atlantida>  
+    <https://www.polskayaliteratura.pl/polskaya-literatura-online?k=all&t=1173>  
     <https://www.polskayaliteratura.pl/tsikly?k=all&c=2576>
 
 ## Книжные каталоги и постатейные указатели
