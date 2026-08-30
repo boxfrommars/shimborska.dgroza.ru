@@ -24,19 +24,6 @@ body {
 }
 
 #wrap,
-#main,
-.page,
-.notabene,
-.illustrations {
-	position: static;
-	width: auto;
-	max-width: none;
-	margin: 0;
-	padding: 0;
-	background: none;
-}
-
-#wrap,
 #footer {
 	width: 100%;
 	max-width: 135mm;
@@ -149,11 +136,9 @@ body > noscript {
 .poem,
 .text {
 	margin: 0 0 12mm;
-	break-inside: auto;
-	page-break-inside: auto;
 }
 
-#main:not(:has(.notabene .note)):not(:has(.illustrations .left-box))
+#main:not(:has(.notabene)):not(:has(.illustrations))
 .page > :is(.poem, .text):not(:has(~ :is(.poem, .text))) {
 	margin-bottom: 0;
 }
@@ -178,11 +163,6 @@ body > noscript {
 	page-break-inside: avoid;
 }
 
-.tonote {
-	border: 0;
-	color: inherit;
-}
-
 .notabene {
 	order: 2;
 	margin-top: 4mm;
@@ -191,11 +171,7 @@ body > noscript {
 	font-size: 11pt;
 }
 
-.notabene:not(:has(.note)) {
-	display: none;
-}
-
-.notabene:has(.note)::before {
+.notabene::before {
 	content: "Примечания";
 	display: block;
 	margin-bottom: 3mm;
@@ -205,10 +181,7 @@ body > noscript {
 }
 
 .notabene .note {
-	position: static !important;
-	margin: 0 0 4mm;
-	padding: 0;
-	color: #000;
+	margin-bottom: 4mm;
 	break-inside: avoid-page;
 	page-break-inside: avoid;
 }
@@ -229,11 +202,7 @@ body > noscript {
 	margin-top: 6mm;
 }
 
-.illustrations:not(:has(.left-box)) {
-	display: none;
-}
-
-.illustrations:has(.left-box)::before {
+.illustrations::before {
 	content: "Иллюстрации";
 	grid-column: 1 / -1;
 	font-family: Georgia, serif;
@@ -242,10 +211,7 @@ body > noscript {
 }
 
 .illustrations .left-box {
-	width: auto;
-	margin: 0;
 	padding: 3mm;
-	border: 0;
 	color: #222;
 	font-size: 11pt;
 	line-height: 1.3;
@@ -261,7 +227,6 @@ body > noscript {
 img {
 	max-width: 100%;
 	height: auto;
-	border: 0;
 	-webkit-print-color-adjust: exact;
 	print-color-adjust: exact;
 	break-inside: avoid-page;
