@@ -6,9 +6,17 @@ return [
         'poems' => [
             ['slug' => 'two-monkeys', 'title' => 'Две обезьяны'],
             ['slug' => 'praise-dreams', 'title' => 'Похвала снам'],
-            ['slug' => 'soliloquy-for-cassandra', 'title' => 'Монолог для Кассандры'],
+            [
+                'slug' => 'soliloquy-for-cassandra',
+                'title' => 'Монолог для Кассандры',
+                'description' => '«Монолог для Кассандры» — стихотворение Виславы Шимборской. Русские переводы Виктора Коркия и Асара Эппеля, а также польский оригинал «Monolog dla Kasandry».',
+            ],
             ['slug' => 'shadow', 'title' => 'Тень'],
-            ['slug' => 'utopia', 'title' => 'Утопия'],
+            [
+                'slug' => 'utopia',
+                'title' => 'Утопия',
+                'description' => '«Утопия» — стихотворение Виславы Шимборской. Пять русских переводов, в том числе Андрея Базилевского и Натальи Астафьевой, а также польский оригинал «Utopia».',
+            ],
             ['slug' => 'torture', 'title' => 'Пытки'],
             ['slug' => 'impression-of-the-theater', 'title' => 'Впечатление от театра'],
             ['slug' => 'reality', 'title' => 'Явь'],
@@ -21,7 +29,11 @@ return [
             ['slug' => 'terrorist-he-looks', 'title' => 'Террорист, он смотрит'],
             ['slug' => 'road-elegy', 'title' => 'Дорожная элегия'],
             ['slug' => 'people-on-bridge', 'title' => 'Люди на мосту'],
-            ['slug' => 'cat-in-empty-apartment', 'title' => 'Кот в пустой квартире'],
+            [
+                'slug' => 'cat-in-empty-apartment',
+                'title' => 'Кот в пустой квартире',
+                'description' => '«Кот в пустой квартире» — стихотворение Виславы Шимборской в переводе Натальи Астафьевой.',
+            ],
             ['slug' => 'atlantis', 'title' => 'Атлантида'],
             ['slug' => 'buffo', 'title' => 'Буффонада'],
             ['slug' => 'commemoration', 'title' => 'Увековечение'],

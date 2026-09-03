@@ -17,21 +17,21 @@ final class PoemCatalog
     private const COMPACT_NAVIGATION_RIGHT_PADDING = 2;
 
     /**
-     * @var array<string, array{title: string, poems: list<array{slug: string, title: string}>}>
+     * @var array<string, array{title: string, poems: list<array{slug: string, title: string, description?: string}>}>
      */
     private array $sections;
 
     /**
      * Flat catalog in public page-number order.
      *
-     * @var list<array{section: string, slug: string, title: string}>
+     * @var list<array{section: string, slug: string, title: string, description: string|null}>
      */
     private array $poems = [];
 
     /**
      * Exact section/slug lookup without changing the ordered catalog above.
      *
-     * @var array<string, array{section: string, slug: string, title: string}>
+     * @var array<string, array{section: string, slug: string, title: string, description: string|null}>
      */
     private array $poemsByPath = [];
 
@@ -46,6 +46,7 @@ final class PoemCatalog
                     'section' => $sectionSlug,
                     'slug' => $poem['slug'],
                     'title' => $poem['title'],
+                    'description' => $poem['description'] ?? null,
                 ];
 
                 $this->poems[] = $entry;
@@ -55,7 +56,7 @@ final class PoemCatalog
     }
 
     /**
-     * @return array<string, array{title: string, poems: list<array{slug: string, title: string}>}>
+     * @return array<string, array{title: string, poems: list<array{slug: string, title: string, description?: string}>}>
      */
     public function sections(): array
     {
@@ -63,7 +64,7 @@ final class PoemCatalog
     }
 
     /**
-     * @return list<array{section: string, slug: string, title: string}>
+     * @return list<array{section: string, slug: string, title: string, description: string|null}>
      */
     public function poems(): array
     {
@@ -71,7 +72,7 @@ final class PoemCatalog
     }
 
     /**
-     * @return array{section: string, slug: string, title: string}|null
+     * @return array{section: string, slug: string, title: string, description: string|null}|null
      */
     public function find(string $section, string $slug): ?array
     {
@@ -79,7 +80,7 @@ final class PoemCatalog
     }
 
     /**
-     * @return array{section: string, slug: string, title: string}|null
+     * @return array{section: string, slug: string, title: string, description: string|null}|null
      */
     public function firstInSection(string $section): ?array
     {
@@ -90,8 +91,8 @@ final class PoemCatalog
 
     /**
      * @return array{
-     *     items: array<int, array{section: string, slug: string, title: string}>,
-     *     compactItems: array<int, array{section: string, slug: string, title: string}>,
+     *     items: array<int, array{section: string, slug: string, title: string, description: string|null}>,
+     *     compactItems: array<int, array{section: string, slug: string, title: string, description: string|null}>,
      *     currentIndex: int|null
      * }
      */
@@ -127,7 +128,7 @@ final class PoemCatalog
     }
 
     /**
-     * @return array<int, array{section: string, slug: string, title: string}>
+     * @return array<int, array{section: string, slug: string, title: string, description: string|null}>
      */
     private function navigationWindow(?int $currentIndex, int $leftPadding, int $rightPadding): array
     {

@@ -22,6 +22,9 @@
     <meta name="theme-color" content="#333333">
 
     <title>{{ $title }}</title>
+    @if(isset($description) && is_string($description) && trim($description) !== '')
+        <meta name="description" content="{{ $description }}">
+    @endif
     @isset($canonicalUrl)
         <link rel="canonical" href="{{ $canonicalUrl }}">
     @endisset

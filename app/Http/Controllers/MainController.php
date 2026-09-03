@@ -29,6 +29,7 @@ class MainController extends Controller
 
         return $this->page($view, 'poem', [
             'title' => "Вислава Шимборская. {$poem['title']}",
+            'description' => $poem['description'],
             'canonicalUrl' => $this->canonicalUrl(route('poem', [
                 'section' => $poem['section'],
                 'slug' => $poem['slug'],
@@ -68,7 +69,7 @@ class MainController extends Controller
 
     /**
      * @param  array<string, mixed>  $params
-     * @param  array{section: string, slug: string, title: string}|null  $poem
+     * @param  array{section: string, slug: string, title: string, description: string|null}|null  $poem
      */
     private function page(string $view, string $page, array $params, ?array $poem = null): View
     {
@@ -82,6 +83,7 @@ class MainController extends Controller
                 'page' => $page,
                 'currentPoem' => $poem,
                 'title' => '',
+                'description' => null,
             ],
             $params
         ));
