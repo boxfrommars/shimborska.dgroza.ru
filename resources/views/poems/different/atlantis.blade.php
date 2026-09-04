@@ -107,4 +107,9 @@
 @endsection
 
 @section('images')
+    <div class="left-box" style="--illustration-offset: 12px;">
+        <img alt="Карта Атлантиды Афанасия Кирхера" src="/images/atlantis.webp"/>
+        <p>Первое изображение Атлантиды в мировой картографии</p>
+        <p>А. Кирхер, трактат Mundus Subterraneus (1664)</p>
+    </div>
 @endsection
