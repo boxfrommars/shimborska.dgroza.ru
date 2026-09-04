@@ -46,10 +46,10 @@
             <aside class="illustrations" aria-label="Иллюстрации">
                 {!! $illustrationsContent !!}
             </aside>
-            <dialog id="illustration-dialog" aria-labelledby="illustration-title">
-                <div class="illustration-titlebar">
+            <dialog id="illustration-dialog" class="site-dialog" aria-labelledby="illustration-title">
+                <div class="dialog-titlebar illustration-titlebar">
                     <h2 id="illustration-title">Иллюстрация</h2>
-                    <button type="button" class="illustration-close" aria-label="Закрыть изображение" autofocus>×</button>
+                    <button type="button" class="dialog-close illustration-close" aria-label="Закрыть изображение" autofocus>×</button>
                 </div>
                 <div class="illustration-stage" aria-busy="false">
                     <p class="illustration-status" role="status" hidden>Загрузка изображения…</p>
@@ -69,10 +69,10 @@
             </aside>
         @endif
 
-        <dialog id="content" aria-labelledby="content-title">
+        <dialog id="content" class="site-dialog" aria-labelledby="content-title">
             <div class="dialog-titlebar">
                 <span id="content-title">Содержание</span>
-                <button type="button" class="content-close" aria-label="Закрыть">×</button>
+                <button type="button" class="dialog-close content-close" aria-label="Закрыть">×</button>
             </div>
             <div class="dialog-body">
                 <div id="contents-wrap">

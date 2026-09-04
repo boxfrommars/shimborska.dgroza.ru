@@ -108,8 +108,9 @@
 
 @section('images')
     <div class="left-box" style="--illustration-offset: 12px;">
-        <a href="/images/full/atlantis.webp" data-illustration title="Увеличить изображение">
-            <span class="visually-hidden">Увеличить: </span><img alt="Карта Атлантиды Афанасия Кирхера" src="/images/atlantis.webp" width="150" height="100"/>
+        <a href="/images/full/atlantis.webp" data-illustration data-illustration-title="Карта Атлантиды"
+           title="Увеличить изображение" aria-label="Увеличить карту Атлантиды" aria-describedby="atlantis-image">
+            <img id="atlantis-image" alt="Карта Атлантиды: большой остров с горами и реками в центре Атлантического океана. Слева показаны Африка и Испания, справа — Америка." src="/images/atlantis.webp" width="150" height="100"/>
         </a>
         <p>Первое изображение Атлантиды в мировой картографии</p>
         <p>А. Кирхер, трактат Mundus Subterraneus (1664)</p>

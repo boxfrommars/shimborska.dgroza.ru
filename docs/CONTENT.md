@@ -114,8 +114,9 @@ magick input.jpg -auto-orient -colorspace sRGB -resize '1600x1600>' -strip -qual
 
 ```html
 <div class="left-box" style="--illustration-offset: 12px;">
-    <a href="/images/full/atlantis.webp" data-illustration title="Увеличить изображение">
-        <span class="visually-hidden">Увеличить: </span><img alt="Карта Атлантиды Афанасия Кирхера" src="/images/atlantis.webp" width="150" height="100"/>
+    <a href="/images/full/atlantis.webp" data-illustration data-illustration-title="Карта Атлантиды"
+       title="Увеличить изображение" aria-label="Увеличить карту Атлантиды" aria-describedby="atlantis-image">
+        <img id="atlantis-image" alt="Карта Атлантиды: большой остров с горами и реками в центре Атлантического океана. Слева показаны Африка и Испания, справа — Америка." src="/images/atlantis.webp" width="150" height="100"/>
     </a>
     <p>Подпись к иллюстрации</p>
     <p>Автор и источник</p>
@@ -123,7 +124,13 @@ magick input.jpg -auto-orient -colorspace sRGB -resize '1600x1600>' -strip -qual
 ```
 
 У миниатюры указывать фактические `width` и `height`, а в `alt` — описание
-изображения. Подписи оставлять непосредственными дочерними абзацами `.left-box`:
+изображения. Ссылке задавать короткое имя действия в `aria-label`, не повторяя
+в нём подробное описание. `aria-describedby` ссылки должен указывать на
+уникальный `id` её миниатюры: браузер использует `alt` этого изображения как
+отдельное описание ссылки. Дополнительный скрытый текст не нужен.
+В `data-illustration-title` задавать короткий заголовок окна без слова
+«Увеличить»; этот заголовок не заменяет `alt` большой картинки.
+Подписи оставлять непосредственными дочерними абзацами `.left-box`:
 просмотрщик копирует их текст и абзацы, не требуя второй копии в шаблоне.
 Вложенная разметка подписи в диалог не переносится.
 Большой файл загружается только после открытия; без JavaScript ссылка ведёт

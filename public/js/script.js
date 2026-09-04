@@ -119,12 +119,70 @@ document.addEventListener('DOMContentLoaded', () => {
         const status = illustrationDialog.querySelector('.illustration-status');
         const error = illustrationDialog.querySelector('.illustration-error');
         const closeButton = illustrationDialog.querySelector('.illustration-close');
+        const titlebar = illustrationDialog.querySelector('.illustration-titlebar');
         let requestId = 0;
         let opener = null;
+        let loadedImage = null;
+        let resizeFrame = null;
         let scrollPosition = { left: 0, top: 0 };
 
         function closeIllustration() {
             if (illustrationDialog.open) illustrationDialog.close();
+        }
+
+        function numericStyle(style, property) {
+            return Number.parseFloat(style.getPropertyValue(property)) || 0;
+        }
+
+        function fitIllustration(image) {
+            const dialogStyle = getComputedStyle(illustrationDialog);
+            const stageStyle = getComputedStyle(stage);
+            const viewportGap = numericStyle(dialogStyle, '--illustration-viewport-gap');
+            const maxDialogWidth = Math.min(
+                numericStyle(dialogStyle, '--illustration-max-width'),
+                window.innerWidth - viewportGap,
+            );
+            const maxDialogHeight = window.innerHeight - viewportGap;
+            const dialogBorderWidth = numericStyle(dialogStyle, 'border-left-width')
+                + numericStyle(dialogStyle, 'border-right-width');
+            const dialogBorderHeight = numericStyle(dialogStyle, 'border-top-width')
+                + numericStyle(dialogStyle, 'border-bottom-width');
+            const stagePaddingWidth = numericStyle(stageStyle, 'padding-left')
+                + numericStyle(stageStyle, 'padding-right');
+            const stagePaddingHeight = numericStyle(stageStyle, 'padding-top')
+                + numericStyle(stageStyle, 'padding-bottom');
+            const availableImageWidth = Math.max(1, maxDialogWidth - dialogBorderWidth - stagePaddingWidth);
+
+            illustrationDialog.style.setProperty('--illustration-dialog-width', `${maxDialogWidth}px`);
+
+            // Re-measure the wrapping caption after each width adjustment.
+            for (let pass = 0; pass < 3; pass += 1) {
+                const fixedHeight = titlebar.getBoundingClientRect().height
+                    + caption.getBoundingClientRect().height
+                    + dialogBorderHeight
+                    + stagePaddingHeight;
+                const availableImageHeight = Math.max(1, maxDialogHeight - fixedHeight - 1);
+                const scale = Math.min(
+                    1,
+                    availableImageWidth / image.naturalWidth,
+                    availableImageHeight / image.naturalHeight,
+                );
+                const imageWidth = image.naturalWidth * scale;
+                const imageHeight = image.naturalHeight * scale;
+
+                illustrationDialog.style.setProperty(
+                    '--illustration-dialog-width',
+                    `${imageWidth + stagePaddingWidth + dialogBorderWidth}px`,
+                );
+                illustrationDialog.style.setProperty(
+                    '--illustration-stage-height',
+                    `${imageHeight + stagePaddingHeight}px`,
+                );
+                illustrationDialog.style.setProperty(
+                    '--illustration-dialog-height',
+                    `${imageHeight + fixedHeight}px`,
+                );
+            }
         }
 
         document.querySelectorAll('.illustrations a[data-illustration]').forEach((link) => {
@@ -142,7 +200,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 const currentRequest = ++requestId;
                 opener = link;
                 scrollPosition = { left: window.scrollX, top: window.scrollY };
-                title.textContent = thumbnail.alt;
+                title.textContent = link.dataset.illustrationTitle?.trim() || 'Иллюстрация';
+                loadedImage = null;
+                window.cancelAnimationFrame(resizeFrame);
+                resizeFrame = null;
+                illustrationDialog.style.removeProperty('--illustration-dialog-width');
+                illustrationDialog.style.removeProperty('--illustration-dialog-height');
+                illustrationDialog.style.removeProperty('--illustration-stage-height');
                 holder.replaceChildren();
                 caption.replaceChildren();
                 link.closest('.left-box')?.querySelectorAll(':scope > p').forEach((paragraph) => {
@@ -165,6 +229,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 image.onload = () => {
                     if (currentRequest !== requestId || !illustrationDialog.open) return;
                     holder.replaceChildren(image);
+                    loadedImage = image;
+                    fitIllustration(image);
                     status.hidden = true;
                     stage.setAttribute('aria-busy', 'false');
                 };
@@ -194,11 +260,24 @@ document.addEventListener('DOMContentLoaded', () => {
             if (illustrationDialog.open) return;
             ++requestId;
             holder.replaceChildren();
+            loadedImage = null;
+            window.cancelAnimationFrame(resizeFrame);
+            resizeFrame = null;
+            illustrationDialog.style.removeProperty('--illustration-dialog-width');
+            illustrationDialog.style.removeProperty('--illustration-dialog-height');
+            illustrationDialog.style.removeProperty('--illustration-stage-height');
             stage.setAttribute('aria-busy', 'false');
             document.body.classList.remove('illustration-open');
             opener?.focus({ preventScroll: true });
             if (opener) window.scrollTo(scrollPosition);
             opener = null;
+        });
+        window.addEventListener('resize', () => {
+            if (!illustrationDialog.open || !loadedImage) return;
+            window.cancelAnimationFrame(resizeFrame);
+            resizeFrame = window.requestAnimationFrame(() => {
+                if (illustrationDialog.open && loadedImage) fitIllustration(loadedImage);
+            });
         });
     }
 

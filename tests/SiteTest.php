@@ -404,6 +404,15 @@ class SiteTest extends TestCase
         foreach ($links as $link) {
             self::assertNotSame('', trim($link->getAttribute('href')), 'The enlargement must work as an ordinary link.');
             self::assertSame(1, $xpath->query('.//img[@src]', $link)->length);
+            $thumbnail = $xpath->query('.//img', $link)->item(0);
+            self::assertNotSame('', trim($thumbnail->getAttribute('id')));
+            self::assertNotSame('', trim($thumbnail->getAttribute('alt')));
+            self::assertSame($thumbnail->getAttribute('id'), $link->getAttribute('aria-describedby'));
+            self::assertNotSame('', trim($link->getAttribute('aria-label')));
+            self::assertStringNotContainsString($thumbnail->getAttribute('alt'), $link->getAttribute('aria-label'));
+            self::assertNotSame('', trim($link->getAttribute('data-illustration-title')));
+            self::assertNotSame($thumbnail->getAttribute('alt'), $link->getAttribute('data-illustration-title'));
+            self::assertSame('', trim($link->textContent), 'The link uses aria-label without duplicate hidden text.');
         }
 
         self::assertSame(1, $xpath->query('//dialog[@id="illustration-dialog"][@aria-labelledby="illustration-title"][not(@open)]')->length);
@@ -1172,6 +1181,15 @@ class SiteTest extends TestCase
                 $violations['images: invalid enlargement link'][] = "{$path}: {$href}";
 
                 continue;
+            }
+
+            $thumbnail = $images->item(0);
+
+            if (trim($link->getAttribute('aria-label')) === ''
+                || trim($link->getAttribute('data-illustration-title')) === ''
+                || trim($thumbnail->getAttribute('id')) === ''
+                || $link->getAttribute('aria-describedby') !== $thumbnail->getAttribute('id')) {
+                $violations['images: invalid enlargement accessibility'][] = "{$path}: {$href}";
             }
 
             $fullPath = public_path(ltrim($href, '/'));
