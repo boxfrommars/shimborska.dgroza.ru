@@ -46,6 +46,21 @@
             <aside class="illustrations" aria-label="Иллюстрации">
                 {!! $illustrationsContent !!}
             </aside>
+            <dialog id="illustration-dialog" aria-labelledby="illustration-title">
+                <div class="illustration-titlebar">
+                    <h2 id="illustration-title">Иллюстрация</h2>
+                    <button type="button" class="illustration-close" aria-label="Закрыть изображение" autofocus>×</button>
+                </div>
+                <div class="illustration-stage" aria-busy="false">
+                    <p class="illustration-status" role="status" hidden>Загрузка изображения…</p>
+                    <div class="illustration-image"></div>
+                    <p class="illustration-error" role="alert" hidden>
+                        Не удалось загрузить изображение.
+                        <a>Открыть файл отдельно</a>
+                    </p>
+                </div>
+                <div class="illustration-caption"></div>
+            </dialog>
         @endif
 
         @if($notesContent !== '')

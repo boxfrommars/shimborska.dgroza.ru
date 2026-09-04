@@ -389,6 +389,55 @@ class SiteTest extends TestCase
         self::assertSame([], $violations);
     }
 
+    public function testIllustrationViewerUsesProgressiveEnhancement(): void
+    {
+        $content = $this->get('/different/atlantis')->assertOk()->getContent();
+        $document = new DOMDocument;
+        $previousUseInternalErrors = libxml_use_internal_errors(true);
+
+        try {
+            self::assertTrue($document->loadHTML($content));
+        } finally {
+            libxml_clear_errors();
+            libxml_use_internal_errors($previousUseInternalErrors);
+        }
+
+        $xpath = new DOMXPath($document);
+        $links = $xpath->query('//aside[@class="illustrations"]//a[@data-illustration]');
+        self::assertSame(1, $links->length);
+        self::assertSame('/images/full/atlantis.webp', $links->item(0)->getAttribute('href'));
+        self::assertSame(1, $xpath->query('.//img[@src="/images/atlantis.webp"][@width="150"][@height="100"]', $links->item(0))->length);
+        self::assertSame(1, $xpath->query('//dialog[@id="illustration-dialog"][@aria-labelledby="illustration-title"][not(@open)]')->length);
+        self::assertSame(1, $xpath->query('//dialog[@id="illustration-dialog"]//*[@id="illustration-title"]')->length);
+        self::assertSame(1, $xpath->query('//dialog[@id="illustration-dialog"]//button[@type="button"][@aria-label="Закрыть изображение"][@autofocus]')->length);
+        self::assertSame(1, $xpath->query('//dialog[@id="illustration-dialog"]//*[@role="status"]')->length);
+        self::assertSame(1, $xpath->query('//dialog[@id="illustration-dialog"]//*[@role="alert"]//a')->length);
+        self::assertSame(0, $xpath->query('//dialog[@id="illustration-dialog"]//img')->length, 'The full image must not be requested before opening.');
+        self::assertSame(0, $xpath->query('//dialog[@id="illustration-dialog"]//*[@class="illustration-caption"]/*')->length, 'Captions are copied from the illustration, not duplicated in Blade.');
+    }
+
+    public function testIllustrationViewerDoesNotChangeOtherImageLinks(): void
+    {
+        foreach (['/different/two-monkeys', '/moment/ball'] as $path) {
+            $this->get($path)->assertOk()
+                ->assertSee('<dialog id="illustration-dialog"', false)
+                ->assertDontSee('data-illustration', false);
+        }
+
+        foreach (['/', '/project', '/author', '/moment/everything'] as $path) {
+            $this->get($path)->assertOk()
+                ->assertDontSee('id="illustration-dialog"', false)
+                ->assertDontSee('data-illustration', false);
+        }
+
+        $this->get('/unknown')->assertNotFound()
+            ->assertDontSee('id="illustration-dialog"', false);
+        $this->get('/')->assertSee(
+            '<a href="' . route('poem', ['section' => 'different', 'slug' => 'two-monkeys']) . '" aria-label=',
+            false,
+        );
+    }
+
     public function testMainNoteMeetsNarrowColumnTypographyContract(): void
     {
         $content = $this->get('/')->assertOk()->getContent();
@@ -1122,6 +1171,35 @@ class SiteTest extends TestCase
                 if (!File::exists($localPath)) {
                     $violations['images: missing local file'][] = "{$path}: {$srcPath}";
                 }
+            }
+        }
+
+        foreach ($xpath->query('//aside[contains(concat(" ", normalize-space(@class), " "), " illustrations ")]//a[@data-illustration]') as $link) {
+            $href = $link->getAttribute('href');
+            $images = $xpath->query('.//img', $link);
+
+            if (!str_starts_with($href, '/images/full/') || !str_ends_with($href, '.webp') || $images->length !== 1) {
+                $violations['images: invalid enlargement link'][] = "{$path}: {$href}";
+
+                continue;
+            }
+
+            $fullPath = public_path(ltrim($href, '/'));
+
+            if (!File::isFile($fullPath)) {
+                $violations['images: missing full image'][] = "{$path}: {$href}";
+
+                continue;
+            }
+
+            $fullSize = getimagesize($fullPath);
+            $thumbnailPath = public_path(ltrim($images->item(0)->getAttribute('src'), '/'));
+            $thumbnailSize = File::isFile($thumbnailPath) ? getimagesize($thumbnailPath) : false;
+
+            if ($fullSize === false || $thumbnailSize === false || $fullSize[2] !== IMAGETYPE_WEBP
+                || max($fullSize[0], $fullSize[1]) > 1600
+                || $fullSize[0] <= $thumbnailSize[0] || $fullSize[1] <= $thumbnailSize[1]) {
+                $violations['images: invalid full image dimensions or format'][] = "{$path}: {$href}";
             }
         }
     }

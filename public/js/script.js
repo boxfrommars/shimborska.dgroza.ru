@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const dialog = document.querySelector('#content');
+    const illustrationDialog = document.querySelector('#illustration-dialog');
     const currentPage = document.querySelector('#center-bottom-nav');
     const platform = navigator.userAgentData?.platform || navigator.platform || '';
     const isMac = platform.toLowerCase().startsWith('mac');
@@ -110,6 +111,97 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     dialog.addEventListener('close', () => document.body.classList.remove('content-open'));
 
+    if (illustrationDialog && typeof illustrationDialog.showModal === 'function') {
+        const title = illustrationDialog.querySelector('#illustration-title');
+        const stage = illustrationDialog.querySelector('.illustration-stage');
+        const holder = illustrationDialog.querySelector('.illustration-image');
+        const caption = illustrationDialog.querySelector('.illustration-caption');
+        const status = illustrationDialog.querySelector('.illustration-status');
+        const error = illustrationDialog.querySelector('.illustration-error');
+        const closeButton = illustrationDialog.querySelector('.illustration-close');
+        let requestId = 0;
+        let opener = null;
+        let scrollPosition = { left: 0, top: 0 };
+
+        function closeIllustration() {
+            if (illustrationDialog.open) illustrationDialog.close();
+        }
+
+        document.querySelectorAll('.illustrations a[data-illustration]').forEach((link) => {
+            const thumbnail = link.querySelector('img');
+            if (!thumbnail) return;
+
+            link.setAttribute('aria-haspopup', 'dialog');
+            link.setAttribute('aria-controls', illustrationDialog.id);
+            link.addEventListener('click', (event) => {
+                if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey
+                    || event.shiftKey || event.altKey || link.hasAttribute('download')
+                    || (link.target && link.target !== '_self')) return;
+
+                event.preventDefault();
+                const currentRequest = ++requestId;
+                opener = link;
+                scrollPosition = { left: window.scrollX, top: window.scrollY };
+                title.textContent = thumbnail.alt;
+                holder.replaceChildren();
+                caption.replaceChildren();
+                link.closest('.left-box')?.querySelectorAll(':scope > p').forEach((paragraph) => {
+                    const copy = document.createElement('p');
+                    copy.textContent = paragraph.textContent;
+                    caption.append(copy);
+                });
+                caption.hidden = caption.childElementCount === 0;
+                status.hidden = false;
+                error.hidden = true;
+                error.querySelector('a').href = link.href;
+                stage.setAttribute('aria-busy', 'true');
+                illustrationDialog.showModal();
+                document.body.classList.add('illustration-open');
+                closeButton.focus({ preventScroll: true });
+
+                // Each opening owns its image; late events cannot replace a newer request.
+                const image = new Image();
+                image.alt = thumbnail.alt;
+                image.onload = () => {
+                    if (currentRequest !== requestId || !illustrationDialog.open) return;
+                    holder.replaceChildren(image);
+                    status.hidden = true;
+                    stage.setAttribute('aria-busy', 'false');
+                };
+                image.onerror = () => {
+                    if (currentRequest !== requestId || !illustrationDialog.open) return;
+                    status.hidden = true;
+                    error.hidden = false;
+                    stage.setAttribute('aria-busy', 'false');
+                };
+                image.src = link.href;
+            });
+        });
+
+        closeButton.addEventListener('click', closeIllustration);
+        illustrationDialog.addEventListener('cancel', (event) => {
+            event.preventDefault();
+            closeIllustration();
+        });
+        illustrationDialog.addEventListener('click', (event) => {
+            const bounds = illustrationDialog.getBoundingClientRect();
+            if (event.target === illustrationDialog && (event.clientX < bounds.left
+                || event.clientX > bounds.right || event.clientY < bounds.top
+                || event.clientY > bounds.bottom)) closeIllustration();
+        });
+        illustrationDialog.addEventListener('close', () => {
+            // A queued close event may arrive after the next opening.
+            if (illustrationDialog.open) return;
+            ++requestId;
+            holder.replaceChildren();
+            stage.setAttribute('aria-busy', 'false');
+            document.body.classList.remove('illustration-open');
+            opener?.focus({ preventScroll: true });
+            if (opener) window.scrollTo(scrollPosition);
+            opener = null;
+        });
+    }
+
     function goToAdjacentPage(direction) {
         const item = direction === 'previous'
             ? currentPage?.previousElementSibling
@@ -132,6 +224,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.addEventListener('keydown', (event) => {
+        if (illustrationDialog?.open) {
+            if (hasShortcutModifiers(event) && event.key.startsWith('Arrow')) event.preventDefault();
+            return;
+        }
         if (event.key === 'Escape' && dialog.open) {
             event.preventDefault();
             closeContents();

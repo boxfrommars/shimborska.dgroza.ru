@@ -57,6 +57,7 @@ body {
 #leftbar,
 #pager,
 #content,
+#illustration-dialog,
 .skip-link,
 .visually-hidden,
 .note-backlink,
@@ -64,6 +65,10 @@ body {
 .shortkey,
 #royklogo,
 body > noscript {
+	display: none !important;
+}
+
+#illustration-dialog::backdrop {
 	display: none !important;
 }
 
