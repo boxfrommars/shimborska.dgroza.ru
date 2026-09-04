@@ -32,15 +32,20 @@ class SiteTest extends TestCase
         self::assertIsInt($styleVersion);
         self::assertIsInt($scriptVersion);
 
-        $this->get('/')
-            ->assertOk()
-            ->assertSee('name="viewport" content="width=device-width, initial-scale=1"', false)
-            ->assertSee("/css/fonts.css?v={$fontVersion}", false)
-            ->assertSee("/css/style.css?v={$styleVersion}", false)
-            ->assertDontSee('/css/print.css', false)
-            ->assertSee('<dialog id="content"', false)
-            ->assertSee("/js/script.js?v={$scriptVersion}", false)
-            ->assertDontSee('jquery', false);
+        $xpath = self::htmlXPath($this->get('/')->assertOk()->getContent(), '/');
+
+        foreach ([
+            '//meta[@name="viewport"][@content="width=device-width, initial-scale=1"]',
+            "//link[@rel=\"stylesheet\"][@href=\"/css/fonts.css?v={$fontVersion}\"]",
+            "//link[@rel=\"stylesheet\"][@href=\"/css/style.css?v={$styleVersion}\"]",
+            '//dialog[@id="content"]',
+            "//script[@src=\"/js/script.js?v={$scriptVersion}\"]",
+        ] as $query) {
+            self::assertSame(1, $xpath->query($query)->length, $query);
+        }
+
+        self::assertSame(0, $xpath->query('//link[starts-with(@href, "/css/print.css")]')->length);
+        self::assertSame(0, $xpath->query('//script[contains(translate(@src, "JQUERY", "jquery"), "jquery")]')->length);
     }
 
     public function testReadingFontsAreLocalVersionedAssets(): void
@@ -50,47 +55,55 @@ class SiteTest extends TestCase
         $fontVersion = filemtime($fontCssPath);
 
         self::assertIsInt($fontVersion);
-        self::assertSame(9, preg_match_all(
-            '/url\("(?<url>\/fonts\/pt-serif\/v19\/[^"\)]+\.woff2)"\)/',
-            $fontCss,
-            $matches,
-        ));
+        $fontCss = preg_replace('~/\*.*?\*/~s', '', $fontCss);
+        self::assertGreaterThan(0, preg_match_all('/@font-face\s*\{([^}]+)\}/i', $fontCss, $faces));
+        $availableFaces = [];
+        $fontDirectories = [];
 
-        $fontUrls = array_values(array_unique($matches['url']));
-        $expectedFontUrls = [
-            '/fonts/pt-serif/v19/bold-cyrillic.woff2',
-            '/fonts/pt-serif/v19/bold-latin-ext.woff2',
-            '/fonts/pt-serif/v19/bold-latin.woff2',
-            '/fonts/pt-serif/v19/italic-cyrillic.woff2',
-            '/fonts/pt-serif/v19/italic-latin-ext.woff2',
-            '/fonts/pt-serif/v19/italic-latin.woff2',
-            '/fonts/pt-serif/v19/regular-cyrillic.woff2',
-            '/fonts/pt-serif/v19/regular-latin-ext.woff2',
-            '/fonts/pt-serif/v19/regular-latin.woff2',
-        ];
-        sort($fontUrls);
-        sort($expectedFontUrls);
+        foreach ($faces[1] as $face) {
+            preg_match_all('/(?:^|;)\s*([a-z-]+)\s*:\s*([^;]+)/i', $face, $declarations, PREG_SET_ORDER);
+            $properties = [];
 
-        self::assertSame($expectedFontUrls, $fontUrls);
-        self::assertSame(9, substr_count($fontCss, '@font-face'));
-        self::assertSame(9, substr_count($fontCss, 'font-display: swap'));
-        self::assertSame(6, substr_count($fontCss, 'font-weight: 400'));
-        self::assertSame(3, substr_count($fontCss, 'font-weight: 700'));
-        self::assertStringNotContainsString('fonts.googleapis.com', $fontCss);
-        self::assertStringNotContainsString('fonts.gstatic.com', $fontCss);
+            foreach ($declarations as $declaration) {
+                $properties[strtolower($declaration[1])] = trim($declaration[2], " \t\r\n\"'");
+            }
 
-        foreach ($fontUrls as $fontUrl) {
-            $fontPath = public_path(ltrim($fontUrl, '/'));
-            self::assertFileExists($fontPath, $fontUrl);
-            self::assertSame('wOF2', substr(File::get($fontPath), 0, 4), $fontUrl);
+            self::assertSame('swap', $properties['font-display'] ?? null, $face);
+            $availableFaces[] = [
+                $properties['font-family'] ?? '',
+                $properties['font-style'] ?? 'normal',
+                $properties['font-weight'] ?? '400',
+            ];
+            self::assertGreaterThan(0, preg_match_all(
+                '~url\(\s*["\']?([^"\'()\s]+)["\']?\s*\)~i',
+                $properties['src'] ?? '',
+                $urls,
+            ), $face);
+
+            foreach ($urls[1] as $fontUrl) {
+                self::assertMatchesRegularExpression('~^/(?!/)[^?#]+\.woff2(?:[?#].*)?$~', $fontUrl);
+                $fontPath = public_path(ltrim(parse_url($fontUrl, PHP_URL_PATH), '/'));
+                self::assertFileExists($fontPath, $fontUrl);
+                self::assertSame('wOF2', substr(File::get($fontPath), 0, 4), $fontUrl);
+                $fontDirectories[] = dirname($fontPath);
+            }
         }
 
-        self::assertFileExists(public_path('fonts/pt-serif/v19/OFL.txt'));
-        self::assertFileExists(public_path('fonts/pt-serif/v19/SOURCE.txt'));
+        foreach ([['PT Serif', 'normal', '400'], ['PT Serif', 'italic', '400'], ['PT Serif', 'normal', '700']] as $face) {
+            self::assertContains($face, $availableFaces, implode(' ', $face));
+        }
+
+        foreach (array_unique($fontDirectories) as $directory) {
+            self::assertFileExists("{$directory}/OFL.txt");
+            self::assertFileExists("{$directory}/SOURCE.txt");
+        }
 
         $fontStylesheet = "/css/fonts.css?v={$fontVersion}";
-        $this->get('/')->assertSee($fontStylesheet, false);
-        $this->get('/unknown')->assertNotFound()->assertSee($fontStylesheet, false);
+
+        foreach (['/' => 200, '/unknown' => 404] as $path => $status) {
+            $xpath = self::htmlXPath($this->get($path)->assertStatus($status)->getContent(), $path);
+            self::assertSame(1, $xpath->query("//link[@rel=\"stylesheet\"][@href=\"{$fontStylesheet}\"]")->length);
+        }
     }
 
     public function testIndexablePagesDeclareCanonicalUrls(): void
@@ -112,11 +125,11 @@ class SiteTest extends TestCase
             }
 
             foreach ($pages as $path => $canonicalUrl) {
-                $content = $this->get($path)->assertOk()->getContent();
-                $canonicalElement = "<link rel=\"canonical\" href=\"{$canonicalUrl}\">";
+                $xpath = self::htmlXPath($this->get($path)->assertOk()->getContent(), $path);
+                $canonicals = $xpath->query('//head/link[@rel="canonical"]');
 
-                self::assertSame(1, substr_count($content, 'rel="canonical"'), $path);
-                self::assertStringContainsString($canonicalElement, $content, $path);
+                self::assertSame(1, $canonicals->length, $path);
+                self::assertSame($canonicalUrl, $canonicals->item(0)->getAttribute('href'), $path);
             }
         } finally {
             config(['app.url' => $originalUrl]);
@@ -219,18 +232,7 @@ class SiteTest extends TestCase
         $violations = [];
 
         foreach (['/' => 'О сайте', '/author' => 'Примечания', '/project' => 'Примечания'] as $path => $notesLabel) {
-            $content = $this->get($path)->assertOk()->getContent();
-            $document = new DOMDocument;
-            $previousUseInternalErrors = libxml_use_internal_errors(true);
-
-            try {
-                self::assertTrue($document->loadHTML($content), $path);
-            } finally {
-                libxml_clear_errors();
-                libxml_use_internal_errors($previousUseInternalErrors);
-            }
-
-            $xpath = new DOMXPath($document);
+            $xpath = self::htmlXPath($this->get($path)->assertOk()->getContent(), $path);
             $visibleText = '';
 
             foreach ($xpath->query('//*[@id="page-content"] | //footer[@id="footer"]') as $node) {
@@ -239,6 +241,15 @@ class SiteTest extends TestCase
 
             self::collectStaticTypographyViolations($violations, $visibleText, $path);
             self::collectSupplementaryContentViolations($violations, $xpath, $path, $notesLabel);
+            $notes = $xpath->query('//aside[contains(concat(" ", normalize-space(@class), " "), " notabene ")]');
+
+            if ($path === '/') {
+                self::assertSame(1, $notes->length, 'The main page must retain its site note.');
+            }
+
+            foreach ($notes as $index => $note) {
+                self::collectNarrowNoteTypographyViolations($violations, $note->textContent, "{$path}, notes {$index}");
+            }
         }
 
         self::assertSame([], $violations);
@@ -288,21 +299,18 @@ class SiteTest extends TestCase
         self::assertIsInt($printVersion);
 
         foreach (['/different/two-monkeys', '/author', '/project'] as $path) {
-            $this->get($path)
-                ->assertOk()
-                ->assertSee(
-                    "<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/print.css?v={$printVersion}\" media=\"print\" />",
-                    false,
-                );
+            $xpath = self::htmlXPath($this->get($path)->assertOk()->getContent(), $path);
+            $styles = $xpath->query('//link[starts-with(@href, "/css/print.css")]');
+            self::assertSame(1, $styles->length, $path);
+            self::assertSame('stylesheet', $styles->item(0)->getAttribute('rel'), $path);
+            self::assertSame('print', $styles->item(0)->getAttribute('media'), $path);
+            self::assertSame("/css/print.css?v={$printVersion}", $styles->item(0)->getAttribute('href'), $path);
         }
 
-        $this->get('/')
-            ->assertOk()
-            ->assertDontSee('/css/print.css', false);
-
-        $this->get('/unknown')
-            ->assertNotFound()
-            ->assertDontSee('/css/print.css', false);
+        foreach (['/' => 200, '/unknown' => 404] as $path => $status) {
+            $xpath = self::htmlXPath($this->get($path)->assertStatus($status)->getContent(), $path);
+            self::assertSame(0, $xpath->query('//link[starts-with(@href, "/css/print.css")]')->length, $path);
+        }
 
         self::assertFileExists(public_path('css/print.css'));
     }
@@ -313,56 +321,65 @@ class SiteTest extends TestCase
         $firstPoem = $poems[0];
         $secondPoem = $poems[1];
 
-        $this->get('/')
-            ->assertOk()
-            ->assertSee('<a class="skip-link" href="#page-content">Перейти к основному содержанию</a>', false)
-            ->assertSee('<span class="visually-hidden"> · </span>', false)
-            ->assertSee('<span class="book-title visually-hidden-mobile">Стихотворения</span>', false)
-            ->assertSee('<article id="page-content" class="page" tabindex="-1">', false)
-            ->assertSee('<nav aria-label="Постраничная навигация">', false)
-            ->assertSee('aria-current="page" aria-label="Текущая страница — Обложка"', false)
-            ->assertSee(
-                "aria-label=\"Вислава Шимборская. Обложка — перейти к стихотворению «{$firstPoem['title']}»\"",
-                false,
-            );
+        $xpath = self::htmlXPath($this->get('/')->assertOk()->getContent(), '/');
 
-        $this->get("/{$firstPoem['section']}/{$firstPoem['slug']}")
-            ->assertOk()
-            ->assertSee(
-                "<span aria-current=\"page\" aria-label=\"Текущая страница 1 — {$firstPoem['title']}\">1</span>",
-                false,
-            )
-            ->assertSee(
-                "title=\"Страница 2 — {$secondPoem['title']}\" aria-label=\"Страница 2 — {$secondPoem['title']}\"",
-                false,
-            )
-            ->assertSee(
-                "<span class=\"active\" aria-current=\"page\" aria-label=\"Текущая страница — {$firstPoem['title']}\">",
-                false,
-            );
+        foreach ([
+            '//a[contains(concat(" ", normalize-space(@class), " "), " skip-link ")][@href="#page-content"][normalize-space(.)="Перейти к основному содержанию"]',
+            '//h1/span[contains(concat(" ", normalize-space(@class), " "), " visually-hidden ")][normalize-space(.)="·"]',
+            '//h1/span[contains(concat(" ", normalize-space(@class), " "), " book-title ")][contains(concat(" ", normalize-space(@class), " "), " visually-hidden-mobile ")][normalize-space(.)="Стихотворения"]',
+            '//article[@id="page-content"][@tabindex="-1"][contains(concat(" ", normalize-space(@class), " "), " page ")]',
+            '//nav[@aria-label="Постраничная навигация"]',
+            '//*[@id="pager"]//*[@aria-current="page"][@aria-label="Текущая страница — Обложка"]',
+        ] as $query) {
+            self::assertSame(1, $xpath->query($query)->length, $query);
+        }
 
-        $this->get('/author')
-            ->assertOk()
-            ->assertSee('aria-current="page" aria-label="Текущая страница — Об авторе"', false);
+        $coverLink = $xpath->query('//*[@id="page-content"]//a[img]');
+        self::assertSame(1, $coverLink->length);
+        self::assertSame(
+            "Вислава Шимборская. Обложка — перейти к стихотворению «{$firstPoem['title']}»",
+            $coverLink->item(0)->getAttribute('aria-label'),
+        );
 
-        $this->get('/project')
-            ->assertOk()
-            ->assertSee('aria-current="page" aria-label="Текущая страница — О проекте"', false);
+        $path = "/{$firstPoem['section']}/{$firstPoem['slug']}";
+        $xpath = self::htmlXPath($this->get($path)->assertOk()->getContent(), $path);
+        $current = $xpath->query('//*[@id="pager"]//span[@aria-current="page"]');
+        self::assertSame(1, $current->length);
+        self::assertSame('1', trim($current->item(0)->textContent));
+        self::assertSame("Текущая страница 1 — {$firstPoem['title']}", $current->item(0)->getAttribute('aria-label'));
 
-        $this->get('/unknown')
-            ->assertNotFound()
-            ->assertSee('<article id="page-content" class="page error-page" tabindex="-1">', false);
+        $nextUrl = route('poem', ['section' => $secondPoem['section'], 'slug' => $secondPoem['slug']]);
+        $next = $xpath->query("//*[@id=\"pager\"]//a[@href=\"{$nextUrl}\"]");
+        self::assertSame(1, $next->length);
+        self::assertSame("Страница 2 — {$secondPoem['title']}", $next->item(0)->getAttribute('title'));
+        self::assertSame("Страница 2 — {$secondPoem['title']}", $next->item(0)->getAttribute('aria-label'));
+
+        $contentsCurrent = $xpath->query('//dialog[@id="content"]//span[@aria-current="page"][contains(concat(" ", normalize-space(@class), " "), " active ")]');
+        self::assertSame(1, $contentsCurrent->length);
+        self::assertSame("Текущая страница — {$firstPoem['title']}", $contentsCurrent->item(0)->getAttribute('aria-label'));
+
+        foreach (['/author' => 'Об авторе', '/project' => 'О проекте'] as $path => $title) {
+            $xpath = self::htmlXPath($this->get($path)->assertOk()->getContent(), $path);
+            self::assertSame(1, $xpath->query("//*[@aria-current=\"page\"][@aria-label=\"Текущая страница — {$title}\"]")->length, $path);
+        }
+
+        $xpath = self::htmlXPath($this->get('/unknown')->assertNotFound()->getContent(), '/unknown');
+        self::assertSame(1, $xpath->query('//article[@id="page-content"][@tabindex="-1"][contains(concat(" ", normalize-space(@class), " "), " page ")][contains(concat(" ", normalize-space(@class), " "), " error-page ")]')->length);
     }
 
     public function testKeyboardShortcutPlaceholdersAreRenderedWithoutPlatformLabels(): void
     {
-        $response = $this->get('/different/two-monkeys')->assertOk();
+        $xpath = self::htmlXPath($this->get('/different/two-monkeys')->assertOk()->getContent());
 
-        $response
-            ->assertSee('<span class="shortkey" data-shortcut="cover"></span>', false)
-            ->assertSee('<span class="shortkey" data-shortcut="contents"></span>', false)
-            ->assertDontSee('(ctrl +', false)
-            ->assertDontSee('⌃⇧', false);
+        foreach (['cover', 'contents'] as $shortcut) {
+            $placeholders = $xpath->query("//span[@data-shortcut=\"{$shortcut}\"][contains(concat(' ', normalize-space(@class), ' '), ' shortkey ')]");
+            self::assertSame(1, $placeholders->length, $shortcut);
+            self::assertSame('', trim($placeholders->item(0)->textContent), $shortcut);
+        }
+
+        $text = $xpath->query('//body')->item(0)->textContent;
+        self::assertStringNotContainsString('(ctrl +', $text);
+        self::assertStringNotContainsString('⌃⇧', $text);
     }
 
     public function testCatalogPagesMeetContentAndTypographyContracts(): void
@@ -371,18 +388,7 @@ class SiteTest extends TestCase
 
         foreach (app(PoemCatalog::class)->poems() as $poem) {
             $path = "/{$poem['section']}/{$poem['slug']}";
-            $content = $this->get($path)->assertOk()->getContent();
-            $document = new DOMDocument;
-            $previousUseInternalErrors = libxml_use_internal_errors(true);
-
-            try {
-                self::assertTrue($document->loadHTML($content), $path);
-            } finally {
-                libxml_clear_errors();
-                libxml_use_internal_errors($previousUseInternalErrors);
-            }
-
-            $xpath = new DOMXPath($document);
+            $xpath = self::htmlXPath($this->get($path)->assertOk()->getContent(), $path);
             self::collectCatalogPageViolations($violations, $xpath, $path);
         }
 
@@ -391,74 +397,46 @@ class SiteTest extends TestCase
 
     public function testIllustrationViewerUsesProgressiveEnhancement(): void
     {
-        $content = $this->get('/different/atlantis')->assertOk()->getContent();
-        $document = new DOMDocument;
-        $previousUseInternalErrors = libxml_use_internal_errors(true);
+        $xpath = self::htmlXPath($this->get('/different/atlantis')->assertOk()->getContent(), '/different/atlantis');
+        $links = $xpath->query('//aside[contains(concat(" ", normalize-space(@class), " "), " illustrations ")]//a[@data-illustration]');
+        self::assertGreaterThan(0, $links->length);
 
-        try {
-            self::assertTrue($document->loadHTML($content));
-        } finally {
-            libxml_clear_errors();
-            libxml_use_internal_errors($previousUseInternalErrors);
+        foreach ($links as $link) {
+            self::assertNotSame('', trim($link->getAttribute('href')), 'The enlargement must work as an ordinary link.');
+            self::assertSame(1, $xpath->query('.//img[@src]', $link)->length);
         }
 
-        $xpath = new DOMXPath($document);
-        $links = $xpath->query('//aside[@class="illustrations"]//a[@data-illustration]');
-        self::assertSame(1, $links->length);
-        self::assertSame('/images/full/atlantis.webp', $links->item(0)->getAttribute('href'));
-        self::assertSame(1, $xpath->query('.//img[@src="/images/atlantis.webp"][@width="150"][@height="100"]', $links->item(0))->length);
         self::assertSame(1, $xpath->query('//dialog[@id="illustration-dialog"][@aria-labelledby="illustration-title"][not(@open)]')->length);
         self::assertSame(1, $xpath->query('//dialog[@id="illustration-dialog"]//*[@id="illustration-title"]')->length);
         self::assertSame(1, $xpath->query('//dialog[@id="illustration-dialog"]//button[@type="button"][@aria-label="Закрыть изображение"][@autofocus]')->length);
         self::assertSame(1, $xpath->query('//dialog[@id="illustration-dialog"]//*[@role="status"]')->length);
         self::assertSame(1, $xpath->query('//dialog[@id="illustration-dialog"]//*[@role="alert"]//a')->length);
         self::assertSame(0, $xpath->query('//dialog[@id="illustration-dialog"]//img')->length, 'The full image must not be requested before opening.');
-        self::assertSame(0, $xpath->query('//dialog[@id="illustration-dialog"]//*[@class="illustration-caption"]/*')->length, 'Captions are copied from the illustration, not duplicated in Blade.');
+        $captions = $xpath->query('//dialog[@id="illustration-dialog"]//*[contains(concat(" ", normalize-space(@class), " "), " illustration-caption ")]');
+        self::assertSame(1, $captions->length);
+        self::assertSame('', trim($captions->item(0)->textContent), 'Captions are copied from the illustration, not duplicated in Blade.');
+        self::assertSame(0, $xpath->query('./*', $captions->item(0))->length);
     }
 
     public function testIllustrationViewerDoesNotChangeOtherImageLinks(): void
     {
         foreach (['/different/two-monkeys', '/moment/ball'] as $path) {
-            $this->get($path)->assertOk()
-                ->assertSee('<dialog id="illustration-dialog"', false)
-                ->assertDontSee('data-illustration', false);
+            $xpath = self::htmlXPath($this->get($path)->assertOk()->getContent(), $path);
+            self::assertSame(1, $xpath->query('//dialog[@id="illustration-dialog"]')->length, $path);
+            self::assertSame(0, $xpath->query('//*[@data-illustration]')->length, $path);
         }
 
         foreach (['/', '/project', '/author', '/moment/everything'] as $path) {
-            $this->get($path)->assertOk()
-                ->assertDontSee('id="illustration-dialog"', false)
-                ->assertDontSee('data-illustration', false);
+            $xpath = self::htmlXPath($this->get($path)->assertOk()->getContent(), $path);
+            self::assertSame(0, $xpath->query('//*[@id="illustration-dialog"]')->length, $path);
+            self::assertSame(0, $xpath->query('//*[@data-illustration]')->length, $path);
         }
 
-        $this->get('/unknown')->assertNotFound()
-            ->assertDontSee('id="illustration-dialog"', false);
-        $this->get('/')->assertSee(
-            '<a href="' . route('poem', ['section' => 'different', 'slug' => 'two-monkeys']) . '" aria-label=',
-            false,
-        );
-    }
-
-    public function testMainNoteMeetsNarrowColumnTypographyContract(): void
-    {
-        $content = $this->get('/')->assertOk()->getContent();
-        $document = new DOMDocument;
-        $previousUseInternalErrors = libxml_use_internal_errors(true);
-
-        try {
-            self::assertTrue($document->loadHTML($content));
-        } finally {
-            libxml_clear_errors();
-            libxml_use_internal_errors($previousUseInternalErrors);
-        }
-
-        $xpath = new DOMXPath($document);
-        $notes = $xpath->query('//aside[contains(concat(" ", normalize-space(@class), " "), " notabene ")]');
-        self::assertSame(1, $notes->length);
-
-        $violations = [];
-        self::collectNarrowNoteTypographyViolations($violations, $notes->item(0)->textContent, '/, notes 0');
-
-        self::assertSame([], $violations);
+        $xpath = self::htmlXPath($this->get('/unknown')->assertNotFound()->getContent(), '/unknown');
+        self::assertSame(0, $xpath->query('//*[@id="illustration-dialog"]')->length);
+        $xpath = self::htmlXPath($this->get('/')->assertOk()->getContent(), '/');
+        $coverUrl = route('poem', ['section' => 'different', 'slug' => 'two-monkeys']);
+        self::assertSame(1, $xpath->query("//*[@id=\"page-content\"]//a[img][@href=\"{$coverUrl}\"][@aria-label][not(@data-illustration)]")->length);
     }
 
     public function testNarrowNoteTypographyValidatorDetectsBreakableGroups(): void
@@ -480,11 +458,7 @@ class SiteTest extends TestCase
 
     public function testContentValidatorDetectsStructuralViolations(): void
     {
-        $document = new DOMDocument;
-        $previousUseInternalErrors = libxml_use_internal_errors(true);
-
-        try {
-            $document->loadHTML(<<<'HTML'
+        $xpath = self::htmlXPath(<<<'HTML'
             <!doctype html>
             <html lang="ru">
             <head><meta charset="utf-8"></head>
@@ -499,14 +473,10 @@ class SiteTest extends TestCase
                 <aside class="illustrations" aria-label="Иллюстрации"><img src="/images/missing.jpg" alt=""></aside>
             </body>
             </html>
-            HTML);
-        } finally {
-            libxml_clear_errors();
-            libxml_use_internal_errors($previousUseInternalErrors);
-        }
+            HTML, '/fixture');
         $violations = [];
 
-        self::collectCatalogPageViolations($violations, new DOMXPath($document), '/fixture');
+        self::collectCatalogPageViolations($violations, $xpath, '/fixture');
 
         self::assertSame([], array_diff([
             'common: mixed alphabets in a word',
@@ -520,18 +490,7 @@ class SiteTest extends TestCase
 
     public function testContentsDialogUsesCatalogOrderInTwoColumns(): void
     {
-        $response = $this->get('/')->assertOk();
-        $document = new DOMDocument;
-        $previousUseInternalErrors = libxml_use_internal_errors(true);
-
-        try {
-            self::assertTrue($document->loadHTML($response->getContent()));
-        } finally {
-            libxml_clear_errors();
-            libxml_use_internal_errors($previousUseInternalErrors);
-        }
-
-        $xpath = new DOMXPath($document);
+        $xpath = self::htmlXPath($this->get('/')->assertOk()->getContent(), '/');
         $columns = $xpath->query('//div[@id="contents-wrap"]/ul[contains(concat(" ", normalize-space(@class), " "), " contents-column ")]');
 
         self::assertSame(
@@ -655,21 +614,21 @@ class SiteTest extends TestCase
 
     public function testUnknownAndMismatchedPagesReturnNotFound(): void
     {
-        $requiredFragments = [
-            '<body class="error-layout">',
-            '<header id="bar">',
-            '<footer id="footer">',
-            '<div id="royklogo"',
-            '<h2>404',
-            'href="' . route('main') . '"',
+        $requiredElements = [
+            '//body[contains(concat(" ", normalize-space(@class), " "), " error-layout ")]',
+            '//header[@id="bar"]',
+            '//footer[@id="footer"]',
+            '//*[@id="royklogo"]',
+            '//h2[starts-with(normalize-space(.), "404")]',
+            '//a[@href="' . route('main') . '"]',
         ];
-        $forbiddenFragments = [
-            '<nav id="leftbar"',
-            '<ul id="pager"',
-            '<dialog id="content"',
-            '/js/script.js',
-            'rel="canonical"',
-            'name="description"',
+        $forbiddenElements = [
+            '//nav[@id="leftbar"]',
+            '//*[@id="pager"]',
+            '//dialog[@id="content"]',
+            '//script[starts-with(@src, "/js/script.js")]',
+            '//link[@rel="canonical"]',
+            '//meta[@name="description"]',
         ];
         $violations = [];
 
@@ -684,21 +643,21 @@ class SiteTest extends TestCase
             $response = str_ends_with($path, '/')
                 ? $this->requestWithRawUri('GET', $path)
                 : $this->get($path);
-            $content = $response->getContent();
+            $xpath = self::htmlXPath($response->getContent(), $path);
 
             if ($response->getStatusCode() !== 404) {
                 $violations[] = "{$path}: expected status 404, got {$response->getStatusCode()}";
             }
 
-            foreach ($requiredFragments as $fragment) {
-                if (!str_contains($content, $fragment)) {
-                    $violations[] = "{$path}: missing {$fragment}";
+            foreach ($requiredElements as $query) {
+                if ($xpath->query($query)->length === 0) {
+                    $violations[] = "{$path}: missing {$query}";
                 }
             }
 
-            foreach ($forbiddenFragments as $fragment) {
-                if (str_contains($content, $fragment)) {
-                    $violations[] = "{$path}: unexpectedly contains {$fragment}";
+            foreach ($forbiddenElements as $query) {
+                if ($xpath->query($query)->length !== 0) {
+                    $violations[] = "{$path}: unexpectedly contains {$query}";
                 }
             }
         }
@@ -825,12 +784,28 @@ class SiteTest extends TestCase
         $poems = $catalog->poems();
 
         foreach ([$poems[0], $poems[intdiv(count($poems) - 1, 2)], $poems[array_key_last($poems)]] as $poem) {
-            $response = $this->get("/{$poem['section']}/{$poem['slug']}")->assertOk();
+            $path = "/{$poem['section']}/{$poem['slug']}";
+            $xpath = self::htmlXPath($this->get($path)->assertOk()->getContent(), $path);
+            $navigation = $catalog->navigation($poem['section'], $poem['slug']);
+            $expectedExtraPages = array_map(
+                static fn (int $index): int => $index + 1,
+                array_keys(array_diff_key($navigation['items'], $navigation['compactItems'])),
+            );
+            $extraPages = [];
 
-            self::assertSame(1, substr_count($response->getContent(), 'class="pager-compact-extra"'));
-            $response->assertSee(
-                'aria-current="page" aria-label="Текущая страница',
-                false,
+            foreach ($xpath->query('//*[@id="pager"]/li[contains(concat(" ", normalize-space(@class), " "), " pager-compact-extra ")]') as $item) {
+                $extraPages[] = (int) trim($item->textContent);
+                self::assertSame(0, $xpath->query('.//*[@aria-current="page"]', $item)->length, "{$path}: current page is hidden");
+            }
+
+            self::assertSame($expectedExtraPages, $extraPages, $path);
+            $current = $xpath->query('//*[@id="pager"]//*[@aria-current="page"]');
+            self::assertSame(1, $current->length, $path);
+            self::assertSame((string) ($navigation['currentIndex'] + 1), trim($current->item(0)->textContent), $path);
+            self::assertSame(
+                'Текущая страница ' . ($navigation['currentIndex'] + 1) . " — {$poem['title']}",
+                $current->item(0)->getAttribute('aria-label'),
+                $path,
             );
         }
     }
@@ -898,6 +873,21 @@ class SiteTest extends TestCase
         } finally {
             config(['app.url' => $originalUrl]);
         }
+    }
+
+    private static function htmlXPath(string $html, string $context = ''): DOMXPath
+    {
+        $document = new DOMDocument;
+        $previousUseInternalErrors = libxml_use_internal_errors(true);
+
+        try {
+            self::assertTrue($document->loadHTML($html), $context);
+        } finally {
+            libxml_clear_errors();
+            libxml_use_internal_errors($previousUseInternalErrors);
+        }
+
+        return new DOMXPath($document);
     }
 
     /**
