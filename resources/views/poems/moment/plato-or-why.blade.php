@@ -103,4 +103,15 @@
 @endsection
 
 @section('images')
+    <div class="left-box" style="--illustration-offset: 12px;">
+        <a href="/images/full/plato.webp" data-illustration
+           data-illustration-title="Портрет Платона"
+           title="Увеличить изображение" aria-label="Увеличить портрет Платона"
+           aria-describedby="plato-image">
+            <img id="plato-image" alt="Мраморная голова Платона с волнистыми волосами и длинной бородой на голубом фоне." src="/images/plato.webp" width="150" height="225"/>
+        </a>
+        <p>Платон, римская копия портрета</p>
+        <p>Силанион (ок.&nbsp;370&nbsp;г. до&nbsp;н.&nbsp;э.)</p>
+        <p>Фото:&nbsp;Marie-Lan&nbsp;Nguyen / Wikimedia&nbsp;Commons, CC&nbsp;BY&nbsp;2.5</p>
+    </div>
 @endsection
