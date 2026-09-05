@@ -97,4 +97,12 @@
 @endsection
 
 @section('images')
+    <div class="left-box" style="--illustration-offset: 12px;">
+        <a href="/images/full/chwila.webp" data-illustration data-illustration-title="Обложка сборника «Мгновение»"
+           title="Увеличить изображение" aria-label="Увеличить обложку сборника «Мгновение»" aria-describedby="moment-image">
+            <img id="moment-image" alt="Белая обложка сборника «Мгновение»: вверху летят ласточки на фоне облачного неба, внизу — имя Виславы Шимборской и название Chwila." src="/images/chwila.webp" width="150" height="217"/>
+        </a>
+        <p>Обложка первого издания сборника «Мгновение» (2002)</p>
+        <p>Оформление: Olgierd Chmielewski</p>
+    </div>
 @endsection
