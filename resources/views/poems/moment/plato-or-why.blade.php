@@ -103,7 +103,7 @@
 @endsection
 
 @section('images')
-    <div class="left-box" style="--illustration-offset: 12px;">
+    <div class="left-box" style="--illustration-offset: 148px;">
         <a href="/images/full/plato.webp" data-illustration
            data-illustration-title="Портрет Платона"
            title="Увеличить изображение" aria-label="Увеличить портрет Платона"
