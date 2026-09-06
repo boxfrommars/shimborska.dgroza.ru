@@ -154,4 +154,12 @@
 @endsection
 
 @section('images')
+    <div class="left-box" style="--illustration-offset: 538px;">
+        <a href="/images/full/newton.webp" data-illustration data-illustration-title="Портрет Исаака Ньютона"
+           title="Увеличить изображение" aria-label="Увеличить портрет Исаака Ньютона" aria-describedby="newton-image">
+            <img id="newton-image" alt="Поясной портрет Исаака Ньютона: учёный с длинными седыми волосами сидит вполоборота в тёмной одежде на коричневом фоне." src="/images/newton.webp" width="150" height="181"/>
+        </a>
+        <p>Исаак Ньютон</p>
+        <p>Г.&nbsp;Кнеллер (1689)</p>
+    </div>
 @endsection
