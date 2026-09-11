@@ -22,6 +22,9 @@
     <meta name="theme-color" content="#333333">
 
     <title>{{ $title }}</title>
+    @if($page !== 'error')
+        <meta property="og:site_name" content="Вислава Шимборская">
+    @endif
     @isset($canonicalUrl)
         <link rel="canonical" href="{{ $canonicalUrl }}">
     @endisset

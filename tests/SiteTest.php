@@ -16,6 +16,8 @@ class SiteTest extends TestCase
 {
     private const HOME_DESCRIPTION = 'Сайт, посвящённый польской поэтессе Виславе Шимборской, — лауреату Нобелевской премии 1996 года. Представлены сборники Двоеточие, Мгновение и другие стихотворения и проза в разных переводах и на польском языке';
 
+    private const SITE_NAME = 'Вислава Шимборская';
+
     public function testMainPageIsAvailable(): void
     {
         $fontVersion = filemtime(public_path('css/fonts.css'));
@@ -170,9 +172,16 @@ class SiteTest extends TestCase
             $xpath = new DOMXPath($document);
             $titles = $xpath->query('//head/title');
             $descriptions = $xpath->query('//head/meta[@name="description"]');
+            $siteNames = $xpath->query('//head/meta[@property="og:site_name"]');
 
             self::assertSame(1, $titles->length, "{$path}: title count");
             self::assertSame($expected['title'], $titles->item(0)?->textContent, "{$path}: title");
+            self::assertSame(1, $siteNames->length, "{$path}: og:site_name count");
+            self::assertSame(
+                self::SITE_NAME,
+                $siteNames->item(0)?->attributes?->getNamedItem('content')?->nodeValue,
+                "{$path}: og:site_name",
+            );
 
             if ($expected['description'] === null) {
                 self::assertSame(0, $descriptions->length, "{$path}: description count");
@@ -187,6 +196,36 @@ class SiteTest extends TestCase
                 "{$path}: description",
             );
         }
+    }
+
+    public function testHomepageDeclaresWebsiteStructuredData(): void
+    {
+        $xpath = self::htmlXPath($this->get('/')->assertOk()->getContent(), '/');
+        $scripts = $xpath->query('//head/script[@type="application/ld+json"]');
+
+        self::assertSame(1, $scripts->length);
+        self::assertSame([
+            '@context' => 'https://schema.org',
+            '@type' => 'WebSite',
+            'url' => rtrim((string) config('app.url'), '/') . '/',
+            'name' => self::SITE_NAME,
+            'alternateName' => [
+                'Шимборская',
+                'shimborska.dgroza.ru',
+            ],
+        ], json_decode(
+            $scripts->item(0)?->textContent ?? '',
+            true,
+            512,
+            JSON_THROW_ON_ERROR,
+        ));
+
+        $internalPage = self::htmlXPath(
+            $this->get('/different/two-monkeys')->assertOk()->getContent(),
+            '/different/two-monkeys',
+        );
+
+        self::assertSame(0, $internalPage->query('//head/script[@type="application/ld+json"]')->length);
     }
 
     public function testStaticPagesUseTheExpectedTypography(): void
@@ -600,6 +639,7 @@ class SiteTest extends TestCase
             '//script[starts-with(@src, "/js/script.js")]',
             '//link[@rel="canonical"]',
             '//meta[@name="description"]',
+            '//meta[@property="og:site_name"]',
         ];
         $violations = [];
 

@@ -2,6 +2,18 @@
 
 @section('head')
     <meta name="description" content="Сайт, посвящённый польской поэтессе Виславе Шимборской, — лауреату Нобелевской премии 1996 года. Представлены сборники Двоеточие, Мгновение и другие стихотворения и проза в разных переводах и на польском языке" />
+    <script type="application/ld+json">
+        {!! json_encode([
+            '@' . 'context' => 'https://schema.org',
+            '@type' => 'WebSite',
+            'url' => $canonicalUrl,
+            'name' => 'Вислава Шимборская',
+            'alternateName' => [
+                'Шимборская',
+                'shimborska.dgroza.ru',
+            ],
+        ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) !!}
+    </script>
 @endsection
 
 @section('content')
