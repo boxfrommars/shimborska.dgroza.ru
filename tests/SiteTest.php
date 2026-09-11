@@ -16,12 +16,6 @@ class SiteTest extends TestCase
 {
     private const HOME_DESCRIPTION = 'Сайт, посвящённый польской поэтессе Виславе Шимборской, — лауреату Нобелевской премии 1996 года. Представлены сборники Двоеточие, Мгновение и другие стихотворения и проза в разных переводах и на польском языке';
 
-    private const PILOT_DESCRIPTIONS = [
-        '/different/utopia' => '«Утопия» — стихотворение Виславы Шимборской. Пять русских переводов, в том числе Андрея Базилевского и Натальи Астафьевой, а также польский оригинал «Utopia».',
-        '/different/cat-in-empty-apartment' => '«Кот в пустой квартире» — стихотворение Виславы Шимборской в переводе Натальи Астафьевой.',
-        '/different/soliloquy-for-cassandra' => '«Монолог для Кассандры» — стихотворение Виславы Шимборской. Русские переводы Виктора Коркия и Асара Эппеля, а также польский оригинал «Monolog dla Kasandry».',
-    ];
-
     public function testMainPageIsAvailable(): void
     {
         $fontVersion = filemtime(public_path('css/fonts.css'));
@@ -136,7 +130,7 @@ class SiteTest extends TestCase
         }
     }
 
-    public function testIndexablePagesExposeExpectedTitlesAndSeoDescriptions(): void
+    public function testIndexablePagesExposeExpectedTitlesAndOnlyHomeDescription(): void
     {
         $pages = [
             '/' => [
@@ -157,7 +151,7 @@ class SiteTest extends TestCase
             $path = "/{$poem['section']}/{$poem['slug']}";
             $pages[$path] = [
                 'title' => "Вислава Шимборская. {$poem['title']}",
-                'description' => self::PILOT_DESCRIPTIONS[$path] ?? null,
+                'description' => null,
             ];
         }
 
@@ -192,38 +186,6 @@ class SiteTest extends TestCase
                 $descriptions->item(0)?->attributes?->getNamedItem('content')?->nodeValue,
                 "{$path}: description",
             );
-        }
-    }
-
-    public function testCatalogNormalizesOptionalSeoDescriptions(): void
-    {
-        $catalog = app(PoemCatalog::class);
-        $rawDescriptions = [];
-
-        foreach ($catalog->sections() as $sectionSlug => $section) {
-            foreach ($section['poems'] as $poem) {
-                if (!array_key_exists('description', $poem)) {
-                    continue;
-                }
-
-                self::assertIsString($poem['description']);
-                self::assertNotSame('', trim($poem['description']));
-                $rawDescriptions["/{$sectionSlug}/{$poem['slug']}"] = $poem['description'];
-            }
-        }
-
-        $expectedDescriptions = self::PILOT_DESCRIPTIONS;
-        ksort($rawDescriptions);
-        ksort($expectedDescriptions);
-
-        self::assertSame($expectedDescriptions, $rawDescriptions);
-
-        foreach ($catalog->poems() as $poem) {
-            $path = "/{$poem['section']}/{$poem['slug']}";
-
-            self::assertArrayHasKey('description', $poem, $path);
-            self::assertSame(self::PILOT_DESCRIPTIONS[$path] ?? null, $poem['description'], $path);
-            self::assertSame($poem, $catalog->find($poem['section'], $poem['slug']), $path);
         }
     }
 
