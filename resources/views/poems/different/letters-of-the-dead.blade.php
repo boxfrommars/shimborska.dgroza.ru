@@ -59,4 +59,20 @@
 @endsection
 
 @section('images')
+    <div class="left-box" style="--illustration-offset: 84px;">
+        <a href="/images/full/napoleon.webp" data-illustration data-illustration-title="Наполеон I, король Италии"
+           title="Увеличить изображение" aria-label="Увеличить портрет Наполеона" aria-describedby="napoleon-image">
+            <img id="napoleon-image" alt="Наполеон в зелёной мантии с золотой вышивкой и орденами, опирающийся левой рукой на корону." src="/images/napoleon.webp" width="150" height="202"/>
+        </a>
+        <p>Наполеон&nbsp;I, король Италии (1805)</p>
+        <p>Андреа&nbsp;Аппиани</p>
+    </div>
+    <div class="left-box" style="--illustration-offset: 165px;">
+        <a href="/images/full/rousseau.webp" data-illustration data-illustration-title="Портрет Жан-Жака Руссо"
+           title="Увеличить изображение" aria-label="Увеличить портрет Руссо" aria-describedby="rousseau-image">
+            <img id="rousseau-image" alt="Жан-Жак Руссо в седоватом парике, коричневом камзоле и белом шейном платке на тёмном фоне." src="/images/rousseau.webp" width="150" height="209"/>
+        </a>
+        <p>Жан-Жак&nbsp;Руссо (ок.&nbsp;1753)</p>
+        <p>Морис&nbsp;Кантен де&nbsp;Латур</p>
+    </div>
 @endsection
