@@ -105,4 +105,12 @@
 @endsection
 
 @section('images')
+    <div class="left-box" style="--illustration-offset: 100px;">
+        <a href="/images/full/holothuria.webp" data-illustration data-illustration-title="Анатомия голотурии"
+           title="Увеличить изображение" aria-label="Увеличить рисунок голотурии" aria-describedby="holothuria-image">
+            <img id="holothuria-image" alt="Чёрно-белый анатомический рисунок голотурии: продольно раскрытое тело с внутренними органами и длинной изогнутой трубкой справа." src="/images/holothuria.webp" width="150" height="205"/>
+        </a>
+        <p>Голотурия. Анатомический рисунок</p>
+        <p>Из&nbsp;коллекции <a href="https://commons.wikimedia.org/wiki/File:Holothuria_spec._-_-_Print_-_Iconographia_Zoologica_-_Special_Collections_University_of_Amsterdam_-_UBAINV0274_106_01_0012.tif">Iconographia&nbsp;Zoologica</a></p>
+    </div>
 @endsection
