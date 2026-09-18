@@ -117,4 +117,13 @@
 @endsection
 
 @section('images')
+    <div class="left-box" style="--illustration-offset: 178px;">
+        <a href="/images/full/tarsius.webp" data-illustration data-illustration-title="Филиппинский долгопят"
+           title="Увеличить изображение" aria-label="Увеличить фото долгопята" aria-describedby="tarsius-image">
+            <img id="tarsius-image" alt="Филиппинский долгопят с серо-коричневой шерстью и огромными круглыми глазами держится за наклонную ветку на фоне зелёной листвы." src="/images/tarsius.webp" width="150" height="100"/>
+        </a>
+        <p>Филиппинский долгопят</p>
+        <p>Фото:&nbsp;<a href="https://commons.wikimedia.org/wiki/File:Tarsius_syrichta.jpg">Plerzelwupp</a>,<br/>
+            <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC&nbsp;BY-SA&nbsp;3.0</a></p>
+    </div>
 @endsection
