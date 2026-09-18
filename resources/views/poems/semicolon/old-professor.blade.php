@@ -88,4 +88,17 @@
 @endsection
 
 @section('images')
+    <div class="left-box" style="--illustration-offset: 738px;">
+        <a href="/images/full/aurelius.webp" data-illustration
+           data-illustration-title="Бюст Марка Аврелия"
+           title="Увеличить изображение" aria-label="Увеличить бюст Марка Аврелия"
+           aria-describedby="aurelius-image">
+            <img id="aurelius-image" alt="Мраморная голова Марка Аврелия с густыми вьющимися волосами и бородой, слегка повёрнутая вправо, на сером фоне." src="/images/aurelius.webp" width="150" height="225"/>
+        </a>
+        <p>Бюст Марка&nbsp;Аврелия<br/>
+            (161–169&nbsp;гг.&nbsp;н.&nbsp;э.)</p>
+        <p>©&nbsp;Marie-Lan&nbsp;Nguyen /<br/>
+            <a href="https://commons.wikimedia.org/wiki/File:Marcus_Aurelius_Louvre_MR561_n01.jpg">Wikimedia&nbsp;Commons</a>,<br/>
+            <a href="https://creativecommons.org/licenses/by/2.5/">CC&nbsp;BY&nbsp;2.5</a></p>
+    </div>
 @endsection
