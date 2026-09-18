@@ -91,4 +91,13 @@
 @endsection
 
 @section('images')
+    <div class="left-box" style="--illustration-offset: 60px;">
+        <a href="/images/full/rembrandt.webp" data-illustration data-illustration-title="Автопортрет с двумя кругами"
+           title="Увеличить изображение" aria-label="Увеличить автопортрет Рембрандта" aria-describedby="rembrandt-image">
+            <img id="rembrandt-image" alt="Рембрандт в белой шапочке и тёмной одежде с меховой отделкой держит палитру и кисти; на светлой стене позади него видны части двух окружностей." src="/images/rembrandt.webp" width="150" height="181"/>
+        </a>
+        <p>Автопортрет с&nbsp;двумя кругами<br/>
+            (ок.&nbsp;1665–1668)</p>
+        <p>Рембрандт&nbsp;ван&nbsp;Рейн</p>
+    </div>
 @endsection
