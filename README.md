@@ -13,8 +13,10 @@
 - [docs/OCR.md](docs/OCR.md) — распознавание произведений по снимкам и
   восстановление прерванной задачи.
 - [docs/FRONTEND.md](docs/FRONTEND.md) — frontend-контракты и ручные проверки.
+- [docs/SEO-MONITORING-2026-09-18.md](docs/SEO-MONITORING-2026-09-18.md)
+  — протокол и журнал еженедельного SEO-мониторинга.
 - [docs/SEO-DESCRIPTIONS-PILOT-2026-08-03.md](docs/SEO-DESCRIPTIONS-PILOT-2026-08-03.md)
-  — журнал пилота descriptions страниц стихотворений.
+  — архив завершённого пилота descriptions страниц стихотворений.
 - [sources/README.md](sources/README.md) — устройство локального архива и
   правила ведения источников.
 - [sources/POEMS.md](sources/POEMS.md) — текущая карта произведений и локальных
