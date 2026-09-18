@@ -53,4 +53,12 @@
 @endsection
 
 @section('images')
+    <div class="left-box" style="--illustration-offset: 127px;">
+        <a href="/images/full/alexander.webp" data-illustration data-illustration-title="Александр перерубает гордиев узел"
+           title="Увеличить изображение" aria-label="Увеличить картину «Александр перерубает гордиев узел»" aria-describedby="alexander-image">
+            <img id="alexander-image" alt="Александр Македонский в доспехах и голубом плаще замахивается мечом на узел у колесницы; вокруг него собрались воины и старцы." src="/images/alexander.webp" width="150" height="117"/>
+        </a>
+        <p>Александр перерубает гордиев&nbsp;узел (1767)</p>
+        <p>Жан-Симон&nbsp;Бертелеми</p>
+    </div>
 @endsection
