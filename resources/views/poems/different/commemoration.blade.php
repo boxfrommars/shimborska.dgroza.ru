@@ -103,4 +103,15 @@
 @endsection
 
 @section('images')
+    <div class="left-box" style="--illustration-offset: 379px;">
+        <a href="/images/full/icarus.webp" data-illustration data-illustration-title="Падение Икара"
+           title="Увеличить изображение" aria-label="Увеличить фреску «Падение Икара»" aria-describedby="icarus-image">
+            <img id="icarus-image" alt="Античная фреска: крылатая фигура летит над морем, внизу видны лодки, люди и лежащее на берегу тело. В центре большой утраченный участок живописи." src="/images/icarus.webp" width="150" height="221"/>
+        </a>
+        <p>Падение&nbsp;Икара<br/>
+            (40–79&nbsp;гг.&nbsp;н.&nbsp;э.)</p>
+        <p>Фреска из&nbsp;Помпей</p>
+        <p><a href="https://commons.wikimedia.org/wiki/File:The_Fall_of_Icarus,_fresco_from_Pompeii,_40-79_AD.png">Sofia&nbsp;Suli</a>,<br/>
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC&nbsp;BY-SA&nbsp;4.0</a></p>
+    </div>
 @endsection
