@@ -73,4 +73,13 @@
 @endsection
 
 @section('images')
+    <div class="left-box" style="--illustration-offset: 175px;">
+        <a href="/images/full/pegasus.webp" data-illustration data-illustration-title="Скульптура Пегаса"
+           title="Увеличить изображение" aria-label="Увеличить скульптуру Пегаса" aria-describedby="pegasus-image">
+            <img id="pegasus-image" alt="Зеленоватая скульптура Пегаса: крылатый конь с приподнятым передним копытом стоит на крыше на фоне голубого неба." src="/images/pegasus.webp" width="150" height="107"/>
+        </a>
+        <p>Пегас на&nbsp;Большом театре им.&nbsp;Станислава Монюшко в&nbsp;Познани (1910)</p>
+        <p>Генрих&nbsp;Дюлль, Георг&nbsp;Пецольд</p>
+        <p>Фото:&nbsp;<a href="https://commons.wikimedia.org/wiki/File:2008-09_Pegasus.JPG">Ziko</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC&nbsp;BY-SA&nbsp;3.0</a></p>
+    </div>
 @endsection
