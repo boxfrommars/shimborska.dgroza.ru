@@ -35,4 +35,12 @@
 @endsection
 
 @section('images')
+    <div class="left-box" style="--illustration-offset: 105px;">
+        <a href="/images/full/grave.webp" data-illustration data-illustration-title="Надгробие Виславы Шимборской"
+           title="Увеличить изображение" aria-label="Увеличить фото надгробия Шимборской" aria-describedby="grave-image">
+            <img id="grave-image" alt="Светлое каменное надгробие Виславы Шимборской с тёмной плитой «Wisława Szymborska 1923–2012», цветами, лампадками и белой фигуркой совы." src="/images/grave.webp" width="150" height="226"/>
+        </a>
+        <p>Надгробие Виславы&nbsp;Шимборской в&nbsp;Кракове</p>
+        <p>Фото:&nbsp;<a href="https://commons.wikimedia.org/wiki/File:Warszawskie,_Krak%C3%B3w,_Poland_-_panoramio_(80).jpg">marek7400</a>, <a href="https://creativecommons.org/licenses/by/3.0/">CC&nbsp;BY&nbsp;3.0</a></p>
+    </div>
 @endsection
