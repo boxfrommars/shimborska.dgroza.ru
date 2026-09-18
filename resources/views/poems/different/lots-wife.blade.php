@@ -105,4 +105,12 @@
 @endsection
 
 @section('images')
+    <div class="left-box" style="--illustration-offset: 134px;">
+        <a href="/images/full/lots-wife.webp" data-illustration data-illustration-title="Бегство Лота из Содома"
+           title="Увеличить изображение" aria-label="Увеличить гравюру «Бегство Лота»" aria-describedby="lots-wife-image">
+            <img id="lots-wife-image" alt="Гравюра: Лот уводит двух дочерей, а позади его жена оборачивается к охваченному огнём и дымом Содому." src="/images/lots-wife.webp" width="150" height="188"/>
+        </a>
+        <p>Бегство Лота из&nbsp;Содома (изд.&nbsp;1875)</p>
+        <p>Гюстав&nbsp;Доре</p>
+    </div>
 @endsection
