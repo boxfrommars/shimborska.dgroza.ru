@@ -101,4 +101,12 @@
 @endsection
 
 @section('images')
+    <div class="left-box" style="--illustration-offset: 83px;">
+        <a href="/images/full/three_graces.webp" data-illustration data-illustration-title="Три грации"
+           title="Увеличить изображение" aria-label="Увеличить картину «Три грации»" aria-describedby="three-graces-image">
+            <img id="three-graces-image" alt="Три обнажённые женщины стоят в кругу, обнявшись, на фоне пейзажа; центральная фигура повёрнута спиной к зрителю. Над ними висит гирлянда цветов, справа находится фонтан." src="/images/three_graces.webp" width="150" height="183"/>
+        </a>
+        <p>Три&nbsp;грации (1630–1635)</p>
+        <p>Питер&nbsp;Пауль&nbsp;Рубенс</p>
+    </div>
 @endsection
