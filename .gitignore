@@ -3,6 +3,7 @@
 /sources/*
 !/sources/README.md
 !/sources/POEMS.md
+!/sources/POEMS-BY-SITE.md
 !/sources/PUBLICATIONS.md
 Homestead.json
 Homestead.yaml
