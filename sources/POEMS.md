@@ -22,17 +22,22 @@
 отмечаются отдельно: такой перевод считается опубликованным.
 
 Оригинальное название — польский авторский заголовок произведения. Название
-сборника — первый польский авторский сборник, включивший произведение; для
-прозы — первая авторская книга. Авторское избранное также учитывается, если
-оно предшествовало основному сборнику. Это не название русского издания,
-антологии или раздела сайта. Польские названия и книжные соответствия сверены
-по библиографии Фонда Шимборской[^bibliography] и оглавлению «Wiersze
-wszystkie»[^collected]; случаи более раннего включения в избранное отмечены
-отдельными сносками. «Без названия» означает отсутствие авторского заголовка
-(начало текста, если приведено, служит идентификатором); «Не установлено» —
-недостаток подтверждённых сведений. `—` в колонке сборника допускается только
-при подтверждённом отсутствии книжного включения. Общие диапазоны страниц
-оригинала и перевода прямо помечены как общие.
+сборника — польский авторский сборник, к которому произведение отнесено в
+авторитетном собрании стихотворений или библиографии. Основная опора —
+распределение по самостоятельным сборникам в «Wiersze wszystkie»[^collected],
+включая посмертную «Czarna piosenka». Для прозы указывается подтверждённая
+авторская книга; выбор авторского избранного для отдельного текста поясняется
+в сноске. Подробные правила — в [памятке архива](README.md).
+
+Более ранние журнальные публикации, включения в избранное и неясная
+последовательность выхода книг сохраняются в сносках и не меняют принадлежности
+к сборнику. Польские названия также сверены по библиографии Фонда
+Шимборской[^bibliography]. «Без названия» означает отсутствие авторского
+заголовка (начало текста, если приведено, служит идентификатором); «Не
+установлено» в колонке сборника — отсутствие подтверждённой книжной
+принадлежности. `—` в ней допускается только при подтверждённом отсутствии
+книжного включения. Общие диапазоны страниц оригинала и перевода прямо
+помечены как общие.
 
 ## По источникам
 
@@ -83,7 +88,7 @@ wszystkie»[^collected]; случаи более раннего включени
 | Баллада | Ballada | Sól | `different/ballad` | ● | PDF 5–6; печатные 389–390 | `RU` — выходная атрибуция: перевод Анны Ахматовой; фактически перевод Анатолия Наймана |
 | За вином | Przy winie | Sól | — |  | PDF 6–7; печатные 390–391 | `RU` — перевод Анны Ахматовой |
 | Движение | Ruch | Sto pociech[^sto-first-confirmed] | — |  | PDF 7; печатная 391 | `RU` — перевод Леонида Цывьяна |
-| Всякий случай | Wszelki wypadek | Не установлено[^first-wszelki] | `different/in-any-event` | ● | PDF 7–8; печатные 391–392 | `RU` — перевод Асара Эппеля |
+| Всякий случай | Wszelki wypadek | Wszelki wypadek[^first-wszelki] | `different/in-any-event` | ● | PDF 7–8; печатные 391–392 | `RU` — перевод Асара Эппеля |
 
 ### PUB-1978-02 — «Польские поэты»
 
@@ -98,9 +103,9 @@ wszystkie»[^collected]; случаи более раннего включени
 
 | Произведение Шимборской | Оригинальное название произведения | Оригинальное название сборника | Страница сайта | Есть на сайте | Страницы источника | Версии и переводчики |
 |---|---|---|---|---|---|---|
-| «Отрывочно мы знали мир…» | Без названия (начало: «Świat umieliśmy kiedyś na wyrywki…») | Wiersze wybrane (1964)[^early-selected] | — |  | PDF 2; печатная 289 | `RU` — перевод Асара Эппеля; в основном тексте без заголовка |
-| Память о сентябре | Pamięć o wrześniu | Wiersze wybrane (1964)[^early-selected] | — |  | PDF 2–3; печатные 289–290 | `RU` — перевод Асара Эппеля |
-| Память о январе | Pamięć o styczniu | Wiersze wybrane (1964)[^early-selected] | — |  | PDF 3; печатная 290 | `RU` — перевод Асара Эппеля |
+| «Отрывочно мы знали мир…» | Без названия (начало: «Świat umieliśmy kiedyś na wyrywki…») | Czarna piosenka[^early-selected] | — |  | PDF 2; печатная 289 | `RU` — перевод Асара Эппеля; в основном тексте без заголовка |
+| Память о сентябре | Pamięć o wrześniu | Czarna piosenka[^early-selected] | — |  | PDF 2–3; печатные 289–290 | `RU` — перевод Асара Эппеля |
+| Память о январе | Pamięć o styczniu | Czarna piosenka[^early-selected] | — |  | PDF 3; печатная 290 | `RU` — перевод Асара Эппеля |
 | Картина в Зимнем дворце | Malowidło w Pałacu Zimowym | Pytania zadawane sobie | — |  | PDF 4; печатная 291 | `RU` — перевод Давида Самойлова |
 | Атлантида | Atlantyda | Wołanie do Yeti | `different/atlantis` | ● | PDF 5–6; печатные 292–293 | `RU` — перевод Асара Эппеля |
 | Четыре часа утра | Czwarta nad ranem | Wołanie do Yeti | `different/four-in-the-morning` | ● | PDF 6; печатная 293 | `RU` — перевод Асара Эппеля |
@@ -118,31 +123,31 @@ wszystkie»[^collected]; случаи более раннего включени
 | Надгробная надпись | Nagrobek | Sól | `different/epitaph` | ● | PDF 15; печатная 302 | `RU` — перевод Асара Эппеля |
 | Я слишком близко | Без названия (начало: «Jestem za blisko, żeby mu się śnić…») | Sól | `different/im-too-close` | ● | PDF 15–16; печатные 302–303 | `RU` — перевод Асара Эппеля |
 | Сон | Sen | Sól | — |  | PDF 16–17; печатные 303–304 | `RU` — перевод Давида Самойлова |
-| Радость писательства | Radość pisania | Wiersze wybrane (1964)[^joy-first] | `different/joy-of-writing` |  | PDF 17–18; печатные 304–305 | `RU` — перевод Асара Эппеля |
-| Вот память и нашла | Pamięć nareszcie | Не установлено[^first-sto] | `different/memory-at-last` |  | PDF 18–19; печатные 305–306 | `RU` — перевод Асара Эппеля |
+| Радость писательства | Radość pisania | Sto pociech[^joy-first] | `different/joy-of-writing` |  | PDF 17–18; печатные 304–305 | `RU` — перевод Асара Эппеля |
+| Вот память и нашла | Pamięć nareszcie | Sto pociech[^first-sto] | `different/memory-at-last` |  | PDF 18–19; печатные 305–306 | `RU` — перевод Асара Эппеля |
 | Пейзаж | Pejzaż | Sto pociech[^sto-first-confirmed] | — |  | PDF 19–20; печатные 306–307 | `RU` — перевод Давида Самойлова |
 | Вокзал | Dworzec | Sto pociech[^sto-first-confirmed] | `different/station` |  | PDF 20–21; печатные 307–308 | `RU` — перевод Асара Эппеля |
-| Рожденный | Urodzony | Не установлено[^first-sto] | `different/born` |  | PDF 21–23; печатные 308–310 | `RU` — перевод Асара Эппеля |
-| Монолог для Кассандры | Monolog dla Kasandry | Не установлено[^first-sto] | `different/soliloquy-for-cassandra` |  | PDF 23–24; печатные 310–311 | `RU` — перевод Асара Эппеля |
+| Рожденный | Urodzony | Sto pociech[^first-sto] | `different/born` |  | PDF 21–23; печатные 308–310 | `RU` — перевод Асара Эппеля |
+| Монолог для Кассандры | Monolog dla Kasandry | Sto pociech[^first-sto] | `different/soliloquy-for-cassandra` |  | PDF 23–24; печатные 310–311 | `RU` — перевод Асара Эппеля |
 | Пьета | Pieta | Sto pociech[^sto-first-confirmed] | — |  | PDF 24; печатная 311 | `RU` — перевод Давида Самойлова |
 | Вьетнам | Wietnam | Sto pociech[^sto-first-confirmed] | `different/vietnam` |  | PDF 25; печатная 312 | `RU` — перевод Давида Самойлова |
-| Прилет | Przylot | Не установлено[^first-sto] | `different/arrival` | ● | PDF 25; печатная 312 | `RU` — перевод Асара Эппеля |
-| Долгопят | Tarsjusz | Не установлено[^first-sto] | `different/tarsier` |  | PDF 25–27; печатные 312–314 | `RU` — перевод Асара Эппеля |
-| Акробат | Akrobata | Не установлено[^first-sto] | — |  | PDF 27; печатная 314 | `RU` — перевод Давида Самойлова |
+| Прилет | Przylot | Sto pociech[^first-sto] | `different/arrival` | ● | PDF 25; печатная 312 | `RU` — перевод Асара Эппеля |
+| Долгопят | Tarsjusz | Sto pociech[^first-sto] | `different/tarsier` |  | PDF 25–27; печатные 312–314 | `RU` — перевод Асара Эппеля |
+| Акробат | Akrobata | Sto pociech[^first-sto] | — |  | PDF 27; печатная 314 | `RU` — перевод Давида Самойлова |
 | Движение | Ruch | Sto pociech[^sto-first-confirmed] | — |  | PDF 27–28; печатные 314–315 | `RU` — перевод Леонида Цывьяна |
-| Потеха | Sto pociech | Не установлено[^first-sto] | `different/hilarity` |  | PDF 28–29; печатные 315–316 | `RU` — перевод Асара Эппеля |
-| Всякий случай | Wszelki wypadek | Не установлено[^first-wszelki] | `different/in-any-event` |  | PDF 29–30; печатные 316–317 | `RU` — перевод Асара Эппеля |
-| Вызываемое театром | Wrażenia z teatru | Не установлено[^first-wszelki] | `different/impression-of-the-theater` |  | PDF 30; печатная 317 | `RU` — перевод Асара Эппеля |
-| Письма умерших | Listy umarłych | Не установлено[^first-wszelki] | `different/letters-of-the-dead` | ● | PDF 31; печатная 318 | `RU` — перевод Асара Эппеля |
-| Проспект | Prospekt | Не установлено[^first-wszelki] | `different/prospect` |  | PDF 31–32; печатные 318–319 | `RU` — перевод Асара Эппеля |
-| Открытие | Odkrycie | Не установлено[^first-wszelki] | `different/discovery` |  | PDF 32–33; печатные 319–320 | `RU` — перевод Асара Эппеля |
-| Скелет ящера | Szkielet jaszczura | Не установлено[^first-wszelki] | `different/lizard-skeleton` |  | PDF 33–34; печатные 320–321 | `RU` — перевод Асара Эппеля |
-| Погоня | Pogoń | Не установлено[^first-wszelki] | `different/pursuit` |  | PDF 34–35; печатные 321–322 | `RU` — перевод Асара Эппеля |
-| День рождения | Urodziny | Не установлено[^first-wszelki] | — |  | PDF 35–36; печатные 322–323 | `RU` — перевод Давида Самойлова |
-| Allegro ma non troppo | Allegro ma non troppo | Не установлено[^first-wszelki] | `different/allegro-ma-non-troppo` |  | PDF 36–37; печатные 323–324 | `RU` — перевод Асара Эппеля |
-| Аутотомия | Autotomia | Не установлено[^first-wszelki] | `different/autotomy` |  | PDF 37–38; печатные 324–325 | `RU` — перевод Асара Эппеля |
-| Похвала снам | Pochwała snów | Не установлено[^first-wszelki] | `different/praise-dreams` |  | PDF 38–39; печатные 325–326 | `RU` — перевод Давида Самойлова |
-| Под тою же самой звездой | Pod jedną gwiazdką | Не установлено[^first-wszelki] | `different/under-one-small-star` |  | PDF 39–40; печатные 326–327 | `RU` — перевод Асара Эппеля |
+| Потеха | Sto pociech | Sto pociech[^first-sto] | `different/hilarity` |  | PDF 28–29; печатные 315–316 | `RU` — перевод Асара Эппеля |
+| Всякий случай | Wszelki wypadek | Wszelki wypadek[^first-wszelki] | `different/in-any-event` |  | PDF 29–30; печатные 316–317 | `RU` — перевод Асара Эппеля |
+| Вызываемое театром | Wrażenia z teatru | Wszelki wypadek[^first-wszelki] | `different/impression-of-the-theater` |  | PDF 30; печатная 317 | `RU` — перевод Асара Эппеля |
+| Письма умерших | Listy umarłych | Wszelki wypadek[^first-wszelki] | `different/letters-of-the-dead` | ● | PDF 31; печатная 318 | `RU` — перевод Асара Эппеля |
+| Проспект | Prospekt | Wszelki wypadek[^first-wszelki] | `different/prospect` |  | PDF 31–32; печатные 318–319 | `RU` — перевод Асара Эппеля |
+| Открытие | Odkrycie | Wszelki wypadek[^first-wszelki] | `different/discovery` |  | PDF 32–33; печатные 319–320 | `RU` — перевод Асара Эппеля |
+| Скелет ящера | Szkielet jaszczura | Wszelki wypadek[^first-wszelki] | `different/lizard-skeleton` |  | PDF 33–34; печатные 320–321 | `RU` — перевод Асара Эппеля |
+| Погоня | Pogoń | Wszelki wypadek[^first-wszelki] | `different/pursuit` |  | PDF 34–35; печатные 321–322 | `RU` — перевод Асара Эппеля |
+| День рождения | Urodziny | Wszelki wypadek[^first-wszelki] | — |  | PDF 35–36; печатные 322–323 | `RU` — перевод Давида Самойлова |
+| Allegro ma non troppo | Allegro ma non troppo | Wszelki wypadek[^first-wszelki] | `different/allegro-ma-non-troppo` |  | PDF 36–37; печатные 323–324 | `RU` — перевод Асара Эппеля |
+| Аутотомия | Autotomia | Wszelki wypadek[^first-wszelki] | `different/autotomy` |  | PDF 37–38; печатные 324–325 | `RU` — перевод Асара Эппеля |
+| Похвала снам | Pochwała snów | Wszelki wypadek[^first-wszelki] | `different/praise-dreams` |  | PDF 38–39; печатные 325–326 | `RU` — перевод Давида Самойлова |
+| Под тою же самой звездой | Pod jedną gwiazdką | Wszelki wypadek[^first-wszelki] | `different/under-one-small-star` |  | PDF 39–40; печатные 326–327 | `RU` — перевод Асара Эппеля |
 | Большие числа | Wielka liczba | Wielka liczba | `different/large-number` |  | PDF 40–41; печатные 327–328 | `RU` — перевод Асара Эппеля |
 | Лотова жена | Żona Lota | Wielka liczba | `different/lots-wife` | ● | PDF 41–42; печатные 328–329 | `RU` — перевод Асара Эппеля |
 | Виденное сверху | Widziane z góry | Wielka liczba | `different/seen-from-above` | ● | PDF 42–43; печатные 329–330 | `RU` — перевод Асара Эппеля |
@@ -170,9 +175,9 @@ wszystkie»[^collected]; случаи более раннего включени
 | Клошар | Clochard | Sól | — |  | PDF 3; печатная 569 | `RU` — перевод Натальи Астафьевой |
 | Вода | Woda | Sól | — |  | PDF 3–4; печатные 569–570 | `RU` — перевод Натальи Астафьевой |
 | Пещера | Jaskinia | Sto pociech[^sto-first-confirmed] | — |  | PDF 5–6; печатные 571–572 | `RU` — перевод Натальи Астафьевой |
-| Томас Манн | Tomasz Mann | Не установлено[^first-sto] | — |  | PDF 6–7; печатные 572–573 | `RU` — перевод Натальи Астафьевой |
-| Удивление | Zdumienie | Не установлено[^first-wszelki] | — |  | PDF 7; печатная 573 | `RU` — перевод Натальи Астафьевой |
-| Классик | Klasyk | Не установлено[^first-wszelki] | — |  | PDF 7–8; печатные 573–574 | `RU` — перевод Натальи Астафьевой |
+| Томас Манн | Tomasz Mann | Sto pociech[^first-sto] | — |  | PDF 6–7; печатные 572–573 | `RU` — перевод Натальи Астафьевой |
+| Удивление | Zdumienie | Wszelki wypadek[^first-wszelki] | — |  | PDF 7; печатная 573 | `RU` — перевод Натальи Астафьевой |
+| Классик | Klasyk | Wszelki wypadek[^first-wszelki] | — |  | PDF 7–8; печатные 573–574 | `RU` — перевод Натальи Астафьевой |
 | Сон старой черепахи | Sen starego żółwia | Wielka liczba | — |  | PDF 8; печатная 574 | `RU` — перевод Натальи Астафьевой |
 | Луковица | Cebula | Wielka liczba | — |  | PDF 9; печатная 575 | `RU` — перевод Натальи Астафьевой |
 | Утопия | Utopia | Wielka liczba | `different/utopia` | ● | PDF 9–10; печатные 575–576 | `RU` — перевод Натальи Астафьевой |
@@ -214,20 +219,20 @@ wszystkie»[^collected]; случаи более раннего включени
 | Я слишком близко... | Без названия (начало: «Jestem za blisko, żeby mu się śnić…») | Sól | `different/im-too-close` |  | PDF 20 | `RU` — перевод Анатолия Нехая |
 | На вавилонской башне | Na wieży Babel | Sól | — |  | PDF 21 | `RU` — перевод Анатолия Нехая |
 | Сон | Sen | Sól | — |  | PDF 22 | `RU` — перевод Анатолия Нехая |
-| Наконец-то память | Pamięć nareszcie | Не установлено[^first-sto] | `different/memory-at-last` |  | PDF 23 | `RU` — перевод Анатолия Нехая; заголовок страницы — «Вот память и нашла» |
+| Наконец-то память | Pamięć nareszcie | Sto pociech[^first-sto] | `different/memory-at-last` |  | PDF 23 | `RU` — перевод Анатолия Нехая; заголовок страницы — «Вот память и нашла» |
 | Для смеха | Śmiech | Sto pociech[^sto-first-confirmed] | — |  | PDF 24–25 | `RU` — перевод Анатолия Нехая |
-| Живой | Żywy | Не установлено[^first-sto] | — |  | PDF 26–27 | `RU` — перевод Анатолия Нехая |
-| Отсечение | Autotomia | Не установлено[^first-wszelki] | — |  | PDF 28 | `RU` — перевод Анатолия Нехая |
+| Живой | Żywy | Sto pociech[^first-sto] | — |  | PDF 26–27 | `RU` — перевод Анатолия Нехая |
+| Отсечение | Autotomia | Wszelki wypadek[^first-wszelki] | — |  | PDF 28 | `RU` — перевод Анатолия Нехая |
 | Вьетнам | Wietnam | Sto pociech[^sto-first-confirmed] | `different/vietnam` |  | PDF 29 | `RU` — перевод Анатолия Нехая |
-| Невинная | Niewinność | Не установлено[^first-sto] | — |  | PDF 30 | `RU` — перевод Анатолия Нехая |
-| К моему сердцу в воскресение | Do serca w niedzielę | Не установлено[^first-sto] | — |  | PDF 31 | `RU` — перевод Анатолия Нехая |
-| Падающие с неба | Spadające z nieba | Не установлено[^first-wszelki] | — |  | PDF 32 | `RU` — перевод Анатолия Нехая |
-| Рекламный проспект | Prospekt | Не установлено[^first-wszelki] | `different/prospect` |  | PDF 33 | `RU` — перевод Анатолия Нехая; заголовок страницы — «Проспект» |
-| Речь, произнесенная в бюро находок | Przemówienie w biurze znalezionych rzeczy | Не установлено[^first-wszelki] | — |  | PDF 34 | `RU` — перевод Анатолия Нехая |
-| Изумление | Zdumienie | Не установлено[^first-wszelki] | — |  | PDF 35 | `RU` — перевод Анатолия Нехая |
-| Счастливая любовь | Miłość szczęśliwa | Не установлено[^first-wszelki] | — |  | PDF 36–37 | `RU` — перевод Анатолия Нехая |
+| Невинная | Niewinność | Sto pociech[^first-sto] | — |  | PDF 30 | `RU` — перевод Анатолия Нехая |
+| К моему сердцу в воскресение | Do serca w niedzielę | Sto pociech[^first-sto] | — |  | PDF 31 | `RU` — перевод Анатолия Нехая |
+| Падающие с неба | Spadające z nieba | Wszelki wypadek[^first-wszelki] | — |  | PDF 32 | `RU` — перевод Анатолия Нехая |
+| Рекламный проспект | Prospekt | Wszelki wypadek[^first-wszelki] | `different/prospect` |  | PDF 33 | `RU` — перевод Анатолия Нехая; заголовок страницы — «Проспект» |
+| Речь, произнесенная в бюро находок | Przemówienie w biurze znalezionych rzeczy | Wszelki wypadek[^first-wszelki] | — |  | PDF 34 | `RU` — перевод Анатолия Нехая |
+| Изумление | Zdumienie | Wszelki wypadek[^first-wszelki] | — |  | PDF 35 | `RU` — перевод Анатолия Нехая |
+| Счастливая любовь | Miłość szczęśliwa | Wszelki wypadek[^first-wszelki] | — |  | PDF 36–37 | `RU` — перевод Анатолия Нехая |
 | Женский портрет | Portret kobiecy | Wielka liczba | — |  | PDF 38 | `RU` — перевод Анатолия Нехая |
-| Под одной звездой | Pod jedną gwiazdką | Не установлено[^first-wszelki] | `different/under-one-small-star` |  | PDF 39 | `RU` — перевод Анатолия Нехая; заголовок страницы — «Под тою же самой звездой» |
+| Под одной звездой | Pod jedną gwiazdką | Wszelki wypadek[^first-wszelki] | `different/under-one-small-star` |  | PDF 39 | `RU` — перевод Анатолия Нехая; заголовок страницы — «Под тою же самой звездой» |
 
 ### PUB-2000-02 — «Польские поэты XX века». Т. 2
 
@@ -245,12 +250,12 @@ wszystkie»[^collected]; случаи более раннего включени
 | Пещера | Jaskinia | Sto pociech[^sto-first-confirmed] | — |  | PDF 3–4; печатные 98–99 | `RU` — перевод Натальи Астафьевой |
 | Фетиш плодородья из палеолита | Fetysz płodności z paleolitu | Sto pociech[^sto-first-confirmed] | — |  | PDF 5; печатная 100 | `RU` — перевод Натальи Астафьевой |
 | Обезьяна | Małpa | Sól | — |  | PDF 6–7; печатные 101–102 | `RU` — перевод Натальи Астафьевой |
-| Классик | Klasyk | Не установлено[^first-wszelki] | — |  | PDF 7; печатная 102 | `RU` — перевод Натальи Астафьевой |
+| Классик | Klasyk | Wszelki wypadek[^first-wszelki] | — |  | PDF 7; печатная 102 | `RU` — перевод Натальи Астафьевой |
 | Сон старой черепахи | Sen starego żółwia | Wielka liczba | — |  | PDF 8; печатная 103 | `RU` — перевод Натальи Астафьевой |
 | Клошар | Clochard | Sól | — |  | PDF 8–9; печатные 103–104 | `RU` — перевод Натальи Астафьевой |
-| Томас Манн | Tomasz Mann | Не установлено[^first-sto] | — |  | PDF 9–10; печатные 104–105 | `RU` — перевод Натальи Астафьевой |
-| Речь в бюро находок | Przemówienie w biurze znalezionych rzeczy | Не установлено[^first-wszelki] | — |  | PDF 10–11; печатные 105–106 | `RU` — перевод Натальи Астафьевой |
-| Удивление | Zdumienie | Не установлено[^first-wszelki] | — |  | PDF 11; печатная 106 | `RU` — перевод Натальи Астафьевой |
+| Томас Манн | Tomasz Mann | Sto pociech[^first-sto] | — |  | PDF 9–10; печатные 104–105 | `RU` — перевод Натальи Астафьевой |
+| Речь в бюро находок | Przemówienie w biurze znalezionych rzeczy | Wszelki wypadek[^first-wszelki] | — |  | PDF 10–11; печатные 105–106 | `RU` — перевод Натальи Астафьевой |
+| Удивление | Zdumienie | Wszelki wypadek[^first-wszelki] | — |  | PDF 11; печатная 106 | `RU` — перевод Натальи Астафьевой |
 | Луковица | Cebula | Wielka liczba | — |  | PDF 11–12; печатные 106–107 | `RU` — перевод Натальи Астафьевой |
 | Элегическая арифметика | Rachunek elegijny | Koniec i początek | `different/elegiac-arithmetic` | ● | PDF 12–14; печатные 107–109 | `RU` — перевод Натальи Астафьевой |
 | Похороны | Pogrzeb | Ludzie na moście | — |  | PDF 14–15; печатные 109–110 | `RU` — перевод Натальи Астафьевой |
@@ -285,7 +290,7 @@ wszystkie»[^collected]; случаи более раннего включени
 | Ночь | Noc | Wołanie do Yeti | — |  | PDF 6–8; печатные 279–281 | `RU` — перевод Анатолия Гелескула |
 | Незабвенность | Upamiętnienie | Wołanie do Yeti | — |  | PDF 8–9; печатные 281–282 | `RU` — перевод Анатолия Гелескула |
 | Тень | Cień | Sól | `different/shadow` | ● | PDF 9; печатная 282 | `RU` — перевод Анатолия Гелескула |
-| Недоумение | Zdumienie | Не установлено[^first-wszelki] | — |  | PDF 9–10; печатные 282–283 | `RU` — перевод Анатолия Гелескула |
+| Недоумение | Zdumienie | Wszelki wypadek[^first-wszelki] | — |  | PDF 9–10; печатные 282–283 | `RU` — перевод Анатолия Гелескула |
 | Погребение | Pogrzeb | Wołanie do Yeti | — |  | PDF 10–11; печатные 283–284 | `RU` — перевод Анатолия Гелескула |
 | Еще | Jeszcze | Wołanie do Yeti | — |  | PDF 11–12; печатные 284–285 | `RU` — перевод Анатолия Гелескула |
 | Сон | Sen | Sól | — |  | PDF 12; печатная 285 | `RU` — перевод Анатолия Гелескула |
@@ -340,44 +345,44 @@ wszystkie»[^collected]; случаи более раннего включени
 | Надгробная надпись | Nagrobek | Sól | `different/epitaph` | ● | Печатная 41 | `RU` — перевод Асара Эппеля |
 | Я слишком близко | Без названия (начало: «Jestem za blisko, żeby mu się śnić…») | Sól | `different/im-too-close` | ● | Печатные 42, 44 | `PL` — оригинал |
 | Я слишком близко | Без названия (начало: «Jestem za blisko, żeby mu się śnić…») | Sól | `different/im-too-close` | ● | Печатные 43, 45 | `RU` — перевод Асара Эппеля |
-| Радость писательства | Radość pisania | Wiersze wybrane (1964)[^joy-first] | `different/joy-of-writing` | ● | Печатные 46, 48 | `PL` — оригинал |
-| Радость писательства | Radość pisania | Wiersze wybrane (1964)[^joy-first] | `different/joy-of-writing` | ● | Печатные 47, 49 | `RU` — перевод Асара Эппеля |
-| Вот память и нашла | Pamięć nareszcie | Не установлено[^first-sto] | `different/memory-at-last` | ● | Печатные 50, 52 | `PL` — оригинал |
-| Вот память и нашла | Pamięć nareszcie | Не установлено[^first-sto] | `different/memory-at-last` | ● | Печатные 51, 53 | `RU` — перевод Асара Эппеля |
+| Радость писательства | Radość pisania | Sto pociech[^joy-first] | `different/joy-of-writing` | ● | Печатные 46, 48 | `PL` — оригинал |
+| Радость писательства | Radość pisania | Sto pociech[^joy-first] | `different/joy-of-writing` | ● | Печатные 47, 49 | `RU` — перевод Асара Эппеля |
+| Вот память и нашла | Pamięć nareszcie | Sto pociech[^first-sto] | `different/memory-at-last` | ● | Печатные 50, 52 | `PL` — оригинал |
+| Вот память и нашла | Pamięć nareszcie | Sto pociech[^first-sto] | `different/memory-at-last` | ● | Печатные 51, 53 | `RU` — перевод Асара Эппеля |
 | Вокзал | Dworzec | Sto pociech[^sto-first-confirmed] | `different/station` | ● | Печатные 54, 56 | `PL` — оригинал |
 | Вокзал | Dworzec | Sto pociech[^sto-first-confirmed] | `different/station` | ● | Печатные 55, 57 | `RU` — перевод Асара Эппеля |
-| Порожденный | Urodzony | Не установлено[^first-sto] | `different/born` | ● | Печатные 58, 60 | `PL` — оригинал |
-| Порожденный | Urodzony | Не установлено[^first-sto] | `different/born` | ● | Печатные 59, 61 | `RU` — перевод Асара Эппеля |
-| Монолог для Кассандры | Monolog dla Kasandry | Не установлено[^first-sto] | `different/soliloquy-for-cassandra` | ● | Печатные 62, 64 | `PL` — оригинал |
-| Монолог для Кассандры | Monolog dla Kasandry | Не установлено[^first-sto] | `different/soliloquy-for-cassandra` | ● | Печатные 63, 65 | `RU` — перевод Асара Эппеля |
+| Порожденный | Urodzony | Sto pociech[^first-sto] | `different/born` | ● | Печатные 58, 60 | `PL` — оригинал |
+| Порожденный | Urodzony | Sto pociech[^first-sto] | `different/born` | ● | Печатные 59, 61 | `RU` — перевод Асара Эппеля |
+| Монолог для Кассандры | Monolog dla Kasandry | Sto pociech[^first-sto] | `different/soliloquy-for-cassandra` | ● | Печатные 62, 64 | `PL` — оригинал |
+| Монолог для Кассандры | Monolog dla Kasandry | Sto pociech[^first-sto] | `different/soliloquy-for-cassandra` | ● | Печатные 63, 65 | `RU` — перевод Асара Эппеля |
 | Вьетнам | Wietnam | Sto pociech[^sto-first-confirmed] | `different/vietnam` | ● | Печатная 66 | `PL` — оригинал |
 | Вьетнам | Wietnam | Sto pociech[^sto-first-confirmed] | `different/vietnam` | ● | Печатная 67 | `RU` — перевод Асара Эппеля |
-| Прилет | Przylot | Не установлено[^first-sto] | `different/arrival` | ● | Печатная 68 | `PL` — оригинал |
-| Прилет | Przylot | Не установлено[^first-sto] | `different/arrival` | ● | Печатная 69 | `RU` — перевод Асара Эппеля |
-| Долгопят | Tarsjusz | Не установлено[^first-sto] | `different/tarsier` | ● | Печатные 70, 72 | `PL` — оригинал |
-| Долгопят | Tarsjusz | Не установлено[^first-sto] | `different/tarsier` | ● | Печатные 71, 73 | `RU` — перевод Асара Эппеля |
-| Умора | Sto pociech | Не установлено[^first-sto] | `different/hilarity` | ● | Печатные 74, 76 | `PL` — оригинал |
-| Умора | Sto pociech | Не установлено[^first-sto] | `different/hilarity` | ● | Печатные 75, 77 | `RU` — перевод Асара Эппеля |
-| Всякий случай | Wszelki wypadek | Не установлено[^first-wszelki] | `different/in-any-event` | ● | Печатные 78, 80 | `PL` — оригинал |
-| Всякий случай | Wszelki wypadek | Не установлено[^first-wszelki] | `different/in-any-event` | ● | Печатные 79, 81 | `RU` — перевод Асара Эппеля |
-| Впечатление от театра | Wrażenia z teatru | Не установлено[^first-wszelki] | `different/impression-of-the-theater` | ● | Печатные 82, 84 | `PL` — оригинал |
-| Впечатление от театра | Wrażenia z teatru | Не установлено[^first-wszelki] | `different/impression-of-the-theater` | ● | Печатные 83, 85 | `RU` — перевод Асара Эппеля |
-| Письма умерших | Listy umarłych | Не установлено[^first-wszelki] | `different/letters-of-the-dead` | ● | Печатная 86 | `PL` — оригинал |
-| Письма умерших | Listy umarłych | Не установлено[^first-wszelki] | `different/letters-of-the-dead` | ● | Печатная 87 | `RU` — перевод Асара Эппеля |
-| Проспект | Prospekt | Не установлено[^first-wszelki] | `different/prospect` | ● | Печатные 88, 90 | `PL` — оригинал |
-| Проспект | Prospekt | Не установлено[^first-wszelki] | `different/prospect` | ● | Печатные 89, 91 | `RU` — перевод Асара Эппеля |
-| Открытие | Odkrycie | Не установлено[^first-wszelki] | `different/discovery` | ● | Печатные 92, 94 | `PL` — оригинал |
-| Открытие | Odkrycie | Не установлено[^first-wszelki] | `different/discovery` | ● | Печатные 93, 95 | `RU` — перевод Асара Эппеля |
-| Скелет ящера | Szkielet jaszczura | Не установлено[^first-wszelki] | `different/lizard-skeleton` | ● | Печатные 96, 98 | `PL` — оригинал |
-| Скелет ящера | Szkielet jaszczura | Не установлено[^first-wszelki] | `different/lizard-skeleton` | ● | Печатные 97, 99 | `RU` — перевод Асара Эппеля |
-| Погоня | Pogoń | Не установлено[^first-wszelki] | `different/pursuit` | ● | Печатные 100, 102 | `PL` — оригинал |
-| Погоня | Pogoń | Не установлено[^first-wszelki] | `different/pursuit` | ● | Печатные 101, 103 | `RU` — перевод Асара Эппеля |
-| Allegro ma non troppo | Allegro ma non troppo | Не установлено[^first-wszelki] | `different/allegro-ma-non-troppo` | ● | Печатные 104, 106 | `PL` — оригинал |
-| Allegro ma non troppo | Allegro ma non troppo | Не установлено[^first-wszelki] | `different/allegro-ma-non-troppo` | ● | Печатные 105, 107 | `RU` — перевод Асара Эппеля |
-| Аутотомия | Autotomia | Не установлено[^first-wszelki] | `different/autotomy` | ● | Печатные 108, 110 | `PL` — оригинал |
-| Аутотомия | Autotomia | Не установлено[^first-wszelki] | `different/autotomy` | ● | Печатные 109, 111 | `RU` — перевод Асара Эппеля |
-| Под тою же самой звездой | Pod jedną gwiazdką | Не установлено[^first-wszelki] | `different/under-one-small-star` | ● | Печатные 112, 114 | `PL` — оригинал |
-| Под тою же самой звездой | Pod jedną gwiazdką | Не установлено[^first-wszelki] | `different/under-one-small-star` | ● | Печатные 113, 115 | `RU` — перевод Асара Эппеля |
+| Прилет | Przylot | Sto pociech[^first-sto] | `different/arrival` | ● | Печатная 68 | `PL` — оригинал |
+| Прилет | Przylot | Sto pociech[^first-sto] | `different/arrival` | ● | Печатная 69 | `RU` — перевод Асара Эппеля |
+| Долгопят | Tarsjusz | Sto pociech[^first-sto] | `different/tarsier` | ● | Печатные 70, 72 | `PL` — оригинал |
+| Долгопят | Tarsjusz | Sto pociech[^first-sto] | `different/tarsier` | ● | Печатные 71, 73 | `RU` — перевод Асара Эппеля |
+| Умора | Sto pociech | Sto pociech[^first-sto] | `different/hilarity` | ● | Печатные 74, 76 | `PL` — оригинал |
+| Умора | Sto pociech | Sto pociech[^first-sto] | `different/hilarity` | ● | Печатные 75, 77 | `RU` — перевод Асара Эппеля |
+| Всякий случай | Wszelki wypadek | Wszelki wypadek[^first-wszelki] | `different/in-any-event` | ● | Печатные 78, 80 | `PL` — оригинал |
+| Всякий случай | Wszelki wypadek | Wszelki wypadek[^first-wszelki] | `different/in-any-event` | ● | Печатные 79, 81 | `RU` — перевод Асара Эппеля |
+| Впечатление от театра | Wrażenia z teatru | Wszelki wypadek[^first-wszelki] | `different/impression-of-the-theater` | ● | Печатные 82, 84 | `PL` — оригинал |
+| Впечатление от театра | Wrażenia z teatru | Wszelki wypadek[^first-wszelki] | `different/impression-of-the-theater` | ● | Печатные 83, 85 | `RU` — перевод Асара Эппеля |
+| Письма умерших | Listy umarłych | Wszelki wypadek[^first-wszelki] | `different/letters-of-the-dead` | ● | Печатная 86 | `PL` — оригинал |
+| Письма умерших | Listy umarłych | Wszelki wypadek[^first-wszelki] | `different/letters-of-the-dead` | ● | Печатная 87 | `RU` — перевод Асара Эппеля |
+| Проспект | Prospekt | Wszelki wypadek[^first-wszelki] | `different/prospect` | ● | Печатные 88, 90 | `PL` — оригинал |
+| Проспект | Prospekt | Wszelki wypadek[^first-wszelki] | `different/prospect` | ● | Печатные 89, 91 | `RU` — перевод Асара Эппеля |
+| Открытие | Odkrycie | Wszelki wypadek[^first-wszelki] | `different/discovery` | ● | Печатные 92, 94 | `PL` — оригинал |
+| Открытие | Odkrycie | Wszelki wypadek[^first-wszelki] | `different/discovery` | ● | Печатные 93, 95 | `RU` — перевод Асара Эппеля |
+| Скелет ящера | Szkielet jaszczura | Wszelki wypadek[^first-wszelki] | `different/lizard-skeleton` | ● | Печатные 96, 98 | `PL` — оригинал |
+| Скелет ящера | Szkielet jaszczura | Wszelki wypadek[^first-wszelki] | `different/lizard-skeleton` | ● | Печатные 97, 99 | `RU` — перевод Асара Эппеля |
+| Погоня | Pogoń | Wszelki wypadek[^first-wszelki] | `different/pursuit` | ● | Печатные 100, 102 | `PL` — оригинал |
+| Погоня | Pogoń | Wszelki wypadek[^first-wszelki] | `different/pursuit` | ● | Печатные 101, 103 | `RU` — перевод Асара Эппеля |
+| Allegro ma non troppo | Allegro ma non troppo | Wszelki wypadek[^first-wszelki] | `different/allegro-ma-non-troppo` | ● | Печатные 104, 106 | `PL` — оригинал |
+| Allegro ma non troppo | Allegro ma non troppo | Wszelki wypadek[^first-wszelki] | `different/allegro-ma-non-troppo` | ● | Печатные 105, 107 | `RU` — перевод Асара Эппеля |
+| Аутотомия | Autotomia | Wszelki wypadek[^first-wszelki] | `different/autotomy` | ● | Печатные 108, 110 | `PL` — оригинал |
+| Аутотомия | Autotomia | Wszelki wypadek[^first-wszelki] | `different/autotomy` | ● | Печатные 109, 111 | `RU` — перевод Асара Эппеля |
+| Под тою же самой звездой | Pod jedną gwiazdką | Wszelki wypadek[^first-wszelki] | `different/under-one-small-star` | ● | Печатные 112, 114 | `PL` — оригинал |
+| Под тою же самой звездой | Pod jedną gwiazdką | Wszelki wypadek[^first-wszelki] | `different/under-one-small-star` | ● | Печатные 113, 115 | `RU` — перевод Асара Эппеля |
 | Большое число | Wielka liczba | Wielka liczba | `different/large-number` | ● | Печатные 116, 118 | `PL` — оригинал |
 | Большое число | Wielka liczba | Wielka liczba | `different/large-number` | ● | Печатные 117, 119 | `RU` — перевод Асара Эппеля |
 | Лотова жена | Żona Lota | Wielka liczba | `different/lots-wife` | ● | Печатные 120, 122 | `PL` — оригинал |
@@ -409,7 +414,7 @@ wszystkie»[^collected]; случаи более раннего включени
 
 | Произведение Шимборской | Оригинальное название произведения | Оригинальное название сборника | Страница сайта | Есть на сайте | Страницы источника | Версии и переводчики |
 |---|---|---|---|---|---|---|
-| Скелет ящера | Szkielet jaszczura | Не установлено[^first-wszelki] | `different/lizard-skeleton` |  | PDF 13–14; печатные 54–55 | `RU` — перевод Андрея Базилевского |
+| Скелет ящера | Szkielet jaszczura | Wszelki wypadek[^first-wszelki] | `different/lizard-skeleton` |  | PDF 13–14; печатные 54–55 | `RU` — перевод Андрея Базилевского |
 | Похвала дурного о себе сужденья | Pochwała złego o sobie mniemania | Wielka liczba | — |  | PDF 14; печатная 55 | `RU` — перевод Андрея Базилевского |
 | Утопия | Utopia | Wielka liczba | `different/utopia` | ● | PDF 14–15; печатные 55–56 | `RU` — перевод Андрея Базилевского |
 | Как писать автобиографию | Pisanie życiorysu | Ludzie na moście | — |  | PDF 15–16; печатные 56–57 | `RU` — перевод Андрея Базилевского |
@@ -437,32 +442,32 @@ wszystkie»[^collected]; случаи более раннего включени
 |---|---|---|---|---|---|---|
 | Большие числа | Wielka liczba | Wielka liczba | `different/large-number` |  | PDF 1–2; печатные 372–373 | `RU` — перевод Асара Эппеля |
 | Вокзал | Dworzec | Sto pociech[^sto-first-confirmed] | `different/station` |  | PDF 3–4; печатные 374–375 | `RU` — перевод Асара Эппеля |
-| Вызываемое театром | Wrażenia z teatru | Не установлено[^first-wszelki] | `different/impression-of-the-theater` |  | PDF 5–6; печатные 376–377 | `RU` — перевод Асара Эппеля |
+| Вызываемое театром | Wrażenia z teatru | Wszelki wypadek[^first-wszelki] | `different/impression-of-the-theater` |  | PDF 5–6; печатные 376–377 | `RU` — перевод Асара Эппеля |
 | Жизнь здесь и немедля | Życie na poczekaniu | Wielka liczba | `different/life-while-you-wait` |  | PDF 7–8; печатные 378–379 | `RU` — перевод Асара Эппеля |
-| Монолог для Кассандры | Monolog dla Kasandry | Не установлено[^first-sto] | `different/soliloquy-for-cassandra` |  | PDF 9–10; печатные 380–381 | `RU` — перевод Асара Эппеля |
-| Письма умерших | Listy umarłych | Не установлено[^first-wszelki] | `different/letters-of-the-dead` | ● | PDF 11; печатная 382 | `RU` — перевод Асара Эппеля |
-| Прилет | Przylot | Не установлено[^first-sto] | `different/arrival` | ● | PDF 12; печатная 383 | `RU` — перевод Асара Эппеля |
+| Монолог для Кассандры | Monolog dla Kasandry | Sto pociech[^first-sto] | `different/soliloquy-for-cassandra` |  | PDF 9–10; печатные 380–381 | `RU` — перевод Асара Эппеля |
+| Письма умерших | Listy umarłych | Wszelki wypadek[^first-wszelki] | `different/letters-of-the-dead` | ● | PDF 11; печатная 382 | `RU` — перевод Асара Эппеля |
+| Прилет | Przylot | Sto pociech[^first-sto] | `different/arrival` | ● | PDF 12; печатная 383 | `RU` — перевод Асара Эппеля |
 | Рубенсовские женщины | Kobiety Rubensa | Sól | `different/rubens-women` |  | PDF 13–14; печатные 384–385 | `RU` — перевод Асара Эппеля |
 | Средневековая миниатюра | Miniatura średniowieczna | Wielka liczba | `different/medieval-miniature` |  | PDF 15–16; печатные 386–387 | `RU` — перевод Асара Эппеля |
 | Увековечение | Upamiętnienie | Wołanie do Yeti | `different/commemoration` |  | PDF 17–18; печатные 388–389 | `RU` — перевод Асара Эппеля |
 | Число пи | Liczba Pi | Wielka liczba | `different/pi` |  | PDF 19–20; печатные 390–391 | `RU` — перевод Асара Эппеля |
 | Буффонада | Buffo | Wołanie do Yeti | `different/buffo` | ● | PDF 21–22; печатные 392–393 | `RU` — перевод Асара Эппеля |
-| Вот память и нашла | Pamięć nareszcie | Не установлено[^first-sto] | `different/memory-at-last` |  | PDF 23–24; печатные 394–395 | `RU` — перевод Асара Эппеля |
+| Вот память и нашла | Pamięć nareszcie | Sto pociech[^first-sto] | `different/memory-at-last` |  | PDF 23–24; печатные 394–395 | `RU` — перевод Асара Эппеля |
 | Конкурс мужской красоты | Konkurs piękności męskiej | Sól | `different/male-beauty-contest` | ● | PDF 25; печатная 396 | `RU` — перевод Асара Эппеля |
 | Надгробная надпись | Nagrobek | Sól | `different/epitaph` | ● | PDF 26; печатная 397 | `RU` — перевод Асара Эппеля |
-| Под тою же самой звездой | Pod jedną gwiazdką | Не установлено[^first-wszelki] | `different/under-one-small-star` |  | PDF 27–28; печатные 398–399 | `RU` — перевод Асара Эппеля |
-| Радость писательства | Radość pisania | Wiersze wybrane (1964)[^joy-first] | `different/joy-of-writing` |  | PDF 29–30; печатные 400–401 | `RU` — перевод Асара Эппеля |
-| Скелет ящера | Szkielet jaszczura | Не установлено[^first-wszelki] | `different/lizard-skeleton` |  | PDF 31–32; печатные 402–403 | `RU` — перевод Асара Эппеля |
+| Под тою же самой звездой | Pod jedną gwiazdką | Wszelki wypadek[^first-wszelki] | `different/under-one-small-star` |  | PDF 27–28; печатные 398–399 | `RU` — перевод Асара Эппеля |
+| Радость писательства | Radość pisania | Sto pociech[^joy-first] | `different/joy-of-writing` |  | PDF 29–30; печатные 400–401 | `RU` — перевод Асара Эппеля |
+| Скелет ящера | Szkielet jaszczura | Wszelki wypadek[^first-wszelki] | `different/lizard-skeleton` |  | PDF 31–32; печатные 402–403 | `RU` — перевод Асара Эппеля |
 | Урок | Lekcja | Sól | `different/lesson` | ● | PDF 33; печатная 404 | `RU` — перевод Асара Эппеля |
 | Тень | Cień | Sól | `different/shadow` | ● | PDF 34–35; печатные 405–406 | `RU` — перевод Асара Эппеля |
 | Я слишком близко | Без названия (начало: «Jestem za blisko, żeby mu się śnić…») | Sól | `different/im-too-close` | ● | PDF 36–37; печатные 407–408 | `RU` — перевод Асара Эппеля; в источнике заголовок «● ● ●», на сайте у этой версии «* * *» |
 | Внезапная встреча | Niespodziane spotkanie | Sól | `different/unexpected-meeting` | ● | PDF 38; печатная 409 | `RU` — перевод Асара Эппеля |
-| Всякий случай | Wszelki wypadek | Не установлено[^first-wszelki] | `different/in-any-event` |  | PDF 39–40; печатные 410–411 | `RU` — перевод Асара Эппеля |
-| Долгопят | Tarsjusz | Не установлено[^first-sto] | `different/tarsier` |  | PDF 41–42; печатные 412–413 | `RU` — перевод Асара Эппеля |
+| Всякий случай | Wszelki wypadek | Wszelki wypadek[^first-wszelki] | `different/in-any-event` |  | PDF 39–40; печатные 410–411 | `RU` — перевод Асара Эппеля |
+| Долгопят | Tarsjusz | Sto pociech[^first-sto] | `different/tarsier` |  | PDF 41–42; печатные 412–413 | `RU` — перевод Асара Эппеля |
 | Лотова жена | Żona Lota | Wielka liczba | `different/lots-wife` | ● | PDF 43–44; печатные 414–415 | `RU` — перевод Асара Эппеля |
-| Открытие | Odkrycie | Не установлено[^first-wszelki] | `different/discovery` |  | PDF 45–46; печатные 416–417 | `RU` — перевод Асара Эппеля |
-| Потеха | Sto pociech | Не установлено[^first-sto] | `different/hilarity` |  | PDF 47–48; печатные 418–419 | `RU` — перевод Асара Эппеля |
-| Рожденный | Urodzony | Не установлено[^first-sto] | `different/born` |  | PDF 49–51; печатные 420–422 | `RU` — перевод Асара Эппеля |
+| Открытие | Odkrycie | Wszelki wypadek[^first-wszelki] | `different/discovery` |  | PDF 45–46; печатные 416–417 | `RU` — перевод Асара Эппеля |
+| Потеха | Sto pociech | Sto pociech[^first-sto] | `different/hilarity` |  | PDF 47–48; печатные 418–419 | `RU` — перевод Асара Эппеля |
+| Рожденный | Urodzony | Sto pociech[^first-sto] | `different/born` |  | PDF 49–51; печатные 420–422 | `RU` — перевод Асара Эппеля |
 | Сношения с умершими | Konszachty z umarłymi | Ludzie na moście | `different/dealings-with-the-dead` |  | PDF 52–53; печатные 423–424 | `RU` — перевод Асара Эппеля |
 | Террорист, он следит | Terrorysta, on patrzy | Wielka liczba | `different/terrorist-he-looks` |  | PDF 54–55; печатные 425–426 | `RU` — перевод Асара Эппеля |
 | Лесное моралите | Moralitet leśny | Dwukropek | `semicolon/forestry-morality` |  | PDF 56–57; печатные 427–428 | `RU` — перевод Асара Эппеля |
@@ -498,10 +503,10 @@ wszystkie»[^collected]; случаи более раннего включени
 
 | Произведение Шимборской | Оригинальное название произведения | Оригинальное название сборника | Страница сайта | Есть на сайте | Страницы источника | Версии и переводчики |
 |---|---|---|---|---|---|---|
-| Нобелевская лекция (цитата) | Poeta i świat[^nobel-title] | Не установлено | `text/poet-and-world` |  | PDF 4; печатная 98 | `RU` — переводчик не указан; сокращённая цитата во вступлении |
+| Нобелевская лекция (цитата) | Poeta i świat[^nobel-title] | Wiersze wybrane (a5, 2012) | `text/poet-and-world` |  | PDF 4; печатная 98 | `RU` — переводчик не указан; сокращённая цитата во вступлении |
 | Атлантида | Atlantyda | Wołanie do Yeti | `different/atlantis` |  | PDF 5; печатная 99 | `RU` — перевод Бориса Горобца |
 | Превышение | Nadmiar | Ludzie na moście | — |  | PDF 5; печатная 99 | `RU` — перевод Бориса Горобца |
-| Падающие с неба | Spadające z nieba | Не установлено[^first-wszelki] | — |  | PDF 5–6; печатные 99–100 | `RU` — перевод Бориса Горобца |
+| Падающие с неба | Spadające z nieba | Wszelki wypadek[^first-wszelki] | — |  | PDF 5–6; печатные 99–100 | `RU` — перевод Бориса Горобца |
 | Предостережение | Ostrzeżenie | Wielka liczba | — |  | PDF 6; печатная 100 | `RU` — перевод Бориса Горобца |
 
 ### PUB-1967-01 — «Иностранная литература», 1967, № 2
@@ -524,15 +529,15 @@ wszystkie»[^collected]; случаи более раннего включени
 
 | Произведение Шимборской | Оригинальное название произведения | Оригинальное название сборника | Страница сайта | Есть на сайте | Страницы источника | Версии и переводчики |
 |---|---|---|---|---|---|---|
-| Allegro ma non troppo | Allegro ma non troppo | Не установлено[^first-wszelki] | `different/allegro-ma-non-troppo` | ● | PDF 2–3; печатные 43–44 | `RU` — перевод Асара Эппеля |
-| Всякий случай | Wszelki wypadek | Не установлено[^first-wszelki] | `different/in-any-event` | ● | PDF 3–4; печатные 44–45 | `RU` — перевод Асара Эппеля |
-| Долгопят | Tarsjusz | Не установлено[^first-sto] | `different/tarsier` |  | PDF 4; печатная 45 | `RU` — перевод Асара Эппеля |
+| Allegro ma non troppo | Allegro ma non troppo | Wszelki wypadek[^first-wszelki] | `different/allegro-ma-non-troppo` | ● | PDF 2–3; печатные 43–44 | `RU` — перевод Асара Эппеля |
+| Всякий случай | Wszelki wypadek | Wszelki wypadek[^first-wszelki] | `different/in-any-event` | ● | PDF 3–4; печатные 44–45 | `RU` — перевод Асара Эппеля |
+| Долгопят | Tarsjusz | Sto pociech[^first-sto] | `different/tarsier` |  | PDF 4; печатная 45 | `RU` — перевод Асара Эппеля |
 | Тень | Cień | Sól | `different/shadow` | ● | PDF 5; печатная 46 | `RU` — перевод Асара Эппеля |
 | Вокзал | Dworzec | Sto pociech[^sto-first-confirmed] | `different/station` | ● | PDF 5–6; печатные 46–47 | `RU` — перевод Асара Эппеля |
-| Проспект | Prospekt | Не установлено[^first-wszelki] | `different/prospect` |  | PDF 6–7; печатные 47–48 | `RU` — перевод Асара Эппеля |
+| Проспект | Prospekt | Wszelki wypadek[^first-wszelki] | `different/prospect` |  | PDF 6–7; печатные 47–48 | `RU` — перевод Асара Эппеля |
 | Четыре часа утра | Czwarta nad ranem | Wołanie do Yeti | `different/four-in-the-morning` | ● | PDF 7; печатная 48 | `RU` — перевод Асара Эппеля |
 | Рубенсовские женщины | Kobiety Rubensa | Sól | `different/rubens-women` | ● | PDF 7–8; печатные 48–49 | `RU` — перевод Асара Эппеля |
-| Потеха | Sto pociech | Не установлено[^first-sto] | `different/hilarity` |  | PDF 8; печатная 49 | `RU` — перевод Асара Эппеля |
+| Потеха | Sto pociech | Sto pociech[^first-sto] | `different/hilarity` |  | PDF 8; печатная 49 | `RU` — перевод Асара Эппеля |
 
 ### PUB-1978-01 — «Иностранная литература», 1978, № 8
 
@@ -572,7 +577,7 @@ wszystkie»[^collected]; случаи более раннего включени
 
 | Произведение Шимборской | Оригинальное название произведения | Оригинальное название сборника | Страница сайта | Есть на сайте | Страницы источника | Версии и переводчики |
 |---|---|---|---|---|---|---|
-| Поэт и мир | Poeta i świat[^nobel-title] | Не установлено | `text/poet-and-world` | ● | PDF 1–3; печатные 236–238 | `RU` — перевод с польского К. Старосельской |
+| Поэт и мир | Poeta i świat[^nobel-title] | Wiersze wybrane (a5, 2012) | `text/poet-and-world` | ● | PDF 1–3; печатные 236–238 | `RU` — перевод с польского К. Старосельской |
 
 ### PUB-1997-05 — «Иностранная литература», 1997, № 7
 
@@ -597,7 +602,7 @@ _Lektury nadobowiązkowe_ и учитывается как одно произв
 
 | Произведение Шимборской | Оригинальное название произведения | Оригинальное название сборника | Страница сайта | Есть на сайте | Страницы источника | Версии и переводчики |
 |---|---|---|---|---|---|---|
-| Необязательное чтение | Lektury nadobowiązkowe | Lektury nadobowiązkowe (1973)[^bibliography] | — |  | PDF 1–16; печатные 234–249 | `RU` — перевод Ксении Старосельской; неполный перевод _Lektury nadobowiązkowe_ |
+| Необязательное чтение | Lektury nadobowiązkowe | Lektury nadobowiązkowe[^bibliography] | — |  | PDF 1–16; печатные 234–249 | `RU` — перевод Ксении Старосельской; неполный перевод _Lektury nadobowiązkowe_ |
 
 ### PUB-2000-03 — «Иностранная литература», 2000, № 8
 
@@ -670,7 +675,7 @@ _Lektury nadobowiązkowe_ и учитывается как одно произв
 
 | Произведение Шимборской | Оригинальное название произведения | Оригинальное название сборника | Страница сайта | Есть на сайте | Страницы источника | Версии и переводчики |
 |---|---|---|---|---|---|---|
-| Литературная почта, или Как стать/не стать писателем | Poczta literacka czyli jak zostać (lub nie zostać) pisarzem | Poczta literacka czyli jak zostać (lub nie zostać) pisarzem (2000)[^bibliography] | `text/literary-mail` | ● | PDF 1–7; печатные 294–300 | `RU` — перевод с польского К. Старосельской |
+| Литературная почта, или Как стать/не стать писателем | Poczta literacka czyli jak zostać (lub nie zostać) pisarzem | Poczta literacka czyli jak zostać (lub nie zostać) pisarzem[^bibliography] | `text/literary-mail` | ● | PDF 1–7; печатные 294–300 | `RU` — перевод с польского К. Старосельской |
 
 ### PUB-2010-01 — «Иностранная литература», 2010, № 1
 
@@ -749,19 +754,19 @@ _Lektury nadobowiązkowe_ и учитывается как одно произв
 | Рубенсовские женщины | Kobiety Rubensa | Sól | `different/rubens-women` |  | `Władimir_Okun.pdf`: PDF 3–5 | `RU` — перевод Владимира Окуня |
 | Баллада | Ballada | Sól | `different/ballad` |  | `Władimir_Okun.pdf`: PDF 5–6 | `RU` — перевод Владимира Окуня |
 | Движение | Ruch | Sto pociech[^sto-first-confirmed] | — |  | `Władimir_Okun.pdf`: PDF 6–7 | `RU` — перевод Владимира Окуня |
-| Впечатления от театра | Wrażenia z teatru | Не установлено[^first-wszelki] | `different/impression-of-the-theater` |  | `Władimir_Okun.pdf`: PDF 7–9 | `RU` — перевод Владимира Окуня (заголовок страницы — «Впечатление от театра») |
+| Впечатления от театра | Wrażenia z teatru | Wszelki wypadek[^first-wszelki] | `different/impression-of-the-theater` |  | `Władimir_Okun.pdf`: PDF 7–9 | `RU` — перевод Владимира Окуня (заголовок страницы — «Впечатление от театра») |
 | Луковица | Cebula | Wielka liczba | — |  | `Władimir_Okun.pdf`: PDF 9–10 | `RU` — перевод Владимира Окуня |
 | Ненависть | Nienawiść | Koniec i początek | — |  | `Władimir_Okun.pdf`: PDF 10–12 | `RU` — перевод Владимира Окуня |
 | Лесное моралите | Moralitet leśny | Dwukropek | `semicolon/forestry-morality` |  | `Władimir_Okun.pdf`: PDF 12–14 | `RU` — перевод Владимира Окуня |
 | Луковица | Cebula | Wielka liczba | — |  | `Elena_Kalawina-i-Aleksandr-Sitnickij.pdf`: PDF 1 | `RU` — перевод Александра Ситницкого и Елены Калявиной |
-| Недоумение | Zdumienie | Не установлено[^first-wszelki] | — |  | `Elena_Kalawina-i-Aleksandr-Sitnickij.pdf`: PDF 2 | `RU` — перевод Александра Ситницкого и Елены Калявиной |
+| Недоумение | Zdumienie | Wszelki wypadek[^first-wszelki] | — |  | `Elena_Kalawina-i-Aleksandr-Sitnickij.pdf`: PDF 2 | `RU` — перевод Александра Ситницкого и Елены Калявиной |
 | Конец и начало | Koniec i początek | Koniec i początek | — |  | `Elena_Kalawina-i-Aleksandr-Sitnickij.pdf`: PDF 3–4 | `RU` — перевод Александра Ситницкого и Елены Калявиной |
 | Тучки | Chmury | Chwila | — |  | `Elena_Kalawina-i-Aleksandr-Sitnickij.pdf`: PDF 4 | `RU` — перевод Александра Ситницкого и Елены Калявиной |
 | Буффонада | Buffo | Wołanie do Yeti | `different/buffo` |  | `Elena_Kalawina-i-Aleksandr-Sitnickij.pdf`: PDF 5 | `RU` — перевод Александра Ситницкого и Елены Калявиной |
-| Театральные впечатления | Wrażenia z teatru | Не установлено[^first-wszelki] | `different/impression-of-the-theater` |  | `Elena_Kalawina-i-Aleksandr-Sitnickij.pdf`: PDF 6 | `RU` — перевод Александра Ситницкого и Елены Калявиной (заголовок страницы — «Впечатление от театра») |
+| Театральные впечатления | Wrażenia z teatru | Wszelki wypadek[^first-wszelki] | `different/impression-of-the-theater` |  | `Elena_Kalawina-i-Aleksandr-Sitnickij.pdf`: PDF 6 | `RU` — перевод Александра Ситницкого и Елены Калявиной (заголовок страницы — «Впечатление от театра») |
 | Nature morte с воздушным шариком | Martwa natura z balonikiem | Wołanie do Yeti | — |  | `Elena_Kalawina-i-Aleksandr-Sitnickij.pdf`: PDF 7 | `RU` — перевод Александра Ситницкого и Елены Калявиной |
 | Ночной кошмар поэта | Okropny sen poety | Dwukropek | `semicolon/poets-nightmare` |  | `Elena_Kalawina-i-Aleksandr-Sitnickij.pdf`: PDF 8 | `RU` — перевод Александра Ситницкого и Елены Калявиной (заголовок страницы — «Страшный сон поэта») |
-| Монолог для Кассандры | Monolog dla Kasandry | Не установлено[^first-sto] | `different/soliloquy-for-cassandra` |  | `Elena_Kalawina-i-Aleksandr-Sitnickij.pdf`: PDF 9 | `RU` — перевод Александра Ситницкого и Елены Калявиной |
+| Монолог для Кассандры | Monolog dla Kasandry | Sto pociech[^first-sto] | `different/soliloquy-for-cassandra` |  | `Elena_Kalawina-i-Aleksandr-Sitnickij.pdf`: PDF 9 | `RU` — перевод Александра Ситницкого и Елены Калявиной |
 | Есть те, кто | Są tacy, którzy | Wystarczy | — |  | `Walerij_Tichonow.pdf`: PDF 1 | `RU` — перевод Валерия Тихонова |
 | Дополнение к статистическим данным | Przyczynek do statystyki | Chwila | `moment/contribution-to-statistics` |  | `Walerij_Tichonow.pdf`: PDF 1–2 | `RU` — перевод Валерия Тихонова (заголовок страницы — «Дополнительно к статистике») |
 | Ненависть | Nienawiść | Koniec i początek | — |  | `Walerij_Tichonow.pdf`: PDF 2–4 | `RU` — перевод Валерия Тихонова |
@@ -782,13 +787,13 @@ _Lektury nadobowiązkowe_ и учитывается как одно произв
 | Произведение Шимборской | Оригинальное название произведения | Оригинальное название сборника | Страница сайта | Есть на сайте | Страницы источника | Версии и переводчики |
 |---|---|---|---|---|---|---|
 | Луковица | Cebula | Wielka liczba | — |  | PDF 3–4; печатные 82–83 | `RU` — перевод Владимира Окуня |
-| Монолог для Кассандры | Monolog dla Kasandry | Не установлено[^first-sto] | `different/soliloquy-for-cassandra` |  | PDF 4–5; печатные 83–84 | `RU` — перевод Александра Ситницкого и Елены Калявиной |
+| Монолог для Кассандры | Monolog dla Kasandry | Sto pociech[^first-sto] | `different/soliloquy-for-cassandra` |  | PDF 4–5; печатные 83–84 | `RU` — перевод Александра Ситницкого и Елены Калявиной |
 | Конец и начало | Koniec i początek | Koniec i początek | — |  | PDF 5–6; печатные 84–85 | `RU` — перевод Валерия Тихонова |
-| Театральные впечатления | Wrażenia z teatru | Не установлено[^first-wszelki] | `different/impression-of-the-theater` |  | PDF 7; печатная 86 | `RU` — перевод Алексея Михеева (заголовок страницы — «Впечатление от театра») |
+| Театральные впечатления | Wrażenia z teatru | Wszelki wypadek[^first-wszelki] | `different/impression-of-the-theater` |  | PDF 7; печатная 86 | `RU` — перевод Алексея Михеева (заголовок страницы — «Впечатление от театра») |
 | Кошмарный сон поэта | Okropny sen poety | Dwukropek | `semicolon/poets-nightmare` |  | PDF 8–9; печатные 87–88 | `RU` — перевод Анастасии Векшиной (заголовок страницы — «Страшный сон поэта») |
 | Лесное моралите | Moralitet leśny | Dwukropek | `semicolon/forestry-morality` |  | PDF 9–10; печатные 88–89 | `RU` — перевод Евгении Зиминой |
 | Есть те, кто... | Są tacy, którzy | Wystarczy | — |  | PDF 10; печатная 89 | `RU` — перевод Бориса Косенкова |
-| Изумление | Zdumienie | Не установлено[^first-wszelki] | — |  | PDF 11; печатная 90 | `RU` — перевод Веры Виногоровой |
+| Изумление | Zdumienie | Wszelki wypadek[^first-wszelki] | — |  | PDF 11; печатная 90 | `RU` — перевод Веры Виногоровой |
 | Ода в честь | Wiersz ku czci | Sól | — |  | PDF 11; печатная 90 | `RU` — перевод Александра Пивинского |
 | Пытки | Tortury | Ludzie na moście | `different/torture` |  | PDF 12–13; печатные 91–92 | `RU` — перевод Екатерины Полянской |
 | К вопросу о статистике | Przyczynek do statystyki | Chwila | `moment/contribution-to-statistics` |  | PDF 13–14; печатные 92–93 | `RU` — перевод Георгия Васильева (заголовок страницы — «Дополнительно к статистике») |
@@ -805,10 +810,10 @@ _Lektury nadobowiązkowe_ и учитывается как одно произв
 | Произведение Шимборской | Оригинальное название произведения | Оригинальное название сборника | Страница сайта | Есть на сайте | Страницы источника | Версии и переводчики |
 |---|---|---|---|---|---|---|
 | Кошка в пустом доме | Kot w pustym mieszkaniu | Koniec i początek | `different/cat-in-empty-apartment` |  | PDF 10–11; печатные 200–201 | `RU` — перевод Елены Катишонок; заголовок страницы — «Кот в пустой квартире» |
-| Монолог для Кассандры | Monolog dla Kasandry | Не установлено[^first-sto] | `different/soliloquy-for-cassandra` |  | PDF 11–12; печатные 201–202 | `RU` — перевод Елены Катишонок |
+| Монолог для Кассандры | Monolog dla Kasandry | Sto pociech[^first-sto] | `different/soliloquy-for-cassandra` |  | PDF 11–12; печатные 201–202 | `RU` — перевод Елены Катишонок |
 | Разговор с камнем | Rozmowa z kamieniem | Sól | — |  | PDF 12–14; печатные 202–204 | `RU` — перевод Елены Катишонок |
 | Конец и начало | Koniec i początek | Koniec i początek | — |  | PDF 14–16; печатные 204–206 | `RU` — перевод Елены Катишонок |
-| Невинность | Niewinność | Не установлено[^first-sto] | — |  | PDF 16; печатная 206 | `RU` — перевод Елены Катишонок |
+| Невинность | Niewinność | Sto pociech[^first-sto] | — |  | PDF 16; печатная 206 | `RU` — перевод Елены Катишонок |
 | Одежда | Odzież | Ludzie na moście | — |  | PDF 17; печатная 207 | `RU` — перевод Елены Катишонок |
 | Натюрморт с воздушным шариком | Martwa natura z balonikiem | Wołanie do Yeti | — |  | PDF 17–18; печатные 207–208 | `RU` — перевод Елены Катишонок |
 | Надгробие | Nagrobek | Sól | `different/epitaph` |  | PDF 18; печатная 208 | `RU` — перевод Елены Катишонок; заголовок страницы — «Надгробная надпись» |
@@ -826,7 +831,7 @@ _Lektury nadobowiązkowe_ и учитывается как одно произв
 | Военный парад | Parada wojskowa | Wielka liczba | — |  | PDF 1; печатная 307 | `RU` — перевод Тамары Яблонской |
 | Аннотация | Streszczenie | Sól | — |  | PDF 2; печатная 308 | `RU` — перевод Тамары Яблонской |
 | Лагерь голода под Яслом | Obóz głodowy pod Jasłem | Sól | — |  | PDF 2–3; печатные 308–309 | `RU` — перевод Тамары Яблонской |
-| Радость письма | Radość pisania | Wiersze wybrane (1964)[^joy-first] | `different/joy-of-writing` |  | PDF 3–4; печатные 309–310 | `RU` — перевод Тамары Яблонской (заголовок страницы — «Радость писательства») |
+| Радость письма | Radość pisania | Sto pociech[^joy-first] | `different/joy-of-writing` |  | PDF 3–4; печатные 309–310 | `RU` — перевод Тамары Яблонской (заголовок страницы — «Радость писательства») |
 
 ### PUB-1999-02 — «Новая Польша», 1999, № 4
 
@@ -838,7 +843,7 @@ _Lektury nadobowiązkowe_ и учитывается как одно произв
 | На исходе века | Schyłek wieku | Ludzie na moście | — |  | PDF 7–8; печатные 75–76 | `RU` — перевод Натальи Астафьевой |
 | Ненависть | Nienawiść | Koniec i początek | — |  | PDF 8–9; печатные 76–77 | `RU` — перевод Натальи Астафьевой |
 | Кот в пустой квартире | Kot w pustym mieszkaniu | Koniec i początek | `different/cat-in-empty-apartment` | ● | PDF 10; печатная 78 | `RU` — перевод Натальи Астафьевой |
-| Речь в бюро находок | Przemówienie w biurze znalezionych rzeczy | Не установлено[^first-wszelki] | — |  | PDF 11; печатная 79 | `RU` — перевод Натальи Астафьевой |
+| Речь в бюро находок | Przemówienie w biurze znalezionych rzeczy | Wszelki wypadek[^first-wszelki] | — |  | PDF 11; печатная 79 | `RU` — перевод Натальи Астафьевой |
 
 ### PUB-2000-05 — «Новая Польша», 2000, № 12
 
@@ -914,7 +919,7 @@ _Lektury nadobowiązkowe_ и учитывается как одно произв
 |---|---|---|---|---|---|---|
 | Некоторые любят поэзию | Niektórzy lubią poezję | Koniec i początek | — |  | PDF 2; печатная 4 | `RU` — перевод Натальи Горбаневской |
 | Как писать автобиографию | Pisanie życiorysu | Ludzie na moście | — |  | PDF 3; печатная 5 | `RU` — перевод Андрея Базилевского |
-| Речь в бюро находок | Przemówienie w biurze znalezionych rzeczy | Не установлено[^first-wszelki] | — |  | PDF 4; печатная 6 | `RU` — перевод Натальи Астафьевой |
+| Речь в бюро находок | Przemówienie w biurze znalezionych rzeczy | Wszelki wypadek[^first-wszelki] | — |  | PDF 4; печатная 6 | `RU` — перевод Натальи Астафьевой |
 | Кошка в пустой квартире | Kot w pustym mieszkaniu | Koniec i początek | `different/cat-in-empty-apartment` |  | PDF 5; печатная 7 | `RU` — перевод Натальи Горбаневской (заголовок страницы — «Кот в пустой квартире») |
 | Маленькая девочка стаскивает скатерть | Mała dziewczynka ściąga obrus | Chwila | `moment/little-girl-pull-tablecloth` | ● | PDF 6; печатная 8 | `RU` — перевод Натальи Астафьевой |
 | Луковица | Cebula | Wielka liczba | — |  | PDF 8; печатная 10 | `RU` — перевод Натальи Горбаневской |
@@ -956,9 +961,9 @@ _Lektury nadobowiązkowe_ и учитывается как одно произв
 
 | Произведение Шимборской | Оригинальное название произведения | Оригинальное название сборника | Страница сайта | Есть на сайте | Страницы источника | Версии и переводчики |
 |---|---|---|---|---|---|---|
-| Впечатление от театра | Wrażenia z teatru | Не установлено[^first-wszelki] | `different/impression-of-the-theater` | ● | PDF 1; печатная 148 | `RU` — перевод Виктора Коркия |
-| Монолог для Кассандры | Monolog dla Kasandry | Не установлено[^first-sto] | `different/soliloquy-for-cassandra` | ● | PDF 2; печатная 149 | `RU` — перевод Виктора Коркия |
-| Похвала снам | Pochwała snów | Не установлено[^first-wszelki] | `different/praise-dreams` | ● | PDF 3; печатная 150 | `RU` — перевод Виктора Коркия |
+| Впечатление от театра | Wrażenia z teatru | Wszelki wypadek[^first-wszelki] | `different/impression-of-the-theater` | ● | PDF 1; печатная 148 | `RU` — перевод Виктора Коркия |
+| Монолог для Кассандры | Monolog dla Kasandry | Sto pociech[^first-sto] | `different/soliloquy-for-cassandra` | ● | PDF 2; печатная 149 | `RU` — перевод Виктора Коркия |
+| Похвала снам | Pochwała snów | Wszelki wypadek[^first-wszelki] | `different/praise-dreams` | ● | PDF 3; печатная 150 | `RU` — перевод Виктора Коркия |
 | Пытки | Tortury | Ludzie na moście | `different/torture` | ● | PDF 4; печатная 151 | `RU` — перевод Натальи Астафьевой |
 
 ### PUB-1968-01 — «Ровесник», 1968, № 4
@@ -993,7 +998,7 @@ _Lektury nadobowiązkowe_ и учитывается как одно произв
 | Произведение Шимборской | Оригинальное название произведения | Оригинальное название сборника | Страница сайта | Есть на сайте | Страницы источника | Версии и переводчики |
 |---|---|---|---|---|---|---|
 | Две обезьяны Брейгеля | Dwie małpy Bruegla | Wołanie do Yeti | `different/two-monkeys` | ● | PDF 1; печатная 7 | `RU` — перевод Натальи Астафьевой (заголовок страницы — «Две обезьяны») |
-| Классик | Klasyk | Не установлено[^first-wszelki] | — |  | PDF 1; печатная 7 | `RU` — перевод Натальи Астафьевой |
+| Классик | Klasyk | Wszelki wypadek[^first-wszelki] | — |  | PDF 1; печатная 7 | `RU` — перевод Натальи Астафьевой |
 | Сон старой черепахи | Sen starego żółwia | Wielka liczba | — |  | PDF 1; печатная 7 | `RU` — перевод Натальи Астафьевой |
 
 ### PUB-1996-05 — «Труд-7», 25–31 октября 1996, № 193 (22696)
@@ -1008,7 +1013,7 @@ _Lektury nadobowiązkowe_ и учитывается как одно произв
 
 | Произведение Шимборской | Оригинальное название произведения | Оригинальное название сборника | Страница сайта | Есть на сайте | Страницы источника | Версии и переводчики |
 |---|---|---|---|---|---|---|
-| «Мир познавали мы…» | Без названия (начало: «Świat umieliśmy kiedyś na wyrywki…») | Wiersze wybrane (1964)[^early-selected] | — |  | PDF 8; печатная 8 | `RU` — перевод Бориса Горобца; без заголовка, обозначено тремя звёздочками |
+| «Мир познавали мы…» | Без названия (начало: «Świat umieliśmy kiedyś na wyrywki…») | Czarna piosenka[^early-selected] | — |  | PDF 8; печатная 8 | `RU` — перевод Бориса Горобца; без заголовка, обозначено тремя звёздочками |
 | Неожиданная встреча | Niespodziane spotkanie | Sól | `different/unexpected-meeting` |  | PDF 8; печатная 8 | `RU` — перевод Бориса Горобца; заголовок страницы — «Внезапная встреча» |
 
 ### PUB-2000-06 — «НГ-Наука», 22 ноября 2000, № 10 (36)
@@ -1026,7 +1031,7 @@ PDF-пагинация. № 10 (36) и полоса 7 указаны в выхо
 
 | Произведение Шимборской | Оригинальное название произведения | Оригинальное название сборника | Страница сайта | Есть на сайте | Страницы источника | Версии и переводчики |
 |---|---|---|---|---|---|---|
-| Прогулка воскрешенного | Spacer wskrzeszonego | Не установлено[^first-wszelki] | — |  | PDF 2 | `RU` — перевод Бориса Горобца; электронный текст из официального CD-ROM архива за 2000 год |
+| Прогулка воскрешенного | Spacer wskrzeszonego | Wszelki wypadek[^first-wszelki] | — |  | PDF 2 | `RU` — перевод Бориса Горобца; электронный текст из официального CD-ROM архива за 2000 год |
 
 ### PUB-2018-01 — «Дом Польский», вып. 13
 
@@ -1089,10 +1094,10 @@ PDF-пагинация. № 10 (36) и полоса 7 указаны в выхо
 |---|---|---|---|---|---|---|
 | Атлантида | Atlantyda | Wołanie do Yeti | `different/atlantis` | ● | `atlantida.pdf`: PDF 1–2 | `RU` — перевод Асара Эппеля |
 | Атлантида | Atlantyda | Wołanie do Yeti | `different/atlantis` |  | `atlantida-0.pdf`: PDF 1–2 | `RU` — перевод Святослава Свяцкого |
-| Радость творчества | Radość pisania | Wiersze wybrane (1964)[^joy-first] | `different/joy-of-writing` |  | `radost-tvorchestva.pdf`: PDF 1–2 | `RU` — перевод Святослава Свяцкого (заголовок страницы — «Радость писательства») |
+| Радость творчества | Radość pisania | Sto pociech[^joy-first] | `different/joy-of-writing` |  | `radost-tvorchestva.pdf`: PDF 1–2 | `RU` — перевод Святослава Свяцкого (заголовок страницы — «Радость писательства») |
 | Кошка в пустой квартире | Kot w pustym mieszkaniu | Koniec i początek | `different/cat-in-empty-apartment` |  | `koshka-v-pustoy-kvartire.pdf`: PDF 1–2 | `RU` — перевод Святослава Свяцкого (заголовок страницы — «Кот в пустой квартире») |
 | Кот в пустой квартире | Kot w pustym mieszkaniu | Koniec i początek | `different/cat-in-empty-apartment` | ● | `kot-v-pustoy-kvartire.pdf`: PDF 1–2 | `RU` — перевод Натальи Астафьевой |
-| Радость писательства | Radość pisania | Wiersze wybrane (1964)[^joy-first] | `different/joy-of-writing` | ● | `radost-pisatelstva.pdf`: PDF 1–2 | `RU` — перевод Асара Эппеля |
+| Радость писательства | Radość pisania | Sto pociech[^joy-first] | `different/joy-of-writing` | ● | `radost-pisatelstva.pdf`: PDF 1–2 | `RU` — перевод Асара Эппеля |
 
 ### PUB-2023-08 — «Столетие Виславы Шимборской»
 
@@ -1206,12 +1211,12 @@ PDF 1–5. Произведения занимают страницы 1–3; н�
 
 | Произведение Шимборской | Оригинальное название произведения | Оригинальное название сборника | Страница сайта | Есть на сайте | Страницы источника | Версии и переводчики |
 |---|---|---|---|---|---|---|
-| Радость писать | Radość pisania | Wiersze wybrane (1964)[^joy-first] | `different/joy-of-writing` |  | PDF 1 | `RU` — перевод Леонида Цывьяна; заголовок страницы — «Радость писательства» |
+| Радость писать | Radość pisania | Sto pociech[^joy-first] | `different/joy-of-writing` |  | PDF 1 | `RU` — перевод Леонида Цывьяна; заголовок страницы — «Радость писательства» |
 | Движение | Ruch | Sto pociech[^sto-first-confirmed] | — |  | PDF 1–2 | `RU` — перевод Леонида Цывьяна |
-| Акробат | Akrobata | Не установлено[^first-sto] | — |  | PDF 2 | `RU` — перевод Леонида Цывьяна |
-| Всякий случай | Wszelki wypadek | Не установлено[^first-wszelki] | `different/in-any-event` |  | PDF 2 | `RU` — перевод Леонида Цывьяна |
-| Allegro ma non troppo | Allegro ma non troppo | Не установлено[^first-wszelki] | `different/allegro-ma-non-troppo` |  | PDF 3 | `RU` — перевод Леонида Цывьяна |
-| Под одной звездой | Pod jedną gwiazdką | Не установлено[^first-wszelki] | `different/under-one-small-star` |  | PDF 3 | `RU` — перевод Леонида Цывьяна; заголовок страницы — «Под тою же самой звездой» |
+| Акробат | Akrobata | Sto pociech[^first-sto] | — |  | PDF 2 | `RU` — перевод Леонида Цывьяна |
+| Всякий случай | Wszelki wypadek | Wszelki wypadek[^first-wszelki] | `different/in-any-event` |  | PDF 2 | `RU` — перевод Леонида Цывьяна |
+| Allegro ma non troppo | Allegro ma non troppo | Wszelki wypadek[^first-wszelki] | `different/allegro-ma-non-troppo` |  | PDF 3 | `RU` — перевод Леонида Цывьяна |
+| Под одной звездой | Pod jedną gwiazdką | Wszelki wypadek[^first-wszelki] | `different/under-one-small-star` |  | PDF 3 | `RU` — перевод Леонида Цывьяна; заголовок страницы — «Под тою же самой звездой» |
 
 ### PUB-2023-06 — «Дом Польский», 2023, вып. 41: «Десять лимериков»
 
@@ -1281,24 +1286,24 @@ PDF 1–5. Произведения занимают страницы 1–3; н�
 | № 9, «Некий вождь по имени Мао…» | Без названия | Rymowanki dla dużych dzieci[^limericks] | — |  | PDF 2 (общий диапазон оригинала и перевода) | `PL` — оригинал |
 | № 9, «Некий вождь по имени Мао…» | Без названия | Rymowanki dla dużych dzieci[^limericks] | — |  | PDF 2 (общий диапазон оригинала и перевода) | `RU` — перевод Анатолия Нехая |
 
-[^bibliography]: Фонд Виславы Шимборской, [«Wisława Szymborska. Bibliografia podmiotowa»](https://www.szymborska.org.pl/app/uploads/2020/02/1361523524_77235044_Bibliografia.pdf): легенда книжных сокращений на странице PDF 1; записи польских произведений содержат названия и привязки к авторским книгам. Первая книга «Lektury nadobowiązkowe» указана в разделе 1973 года (PDF 24), «Poczta literacka czyli jak zostać (lub nie zostać) pisarzem» — в разделе 2000 года (PDF 43). Польские названия не означают наличия польской версии в конкретном локальном источнике.
+[^bibliography]: Фонд Виславы Шимборской, [«Wisława Szymborska. Bibliografia podmiotowa»](https://www.szymborska.org.pl/app/uploads/2020/02/1361523524_77235044_Bibliografia.pdf): легенда книжных сокращений на странице PDF 1; записи польских произведений содержат названия и привязки к авторским книгам. Первая книга «Lektury nadobowiązkowe» указана в разделе 1973 года (PDF 24), «Poczta literacka czyli jak zostać (lub nie zostać) pisarzem» — в разделе 2000 года (PDF 43). Годы первых книг цикла сохранены здесь; названия прозаических подборок в колонке не утверждают совпадения их полного состава с первым изданием. Польские названия не означают наличия польской версии в конкретном локальном источнике.
 
-[^collected]: Wisława Szymborska, «Wiersze wszystkie», Znak, 2023; [оглавление электронного издания ISBN 9788324067213](https://ebookpoint.pl/ksiazki/wiersze-wszystkie-wislawa-szymborska,e_4f1j.htm) воспроизводит названия произведений и разделение по авторским книгам. Это основание для названий и книжных соответствий, а не для автоматического отождествления разных переводов или установления самой ранней книги. «Pogrzeb» в переводе Анатолия Гелескула («Погребение», PUB-2006-02, PDF 10–11) относится к «Wołanie do Yeti»; одноимённое позднее произведение в переводах Натальи Астафьевой и Андрея Базилевского («Похороны») — к «Ludzie na moście». «Notatka» на странице `moment/note` относится к «Chwila», а не к одноимённому стихотворению из «Sól».
+[^collected]: Wisława Szymborska, «Wiersze wszystkie», Znak, 2023; [оглавление электронного издания ISBN 9788324067213](https://ebookpoint.pl/ksiazki/wiersze-wszystkie-wislawa-szymborska,e_4f1j.htm) воспроизводит названия произведений и разделение по авторским книгам. Распределение по самостоятельным сборникам принято для колонки «Оригинальное название сборника»; более ранние публикации и включения в избранное описываются отдельно. Совпадение названий само по себе не отождествляет разные произведения или переводы. «Pogrzeb» в переводе Анатолия Гелескула («Погребение», PUB-2006-02, PDF 10–11) относится к «Wołanie do Yeti»; одноимённое позднее произведение в переводах Натальи Астафьевой и Андрея Базилевского («Похороны») — к «Ludzie na moście». «Notatka» на странице `moment/note` относится к «Chwila», а не к одноимённому стихотворению из «Sól». Все представленные в этом оглавлении стихотворения карты сверены с распределением по сборникам 16.10.2026.
 
-[^first-sto]: Для оставшихся здесь одиннадцати стихотворений подтверждены две книги 1967 года: «Poezje wybrane» (LSW) и «Sto pociech» (PIW). На [фотографиях полного оглавления «Poezje wybrane»](https://antykwariatwaw.pl/pl/p/Poezje-wybrane-Wislawa-Szymborska-wybor-i-wstep-autorki-Biblioteka-Poetow-Exlibris-1967/156334) указаны «Pamięć nareszcie» (с. 84), «Żywy» (88), «Urodzony» (90), «Monolog dla Kasandry» (95), «Niewinność» (102), «Przylot» (104), «Tomasz Mann» (105), «Tarsjusz» (107), «Akrobata» (109), «Sto pociech» (111) и «Do serca w niedzielę» (113); принадлежность к «Sto pociech» подтверждена оглавлением[^collected]. [IBL PAN, позиции 6–7](https://pisarzeibadacze.ibl.edu.pl/haslo/4150/szymborska-wislawa) и [хронология Фонда](https://www.szymborska.org.pl/szymborska/zyciorys/) датируют обе книги 1967 годом, но их порядок перечисления различается и сам по себе не устанавливает последовательность выхода. Для выбора первой книги нужны выходные сведения экземпляров или иной источник с точной хронологией. Проверено 15.10.2026.
+[^first-sto]: Одиннадцать стихотворений, отнесённых в карте к «Sto pociech» (PIW, 1967), также включены в «Poezje wybrane» (LSW, 1967). На [фотографиях полного оглавления «Poezje wybrane»](https://antykwariatwaw.pl/pl/p/Poezje-wybrane-Wislawa-Szymborska-wybor-i-wstep-autorki-Biblioteka-Poetow-Exlibris-1967/156334) указаны «Pamięć nareszcie» (с. 84), «Żywy» (88), «Urodzony» (90), «Monolog dla Kasandry» (95), «Niewinność» (102), «Przylot» (104), «Tomasz Mann» (105), «Tarsjusz» (107), «Akrobata» (109), «Sto pociech» (111) и «Do serca w niedzielę» (113); принадлежность к «Sto pociech» подтверждена оглавлением[^collected]. [IBL PAN, позиции 6–7](https://pisarzeibadacze.ibl.edu.pl/haslo/4150/szymborska-wislawa) и [хронология Фонда](https://www.szymborska.org.pl/szymborska/zyciorys/) датируют обе книги 1967 годом, но их порядок перечисления различается и сам по себе не устанавливает последовательность выхода. Первая из этих двух книг не установлена. В колонке указан «Sto pociech» по распределению в «Wiersze wszystkie»; неопределённая хронология избранного не меняет этой принадлежности. Проверено 15.10.2026.
 
-[^sto-first-confirmed]: Для «Ruch», «Pejzaż», «Dworzec», «Pieta», «Wietnam», «Jaskinia», «Śmiech» и «Fetysz płodności z paleolitu» первая авторская книга установлена сопоставлением составов: «Sto pociech» (PIW, 1967)[^collected]. В более раннем «Wiersze wybrane» (PIW, 1964), по [каталогу Rara Avis, позиция 299, с. 80](https://raraavis.krakow.pl/wp-content/uploads/2023/06/a138.pdf), раздел новых стихов содержит только одно произведение — это «Radość pisania»[^joy-first]. Все восемь названных стихотворений отсутствуют и в полном оглавлении «Poezje wybrane» (LSW, 1967): [первая страница оглавления](https://antykwariatwaw.pl/userdata/public/gfx/416179/szymborska-3.jpg), [вторая страница оглавления](https://antykwariatwaw.pl/userdata/public/gfx/416180/szymborska-4.jpg); издание опознано по [карточке и фотографии титульного листа](https://antykwariatwaw.pl/pl/p/Poezje-wybrane-Wislawa-Szymborska-wybor-i-wstep-autorki-Biblioteka-Poetow-Exlibris-1967/156334). Поэтому неопределённая последовательность двух книг 1967 года для этих восьми произведений не влияет на результат. Проверено 15.10.2026.
+[^sto-first-confirmed]: «Ruch», «Pejzaż», «Dworzec», «Pieta», «Wietnam», «Jaskinia», «Śmiech» и «Fetysz płodności z paleolitu» отнесены к «Sto pociech» (PIW, 1967)[^collected]. При проверке ранних книжных включений сопоставлены также составы избранных 1964 и 1967 годов. В более раннем «Wiersze wybrane» (PIW, 1964), по [каталогу Rara Avis, позиция 299, с. 80](https://raraavis.krakow.pl/wp-content/uploads/2023/06/a138.pdf), раздел новых стихов содержит только одно произведение — это «Radość pisania»[^joy-first]. Все восемь названных стихотворений отсутствуют и в полном оглавлении «Poezje wybrane» (LSW, 1967): [первая страница оглавления](https://antykwariatwaw.pl/userdata/public/gfx/416179/szymborska-3.jpg), [вторая страница оглавления](https://antykwariatwaw.pl/userdata/public/gfx/416180/szymborska-4.jpg); издание опознано по [карточке и фотографии титульного листа](https://antykwariatwaw.pl/pl/p/Poezje-wybrane-Wislawa-Szymborska-wybor-i-wstep-autorki-Biblioteka-Poetow-Exlibris-1967/156334). В проверенных избранных более раннего включения этих восьми произведений не обнаружено; принадлежность к «Sto pociech» подтверждается распределением в собрании. Проверено 15.10.2026.
 
-[^first-wszelki]: Принадлежность этих стихотворений к «Wszelki wypadek» (1972) подтверждена оглавлением[^collected], но самая ранняя авторская книга для них не установлена. [Библиографическая статья IBL PAN «Szymborska Wisława»](https://pisarzeibadacze.ibl.edu.pl/haslo/4150/szymborska-wislawa), позиции 8–10, описывает разделы новых стихов в двух авторских избранных 1970 года: «Poezje» (PIW) и «Wisława Szymborska» (Czytelnik, серия «Poeci Polscy»). Magnus J. Kryński и Robert A. Maguire, [«Sounds, Feelings, Thoughts: The Poetry of Wisława Szymborska», примечание 1](https://www.enotes.com/topics/wis-awa-szymborska/criticism/criticism/magnus-j-kry-ski-and-robert-maguire-essay-date), указывают десять новых стихотворений в «Poezje», но в доступном примечании не перечисляют их названий. [Библиография Фонда, редакция 2023 года](https://www.szymborska.org.pl/app/uploads/2023/03/Bibliografia_Wis%C5%82awa_Szymborska.pdf), PDF 21 и 23, фиксирует журнальные публикации «Klasyk», «Listy umarłych», «Miłość szczęśliwa», «Wrażenia z teatru» и «Prospekt» в 1971 году, «Pochwała snów» — в 1972-м; эти даты сами по себе не доказывают отсутствия в более ранних книгах. До проверки полного состава обоих избранных первая книга остаётся неустановленной. Проверено 15.10.2026.
+[^first-wszelki]: Принадлежность этих стихотворений к «Wszelki wypadek» (1972) подтверждена оглавлением[^collected], но самая ранняя авторская книга для них не установлена. [Библиографическая статья IBL PAN «Szymborska Wisława»](https://pisarzeibadacze.ibl.edu.pl/haslo/4150/szymborska-wislawa), позиции 8–10, описывает разделы новых стихов в двух авторских избранных 1970 года: «Poezje» (PIW) и «Wisława Szymborska» (Czytelnik, серия «Poeci Polscy»). Magnus J. Kryński и Robert A. Maguire, [«Sounds, Feelings, Thoughts: The Poetry of Wisława Szymborska», примечание 1](https://www.enotes.com/topics/wis-awa-szymborska/criticism/criticism/magnus-j-kry-ski-and-robert-maguire-essay-date), указывают десять новых стихотворений в «Poezje», но в доступном примечании не перечисляют их названий. [Библиография Фонда, редакция 2023 года](https://www.szymborska.org.pl/app/uploads/2023/03/Bibliografia_Wis%C5%82awa_Szymborska.pdf), PDF 21 и 23, фиксирует журнальные публикации «Klasyk», «Listy umarłych», «Miłość szczęśliwa», «Wrażenia z teatru» и «Prospekt» в 1971 году, «Pochwała snów» — в 1972-м; эти даты сами по себе не доказывают отсутствия в более ранних книгах. Полный состав обоих избранных ещё не проверен. В колонке указан подтверждённый сборник «Wszelki wypadek»; вопрос о самом раннем книжном включении сохранён отдельно и на это значение не влияет. Проверено 15.10.2026.
 
-[^joy-first]: Małgorzata Baranowska, [«Prywatna historia poezji (II)»](https://rcin.org.pl/Content/234744/WA248_71895_P-I-2524_baranowska-prywatna_o.pdf), «Teksty Drugie», 1990, № 5–6, с. 223 (PDF 2): «Radość pisania» прямо отнесено к «Wiersze wybrane» 1964 года. Поэтому здесь указан этот более ранний сборник, а не «Sto pociech» 1967 года.
+[^joy-first]: Małgorzata Baranowska, [«Prywatna historia poezji (II)»](https://rcin.org.pl/Content/234744/WA248_71895_P-I-2524_baranowska-prywatna_o.pdf), «Teksty Drugie», 1990, № 5–6, с. 223 (PDF 2): «Radość pisania» прямо отнесено к «Wiersze wybrane» 1964 года. В колонке указан «Sto pociech» (1967) по распределению в «Wiersze wszystkie»[^collected]; включение в избранное 1964 года сохраняется как более ранняя книжная публикация.
 
-[^early-selected]: Anna Zarzycka, [«Od „Szukania słowa” do „Wołania do Yeti”. Biografia literacka Wisławy Szymborskiej 1945–1957»](https://rcin.org.pl/dlibra/publication/80966/edition/63291), «Pamiętnik Literacki», 2010, т. 101, № 1, с. 216, примечание 73: «Pamięć o wrześniu», «Pamięć o styczniu» и безымянное стихотворение с началом «Świat umieliśmy kiedyś na wyrywki…» были включены в «Wiersze wybrane» 1964 года. Пометка `NZ` («невыпущенный сборник») в старой библиографии не означает отсутствия последующих книжных публикаций.
+[^early-selected]: Anna Zarzycka, [«Od „Szukania słowa” do „Wołania do Yeti”. Biografia literacka Wisławy Szymborskiej 1945–1957»](https://rcin.org.pl/dlibra/publication/80966/edition/63291), «Pamiętnik Literacki», 2010, т. 101, № 1, с. 216, примечание 73: «Pamięć o wrześniu», «Pamięć o styczniu» и безымянное стихотворение с началом «Świat umieliśmy kiedyś na wyrywki…» были включены в «Wiersze wybrane» 1964 года. Пометка `NZ` («невыпущенный сборник») в старой библиографии не означает отсутствия последующих книжных публикаций. В колонке для всех трёх произведений указана посмертная «Czarna piosenka» (2014) по распределению в «Wiersze wszystkie»[^collected]; публикация в избранном 1964 года сохраняется в этой сноске.
 
-[^black-song]: Издательство Znak, [«Czarna piosenka», первое издание, 2014](https://www.znak.com.pl/p/czarna-piosenka-wislawa-szymborska-2609); состав и названия «Szukam słowa» и «Krucjata dzieci» также подтверждены оглавлением «Wiersze wszystkie»[^collected]. Год написания раннего стихотворения не подставляется вместо даты книжного издания.
+[^black-song]: Издательство Znak, [«Czarna piosenka», первое издание, 2014](https://www.znak.com.pl/p/czarna-piosenka-wislawa-szymborska-2609); состав и названия «Szukam słowa» и «Krucjata dzieci» также подтверждены оглавлением «Wiersze wszystkie»[^collected]. По этому же оглавлению к книге отнесены три ранних произведения, перечисленные в сноске[^early-selected]. Их принадлежность к этому посмертному сборнику сохраняется независимо от более ранних публикаций. Год написания раннего стихотворения не подставляется вместо даты книжного издания.
 
-[^rhymes]: Wojciech Ligęza, [«„Żart jest najlepszą dla mnie rekomendacją powagi.” O humorze poetyckim oraz Wisławy Szymborskiej zabawach słowem i obrazem»](https://pressto.amu.edu.pl/index.php/pi/article/view/4187), «Polonistyka. Innowacje», 2015, № 1: отдельные циклы «Lepieje», «Odwódki», «Moskaliki», «Altruitki» относятся к книге «Rymowanki dla dużych dzieci» (2003). Польские заголовки циклов дополнительно сверены с билингвальными локальными публикациями PUB-2023-02, PUB-2023-03 и PUB-2023-04; отдельные миниатюры внутри этих принятых единиц учёта здесь не дробятся.
+[^rhymes]: Wojciech Ligęza, [«„Żart jest najlepszą dla mnie rekomendacją powagi.” O humorze poetyckim oraz Wisławy Szymborskiej zabawach słowem i obrazem»](https://pressto.amu.edu.pl/index.php/pi/article/view/4187), «Polonistyka. Innowacje», 2015, № 2, с. 1–12: отдельные циклы «Lepieje», «Odwódki», «Moskaliki», «Altruitki» относятся к книге «Rymowanki dla dużych dzieci» (2003). Польские заголовки циклов дополнительно сверены с билингвальными локальными публикациями PUB-2023-02, PUB-2023-03 и PUB-2023-04; отдельные миниатюры внутри этих принятых единиц учёта здесь не дробятся.
 
 [^limericks]: PUB-2023-06, `web/DP-2023-41-ten-limericks.pdf`, PDF 1–2: лимерики не имеют индивидуальных авторских заголовков, а заключительный абзац публикации прямо указывает книгу «Rymowanki dla dużych dzieci». Номера и русские начальные строки в первой колонке — идентификаторы локальной публикации; девять из этих лимериков повторно представлены в PUB-2026-02.
 
-[^nobel-title]: Польский заголовок «Poeta i świat» подтверждён оригиналом на странице сайта и в [её Blade-шаблоне](../resources/views/poems/text/poet-and-world.blade.php). Книжное включение подтверждено в «Wiersze wybrane» (a5, 2000): [IBL PAN, позиция 39](https://pisarzeibadacze.ibl.edu.pl/haslo/4150/szymborska-wislawa) прямо перечисляет лекцию в составе этой книги. Самая ранняя польская авторская книга пока не установлена: подтверждение публикации 2000 года не исключает более ранних книжных изданий. Цитата в PUB-1998-03 отнесена к тому же произведению, но остаётся отдельной сокращённой версией. Проверено 15.10.2026.
+[^nobel-title]: Польский заголовок «Poeta i świat» подтверждён оригиналом на странице сайта и в [её Blade-шаблоне](../resources/views/poems/text/poet-and-world.blade.php). Для отдельной лекции в колонке указано авторское избранное «Wiersze wybrane» (a5, 2012): [описание этого издания](https://www.znak.com.pl/p/wiersze-wybrane-wislawa-szymborska-28660) прямо подтверждает включение лекции. [IBL PAN, позиция 39](https://pisarzeibadacze.ibl.edu.pl/haslo/4150/szymborska-wislawa) описывает это избранное с первого издания 2000 года и его последующие переиздания; год в колонке уточняет проверенное издание. Более ранние публикации лекции 1996 года перечислены в [библиографии Фонда, PDF 41](https://www.szymborska.org.pl/app/uploads/2020/02/1361523524_77235044_Bibliografia.pdf#page=41): «Rzeczpospolita», № 286, с. 25, и «Tygodnik Powszechny», № 50, приложение, с. I. Самая ранняя польская авторская книга пока не установлена; значение в колонке не утверждает первенства издания 2012 года. Цитата в PUB-1998-03 отнесена к тому же произведению, но остаётся отдельной сокращённой версией. Проверено 16.10.2026.
