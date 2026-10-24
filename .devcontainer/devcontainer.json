@@ -6,6 +6,10 @@
     "shutdownAction": "none",
     "customizations": {
         "vscode": {
+            "extensions": [
+                "bmewburn.vscode-intelephense-client",
+                "laravel.vscode-laravel"
+            ],
             "settings": {
                 "php.validate.executablePath": "/usr/local/bin/php"
             }
