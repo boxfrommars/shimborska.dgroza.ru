@@ -8,7 +8,8 @@
         "vscode": {
             "extensions": [
                 "bmewburn.vscode-intelephense-client",
-                "laravel.vscode-laravel"
+                "laravel.vscode-laravel",
+                "shd101wyy.markdown-preview-enhanced"
             ],
             "settings": {
                 "php.validate.executablePath": "/usr/local/bin/php"
