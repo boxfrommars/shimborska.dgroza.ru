@@ -1,0 +1,14 @@
+{
+    "name": "shimborska",
+    "dockerComposeFile": "../compose.yaml",
+    "service": "app",
+    "workspaceFolder": "/app",
+    "shutdownAction": "none",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "php.validate.executablePath": "/usr/local/bin/php"
+            }
+        }
+    }
+}

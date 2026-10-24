@@ -43,6 +43,40 @@ docker compose up -d
 docker compose down
 ```
 
+### VS Code и Dev Containers
+
+VS Code можно подключить к контейнеру приложения, чтобы терминал и проверка
+синтаксиса PHP работали в том же окружении, что и сайт. Устанавливать PHP или
+Composer в операционную систему для этого не требуется.
+
+1. Запустить Docker Desktop и выполнить начальную установку и запуск из
+   раздела выше.
+2. Установить расширение Microsoft
+   [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers).
+3. Открыть корень проекта в VS Code, вызвать палитру команд
+   (`Ctrl+Shift+P`) и выбрать **Dev Containers: Reopen in Container**.
+
+Конфигурация [.devcontainer/devcontainer.json](.devcontainer/devcontainer.json)
+использует существующий `compose.yaml`: VS Code подключается к сервису `app`
+и открывает каталог `/app`. Для встроенной проверки синтаксиса задан PHP
+внутри контейнера: `/usr/local/bin/php`.
+
+Во встроенном терминале подключённого окна команды выполняются напрямую:
+
+```shell
+php -v
+composer check
+```
+
+Остальные Composer-команды из раздела «Проверки» также выполняются без
+префикса `docker compose run --rm app`. Сайт остаётся доступен на
+[localhost:8000](http://localhost:8000).
+
+Закрытие VS Code оставляет контейнер работающим (`shutdownAction: none`).
+Для остановки выполнить `docker compose down` из обычного терминала
+операционной системы. После изменения `Dockerfile` или конфигурации Dev
+Containers выбрать **Dev Containers: Rebuild Container** в палитре команд.
+
 ## Проверки
 
 Полная автоматическая проверка выполняет строгую валидацию Composer, security
