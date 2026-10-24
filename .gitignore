@@ -8,6 +8,10 @@
 Homestead.json
 Homestead.yaml
 .env
+.env.backup
+.env.production
+/auth.json
+/storage/*.key
 .phpunit.result.cache
 .phpunit.cache
 public/sitemap.xml
