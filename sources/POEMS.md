@@ -856,46 +856,65 @@ PDF 2 — редакционные сведения, ISBN 5-94214-006-5 и зн�
 
 ### PUB-2012-03 — «Моя полониана»
 
-[`books/AE-2012.pdf`](books/AE-2012.pdf) — раздел Виславы Шимборской из книги
+[`books/AE-2012.pdf`](books/AE-2012.pdf) — скан избранных страниц книги
 Асара Эппеля «Моя полониана: переводы из польской поэзии» (Москва: Новое
-литературное обозрение, 2012): 32 полных стихотворения на страницах PDF 1–58,
-печатных страницах 372–429. Номер 372 на первой странице в кадре не виден и
-определён по следующей странице 373.
+литературное обозрение, 2012; 448 с.). Файл содержит 70 страниц без текстового
+слоя:
+
+- PDF 1 — обложка;
+- PDF 2 — библиографическое описание, ISBN 978-5-86793-946-5 и сведения об
+  авторских правах; указана поддержка Польского культурного центра в Москве
+  и Краковского Института книги;
+- PDF 3–4 — предисловие Асара Эппеля «О книге», печатные страницы 5–6;
+- PDF 5–62 — полный раздел Виславы Шимборской: 32 стихотворения в переводах
+  Асара Эппеля, печатные страницы 372–429;
+- PDF 63–69 — полное оглавление книги, печатные страницы 433–439; перечень
+  стихотворений Шимборской находится на PDF 69, печатной странице 439;
+- PDF 70 — выпускные сведения: дизайнер А. Бондаренко, редактор
+  Е. Шкловский, корректор М. Смирнова, вёрстка К. Москалева; тираж 1000 экз.,
+  заказ № 20; ОАО «Типография “Новости”», Москва.
+
+Номера 5, 372 и 433 в кадре не видны: с. 5 установлена по оглавлению и
+следующей с. 6; с. 372 — по оглавлению и следующей с. 373; с. 433 — по
+следующей с. 434. Язык стихотворений — `RU`. Состав, порядок и заголовки
+сверены по текстам и оглавлению; безымянное стихотворение с заголовком
+«● ● ●» в оглавлении обозначено первой строкой. Предисловие, оглавление и
+служебные страницы в таблицу произведений Шимборской не включены.
 
 | Произведение Шимборской | Оригинальное название произведения | Оригинальное название сборника | Страница сайта | Есть на сайте | Страницы источника | Версии и переводчики |
 |---|---|---|---|---|---|---|
-| Большие числа | Wielka liczba | Wielka liczba | `different/large-number` |  | PDF 1–2; печатные 372–373 | `RU` — перевод Асара Эппеля |
-| Вокзал | Dworzec | Sto pociech[^sto-first-confirmed] | `different/station` |  | PDF 3–4; печатные 374–375 | `RU` — перевод Асара Эппеля |
-| Вызываемое театром | Wrażenia z teatru | Wszelki wypadek[^first-wszelki] | `different/impression-of-the-theater` |  | PDF 5–6; печатные 376–377 | `RU` — перевод Асара Эппеля |
-| Жизнь здесь и немедля | Życie na poczekaniu | Wielka liczba | `different/life-while-you-wait` |  | PDF 7–8; печатные 378–379 | `RU` — перевод Асара Эппеля |
-| Монолог для Кассандры | Monolog dla Kasandry | Sto pociech[^first-sto] | `different/soliloquy-for-cassandra` |  | PDF 9–10; печатные 380–381 | `RU` — перевод Асара Эппеля |
-| Письма умерших | Listy umarłych | Wszelki wypadek[^first-wszelki] | `different/letters-of-the-dead` | ● | PDF 11; печатная 382 | `RU` — перевод Асара Эппеля |
-| Прилет | Przylot | Sto pociech[^first-sto] | `different/arrival` | ● | PDF 12; печатная 383 | `RU` — перевод Асара Эппеля |
-| Рубенсовские женщины | Kobiety Rubensa | Sól | `different/rubens-women` |  | PDF 13–14; печатные 384–385 | `RU` — перевод Асара Эппеля |
-| Средневековая миниатюра | Miniatura średniowieczna | Wielka liczba | `different/medieval-miniature` |  | PDF 15–16; печатные 386–387 | `RU` — перевод Асара Эппеля |
-| Увековечение | Upamiętnienie | Wołanie do Yeti | `different/commemoration` |  | PDF 17–18; печатные 388–389 | `RU` — перевод Асара Эппеля |
-| Число пи | Liczba Pi | Wielka liczba | `different/pi` |  | PDF 19–20; печатные 390–391 | `RU` — перевод Асара Эппеля |
-| Буффонада | Buffo | Wołanie do Yeti | `different/buffo` | ● | PDF 21–22; печатные 392–393 | `RU` — перевод Асара Эппеля |
-| Вот память и нашла | Pamięć nareszcie | Sto pociech[^first-sto] | `different/memory-at-last` |  | PDF 23–24; печатные 394–395 | `RU` — перевод Асара Эппеля |
-| Конкурс мужской красоты | Konkurs piękności męskiej | Sól | `different/male-beauty-contest` | ● | PDF 25; печатная 396 | `RU` — перевод Асара Эппеля |
-| Надгробная надпись | Nagrobek | Sól | `different/epitaph` | ● | PDF 26; печатная 397 | `RU` — перевод Асара Эппеля |
-| Под тою же самой звездой | Pod jedną gwiazdką | Wszelki wypadek[^first-wszelki] | `different/under-one-small-star` |  | PDF 27–28; печатные 398–399 | `RU` — перевод Асара Эппеля |
-| Радость писательства | Radość pisania | Sto pociech[^joy-first] | `different/joy-of-writing` |  | PDF 29–30; печатные 400–401 | `RU` — перевод Асара Эппеля |
-| Скелет ящера | Szkielet jaszczura | Wszelki wypadek[^first-wszelki] | `different/lizard-skeleton` |  | PDF 31–32; печатные 402–403 | `RU` — перевод Асара Эппеля |
-| Урок | Lekcja | Sól | `different/lesson` | ● | PDF 33; печатная 404 | `RU` — перевод Асара Эппеля |
-| Тень | Cień | Sól | `different/shadow` | ● | PDF 34–35; печатные 405–406 | `RU` — перевод Асара Эппеля |
-| Я слишком близко | Без названия (начало: «Jestem za blisko, żeby mu się śnić…») | Sól | `different/im-too-close` | ● | PDF 36–37; печатные 407–408 | `RU` — перевод Асара Эппеля; в источнике заголовок «● ● ●», на сайте у этой версии «* * *» |
-| Внезапная встреча | Niespodziane spotkanie | Sól | `different/unexpected-meeting` | ● | PDF 38; печатная 409 | `RU` — перевод Асара Эппеля |
-| Всякий случай | Wszelki wypadek | Wszelki wypadek[^first-wszelki] | `different/in-any-event` |  | PDF 39–40; печатные 410–411 | `RU` — перевод Асара Эппеля |
-| Долгопят | Tarsjusz | Sto pociech[^first-sto] | `different/tarsier` |  | PDF 41–42; печатные 412–413 | `RU` — перевод Асара Эппеля |
-| Лотова жена | Żona Lota | Wielka liczba | `different/lots-wife` | ● | PDF 43–44; печатные 414–415 | `RU` — перевод Асара Эппеля |
-| Открытие | Odkrycie | Wszelki wypadek[^first-wszelki] | `different/discovery` |  | PDF 45–46; печатные 416–417 | `RU` — перевод Асара Эппеля |
-| Потеха | Sto pociech | Sto pociech[^first-sto] | `different/hilarity` |  | PDF 47–48; печатные 418–419 | `RU` — перевод Асара Эппеля |
-| Рожденный | Urodzony | Sto pociech[^first-sto] | `different/born` |  | PDF 49–51; печатные 420–422 | `RU` — перевод Асара Эппеля |
-| Сношения с умершими | Konszachty z umarłymi | Ludzie na moście | `different/dealings-with-the-dead` |  | PDF 52–53; печатные 423–424 | `RU` — перевод Асара Эппеля |
-| Террорист, он следит | Terrorysta, on patrzy | Wielka liczba | `different/terrorist-he-looks` |  | PDF 54–55; печатные 425–426 | `RU` — перевод Асара Эппеля |
-| Лесное моралите | Moralitet leśny | Dwukropek | `semicolon/forestry-morality` |  | PDF 56–57; печатные 427–428 | `RU` — перевод Асара Эппеля |
-| Четыре часа утра | Czwarta nad ranem | Wołanie do Yeti | `different/four-in-the-morning` | ● | PDF 58; печатная 429 | `RU` — перевод Асара Эппеля |
+| Большие числа | Wielka liczba | Wielka liczba | `different/large-number` |  | PDF 5–6; печатные 372–373 | `RU` — перевод Асара Эппеля |
+| Вокзал | Dworzec | Sto pociech[^sto-first-confirmed] | `different/station` |  | PDF 7–8; печатные 374–375 | `RU` — перевод Асара Эппеля |
+| Вызываемое театром | Wrażenia z teatru | Wszelki wypadek[^first-wszelki] | `different/impression-of-the-theater` |  | PDF 9–10; печатные 376–377 | `RU` — перевод Асара Эппеля |
+| Жизнь здесь и немедля | Życie na poczekaniu | Wielka liczba | `different/life-while-you-wait` |  | PDF 11–12; печатные 378–379 | `RU` — перевод Асара Эппеля |
+| Монолог для Кассандры | Monolog dla Kasandry | Sto pociech[^first-sto] | `different/soliloquy-for-cassandra` |  | PDF 13–14; печатные 380–381 | `RU` — перевод Асара Эппеля |
+| Письма умерших | Listy umarłych | Wszelki wypadek[^first-wszelki] | `different/letters-of-the-dead` | ● | PDF 15; печатная 382 | `RU` — перевод Асара Эппеля |
+| Прилет | Przylot | Sto pociech[^first-sto] | `different/arrival` | ● | PDF 16; печатная 383 | `RU` — перевод Асара Эппеля |
+| Рубенсовские женщины | Kobiety Rubensa | Sól | `different/rubens-women` |  | PDF 17–18; печатные 384–385 | `RU` — перевод Асара Эппеля |
+| Средневековая миниатюра | Miniatura średniowieczna | Wielka liczba | `different/medieval-miniature` |  | PDF 19–20; печатные 386–387 | `RU` — перевод Асара Эппеля |
+| Увековечение | Upamiętnienie | Wołanie do Yeti | `different/commemoration` |  | PDF 21–22; печатные 388–389 | `RU` — перевод Асара Эппеля |
+| Число пи | Liczba Pi | Wielka liczba | `different/pi` |  | PDF 23–24; печатные 390–391 | `RU` — перевод Асара Эппеля |
+| Буффонада | Buffo | Wołanie do Yeti | `different/buffo` | ● | PDF 25–26; печатные 392–393 | `RU` — перевод Асара Эппеля |
+| Вот память и нашла | Pamięć nareszcie | Sto pociech[^first-sto] | `different/memory-at-last` |  | PDF 27–28; печатные 394–395 | `RU` — перевод Асара Эппеля |
+| Конкурс мужской красоты | Konkurs piękności męskiej | Sól | `different/male-beauty-contest` | ● | PDF 29; печатная 396 | `RU` — перевод Асара Эппеля |
+| Надгробная надпись | Nagrobek | Sól | `different/epitaph` | ● | PDF 30; печатная 397 | `RU` — перевод Асара Эппеля |
+| Под тою же самой звездой | Pod jedną gwiazdką | Wszelki wypadek[^first-wszelki] | `different/under-one-small-star` |  | PDF 31–32; печатные 398–399 | `RU` — перевод Асара Эппеля |
+| Радость писательства | Radość pisania | Sto pociech[^joy-first] | `different/joy-of-writing` |  | PDF 33–34; печатные 400–401 | `RU` — перевод Асара Эппеля |
+| Скелет ящера | Szkielet jaszczura | Wszelki wypadek[^first-wszelki] | `different/lizard-skeleton` |  | PDF 35–36; печатные 402–403 | `RU` — перевод Асара Эппеля |
+| Урок | Lekcja | Sól | `different/lesson` | ● | PDF 37; печатная 404 | `RU` — перевод Асара Эппеля |
+| Тень | Cień | Sól | `different/shadow` | ● | PDF 38–39; печатные 405–406 | `RU` — перевод Асара Эппеля |
+| Я слишком близко | Без названия (начало: «Jestem za blisko, żeby mu się śnić…») | Sól | `different/im-too-close` | ● | PDF 40–41; печатные 407–408 | `RU` — перевод Асара Эппеля; в источнике заголовок «● ● ●», на сайте у этой версии «* * *» |
+| Внезапная встреча | Niespodziane spotkanie | Sól | `different/unexpected-meeting` | ● | PDF 42; печатная 409 | `RU` — перевод Асара Эппеля |
+| Всякий случай | Wszelki wypadek | Wszelki wypadek[^first-wszelki] | `different/in-any-event` |  | PDF 43–44; печатные 410–411 | `RU` — перевод Асара Эппеля |
+| Долгопят | Tarsjusz | Sto pociech[^first-sto] | `different/tarsier` |  | PDF 45–46; печатные 412–413 | `RU` — перевод Асара Эппеля |
+| Лотова жена | Żona Lota | Wielka liczba | `different/lots-wife` | ● | PDF 47–48; печатные 414–415 | `RU` — перевод Асара Эппеля |
+| Открытие | Odkrycie | Wszelki wypadek[^first-wszelki] | `different/discovery` |  | PDF 49–50; печатные 416–417 | `RU` — перевод Асара Эппеля |
+| Потеха | Sto pociech | Sto pociech[^first-sto] | `different/hilarity` |  | PDF 51–52; печатные 418–419 | `RU` — перевод Асара Эппеля |
+| Рожденный | Urodzony | Sto pociech[^first-sto] | `different/born` |  | PDF 53–55; печатные 420–422 | `RU` — перевод Асара Эппеля |
+| Сношения с умершими | Konszachty z umarłymi | Ludzie na moście | `different/dealings-with-the-dead` |  | PDF 56–57; печатные 423–424 | `RU` — перевод Асара Эппеля |
+| Террорист, он следит | Terrorysta, on patrzy | Wielka liczba | `different/terrorist-he-looks` |  | PDF 58–59; печатные 425–426 | `RU` — перевод Асара Эппеля |
+| Лесное моралите | Moralitet leśny | Dwukropek | `semicolon/forestry-morality` |  | PDF 60–61; печатные 427–428 | `RU` — перевод Асара Эппеля |
+| Четыре часа утра | Czwarta nad ranem | Wołanie do Yeti | `different/four-in-the-morning` | ● | PDF 62; печатная 429 | `RU` — перевод Асара Эппеля |
 
 ### PUB-2024-01 — «Внеклассные чтения от А до Z»
 
