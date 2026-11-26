@@ -6,11 +6,11 @@
     "license": "MIT",
     "require": {
         "php": "^8.3",
-        "laravel/framework": "^13.40.0"
+        "laravel/framework": "^13.44.1"
     },
     "require-dev": {
-        "laravel/pint": "^1.32.1",
-        "phpunit/phpunit": "^12.5.43"
+        "laravel/pint": "^1.32.3",
+        "phpunit/phpunit": "^12.5.45"
     },
     "autoload": {
         "psr-4": {
